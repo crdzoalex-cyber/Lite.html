@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nova Stream Lite 📱</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        /* === ESTILOS BASE MÓVIL (PREMIUM BLUE) === */
+        /* === ESTILOS BASE MÓVIL === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; background-color: #02050f; color: #ffffff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; padding-bottom: 70px; padding-top: 70px; }
         ::-webkit-scrollbar { display: none; }
 
-        /* === INTRO === */
+        /* === INTRO SPLASH === */
         #splash-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #02050f; z-index: 999999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); }
         .splash-slide-up { transform: translateY(-100%); }
         .splash-logo-nova { font-size: 50px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 20px rgba(30, 80, 255, 0.8); letter-spacing: 4px; line-height: 1; }
@@ -25,43 +25,46 @@
 
         .search-container { display: flex; align-items: center; background: rgba(30, 80, 255, 0.1); border-radius: 20px; padding: 4px 12px; border: 1px solid rgba(30, 80, 255, 0.5); }
         .search-bar { background: transparent; border: none; color: white; outline: none; width: 130px; font-size: 14px; transition: 0.3s; }
-        .search-bar::placeholder { color: #5577cc; transition: 0.3s; }
+        .search-bar::placeholder { color: #5577cc; }
         .search-btn { background: transparent; border: none; color: #2a60ff; font-size: 16px; margin-left: 5px; }
 
-        /* === SECCIONES Y TARJETAS === */
+        /* === SECCIONES === */
         .content-section { display: none; animation: fadeIn 0.3s ease; }
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .section-title { margin: 20px 0 10px 15px; font-size: 18px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
 
-        .section-title { margin: 20px 0 10px 15px; font-size: 16px; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
+        /* === FILAS ESTILO NETFLIX (NUEVO) === */
+        .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
+        .movie-row .movie-card { flex: 0 0 120px; scroll-snap-align: start; } /* Ancho fijo para las pelis en fila */
+        .movie-row .movie-card img { height: 180px; }
 
+        /* === GRILLAS (Para TV, Series y Búsqueda) === */
+        .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
+        .movie-card { border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); transition: 0.2s; background: #000; cursor: pointer; }
+        .movie-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+        .movie-card:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
+        
+        /* === TV === */
         .category-pill-container { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
         .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
-
-        .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
-        .movie-card { border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); transition: 0.2s; background: #000; }
-        .movie-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
-        
         .canal-item img { object-fit: contain; padding: 10px; height: 120px; background: white;}
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
-
-        .movie-card:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
         .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
         /* === NAVEGACIÓN === */
-        nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(2, 5, 15, 0.95); border-top: 1px solid #1e50ff; box-shadow: 0 -5px 15px rgba(30, 80, 255, 0.2); display: flex; justify-content: space-around; align-items: center; z-index: 100; backdrop-filter: blur(5px); }
+        nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(2, 5, 15, 0.95); border-top: 1px solid #1e50ff; display: flex; justify-content: space-around; align-items: center; z-index: 100; backdrop-filter: blur(5px); }
         .nav-item { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; }
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
         .nav-item i { font-size: 22px; margin-bottom: 3px; font-style: normal; }
 
-        /* === REPRODUCTOR === */
+        /* === REPRODUCTOR YT === */
         #cinematic-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; flex-direction: column; }
         .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: flex-end; align-items: center; padding: 0 20px; }
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
         #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
-        
         .loader { text-align: center; color: #2a60ff; padding: 50px; font-size: 18px; width: 100%; grid-column: 1 / -1;}
     </style>
 </head>
@@ -90,10 +93,21 @@
         </div>
 
         <div id="sec-cine" class="content-section active">
-            <h3 class="section-title">Catálogo de Películas</h3>
-            <div class="movie-grid" id="grilla-cine">
-                <div class="loader">Cargando base de datos... 🚀</div>
+            
+            <h3 class="section-title">🔥 Estrenos</h3>
+            <div class="movie-row" id="row-estrenos">
+                <div class="loader" style="padding: 20px;">Cargando...</div>
             </div>
+
+            <h3 class="section-title">💥 Acción</h3>
+            <div class="movie-row" id="row-accion"></div>
+
+            <h3 class="section-title">👻 Terror</h3>
+            <div class="movie-row" id="row-terror"></div>
+
+            <h3 class="section-title">🧸 Infantiles</h3>
+            <div class="movie-row" id="row-infantiles"></div>
+
         </div>
 
         <div id="sec-series" class="content-section">
@@ -135,26 +149,24 @@
     </div>
 
     <script>
-        // 1. Intro Splash Ultra Rápida
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 splash.classList.add('splash-slide-up');
                 setTimeout(() => { splash.style.display = 'none'; }, 400);
             }, 400); 
-            
             cargarBaseDeDatos();
         });
 
-        // 2. CARGA DINÁMICA DE DATOS
         async function cargarBaseDeDatos() {
             try {
                 const respuesta = await fetch('datos.json');
                 const db = await respuesta.json();
 
+                // 1. DIBUJAR TV
                 const grillaTV = document.getElementById('grilla-tv');
                 grillaTV.innerHTML = '';
-                db.channels.forEach(canal => {
+                (db.channels || []).forEach(canal => {
                     grillaTV.innerHTML += `
                         <div class="movie-card canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false})">
                             <img src="${canal.logo}" alt="${canal.name}">
@@ -164,17 +176,30 @@
                     `;
                 });
 
-                const grillaCine = document.getElementById('grilla-cine');
-                grillaCine.innerHTML = '';
-                const todasLasPelis = [...(db.peliculasEstrenos || []), ...(db.peliculasAccion || [])];
-                todasLasPelis.forEach(peli => {
-                    grillaCine.innerHTML += `
-                        <div class="movie-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
-                            <img src="${peli.poster}" alt="${peli.title}">
-                        </div>
-                    `;
-                });
+                // 2. DIBUJAR CINE POR CATEGORÍAS (ESTILO NETFLIX)
+                const armarFila = (idContenedor, arrayPelis) => {
+                    const cont = document.getElementById(idContenedor);
+                    cont.innerHTML = '';
+                    if (!arrayPelis || arrayPelis.length === 0) {
+                        cont.innerHTML = '<span style="color:#555; padding-left:5px; font-size:12px;">Próximamente...</span>';
+                        return;
+                    }
+                    arrayPelis.forEach(peli => {
+                        cont.innerHTML += `
+                            <div class="movie-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                                <img src="${peli.poster}" alt="${peli.title}">
+                            </div>
+                        `;
+                    });
+                };
 
+                // Llenamos cada fila con lo que hay en el JSON
+                armarFila('row-estrenos', db.peliculasEstrenos);
+                armarFila('row-accion', db.peliculasAccion);
+                armarFila('row-terror', db.peliculasTerror);
+                armarFila('row-infantiles', db.peliculasInfantiles);
+
+                // 3. DIBUJAR SERIES
                 const grillaSeries = document.getElementById('grilla-series');
                 grillaSeries.innerHTML = '';
                 (db.seriesData || []).forEach(serie => {
@@ -186,12 +211,12 @@
                 });
 
             } catch (error) {
-                document.getElementById('grilla-cine').innerHTML = '<p style="color:red;text-align:center;grid-column:1/-1;">Error cargando datos.json. Revisá si no hay un error en el archivo JSON.</p>';
+                document.getElementById('row-estrenos').innerHTML = '<p style="color:red; padding:15px;">Error cargando datos.json.</p>';
                 console.log(error);
             }
         }
 
-        // 3. NAVEGACIÓN Y FILTROS
+        // NAVEGACIÓN Y BÚSQUEDA
         let seccionAnterior = 'sec-cine';
 
         function cambiarSeccion(idSeccion, elementoBoton) {
@@ -240,7 +265,7 @@
                 }
             });
 
-            if(encontradas === 0) contenedorResultados.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:20px; color:#aaa;">No se encontró nada en esta sección 🛸</div>';
+            if(encontradas === 0) contenedorResultados.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:20px; color:#aaa;">No se encontró nada 🛸</div>';
         }
 
         function filtrarCanales(categoria, botonApretado) {
@@ -256,7 +281,7 @@
             });
         }
 
-        // 4. REPRODUCTOR
+        // REPRODUCTOR
         function playCinematic(url, isYT) {
             if (isYT || url.includes('youtu')) {
                 const overlay = document.getElementById('cinematic-overlay');
