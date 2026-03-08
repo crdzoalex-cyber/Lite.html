@@ -12,7 +12,7 @@
         ::-webkit-scrollbar { display: none; }
 
         /* === INTRO === */
-        #splash-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #02050f; z-index: 999999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
+        #splash-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #02050f; z-index: 999999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); }
         .splash-slide-up { transform: translateY(-100%); }
         .splash-logo-nova { font-size: 50px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 20px rgba(30, 80, 255, 0.8); letter-spacing: 4px; line-height: 1; }
         .splash-logo-lite { font-size: 16px; font-weight: 600; color: #888; letter-spacing: 10px; margin-top: 5px; }
@@ -35,6 +35,258 @@
 
         .section-title { margin: 20px 0 10px 15px; font-size: 16px; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
 
+        .category-pill-container { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
+        .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
+        .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
+
+        .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
+        .movie-card { border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); transition: 0.2s; background: #000; }
+        .movie-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+        
+        .canal-item img { object-fit: contain; padding: 10px; height: 120px; background: white;}
+        .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
+
+        .movie-card:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
+        .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+
+        /* === NAVEGACIÓN === */
+        nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(2, 5, 15, 0.95); border-top: 1px solid #1e50ff; box-shadow: 0 -5px 15px rgba(30, 80, 255, 0.2); display: flex; justify-content: space-around; align-items: center; z-index: 100; backdrop-filter: blur(5px); }
+        .nav-item { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; }
+        .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
+        .nav-item i { font-size: 22px; margin-bottom: 3px; font-style: normal; }
+
+        /* === REPRODUCTOR === */
+        #cinematic-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; flex-direction: column; }
+        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: flex-end; align-items: center; padding: 0 20px; }
+        .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
+        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
+        
+        .loader { text-align: center; color: #2a60ff; padding: 50px; font-size: 18px; width: 100%; grid-column: 1 / -1;}
+    </style>
+</head>
+<body>
+
+    <div id="splash-screen">
+        <span class="splash-logo-nova">NOVA</span>
+        <span class="splash-logo-lite">LITE</span>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-nova">NOVA</span>
+            <span class="logo-lite">LITE</span>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar peli..." oninput="realizarBusqueda(this.value)">
+            <span class="search-btn">🔍</span>
+        </div>
+    </header>
+
+    <main>
+        <div id="sec-busqueda" class="content-section">
+            <h3 class="section-title">Resultados</h3>
+            <div class="movie-grid" id="contenedor-resultados"></div>
+        </div>
+
+        <div id="sec-cine" class="content-section active">
+            <h3 class="section-title">Catálogo de Películas</h3>
+            <div class="movie-grid" id="grilla-cine">
+                <div class="loader">Cargando base de datos... 🚀</div>
+            </div>
+        </div>
+
+        <div id="sec-series" class="content-section">
+            <h3 class="section-title">Series Top</h3>
+            <div class="movie-grid" id="grilla-series"></div>
+        </div>
+
+        <div id="sec-tv" class="content-section">
+            <h3 class="section-title">Canales en Vivo</h3>
+            <div class="category-pill-container">
+                <div class="category-pill active" onclick="filtrarCanales('todos', this)">Todos</div>
+                <div class="category-pill" onclick="filtrarCanales('argentina', this)">Argentina</div>
+                <div class="category-pill" onclick="filtrarCanales('noticias', this)">Noticias</div>
+                <div class="category-pill" onclick="filtrarCanales('deportes', this)">Deportes</div>
+                <div class="category-pill" onclick="filtrarCanales('cine', this)">Cine</div>
+                <div class="category-pill" onclick="filtrarCanales('musica', this)">Música</div>
+            </div>
+            <div class="movie-grid" id="grilla-tv"></div>
+        </div>
+        
+        <div id="sec-perfil" class="content-section">
+            <div style="text-align: center; padding: 40px; color: #aaa;">
+                <div style="width: 80px; height: 80px; background: rgba(30,80,255,0.2); border-radius: 50%; margin: 0 auto 15px; border: 2px solid #2a60ff; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white;">👤</div>
+                <h3 style="color: white; margin-bottom: 5px;">Usuario VIP</h3>
+            </div>
+        </div>
+    </main>
+
+    <nav>
+        <div class="nav-item active" onclick="cambiarSeccion('sec-cine', this)"><i>🎬</i><span>Cine</span></div>
+        <div class="nav-item" onclick="cambiarSeccion('sec-series', this)"><i>📺</i><span>Series</span></div>
+        <div class="nav-item" onclick="cambiarSeccion('sec-tv', this)"><i>📡</i><span>TV</span></div>
+        <div class="nav-item" onclick="cambiarSeccion('sec-perfil', this)"><i>👤</i><span>Perfil</span></div>
+    </nav>
+
+    <div id="cinematic-overlay">
+        <div class="close-bar"><button class="close-btn" onclick="closeCinematic()">✖</button></div>
+        <div id="cinematic-container"></div>
+    </div>
+
+    <script>
+        // 1. Intro Splash Ultra Rápida
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('splash-slide-up');
+                setTimeout(() => { splash.style.display = 'none'; }, 400);
+            }, 400); 
+            
+            cargarBaseDeDatos();
+        });
+
+        // 2. CARGA DINÁMICA DE DATOS
+        async function cargarBaseDeDatos() {
+            try {
+                const respuesta = await fetch('datos.json');
+                const db = await respuesta.json();
+
+                const grillaTV = document.getElementById('grilla-tv');
+                grillaTV.innerHTML = '';
+                db.channels.forEach(canal => {
+                    grillaTV.innerHTML += `
+                        <div class="movie-card canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false})">
+                            <img src="${canal.logo}" alt="${canal.name}">
+                            <p class="canal-title">${canal.name}</p>
+                            <span class="badge-live">EN VIVO</span>
+                        </div>
+                    `;
+                });
+
+                const grillaCine = document.getElementById('grilla-cine');
+                grillaCine.innerHTML = '';
+                const todasLasPelis = [...(db.peliculasEstrenos || []), ...(db.peliculasAccion || [])];
+                todasLasPelis.forEach(peli => {
+                    grillaCine.innerHTML += `
+                        <div class="movie-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                            <img src="${peli.poster}" alt="${peli.title}">
+                        </div>
+                    `;
+                });
+
+                const grillaSeries = document.getElementById('grilla-series');
+                grillaSeries.innerHTML = '';
+                (db.seriesData || []).forEach(serie => {
+                    grillaSeries.innerHTML += `
+                        <div class="movie-card" onclick="playCinematic('${serie.url}', ${serie.isYT || false})">
+                            <img src="${serie.img}" alt="${serie.title}">
+                        </div>
+                    `;
+                });
+
+            } catch (error) {
+                document.getElementById('grilla-cine').innerHTML = '<p style="color:red;text-align:center;grid-column:1/-1;">Error cargando datos.json. Revisá si no hay un error en el archivo JSON.</p>';
+                console.log(error);
+            }
+        }
+
+        // 3. NAVEGACIÓN Y FILTROS
+        let seccionAnterior = 'sec-cine';
+
+        function cambiarSeccion(idSeccion, elementoBoton) {
+            const buscador = document.getElementById('searchInput');
+            buscador.value = ''; 
+            buscador.placeholder = idSeccion === 'sec-cine' ? 'Buscar peli...' : idSeccion === 'sec-series' ? 'Buscar serie...' : idSeccion === 'sec-tv' ? 'Buscar canal...' : 'Buscar...';
+
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(idSeccion).classList.add('active');
+            elementoBoton.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function realizarBusqueda(textoIngresado) {
+            const texto = textoIngresado.toLowerCase().trim();
+            const secBusqueda = document.getElementById('sec-busqueda');
+            const contenedorResultados = document.getElementById('contenedor-resultados');
+
+            if (texto === '') {
+                document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(seccionAnterior).classList.add('active');
+                return;
+            }
+
+            const activaActual = document.querySelector('.content-section.active');
+            if(activaActual.id !== 'sec-busqueda') seccionAnterior = activaActual.id;
+
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            secBusqueda.classList.add('active');
+            contenedorResultados.innerHTML = '';
+
+            let encontradas = 0;
+            const seccionDondeBuscar = document.getElementById(seccionAnterior);
+            seccionDondeBuscar.querySelectorAll('.movie-card').forEach(tarjeta => {
+                let titulo = "";
+                const img = tarjeta.querySelector('img');
+                if(img && img.alt) titulo += img.alt.toLowerCase();
+                const p = tarjeta.querySelector('p');
+                if(p && p.innerText) titulo += " " + p.innerText.toLowerCase();
+
+                if (titulo.includes(texto)) {
+                    contenedorResultados.appendChild(tarjeta.cloneNode(true));
+                    encontradas++;
+                }
+            });
+
+            if(encontradas === 0) contenedorResultados.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:20px; color:#aaa;">No se encontró nada en esta sección 🛸</div>';
+        }
+
+        function filtrarCanales(categoria, botonApretado) {
+            document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
+            botonApretado.classList.add('active');
+
+            document.querySelectorAll('.canal-item').forEach(canal => {
+                if (categoria === 'todos' || canal.getAttribute('data-category') === categoria) {
+                    canal.style.display = 'block';
+                } else {
+                    canal.style.display = 'none';
+                }
+            });
+        }
+
+        // 4. REPRODUCTOR
+        function playCinematic(url, isYT) {
+            if (isYT || url.includes('youtu')) {
+                const overlay = document.getElementById('cinematic-overlay');
+                const container = document.getElementById('cinematic-container');
+                overlay.style.display = 'flex';
+                
+                let videoId = url;
+                if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
+                else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
+
+                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&disablekb=1&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="pointer-events: none;"></iframe>`;
+            } else {
+                try {
+                    const protocolo = url.split('://')[0];
+                    const linkSinProtocolo = url.split('://')[1];
+                    const intentAndroid = `intent://${linkSinProtocolo}#Intent;scheme=${protocolo};type=video/*;end`;
+                    window.location.href = intentAndroid;
+                } catch(e) {
+                    window.location.href = url;
+                }
+            }
+        }
+
+        function closeCinematic() {
+            document.getElementById('cinematic-container').innerHTML = '';
+            document.getElementById('cinematic-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
         .category-pill-container { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
         .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
