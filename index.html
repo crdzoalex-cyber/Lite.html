@@ -288,7 +288,8 @@
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
-                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allowfullscreen></iframe>`;
+                // CÓDIGO NUEVO PREMIUM (Reemplazala por esta)
+container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&disablekb=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
             } 
             // 2. ¡EL TRUCO APPCREATOR24! (Para canales IPTV .m3u8 y Películas .mp4)
             else {
