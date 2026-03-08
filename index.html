@@ -222,12 +222,14 @@
             const secBusqueda = document.getElementById('sec-busqueda');
             const contenedorResultados = document.getElementById('contenedor-resultados');
 
+            // Si el buscador está vacío, volvemos a donde estábamos
             if (texto === '') {
                 document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
                 document.getElementById(seccionAnterior).classList.add('active');
                 return;
             }
 
+            // Guardamos de qué pestaña venimos (Cine, Series o TV)
             const activaActual = document.querySelector('.content-section.active');
             if(activaActual.id !== 'sec-busqueda') seccionAnterior = activaActual.id;
 
@@ -236,17 +238,26 @@
             contenedorResultados.innerHTML = '';
 
             let encontradas = 0;
-            document.querySelectorAll('.movie-card:not(#contenedor-resultados .movie-card)').forEach(tarjeta => {
-                const titulo = tarjeta.querySelector('img').alt.toLowerCase();
+            
+            // MAGIA: Solo buscamos adentro de la sección donde estábamos (seccionAnterior)
+            const seccionDondeBuscar = document.getElementById(seccionAnterior);
+            seccionDondeBuscar.querySelectorAll('.movie-card').forEach(tarjeta => {
+                
+                // Buscamos tanto en el texto (p) como en la imagen (alt)
+                let titulo = "";
+                const img = tarjeta.querySelector('img');
+                if(img && img.alt) titulo += img.alt.toLowerCase();
+                const p = tarjeta.querySelector('p');
+                if(p && p.innerText) titulo += " " + p.innerText.toLowerCase();
+
                 if (titulo.includes(texto)) {
                     contenedorResultados.appendChild(tarjeta.cloneNode(true));
                     encontradas++;
                 }
             });
 
-            if(encontradas === 0) contenedorResultados.innerHTML = '<div class="no-results">No se encontró contenido 🛸</div>';
+            if(encontradas === 0) contenedorResultados.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:20px; color:#aaa;">No se encontró nada en esta sección 🛸</div>';
         }
-
         function filtrarCanales(categoria, botonApretado) {
             document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
             botonApretado.classList.add('active');
