@@ -284,39 +284,45 @@
 
     const overlay = document.getElementById('cinematic-overlay');
     const container = document.getElementById('cinematic-container');
+
     overlay.style.display = 'flex';
+    container.innerHTML = "";
 
     // YOUTUBE
     if (isYT || url.includes('youtu')) {
 
         let videoId = url;
-
         if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
         else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
-        container.innerHTML =
-        `<iframe width="100%" height="100%"
-        src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1"
+        container.innerHTML = `
+        <iframe width="100%" height="100%"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&playsinline=1"
         frameborder="0"
         allow="autoplay; encrypted-media"
-        allowfullscreen></iframe>`;
+        allowfullscreen>
+        </iframe>`;
 
     }
 
-    // STREAMS (M3U8 / MP4 / IPTV)
+    // STREAM / IPTV / MP4
     else {
 
         container.innerHTML = `
-        <video id="player"
+        <video id="novaPlayer"
         controls
         autoplay
         playsinline
-        style="width:100%;height:100%;background:black"></video>
-        `;
+        style="width:100%;height:100%;background:black">
+        </video>`;
 
-        const video = document.getElementById('player');
+        const video = document.getElementById("novaPlayer");
 
-        // HLS STREAM
+        // 🔊 FORZAR AUDIO
+        video.muted = false;
+        video.volume = 1.0;
+
+        // M3U8 (IPTV)
         if (url.includes(".m3u8")) {
 
             if (Hls.isSupported()) {
@@ -329,26 +335,23 @@
                 hls.loadSource(url);
                 hls.attachMedia(video);
 
-                hls.on(Hls.Events.MANIFEST_PARSED,function() {
-                    video.muted = false;
-                    video.volume = 1.0;
-                    video.play();
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play().catch(()=>{});
                 });
 
             } else {
                 video.src = url;
-                video.play();
             }
 
         }
 
-        // MP4 NORMAL
+        // MP4
         else {
             video.src = url;
-            video.muted = false;
-            video.volume = 1;
-            video.play();
+            video.play().catch(()=>{});
         }
+    }
+}
     }
 }
 
