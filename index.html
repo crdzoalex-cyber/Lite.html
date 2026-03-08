@@ -6,7 +6,7 @@
     <title>Nova Stream Lite 📱</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        /* === ESTILOS BASE (VUELVE EL AZUL NOVA) === */
+        /* === ESTILOS BASE (AZUL NOVA) === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; background-color: #02050f; color: #ffffff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; padding-bottom: 70px; padding-top: 70px; }
         ::-webkit-scrollbar { display: none; }
@@ -17,7 +17,7 @@
         .splash-logo-nova { font-size: 50px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 20px rgba(30, 80, 255, 0.8); letter-spacing: 4px; line-height: 1; }
         .splash-logo-lite { font-size: 16px; font-weight: 600; color: #888; letter-spacing: 10px; margin-top: 5px; }
 
-        /* === CABECERA (LOGO ORIGINAL) === */
+        /* === CABECERA === */
         header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: rgba(2, 5, 15, 0.95); border-bottom: 1px solid #1e50ff; box-shadow: 0 0 15px rgba(30, 80, 255, 0.4); z-index: 100; backdrop-filter: blur(5px); }
         .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .logo-nova { font-size: 22px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); letter-spacing: 2px; line-height: 1; }
@@ -28,14 +28,23 @@
         .search-bar::placeholder { color: #5577cc; }
         .search-btn { background: transparent; border: none; color: #2a60ff; font-size: 16px; margin-left: 5px; }
 
-        /* === SECCIONES GLOBALES === */
+        /* === SECCIONES === */
         .content-section { display: none; animation: fadeIn 0.3s ease; }
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .section-title { margin: 20px 0 10px 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
+        
+        /* === CABECERAS CON FLECHA (NUEVO) === */
+        .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 5px; }
+        .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
+        .btn-more { background: transparent; border: none; color: #2a60ff; font-size: 20px; font-weight: bold; cursor: pointer; padding: 0 10px; transition: 0.2s; }
+        .btn-more:active { transform: scale(0.9); }
+
+        /* === BOTÓN VOLVER DEL CATÁLOGO (NUEVO) === */
+        .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
+        .btn-back { background: rgba(30,80,255,0.2); border: 1px solid #2a60ff; color: white; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 14px; }
 
         /* === CARRUSEL DE ESTRENOS === */
-        .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 25px; padding-top: 5px;}
+        .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
         .hero-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 15px; padding: 0 15px; }
         .hero-card { flex: 0 0 85vw; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(30,80,255,0.3); border: 1px solid rgba(30, 80, 255, 0.3); cursor: pointer; }
         .hero-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
@@ -43,17 +52,20 @@
         .hero-title { position: absolute; bottom: 15px; left: 15px; right: 15px; font-size: 20px; font-weight: bold; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
         .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); }
 
-        /* === FILAS DE PELÍCULAS CON TÍTULO ABAJO === */
+        /* === FILAS Y GRILLAS === */
         .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
+        .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
+        
+        /* ADAPTACIÓN PARA FILA Y GRILLA */
         .movie-card-container { flex: 0 0 115px; scroll-snap-align: start; cursor: pointer; display: flex; flex-direction: column; }
+        .movie-grid .movie-card-container { flex: unset; width: 100%; } /* Truco para que la tarjeta sirva en ambos lados */
+
         .movie-poster-box { border-radius: 8px; overflow: hidden; position: relative; background: #000; border: 1px solid rgba(30, 80, 255, 0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: 0.2s; }
         .movie-card-container:active .movie-poster-box { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
         .movie-poster-box img { width: 100%; height: 170px; object-fit: cover; display: block; }
-        .movie-title-text { font-size: 12px; color: #ddd; margin-top: 8px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
-        .movie-price-text { font-size: 11px; color: #2a60ff; margin-top: 2px; font-weight: bold; }
+        .movie-title-text { font-size: 13px; color: #ddd; margin-top: 8px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; }
 
-        /* === GRILLAS TV Y BÚSQUEDA === */
-        .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
+        /* === CANALES TV === */
         .canal-item { border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); background: #000; cursor: pointer; transition: 0.2s; }
         .canal-item:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
         .canal-item img { width: 100%; object-fit: contain; padding: 10px; height: 120px; background: white; display: block; }
@@ -61,12 +73,12 @@
         .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
-        /* === TV PILLS (VUELVEN TODAS LAS CATEGORÍAS) === */
+        /* === TV PILLS === */
         .category-pill-container { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
         .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
 
-        /* === NAVEGACIÓN INFERIOR (ESTILO NOVA) === */
+        /* === NAVEGACIÓN === */
         nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(2, 5, 15, 0.95); border-top: 1px solid #1e50ff; box-shadow: 0 -5px 15px rgba(30, 80, 255, 0.2); display: flex; justify-content: space-around; align-items: center; z-index: 100; backdrop-filter: blur(5px); }
         .nav-item { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; }
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
@@ -99,8 +111,16 @@
 
     <main>
         <div id="sec-busqueda" class="content-section">
-            <h3 class="section-title">Resultados</h3>
+            <div class="section-header"><h3 class="section-title">Resultados</h3></div>
             <div class="movie-grid" id="contenedor-resultados"></div>
+        </div>
+
+        <div id="sec-catalogo" class="content-section">
+            <div class="header-back">
+                <button class="btn-back" onclick="volverDeCatalogo()">❮ Volver</button>
+                <h3 class="section-title" id="titulo-catalogo" style="margin: 0; border: none; padding: 0;">Catálogo</h3>
+            </div>
+            <div class="movie-grid" id="grilla-catalogo"></div>
         </div>
 
         <div id="sec-cine" class="content-section active">
@@ -111,24 +131,36 @@
                 </div>
             </div>
 
-            <h3 class="section-title">🔥 Acción</h3>
+            <div class="section-header">
+                <h3 class="section-title">🔥 Acción</h3>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">❯</button>
+            </div>
             <div class="movie-row" id="row-accion"></div>
 
-            <h3 class="section-title">👻 Terror</h3>
+            <div class="section-header">
+                <h3 class="section-title">👻 Terror</h3>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')">❯</button>
+            </div>
             <div class="movie-row" id="row-terror"></div>
 
-            <h3 class="section-title">🧸 Infantiles</h3>
+            <div class="section-header">
+                <h3 class="section-title">🧸 Infantiles</h3>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">❯</button>
+            </div>
             <div class="movie-row" id="row-infantiles"></div>
 
         </div>
 
         <div id="sec-series" class="content-section">
-            <h3 class="section-title">Series Top</h3>
+            <div class="section-header">
+                <h3 class="section-title">📺 Series Top</h3>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Series', 'seriesData')">❯</button>
+            </div>
             <div class="movie-row" id="row-series"></div>
         </div>
 
         <div id="sec-tv" class="content-section">
-            <h3 class="section-title">Canales en Vivo</h3>
+            <div class="section-header"><h3 class="section-title">Canales en Vivo</h3></div>
             <div class="category-pill-container">
                 <div class="category-pill active" onclick="filtrarCanales('todos', this)">Todos</div>
                 <div class="category-pill" onclick="filtrarCanales('argentina', this)">Argentina</div>
@@ -161,6 +193,9 @@
     </div>
 
     <script>
+        // VARIABLE GLOBAL PARA LA BASE DE DATOS
+        window.miBaseDeDatos = {};
+
         // INTRO
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -171,24 +206,19 @@
             cargarBaseDeDatos();
         });
 
-        // MOTOR DE CARRUSEL AUTOMÁTICO
+        // MOTOR DE CARRUSEL
         let intervaloCarrusel;
         function iniciarCarrusel() {
             const carrusel = document.getElementById('hero-carousel');
             if(!carrusel) return;
             let scrollActual = 0;
-            
             clearInterval(intervaloCarrusel); 
             intervaloCarrusel = setInterval(() => {
                 const tarjeta = carrusel.querySelector('.hero-card');
                 if(!tarjeta) return;
-                
                 const anchoTarjeta = tarjeta.offsetWidth + 15; 
                 scrollActual += anchoTarjeta;
-                
-                if(scrollActual >= carrusel.scrollWidth - carrusel.clientWidth + 10) {
-                    scrollActual = 0; 
-                }
+                if(scrollActual >= carrusel.scrollWidth - carrusel.clientWidth + 10) { scrollActual = 0; }
                 carrusel.scrollTo({ top: 0, left: scrollActual, behavior: 'smooth' });
             }, 5000); 
         }
@@ -198,8 +228,9 @@
             try {
                 const respuesta = await fetch('datos.json');
                 const db = await respuesta.json();
+                window.miBaseDeDatos = db; // Guardamos en memoria para usar luego
 
-                // 1. DIBUJAR CARRUSEL HERO (Toma de "peliculasEstrenos")
+                // 1. DIBUJAR CARRUSEL HERO
                 const heroCarrusel = document.getElementById('hero-carousel');
                 heroCarrusel.innerHTML = '';
                 if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
@@ -216,22 +247,23 @@
                     iniciarCarrusel(); 
                 }
 
-                // 2. DIBUJAR CINE EN FILAS CON TÍTULOS
+                // 2. DIBUJAR CINE EN FILAS (LIMITADO A 5)
                 const armarFila = (idContenedor, arrayPelis) => {
                     const cont = document.getElementById(idContenedor);
                     cont.innerHTML = '';
                     if (!arrayPelis || arrayPelis.length === 0) {
-                        cont.innerHTML = '<span style="color:#5577cc; padding-left:5px; font-size:12px;">Próximamente...</span>';
+                        cont.innerHTML = '<span style="color:#5577cc; padding-left:15px; font-size:12px;">Próximamente...</span>';
                         return;
                     }
-                    arrayPelis.forEach(peli => {
+                    
+                    // EL TRUCO DE LAS 5 PELÍCULAS (.slice(0, 5))
+                    arrayPelis.slice(0, 5).forEach(peli => {
                         cont.innerHTML += `
                             <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
                                 <div class="movie-poster-box">
                                     <img src="${peli.poster}" alt="${peli.title}">
                                 </div>
                                 <div class="movie-title-text">${peli.title}</div>
-                                <div class="movie-price-text">GRATIS</div>
                             </div>
                         `;
                     });
@@ -240,11 +272,9 @@
                 armarFila('row-accion', db.peliculasAccion);
                 armarFila('row-terror', db.peliculasTerror);
                 armarFila('row-infantiles', db.peliculasInfantiles);
-                
-                // 3. DIBUJAR SERIES
                 armarFila('row-series', db.seriesData);
 
-                // 4. DIBUJAR TV
+                // 3. DIBUJAR TV
                 const grillaTV = document.getElementById('grilla-tv');
                 grillaTV.innerHTML = '';
                 (db.channels || []).forEach(canal => {
@@ -257,12 +287,59 @@
                     `;
                 });
 
-            } catch (error) {
-                console.log(error);
-            }
+            } catch (error) { console.log(error); }
         }
 
+        // ==========================================
+        // SISTEMA DE CATÁLOGO COMPLETO (NUEVO)
+        // ==========================================
+        let seccionAntesDelCatalogo = 'sec-cine';
+
+        function abrirCatalogoCompleto(nombreCategoria, claveJson) {
+            // Guardamos de dónde venimos para poder volver
+            const activaActual = document.querySelector('.content-section.active');
+            if(activaActual) seccionAntesDelCatalogo = activaActual.id;
+
+            // Ocultar todo y mostrar el catálogo
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('sec-catalogo').classList.add('active');
+            
+            // Cambiar título
+            document.getElementById('titulo-catalogo').innerText = "Todo en " + nombreCategoria;
+
+            // Rellenar la grilla con TODAS las películas de esa categoría
+            const contenedor = document.getElementById('grilla-catalogo');
+            contenedor.innerHTML = '';
+            const arrayPelis = window.miBaseDeDatos[claveJson];
+
+            if(arrayPelis && arrayPelis.length > 0) {
+                arrayPelis.forEach(peli => {
+                    contenedor.innerHTML += `
+                        <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                            <div class="movie-poster-box">
+                                <img src="${peli.poster}" alt="${peli.title}">
+                            </div>
+                            <div class="movie-title-text">${peli.title}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                contenedor.innerHTML = '<span style="color:#555; padding: 20px; grid-column: 1/-1; text-align: center;">No hay contenido aquí todavía.</span>';
+            }
+            
+            // Subir la pantalla arriba de todo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function volverDeCatalogo() {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(seccionAntesDelCatalogo).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==========================================
         // NAVEGACIÓN Y BÚSQUEDA
+        // ==========================================
         let seccionAnterior = 'sec-cine';
 
         function cambiarSeccion(idSeccion, elementoBoton) {
@@ -306,10 +383,7 @@
                 if(textoInterior) titulo += " " + textoInterior.toLowerCase();
 
                 if (titulo.includes(texto)) {
-                    // Creamos un clon para la grilla de resultados (que se vea como tarjeta de búsqueda)
                     const clon = tarjeta.cloneNode(true);
-                    clon.style.flex = "unset"; // Quitamos el flex del carrusel para que entre en la grilla
-                    clon.style.width = "100%";
                     contenedorResultados.appendChild(clon);
                     encontradas++;
                 }
