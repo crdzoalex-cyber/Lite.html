@@ -7,11 +7,175 @@
     "promoDesc": "Mensaje para tus usuarios, solo por"
   },
   "users": [
-    { "username": "admin", "pin": "1234", "status": "active", "expires": "2099-03-05" }
+    {
+      "username": "admin",
+      "pin": "1234",
+      "status": "active",
+      "expires": "2099-03-05"
+    }
   ],
-
-
-"channels": [
+  "heroData": [
+    {
+      "id": 1001,
+      "title": "Sintel (Prueba MP4)",
+      "tag": "FANTASÍA",
+      "cat": "accion",
+      "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "isYT": false,
+      "img": "https://image.tmdb.org/t/p/w1280/qZ4MkWQ1Fgeh88Zus4rVzZ1D0o5.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/2L2H2k2lZk2q2w58v9H39422X8.jpg",
+      "year": "2010",
+      "dur": "14m 48s",
+      "syn": "Una joven busca desesperadamente a su dragón mascota. Una historia épica de fantasía en alta calidad."
+    },
+    {
+      "id": 1002,
+      "title": "Dune: Parte Dos",
+      "tag": "ACCIÓN",
+      "cat": "accion",
+      "url": "U2Qp5pL3ovA",
+      "isYT": true,
+      "img": "https://image.tmdb.org/t/p/w1280/8rpDcsfLJypbO6vtec042uteBbw.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2JGjjc48Y.jpg",
+      "year": "2024",
+      "dur": "2h 46m",
+      "syn": "Paul Atreides se une a Chani y a los Fremen mientras busca venganza contra los conspiradores que destruyeron a su familia."
+    }
+  ],
+  "continueData": [
+    {
+      "id": 1003,
+      "title": "Tears of Steel (MP4)",
+      "progress": "65%",
+      "timeLeft": "4m",
+      "thumb": "https://image.tmdb.org/t/p/w780/aPIfIofR1o3s9gC19F0xT48YwSg.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg",
+      "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "isYT": false,
+      "year": "2012",
+      "dur": "12m 14s",
+      "syn": "En un futuro post-apocalíptico, un grupo de soldados intenta detener una invasión de robots mutantes."
+    },
+    {
+      "id": 102,
+      "title": "Deadpool 3",
+      "progress": "30%",
+      "timeLeft": "1h 45m",
+      "thumb": "https://image.tmdb.org/t/p/w780/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+      "url": "73_1biulkYk",
+      "isYT": true,
+      "year": "2024",
+      "dur": "2h 05m",
+      "syn": "Wolverine se recupera de sus heridas cuando se cruza con Deadpool. Juntos, se unen para derrotar a un enemigo común."
+    }
+  ],
+  "top10Data": [
+    {
+      "id": 1004,
+      "poster": "https://image.tmdb.org/t/p/w500/fdZpvZCGvVKXv1NR0n6tN5A2t7a.jpg",
+      "title": "Godzilla x Kong",
+      "url": "lV1OOlGwExM",
+      "isYT": true,
+      "year": "2024",
+      "dur": "1h 55m",
+      "syn": "Una aventura completamente nueva que enfrenta al todopoderoso Kong y al temible Godzilla."
+    },
+    {
+      "id": 1005,
+      "poster": "https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg",
+      "title": "Furiosa",
+      "cat": "accion",
+      "url": "XJMuhwVlca4",
+      "isYT": true,
+      "year": "2024",
+      "dur": "2h 28m",
+      "syn": "Al caer el mundo, la joven Furiosa es arrebatada del Lugar Verde de las Muchas Madres."
+    }
+  ],
+  "peliculasEstrenos": [
+    {
+      "id": 1011,
+      "title": "El Engaño",
+      "poster": "https://www.pelisplushd.la/poster/el-engano-799882-thumb.jpg",
+      "cat": "estrenos",
+      "url": "https://www.dropbox.com/scl/fi/2wijng8a1hojs0on2s0o6/Ver-El-enga-o-2026-Online-Latino-HD-Pelisplus.mp4?rlkey=3tcsuk0ed3fq9pajn26lc2m0q&st=t8616gqf&raw=1",
+      "isYT": false,
+      "year": "2026",
+      "dur": "1h 43m",
+      "syn": "Cuando su vida tranquila en una isla remota se ve truncada por el regreso de su vengativo excapitán, una hábil expirata debe enfrentarse a su sangriento pasado y dar rienda suelta a sus mortales talentos para salvar a su familia de un asedio despiadado."
+    },
+    {
+      "id": 1007,
+      "poster": "https://image.tmdb.org/t/p/w500/A0vHETD5g135wXIT2zBfO8dMv3Q.jpg",
+      "title": "Elephants Dream (MP4)",
+      "cat": "accion",
+      "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "isYT": false,
+      "year": "2006",
+      "dur": "10m 54s",
+      "syn": "Dos amigos exploran un mundo mecánico y extraño."
+    }
+  ],
+  "peliculasAccion": [
+    {
+      "id": 1008,
+      "poster": "https://image.tmdb.org/t/p/w500/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg",
+      "title": "Bad Boys 4",
+      "cat": "accion",
+      "url": "hRFY_Fesa9Q",
+      "isYT": true,
+      "year": "2024",
+      "dur": "1h 55m",
+      "syn": "Los policías más famosos del mundo regresan."
+    },
+    {
+      "id": 1009,
+      "poster": "https://image.tmdb.org/t/p/w500/3k81gWzaA2q4rA3q2mD7e5XwD7E.jpg",
+      "title": "Venom 3",
+      "cat": "accion",
+      "url": "u_kE3vYqJFA",
+      "isYT": true,
+      "year": "2024",
+      "dur": "2h 10m",
+      "syn": "Venom regresa en otra aventura sangrienta."
+    }
+  ],
+  "peliculasTerror": [],
+  "peliculasInfantiles": [],
+  "seriesData": [
+    {
+      "id": 201,
+      "title": "The Last of Us",
+      "episodesText": "1 Temporada • 9 Episodios",
+      "badge": "TOP 1",
+      "badgeColor": "badge-cyan",
+      "img": "https://image.tmdb.org/t/p/w1280/uDgy6hyPd82kRVc6OumBncfCdbA.jpg",
+      "isYT": true,
+      "url": "uLtkt8QL2nQ",
+      "seasons": {
+        "1": [
+          {
+            "num": "E1",
+            "title": "Cuando estás perdido en la oscuridad",
+            "dur": "1h 21m",
+            "img": "https://image.tmdb.org/t/p/w780/t2rAdjmEEwvQhkaPZk1uQo2qMIE.jpg",
+            "url": "uLtkt8QL2nQ",
+            "isYT": true
+          },
+          {
+            "num": "E2",
+            "title": "Infectados",
+            "dur": "52m",
+            "img": "https://image.tmdb.org/t/p/w780/aPIfIofR1o3s9gC19F0xT48YwSg.jpg",
+            "url": "uLtkt8QL2nQ",
+            "isYT": true
+          }
+        ]
+      }
+    }
+  ],
+  "channels": [
     { "id": 1, "name": "Telefe", "cat": "argentina", "url": "http://107.152.39.199:8030/hls/canal13.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Telefe_%28nuevo_logo%29.png" },
     { "id": 2, "name": "C5N", "cat": "argentina", "url": "SF06Qy1Ct6Y", "isYT": true, "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Logo_C5N.svg/1200px-Logo_C5N.svg.png" },
     { "id": 3, "name": "TV Publica", "cat": "argentina", "url": "https://g5.vxral-hor.transport.edge-access.net/b16/ngrp:c7_vivo01_dai_source-20001_all/playlist.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo_Televisi%C3%B3n_P%C3%BAblica_Argentina.png" },
@@ -580,77 +744,3 @@
     { "id": 568, "name": "Alkarma TV Australia", "cat": "religiosos", "url": "https://5a8308add0b31.streamlock.net/alkarmatv.com/alkarmaau.smil/playlist.m3u8", "logo": "https://i.imgur.com/90ykspa.png" }
   ]
 }
-
-   
-  "heroData": [
-    { "id": 1001, "title": "Sintel (Prueba MP4)", "tag": "FANTASÍA", "cat": "accion", "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4", "isYT": false, "img": "https://image.tmdb.org/t/p/w1280/qZ4MkWQ1Fgeh88Zus4rVzZ1D0o5.jpg", "poster": "https://image.tmdb.org/t/p/w500/2L2H2k2lZk2q2w58v9H39422X8.jpg", "year": "2010", "dur": "14m 48s", "syn": "Una joven busca desesperadamente a su dragón mascota. Una historia épica de fantasía en alta calidad." },
-    { "id": 1002, "title": "Dune: Parte Dos", "tag": "ACCIÓN", "cat": "accion", "url": "U2Qp5pL3ovA", "isYT": true, "img": "https://image.tmdb.org/t/p/w1280/8rpDcsfLJypbO6vtec042uteBbw.jpg", "poster": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2JGjjc48Y.jpg", "year": "2024", "dur": "2h 46m", "syn": "Paul Atreides se une a Chani y a los Fremen mientras busca venganza contra los conspiradores que destruyeron a su familia." }
-  ],
-  "continueData": [
-    { "id": 1003, "title": "Tears of Steel (MP4)", "progress": "65%", "timeLeft": "4m", "thumb": "https://image.tmdb.org/t/p/w780/aPIfIofR1o3s9gC19F0xT48YwSg.jpg", "poster": "https://image.tmdb.org/t/p/w500/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg", "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4", "isYT": false, "year": "2012", "dur": "12m 14s", "syn": "En un futuro post-apocalíptico, un grupo de soldados intenta detener una invasión de robots mutantes." },
-    { "id": 102, "title": "Deadpool 3", "progress": "30%", "timeLeft": "1h 45m", "thumb": "https://image.tmdb.org/t/p/w780/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg", "poster": "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", "url": "73_1biulkYk", "isYT": true, "year": "2024", "dur": "2h 05m", "syn": "Wolverine se recupera de sus heridas cuando se cruza con Deadpool. Juntos, se unen para derrotar a un enemigo común." }
-  ],
-  "top10Data": [
-    { "id": 1004, "poster": "https://image.tmdb.org/t/p/w500/fdZpvZCGvVKXv1NR0n6tN5A2t7a.jpg", "title": "Godzilla x Kong", "url": "lV1OOlGwExM", "isYT": true, "year": "2024", "dur": "1h 55m", "syn": "Una aventura completamente nueva que enfrenta al todopoderoso Kong y al temible Godzilla." },
-    { "id": 1005, "poster": "https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg", "title": "Furiosa", "cat": "accion", "url": "XJMuhwVlca4", "isYT": true, "year": "2024", "dur": "2h 28m", "syn": "Al caer el mundo, la joven Furiosa es arrebatada del Lugar Verde de las Muchas Madres." }
-  ],
-  "peliculasEstrenos": [
-    {
-      "id": 1011,
-      "title": "El Engaño",
-      "poster": "https://www.pelisplushd.la/poster/el-engano-799882-thumb.jpg",
-      "cat": "estrenos",
-      "url": "https://www.dropbox.com/scl/fi/2wijng8a1hojs0on2s0o6/Ver-El-enga-o-2026-Online-Latino-HD-Pelisplus.mp4?rlkey=3tcsuk0ed3fq9pajn26lc2m0q&st=t8616gqf&raw=1",
-      "isYT": false,
-      "year": "2026",
-      "dur": "1h 43m",
-      "syn": "Cuando su vida tranquila en una isla remota se ve truncada por el regreso de su vengativo excapitán, una hábil expirata debe enfrentarse a su sangriento pasado y dar rienda suelta a sus mortales talentos para salvar a su familia de un asedio despiadado."
-    },
-    {
-      "id": 1007,
-      "poster": "https://image.tmdb.org/t/p/w500/A0vHETD5g135wXIT2zBfO8dMv3Q.jpg",
-      "title": "Elephants Dream (MP4)",
-      "cat": "accion",
-      "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "isYT": false,
-      "year": "2006",
-      "dur": "10m 54s",
-      "syn": "Dos amigos exploran un mundo mecánico y extraño."
-    }
-  ],
-  "peliculasAccion": [
-    { "id": 1008, "poster": "https://image.tmdb.org/t/p/w500/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg", "title": "Bad Boys 4", "cat": "accion", "url": "hRFY_Fesa9Q", "isYT": true, "year": "2024", "dur": "1h 55m", "syn": "Los policías más famosos del mundo regresan." },
-    { "id": 1009, "poster": "https://image.tmdb.org/t/p/w500/3k81gWzaA2q4rA3q2mD7e5XwD7E.jpg", "title": "Venom 3", "cat": "accion", "url": "u_kE3vYqJFA", "isYT": true, "year": "2024", "dur": "2h 10m", "syn": "Venom regresa en otra aventura sangrienta." }
-  ],
-  "seriesData": [
-    {
-      "id": 201,
-      "title": "The Last of Us",
-      "episodesText": "1 Temporada • 9 Episodios",
-      "badge": "TOP 1",
-      "badgeColor": "badge-cyan",
-      "img": "https://image.tmdb.org/t/p/w1280/uDgy6hyPd82kRVc6OumBncfCdbA.jpg",
-      "isYT": true,
-      "url": "uLtkt8QL2nQ",
-      "seasons": {
-        "1": [
-          {
-            "num": "E1",
-            "title": "Cuando estás perdido en la oscuridad",
-            "dur": "1h 21m",
-            "img": "https://image.tmdb.org/t/p/w780/t2rAdjmEEwvQhkaPZk1uQo2qMIE.jpg",
-            "url": "uLtkt8QL2nQ",
-            "isYT": true
-          },
-          {
-            "num": "E2",
-            "title": "Infectados",
-            "dur": "52m",
-            "img": "https://image.tmdb.org/t/p/w780/aPIfIofR1o3s9gC19F0xT48YwSg.jpg",
-            "url": "uLtkt8QL2nQ",
-            "isYT": true
-          }
-        ]
-      }
-    }
-  ]
