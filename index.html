@@ -274,39 +274,27 @@
         // ==========================================
         // 3. REPRODUCTOR UNIVERSAL (YT + MP4 + IPTV)
         // ==========================================
+        // ==========================================
+        // 3. REPRODUCTOR (EL TRUCO DE APPCREATOR24)
+        // ==========================================
         function playCinematic(url, isYT) {
-            const overlay = document.getElementById('cinematic-overlay');
-            const container = document.getElementById('cinematic-container');
-            overlay.style.display = 'flex';
-            
-            // Si es de YOUTUBE
+            // 1. SI ES YOUTUBE (Lo abrimos en el reproductor web de la app porque Youtube es seguro HTTPS)
             if (isYT || url.includes('youtu')) {
+                const overlay = document.getElementById('cinematic-overlay');
+                const container = document.getElementById('cinematic-container');
+                overlay.style.display = 'flex';
+                
                 let videoId = url;
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
                 container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allowfullscreen></iframe>`;
             } 
-            // Si es IPTV (.m3u8) o MP4 Directo
+            // 2. ¡EL TRUCO APPCREATOR24! (Para canales IPTV .m3u8 y Películas .mp4)
             else {
-                container.innerHTML = `<video id="video-player" controls autoplay style="width:100%; height:100%; object-fit:contain;"></video>`;
-                const videoElement = document.getElementById('video-player');
-
-                if (url.includes('.m3u8')) {
-                    if (Hls.isSupported()) {
-                        const hls = new Hls();
-                        hls.loadSource(url);
-                        hls.attachMedia(videoElement);
-                        hls.on(Hls.Events.MANIFEST_PARSED, () => videoElement.play());
-                    } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-                        videoElement.src = url;
-                        videoElement.play();
-                    }
-                } else {
-                    // MP4 normal
-                    videoElement.src = url;
-                    videoElement.play();
-                }
+                // En vez de luchar contra la seguridad de Android, le mandamos el link directo al celular.
+                // AppCreator24 intercepta esto mágicamente y abre su reproductor nativo a pantalla completa.
+                window.location.href = url;
             }
         }
 
