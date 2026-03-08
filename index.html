@@ -33,15 +33,16 @@
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* === CABECERAS CON FLECHA (NUEVO) === */
-        .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 5px; }
+        /* === CABECERAS CON BOTÓN VER MÁS (MODIFICADO) === */
+        .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 10px; }
         .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
-        .btn-more { background: transparent; border: none; color: #2a60ff; font-size: 20px; font-weight: bold; cursor: pointer; padding: 0 10px; transition: 0.2s; }
-        .btn-more:active { transform: scale(0.9); }
+        
+        /* ESTILO UNIFICADO PARA BOTONES VER MÁS Y VOLVER */
+        .btn-more, .btn-back { background: rgba(30,80,255,0.2); border: 1px solid #2a60ff; color: white; padding: 6px 14px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 12px; transition: 0.2s; display: flex; align-items: center; gap: 5px; }
+        .btn-more:active, .btn-back:active { transform: scale(0.95); background: rgba(30,80,255,0.4); }
 
-        /* === BOTÓN VOLVER DEL CATÁLOGO (NUEVO) === */
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
-        .btn-back { background: rgba(30,80,255,0.2); border: 1px solid #2a60ff; color: white; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        .btn-back { font-size: 14px; } /* Un poquito más grande para volver */
 
         /* === CARRUSEL DE ESTRENOS === */
         .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
@@ -56,9 +57,8 @@
         .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
         
-        /* ADAPTACIÓN PARA FILA Y GRILLA */
         .movie-card-container { flex: 0 0 115px; scroll-snap-align: start; cursor: pointer; display: flex; flex-direction: column; }
-        .movie-grid .movie-card-container { flex: unset; width: 100%; } /* Truco para que la tarjeta sirva en ambos lados */
+        .movie-grid .movie-card-container { flex: unset; width: 100%; }
 
         .movie-poster-box { border-radius: 8px; overflow: hidden; position: relative; background: #000; border: 1px solid rgba(30, 80, 255, 0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: 0.2s; }
         .movie-card-container:active .movie-poster-box { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
@@ -133,19 +133,19 @@
 
             <div class="section-header">
                 <h3 class="section-title">🔥 Acción</h3>
-                <button class="btn-more" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">❯</button>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-accion"></div>
 
             <div class="section-header">
                 <h3 class="section-title">👻 Terror</h3>
-                <button class="btn-more" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')">❯</button>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-terror"></div>
 
             <div class="section-header">
                 <h3 class="section-title">🧸 Infantiles</h3>
-                <button class="btn-more" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">❯</button>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-infantiles"></div>
 
@@ -154,7 +154,7 @@
         <div id="sec-series" class="content-section">
             <div class="section-header">
                 <h3 class="section-title">📺 Series Top</h3>
-                <button class="btn-more" onclick="abrirCatalogoCompleto('Series', 'seriesData')">❯</button>
+                <button class="btn-more" onclick="abrirCatalogoCompleto('Series', 'seriesData')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-series"></div>
         </div>
@@ -228,7 +228,7 @@
             try {
                 const respuesta = await fetch('datos.json');
                 const db = await respuesta.json();
-                window.miBaseDeDatos = db; // Guardamos en memoria para usar luego
+                window.miBaseDeDatos = db; 
 
                 // 1. DIBUJAR CARRUSEL HERO
                 const heroCarrusel = document.getElementById('hero-carousel');
@@ -256,7 +256,6 @@
                         return;
                     }
                     
-                    // EL TRUCO DE LAS 5 PELÍCULAS (.slice(0, 5))
                     arrayPelis.slice(0, 5).forEach(peli => {
                         cont.innerHTML += `
                             <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
@@ -291,23 +290,19 @@
         }
 
         // ==========================================
-        // SISTEMA DE CATÁLOGO COMPLETO (NUEVO)
+        // SISTEMA DE CATÁLOGO COMPLETO
         // ==========================================
         let seccionAntesDelCatalogo = 'sec-cine';
 
         function abrirCatalogoCompleto(nombreCategoria, claveJson) {
-            // Guardamos de dónde venimos para poder volver
             const activaActual = document.querySelector('.content-section.active');
             if(activaActual) seccionAntesDelCatalogo = activaActual.id;
 
-            // Ocultar todo y mostrar el catálogo
             document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
             document.getElementById('sec-catalogo').classList.add('active');
             
-            // Cambiar título
             document.getElementById('titulo-catalogo').innerText = "Todo en " + nombreCategoria;
 
-            // Rellenar la grilla con TODAS las películas de esa categoría
             const contenedor = document.getElementById('grilla-catalogo');
             contenedor.innerHTML = '';
             const arrayPelis = window.miBaseDeDatos[claveJson];
@@ -327,7 +322,6 @@
                 contenedor.innerHTML = '<span style="color:#555; padding: 20px; grid-column: 1/-1; text-align: center;">No hay contenido aquí todavía.</span>';
             }
             
-            // Subir la pantalla arriba de todo
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
