@@ -10,7 +10,7 @@
     { "username": "admin", "pin": "1234", "status": "active", "expires": "2099-03-05" }
   ],
 
-  
+
 "channels": [
     { "id": 1, "name": "Telefe", "cat": "argentina", "url": "http://107.152.39.199:8030/hls/canal13.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Telefe_%28nuevo_logo%29.png" },
     { "id": 2, "name": "C5N", "cat": "argentina", "url": "SF06Qy1Ct6Y", "isYT": true, "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Logo_C5N.svg/1200px-Logo_C5N.svg.png" },
@@ -579,6 +579,7 @@
     { "id": 567, "name": "Alistiqama TV", "cat": "religiosos", "url": "https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8", "logo": "https://i.imgur.com/2FPtYZr.png" },
     { "id": 568, "name": "Alkarma TV Australia", "cat": "religiosos", "url": "https://5a8308add0b31.streamlock.net/alkarmatv.com/alkarmaau.smil/playlist.m3u8", "logo": "https://i.imgur.com/90ykspa.png" }
   ]
+}
 
    ],
   "heroData": [
