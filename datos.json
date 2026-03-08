@@ -598,16 +598,16 @@
   ],
   "peliculasEstrenos": [
     {
-      "id": 1050,
-      "poster": "https://i.ytimg.com/vi_webp/jyKUHagbOqY/sddefault.webp",
-      "title": "Gladiador 2",
-      "cat": "accion",
-      "url": "Z0_x0MnZgFs",
-      "isYT": true,
-      "year": "2024",
-      "dur": "2h 28m",
-      "syn": "Años después de presenciar la muerte del venerado héroe Máximo, Lucio es forzado a entrar en el Coliseo..."
-    },
+      "id": 1011,
+      "poster": "https://www.pelisplushd.la/poster/el-engano-799882-thumb.jpg",
+      "title": "El Engaño",
+      "cat": "estrenos",
+      "url": "https://hglamioz.com/stream/KhTGhF4VapBixmtcdCEamw/kjhhiuahiuhgihdf/1772986165/68691937/index-f2-v1-a1.m3u8",
+      "isYT": false,
+      "year": "2026",
+      "dur": "1h 43m",
+      "syn": "Cuando su vida tranquila en una isla remota se ve truncada por el regreso de su vengativo excapitán, una hábil expirata debe enfrentarse a su sangriento pasado y dar rienda suelta a sus mortales talentos para salvar a su familia de un asedio despiadado."
+    }
     {
       "id": 1007,
       "poster": "https://image.tmdb.org/t/p/w500/A0vHETD5g135wXIT2zBfO8dMv3Q.jpg",
