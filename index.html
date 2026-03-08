@@ -6,7 +6,7 @@
     <title>Nova Stream Lite 📱</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        /* === ESTILOS BASE (AZUL NOVA) === */
+        /* === ESTILOS BASE === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; background-color: #02050f; color: #ffffff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; padding-bottom: 70px; padding-top: 70px; }
         ::-webkit-scrollbar { display: none; }
@@ -33,18 +33,17 @@
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* === CABECERAS CON BOTÓN VER MÁS (MODIFICADO) === */
+        /* === CABECERAS === */
         .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 10px; }
         .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
         
-        /* ESTILO UNIFICADO PARA BOTONES VER MÁS Y VOLVER */
         .btn-more, .btn-back { background: rgba(30,80,255,0.2); border: 1px solid #2a60ff; color: white; padding: 6px 14px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 12px; transition: 0.2s; display: flex; align-items: center; gap: 5px; }
         .btn-more:active, .btn-back:active { transform: scale(0.95); background: rgba(30,80,255,0.4); }
 
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
-        .btn-back { font-size: 14px; } /* Un poquito más grande para volver */
+        .btn-back { font-size: 14px; } 
 
-        /* === CARRUSEL DE ESTRENOS === */
+        /* === CARRUSEL === */
         .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
         .hero-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 15px; padding: 0 15px; }
         .hero-card { flex: 0 0 85vw; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(30,80,255,0.3); border: 1px solid rgba(30, 80, 255, 0.3); cursor: pointer; }
@@ -163,11 +162,18 @@
             <div class="section-header"><h3 class="section-title">Canales en Vivo</h3></div>
             <div class="category-pill-container">
                 <div class="category-pill active" onclick="filtrarCanales('todos', this)">Todos</div>
+                <div class="category-pill" onclick="filtrarCanales('bolivia', this)">Bolivia</div>
                 <div class="category-pill" onclick="filtrarCanales('argentina', this)">Argentina</div>
-                <div class="category-pill" onclick="filtrarCanales('noticias', this)">Noticias</div>
+                <div class="category-pill" onclick="filtrarCanales('mexico', this)">México</div>
+                <div class="category-pill" onclick="filtrarCanales('chile', this)">Chile</div>
+                <div class="category-pill" onclick="filtrarCanales('ecuador', this)">Ecuador</div>
+                <div class="category-pill" onclick="filtrarCanales('internacional', this)">Internacional</div>
+                <div class="category-pill" onclick="filtrarCanales('infantiles', this)">Infantiles</div>
                 <div class="category-pill" onclick="filtrarCanales('deportes', this)">Deportes</div>
+                <div class="category-pill" onclick="filtrarCanales('noticias', this)">Noticias</div>
                 <div class="category-pill" onclick="filtrarCanales('cine', this)">Cine</div>
                 <div class="category-pill" onclick="filtrarCanales('musica', this)">Música</div>
+                <div class="category-pill" onclick="filtrarCanales('religiosos', this)">Religiosos</div>
             </div>
             <div class="movie-grid" id="grilla-tv"></div>
         </div>
@@ -193,7 +199,6 @@
     </div>
 
     <script>
-        // VARIABLE GLOBAL PARA LA BASE DE DATOS
         window.miBaseDeDatos = {};
 
         // INTRO
