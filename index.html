@@ -277,8 +277,11 @@
         // ==========================================
         // 3. REPRODUCTOR (EL TRUCO DE APPCREATOR24)
         // ==========================================
+        // ==========================================
+        // 3. REPRODUCTOR (EL TRUCO APPCREATOR24 + INTENT NATIVO)
+        // ==========================================
         function playCinematic(url, isYT) {
-            // 1. SI ES YOUTUBE (Lo abrimos en el reproductor web de la app porque Youtube es seguro HTTPS)
+            // 1. SI ES YOUTUBE (Con el truco del cristal invisible)
             if (isYT || url.includes('youtu')) {
                 const overlay = document.getElementById('cinematic-overlay');
                 const container = document.getElementById('cinematic-container');
@@ -288,15 +291,19 @@
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
-                // CÓDIGO NUEVO ULTRA PREMIUM (Con bloqueo de toques)
-container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&disablekb=1&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="pointer-events: none;"></iframe>`;
-
+                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&disablekb=1&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="pointer-events: none;"></iframe>`;
             } 
-            // 2. ¡EL TRUCO APPCREATOR24! (Para canales IPTV .m3u8 y Películas .mp4)
+            // 2. ¡EL TRUCO INTENT NATIVO! (Para IPTV .m3u8 y Películas .mp4)
             else {
-                // En vez de luchar contra la seguridad de Android, le mandamos el link directo al celular.
-                // AppCreator24 intercepta esto mágicamente y abre su reproductor nativo a pantalla completa.
-                window.location.href = url;
+                // Separamos el "http" del resto del link
+                const protocolo = url.split('://')[0];
+                const linkSinProtocolo = url.split('://')[1];
+                
+                // Armamos un código especial para Android
+                const intentAndroid = `intent://${linkSinProtocolo}#Intent;scheme=${protocolo};type=video/*;end`;
+                
+                // Le decimos al celular que abra SU reproductor nativo
+                window.location.href = intentAndroid;
             }
         }
 
