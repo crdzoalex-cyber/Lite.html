@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nova Stream Lite 📱</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        /* === ESTILOS BASE MÓVIL === */
+        /* === ESTILOS BASE MÓVIL (PREMIUM BLUE) === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; background-color: #02050f; color: #ffffff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; padding-bottom: 70px; padding-top: 70px; }
         ::-webkit-scrollbar { display: none; }
 
-        /* === PANTALLA DE INTRODUCCIÓN === */
-        #splash-screen {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #02050f; z-index: 999999; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-        }
+        /* === INTRO === */
+        #splash-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #02050f; z-index: 999999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
         .splash-slide-up { transform: translateY(-100%); }
         .splash-logo-nova { font-size: 50px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 20px rgba(30, 80, 255, 0.8); letter-spacing: 4px; line-height: 1; }
         .splash-logo-lite { font-size: 16px; font-weight: 600; color: #888; letter-spacing: 10px; margin-top: 5px; }
@@ -31,28 +28,30 @@
         .search-bar::placeholder { color: #5577cc; transition: 0.3s; }
         .search-btn { background: transparent; border: none; color: #2a60ff; font-size: 16px; margin-left: 5px; }
 
-        /* === SECCIONES Y NAVEGACIÓN === */
+        /* === SECCIONES Y TARJETAS === */
         .content-section { display: none; animation: fadeIn 0.3s ease; }
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .section-title { margin: 20px 0 10px 15px; font-size: 16px; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
 
-        /* Categorías TV (Botones Píldora) */
         .category-pill-container { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
         .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
 
-        .movie-row { display: flex; overflow-x: auto; gap: 15px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
-        .movie-card { flex: 0 0 130px; border-radius: 8px; overflow: hidden; scroll-snap-align: start; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); transition: 0.2s; }
+        .movie-card { border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); transition: 0.2s; background: #000; }
         .movie-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
-        .movie-card:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
+        
+        /* Ajuste especial para logos de TV para que no se recorten feo */
+        .canal-item img { object-fit: contain; padding: 10px; height: 120px; background: white;}
+        .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
 
+        .movie-card:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
         .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
-        /* === BARRA INFERIOR === */
+        /* === NAVEGACIÓN === */
         nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(2, 5, 15, 0.95); border-top: 1px solid #1e50ff; box-shadow: 0 -5px 15px rgba(30, 80, 255, 0.2); display: flex; justify-content: space-around; align-items: center; z-index: 100; backdrop-filter: blur(5px); }
         .nav-item { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; }
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
@@ -62,8 +61,9 @@
         #cinematic-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; flex-direction: column; }
         .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: flex-end; align-items: center; padding: 0 20px; }
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
-        #cinematic-container { flex: 1; width: 100%; background: #000; }
-        .no-results { color: #888; text-align: center; width: 100%; margin-top: 40px; font-size: 14px; }
+        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
+        
+        .loader { text-align: center; color: #2a60ff; padding: 50px; font-size: 18px; width: 100%; grid-column: 1 / -1;}
     </style>
 </head>
 <body>
@@ -90,87 +90,41 @@
             <div class="movie-grid" id="contenedor-resultados"></div>
         </div>
 
-        <div id="sec-inicio" class="content-section active">
-            <div style="width: 100%; height: 200px; background: url('https://image.tmdb.org/t/p/w780/8rpDcsfLJypbO6vtecsozsPbSUS.jpg') center/cover; position: relative;">
-                <div style="position: absolute; bottom: 0; width: 100%; background: linear-gradient(transparent, #02050f); padding: 20px 15px 10px;">
-                    <h2 style="margin: 0; font-size: 22px; text-shadow: 0 0 10px #000;">Deadpool & Wolverine</h2>
-                </div>
-            </div>
-            <h3 class="section-title">Nuevos Lanzamientos</h3>
-            <div class="movie-row">
-                <div class="movie-card" onclick="playCinematic('https://www.youtube.com/watch?v=U2Qp5pL3ovA')">
-                    <img src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" alt="Dune 2">
-                </div>
-                <div class="movie-card" onclick="playCinematic('https://www.youtube.com/watch?v=Way9Dexny3w')">
-                    <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers Endgame">
-                </div>
-            </div>
-        </div>
-
-        <div id="sec-cine" class="content-section">
-            <h3 class="section-title">Catálogo de Cine</h3>
-            <div class="movie-grid">
-                <div class="movie-card" onclick="playCinematic('https://www.youtube.com/watch?v=exiRceE2Om4')">
-                    <img src="https://image.tmdb.org/t/p/w500/xXHZeb1ywGvD04BgGQhLEWUo2hB.jpg" alt="Matrix">
-                </div>
-                <div class="movie-card" onclick="playCinematic('https://www.youtube.com/watch?v=8Qn_spdM5Zg')">
-                    <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2JGjjcNsV.jpg" alt="Star Wars">
-                </div>
+        <div id="sec-cine" class="content-section active">
+            <h3 class="section-title">Catálogo de Películas</h3>
+            <div class="movie-grid" id="grilla-cine">
+                <div class="loader">Cargando base de datos... 🚀</div>
             </div>
         </div>
 
         <div id="sec-series" class="content-section">
             <h3 class="section-title">Series Top</h3>
-            <div class="movie-grid">
-                <div class="movie-card" onclick="playCinematic('https://www.youtube.com/watch?v=b9EkMc79ZSU')">
-                    <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8RFCqFWNe.jpg" alt="Stranger Things">
-                </div>
-                <div class="movie-card" onclick="playCinematic('https://www.youtube.com/watch?v=uLtkt8BonwM')">
-                    <img src="https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg" alt="The Last of Us">
-                </div>
-            </div>
+            <div class="movie-grid" id="grilla-series"></div>
         </div>
 
         <div id="sec-tv" class="content-section">
             <h3 class="section-title">Canales en Vivo</h3>
-            
             <div class="category-pill-container">
                 <div class="category-pill active" onclick="filtrarCanales('todos', this)">Todos</div>
+                <div class="category-pill" onclick="filtrarCanales('argentina', this)">Argentina</div>
                 <div class="category-pill" onclick="filtrarCanales('noticias', this)">Noticias</div>
-                <div class="category-pill" onclick="filtrarCanales('musica', this)">Música 24/7</div>
                 <div class="category-pill" onclick="filtrarCanales('deportes', this)">Deportes</div>
+                <div class="category-pill" onclick="filtrarCanales('cine', this)">Cine</div>
+                <div class="category-pill" onclick="filtrarCanales('musica', this)">Música</div>
             </div>
-
-            <div class="movie-grid">
-                <div class="movie-card canal-item" data-category="noticias" onclick="playCinematic('https://www.youtube.com/watch?v=-sN8hV81bK4')">
-                    <img src="https://www.tvn-2.com/2021/04/05/tvn-noticias/Logo-TVN-Noticias_5942405786_11306352_1024x576.jpg" alt="TVN Noticias">
-                    <span class="badge-live">EN VIVO</span>
-                </div>
-                <div class="movie-card canal-item" data-category="musica" onclick="playCinematic('https://www.youtube.com/watch?v=jfKfPfyJRdk')">
-                    <img src="https://i.ytimg.com/vi/jfKfPfyJRdk/maxresdefault.jpg" alt="Lofi Radio">
-                    <span class="badge-live">EN VIVO</span>
-                </div>
-                <div class="movie-card canal-item" data-category="deportes" onclick="playCinematic('https://www.youtube.com/watch?v=dGsm082IGy4')">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sD1kKjV3u5YQkFmP7R61p_iY4fE0pM7L_A&s" alt="Fox Sports">
-                    <span class="badge-live">EN VIVO</span>
-                </div>
-            </div>
+            <div class="movie-grid" id="grilla-tv"></div>
         </div>
-
+        
         <div id="sec-perfil" class="content-section">
             <div style="text-align: center; padding: 40px; color: #aaa;">
                 <div style="width: 80px; height: 80px; background: rgba(30,80,255,0.2); border-radius: 50%; margin: 0 auto 15px; border: 2px solid #2a60ff; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white;">👤</div>
                 <h3 style="color: white; margin-bottom: 5px;">Usuario VIP</h3>
-                <p>Plan Premium Activo</p>
-                <button style="margin-top: 20px; padding: 10px 20px; background: transparent; border: 1px solid #1e50ff; color: #00f3ff; border-radius: 20px;">Cerrar Sesión</button>
             </div>
         </div>
-
     </main>
 
     <nav>
-        <div class="nav-item active" onclick="cambiarSeccion('sec-inicio', this)"><i>🏠</i><span>Inicio</span></div>
-        <div class="nav-item" onclick="cambiarSeccion('sec-cine', this)"><i>🎬</i><span>Cine</span></div>
+        <div class="nav-item active" onclick="cambiarSeccion('sec-cine', this)"><i>🎬</i><span>Cine</span></div>
         <div class="nav-item" onclick="cambiarSeccion('sec-series', this)"><i>📺</i><span>Series</span></div>
         <div class="nav-item" onclick="cambiarSeccion('sec-tv', this)"><i>📡</i><span>TV</span></div>
         <div class="nav-item" onclick="cambiarSeccion('sec-perfil', this)"><i>👤</i><span>Perfil</span></div>
@@ -188,38 +142,81 @@
                 const splash = document.getElementById('splash-screen');
                 splash.classList.add('splash-slide-up');
                 setTimeout(() => { splash.style.display = 'none'; }, 800);
-            }, 2000); 
+            }, 1500); 
+            
+            // Iniciar la carga de la base de datos
+            cargarBaseDeDatos();
         });
 
-        // Buscador y Cambio Dinámico de Placeholder
-        let seccionAnterior = 'sec-inicio';
+        // ==========================================
+        // 1. CARGA DINÁMICA DE DATOS (JSON)
+        // ==========================================
+        async function cargarBaseDeDatos() {
+            try {
+                // Va a buscar tu archivo datos.json
+                const respuesta = await fetch('datos.json');
+                const db = await respuesta.json();
+
+                // DIBUJAR TV
+                const grillaTV = document.getElementById('grilla-tv');
+                grillaTV.innerHTML = '';
+                db.channels.forEach(canal => {
+                    grillaTV.innerHTML += `
+                        <div class="movie-card canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false})">
+                            <img src="${canal.logo}" alt="${canal.name}">
+                            <p class="canal-title">${canal.name}</p>
+                            <span class="badge-live">EN VIVO</span>
+                        </div>
+                    `;
+                });
+
+                // DIBUJAR CINE (Unimos estrenos y accion)
+                const grillaCine = document.getElementById('grilla-cine');
+                grillaCine.innerHTML = '';
+                const todasLasPelis = [...db.peliculasEstrenos, ...db.peliculasAccion];
+                todasLasPelis.forEach(peli => {
+                    grillaCine.innerHTML += `
+                        <div class="movie-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                            <img src="${peli.poster}" alt="${peli.title}">
+                        </div>
+                    `;
+                });
+
+                // DIBUJAR SERIES
+                const grillaSeries = document.getElementById('grilla-series');
+                grillaSeries.innerHTML = '';
+                db.seriesData.forEach(serie => {
+                    grillaSeries.innerHTML += `
+                        <div class="movie-card" onclick="playCinematic('${serie.url}', ${serie.isYT || false})">
+                            <img src="${serie.img}" alt="${serie.title}">
+                        </div>
+                    `;
+                });
+
+            } catch (error) {
+                document.getElementById('grilla-cine').innerHTML = '<p style="color:red;">Error cargando datos. Revisa el archivo datos.json.</p>';
+                console.log(error);
+            }
+        }
+
+        // ==========================================
+        // 2. NAVEGACIÓN Y FILTROS
+        // ==========================================
+        let seccionAnterior = 'sec-cine';
 
         function cambiarSeccion(idSeccion, elementoBoton) {
             const buscador = document.getElementById('searchInput');
-            buscador.value = ''; // Limpiamos lo que estaba escrito
+            buscador.value = ''; 
+            buscador.placeholder = idSeccion === 'sec-cine' ? 'Buscar peli...' : idSeccion === 'sec-series' ? 'Buscar serie...' : idSeccion === 'sec-tv' ? 'Buscar canal...' : 'Buscar...';
 
-            // 🔥 ACÁ CAMBIAMOS EL TEXTO DEL BUSCADOR SEGÚN LA PESTAÑA 🔥
-            if(idSeccion === 'sec-inicio' || idSeccion === 'sec-cine') {
-                buscador.placeholder = 'Buscar peli...';
-            } else if (idSeccion === 'sec-series') {
-                buscador.placeholder = 'Buscar serie...';
-            } else if (idSeccion === 'sec-tv') {
-                buscador.placeholder = 'Buscar canal...';
-            } else {
-                buscador.placeholder = 'Buscar...';
-            }
-
-            const secciones = document.querySelectorAll('.content-section');
-            secciones.forEach(sec => sec.classList.remove('active'));
-            const botones = document.querySelectorAll('.nav-item');
-            botones.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
             document.getElementById(idSeccion).classList.add('active');
             elementoBoton.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Lógica de búsqueda
         function realizarBusqueda(textoIngresado) {
             const texto = textoIngresado.toLowerCase().trim();
             const secBusqueda = document.getElementById('sec-busqueda');
@@ -232,38 +229,29 @@
             }
 
             const activaActual = document.querySelector('.content-section.active');
-            if(activaActual.id !== 'sec-busqueda') { seccionAnterior = activaActual.id; }
+            if(activaActual.id !== 'sec-busqueda') seccionAnterior = activaActual.id;
 
             document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
             secBusqueda.classList.add('active');
             contenedorResultados.innerHTML = '';
 
-            const todasLasPelis = document.querySelectorAll('.movie-card');
             let encontradas = 0;
-            todasLasPelis.forEach(tarjeta => {
+            document.querySelectorAll('.movie-card:not(#contenedor-resultados .movie-card)').forEach(tarjeta => {
                 const titulo = tarjeta.querySelector('img').alt.toLowerCase();
                 if (titulo.includes(texto)) {
-                    const clon = tarjeta.cloneNode(true);
-                    contenedorResultados.appendChild(clon);
+                    contenedorResultados.appendChild(tarjeta.cloneNode(true));
                     encontradas++;
                 }
             });
 
-            if(encontradas === 0) {
-                contenedorResultados.innerHTML = '<div class="no-results">No se encontró contenido 🛸</div>';
-            }
+            if(encontradas === 0) contenedorResultados.innerHTML = '<div class="no-results">No se encontró contenido 🛸</div>';
         }
 
-        // 🔥 FILTRO DE CANALES DE TV 🔥
         function filtrarCanales(categoria, botonApretado) {
-            // Pintar de azul el botón tocado
-            const botonesPildora = document.querySelectorAll('.category-pill');
-            botonesPildora.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
             botonApretado.classList.add('active');
 
-            // Filtrar los canales según el data-category
-            const canales = document.querySelectorAll('.canal-item');
-            canales.forEach(canal => {
+            document.querySelectorAll('.canal-item').forEach(canal => {
                 if (categoria === 'todos' || canal.getAttribute('data-category') === categoria) {
                     canal.style.display = 'block';
                 } else {
@@ -272,23 +260,48 @@
             });
         }
 
-        // Reproductor
-        function playCinematic(url) {
+        // ==========================================
+        // 3. REPRODUCTOR UNIVERSAL (YT + MP4 + IPTV)
+        // ==========================================
+        function playCinematic(url, isYT) {
             const overlay = document.getElementById('cinematic-overlay');
             const container = document.getElementById('cinematic-container');
             overlay.style.display = 'flex';
-            let videoId = '';
-            if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
-            else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
+            
+            // Si es de YOUTUBE
+            if (isYT || url.includes('youtu')) {
+                let videoId = url;
+                if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
+                else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
-            container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1&origin=https://www.youtube.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allowfullscreen></iframe>`;
+            } 
+            // Si es IPTV (.m3u8) o MP4 Directo
+            else {
+                container.innerHTML = `<video id="video-player" controls autoplay style="width:100%; height:100%; object-fit:contain;"></video>`;
+                const videoElement = document.getElementById('video-player');
+
+                if (url.includes('.m3u8')) {
+                    if (Hls.isSupported()) {
+                        const hls = new Hls();
+                        hls.loadSource(url);
+                        hls.attachMedia(videoElement);
+                        hls.on(Hls.Events.MANIFEST_PARSED, () => videoElement.play());
+                    } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+                        videoElement.src = url;
+                        videoElement.play();
+                    }
+                } else {
+                    // MP4 normal
+                    videoElement.src = url;
+                    videoElement.play();
+                }
+            }
         }
 
         function closeCinematic() {
-            const overlay = document.getElementById('cinematic-overlay');
-            const container = document.getElementById('cinematic-container');
-            container.innerHTML = '';
-            overlay.style.display = 'none';
+            document.getElementById('cinematic-container').innerHTML = '';
+            document.getElementById('cinematic-overlay').style.display = 'none';
         }
     </script>
 </body>
