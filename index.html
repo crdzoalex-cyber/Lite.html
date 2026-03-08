@@ -33,7 +33,6 @@
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* === CABECERAS === */
         .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 10px; }
         .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
         
@@ -83,11 +82,14 @@
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
         .nav-item i { font-size: 22px; margin-bottom: 3px; font-style: normal; }
 
-        /* === REPRODUCTOR === */
+        /* === NUEVO REPRODUCTOR INTERNO === */
         #cinematic-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; flex-direction: column; }
-        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: flex-end; align-items: center; padding: 0 20px; }
+        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: flex-end; align-items: center; padding: 0 20px; z-index: 10;}
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
-        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
+        #cinematic-container { flex: 1; width: 100%; height: calc(100% - 50px); background: #000; display: flex; justify-content: center; align-items: center; position: relative;}
+        
+        /* Estilos del video tag */
+        video { width: 100%; height: 100%; outline: none; background-color: #000; }
     </style>
 </head>
 <body>
@@ -162,13 +164,14 @@
             <div class="section-header"><h3 class="section-title">Canales en Vivo</h3></div>
             <div class="category-pill-container">
                 <div class="category-pill active" onclick="filtrarCanales('todos', this)">Todos</div>
-                <div class="category-pill" onclick="filtrarCanales('argentina', this)">Argentina</div>
                 <div class="category-pill" onclick="filtrarCanales('bolivia', this)">Bolivia</div>
-                <div class="category-pill" onclick="filtrarCanales('chile', this)">Chile</div>
-                <div class="category-pill" onclick="filtrarCanales('Colombia', this)">Colombia</div>
-                <div class="category-pill" onclick="filtrarCanales('Peru', this)">Peru</div>
+                <div class="category-pill" onclick="filtrarCanales('argentina', this)">Argentina</div>
                 <div class="category-pill" onclick="filtrarCanales('mexico', this)">México</div>
+                <div class="category-pill" onclick="filtrarCanales('colombia', this)">Colombia</div>
+                <div class="category-pill" onclick="filtrarCanales('chile', this)">Chile</div>
+                <div class="category-pill" onclick="filtrarCanales('peru', this)">Perú</div>
                 <div class="category-pill" onclick="filtrarCanales('ecuador', this)">Ecuador</div>
+                <div class="category-pill" onclick="filtrarCanales('venezuela', this)">Venezuela</div>
                 <div class="category-pill" onclick="filtrarCanales('internacional', this)">Internacional</div>
                 <div class="category-pill" onclick="filtrarCanales('infantiles', this)">Infantiles</div>
                 <div class="category-pill" onclick="filtrarCanales('deportes', this)">Deportes</div>
@@ -202,6 +205,7 @@
 
     <script>
         window.miBaseDeDatos = {};
+        let hlsPlayer = null; // Variable global para el decodificador
 
         // INTRO
         window.addEventListener('load', () => {
@@ -237,7 +241,6 @@
                 const db = await respuesta.json();
                 window.miBaseDeDatos = db; 
 
-                // 1. DIBUJAR CARRUSEL HERO
                 const heroCarrusel = document.getElementById('hero-carousel');
                 heroCarrusel.innerHTML = '';
                 if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
@@ -254,7 +257,6 @@
                     iniciarCarrusel(); 
                 }
 
-                // 2. DIBUJAR CINE EN FILAS (LIMITADO A 5)
                 const armarFila = (idContenedor, arrayPelis) => {
                     const cont = document.getElementById(idContenedor);
                     cont.innerHTML = '';
@@ -262,7 +264,6 @@
                         cont.innerHTML = '<span style="color:#5577cc; padding-left:15px; font-size:12px;">Próximamente...</span>';
                         return;
                     }
-                    
                     arrayPelis.slice(0, 5).forEach(peli => {
                         cont.innerHTML += `
                             <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
@@ -280,7 +281,6 @@
                 armarFila('row-infantiles', db.peliculasInfantiles);
                 armarFila('row-series', db.seriesData);
 
-                // 3. DIBUJAR TV
                 const grillaTV = document.getElementById('grilla-tv');
                 grillaTV.innerHTML = '';
                 (db.channels || []).forEach(canal => {
@@ -296,9 +296,7 @@
             } catch (error) { console.log(error); }
         }
 
-        // ==========================================
         // SISTEMA DE CATÁLOGO COMPLETO
-        // ==========================================
         let seccionAntesDelCatalogo = 'sec-cine';
 
         function abrirCatalogoCompleto(nombreCategoria, claveJson) {
@@ -338,9 +336,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ==========================================
         // NAVEGACIÓN Y BÚSQUEDA
-        // ==========================================
         let seccionAnterior = 'sec-cine';
 
         function cambiarSeccion(idSeccion, elementoBoton) {
@@ -406,31 +402,67 @@
             });
         }
 
-        // REPRODUCTOR
+        // ==========================================
+        // EL NUEVO REPRODUCTOR MÁGICO
+        // ==========================================
         function playCinematic(url, isYT) {
+            const overlay = document.getElementById('cinematic-overlay');
+            const container = document.getElementById('cinematic-container');
+            
+            // Mostramos la pantalla negra
+            overlay.style.display = 'flex';
+            container.innerHTML = ''; // Limpiamos cualquier video anterior
+            
             if (isYT || url.includes('youtu')) {
-                const overlay = document.getElementById('cinematic-overlay');
-                const container = document.getElementById('cinematic-container');
-                overlay.style.display = 'flex';
-                
+                // 1. SI ES YOUTUBE (Carga el Iframe normal)
                 let videoId = url;
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
-                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&disablekb=1&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="pointer-events: none;"></iframe>`;
+                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            
             } else {
-                try {
-                    const protocolo = url.split('://')[0];
-                    const linkSinProtocolo = url.split('://')[1];
-                    const intentAndroid = `intent://${linkSinProtocolo}#Intent;scheme=${protocolo};type=video/*;end`;
-                    window.location.href = intentAndroid;
-                } catch(e) {
-                    window.location.href = url;
+                // 2. SI ES CANAL DE TV (M3U8) O PELÍCULA (MP4)
+                
+                // Creamos la etiqueta de video HTML5
+                const videoElement = document.createElement('video');
+                videoElement.controls = true; // Botones de play, pausa, fullscreen
+                videoElement.autoplay = true;
+                videoElement.style.width = "100%";
+                videoElement.style.height = "100%";
+                container.appendChild(videoElement);
+
+                // Si es un canal en vivo (termina en m3u8) aplicamos los Códecs HLS
+                if (url.includes('.m3u8')) {
+                    if (Hls.isSupported()) {
+                        hlsPlayer = new Hls();
+                        hlsPlayer.loadSource(url);
+                        hlsPlayer.attachMedia(videoElement);
+                        hlsPlayer.on(Hls.Events.MANIFEST_PARSED, function() {
+                            videoElement.play().catch(() => console.log("Auto-play bloqueado por el navegador"));
+                        });
+                    } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+                        // Soporte nativo para iPhones/Safari antiguos
+                        videoElement.src = url;
+                        videoElement.addEventListener('loadedmetadata', function() {
+                            videoElement.play();
+                        });
+                    }
+                } else {
+                    // Si es MP4 normal (Película de Dropbox/Google Drive)
+                    videoElement.src = url;
+                    videoElement.play().catch(() => console.log("Auto-play bloqueado por el navegador"));
                 }
             }
         }
 
         function closeCinematic() {
+            // Apagamos y destruimos los códecs para que no consuman internet en segundo plano
+            if (hlsPlayer) {
+                hlsPlayer.destroy();
+                hlsPlayer = null;
+            }
+            
             document.getElementById('cinematic-container').innerHTML = '';
             document.getElementById('cinematic-overlay').style.display = 'none';
         }
