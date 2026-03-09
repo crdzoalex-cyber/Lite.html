@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nova Stream Lite 📱</title>
-    
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/3.2.1/dash.all.min.js"></script>
-
     <style>
         /* === ESTILOS BASE (AZUL NOVA) === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -38,6 +32,7 @@
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
+        /* === CABECERAS === */
         .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 10px; }
         .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
         
@@ -87,17 +82,12 @@
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
         .nav-item i { font-size: 22px; margin-bottom: 3px; font-style: normal; }
 
-        /* === MEGA REPRODUCTOR === */
+        /* === REPRODUCTOR YT (SOLO TRAILERS) === */
         #cinematic-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; flex-direction: column; }
-        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 10;}
+        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .player-title { color: white; font-weight: bold; font-size: 16px; text-shadow: 0 0 5px #2a60ff; }
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
-        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;}
-        
-        /* Ajustes visuales Plyr para que se vea premium */
-        :root { --plyr-color-main: #2a60ff; }
-        .plyr { width: 100%; height: 100%; }
-        .plyr video { object-fit: contain; }
+        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
     </style>
 </head>
 <body>
@@ -208,7 +198,7 @@
 
     <div id="cinematic-overlay">
         <div class="close-bar">
-            <span class="player-title" id="player-title">Nova Player</span>
+            <span class="player-title" id="player-title">Nova Trailer</span>
             <button class="close-btn" onclick="closeCinematic()">✖</button>
         </div>
         <div id="cinematic-container"></div>
@@ -216,11 +206,6 @@
 
     <script>
         window.miBaseDeDatos = {};
-        
-        // Variables globales para el reproductor
-        window.plyrPlayer = null;
-        window.hlsInstance = null;
-        window.dashInstance = null;
 
         // INTRO
         window.addEventListener('load', () => {
@@ -260,7 +245,6 @@
                 heroCarrusel.innerHTML = '';
                 if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
                     db.peliculasEstrenos.forEach(peli => {
-                        // Le pasamos el titulo también a la función para mostrarlo en el reproductor
                         const tituloLimpio = peli.title.replace(/'/g, "\\'");
                         heroCarrusel.innerHTML += `
                             <div class="hero-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
@@ -424,72 +408,33 @@
         }
 
         // ==========================================
-        // MEGA REPRODUCTOR UNIVERSAL (PLYR + HLS + DASH)
+        // EL REPRODUCTOR INFALIBLE (INTENT NATIVO)
         // ==========================================
-        function playCinematic(url, isYT, tituloVideo = "Nova Player") {
-            const overlay = document.getElementById('cinematic-overlay');
-            const container = document.getElementById('cinematic-container');
-            const titleBar = document.getElementById('player-title');
-            
-            titleBar.innerText = tituloVideo; // Ponemos el nombre de la peli arriba
-            overlay.style.display = 'flex';
-            container.innerHTML = ''; 
-
+        function playCinematic(url, isYT, tituloVideo = "Nova") {
             if (isYT || url.includes('youtu')) {
-                // YOUTUBE
+                // Youtube queda igual, en el reproductor interno de la web
+                const overlay = document.getElementById('cinematic-overlay');
+                const container = document.getElementById('cinematic-container');
+                document.getElementById('player-title').innerText = tituloVideo + " (Trailer)";
+                overlay.style.display = 'flex';
+                
                 let videoId = url;
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
                 container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
             } else {
-                // PELÍCULAS, SERIES Y TV DIRECTA (M3U8, MPD, MP4)
-                container.innerHTML = `<video id="nova-video" playsinline controls crossorigin></video>`;
-                const videoElement = document.getElementById('nova-video');
-                
-                // Opciones premium para el reproductor
-                const defaultOptions = {
-                    controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
-                    settings: ['quality', 'speed'],
-                    autoplay: true,
-                    keyboard: { focused: true, global: true }
-                };
-
-                if (url.includes('.m3u8')) {
-                    // CÓDEC HLS PARA TV Y STREAMING
-                    if (Hls.isSupported()) {
-                        window.hlsInstance = new Hls();
-                        window.hlsInstance.loadSource(url);
-                        window.hlsInstance.attachMedia(videoElement);
-                        window.hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
-                            window.plyrPlayer = new Plyr(videoElement, defaultOptions);
-                            window.plyrPlayer.play();
-                        });
-                    } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-                        videoElement.src = url;
-                        window.plyrPlayer = new Plyr(videoElement, defaultOptions);
-                        videoElement.addEventListener('loadedmetadata', () => { window.plyrPlayer.play(); });
-                    }
-                } else if (url.includes('.mpd')) {
-                    // CÓDEC DASH
-                    window.dashInstance = dashjs.MediaPlayer().create();
-                    window.dashInstance.initialize(videoElement, url, true);
-                    window.plyrPlayer = new Plyr(videoElement, defaultOptions);
-                } else {
-                    // MP4 DIRECTO (Tus películas de Dropbox/Drive)
-                    videoElement.src = url;
-                    window.plyrPlayer = new Plyr(videoElement, defaultOptions);
-                    window.plyrPlayer.play();
+                // ¡MAGIA NATIVA! Le pasamos el link y el título directamente a Android Studio
+                try {
+                    AndroidInterface.abrirReproductor(url, tituloVideo);
+                } catch(e) {
+                    console.log("Android no detectado. Modo web fallback.");
+                    window.open(url, '_blank'); // Por si lo probás en la PC
                 }
             }
         }
 
         function closeCinematic() {
-            // Destruir procesos para liberar RAM y datos
-            if(window.hlsInstance) { window.hlsInstance.destroy(); window.hlsInstance = null; }
-            if(window.dashInstance) { window.dashInstance.reset(); window.dashInstance = null; }
-            if(window.plyrPlayer) { window.plyrPlayer.destroy(); window.plyrPlayer = null; }
-            
             document.getElementById('cinematic-container').innerHTML = '';
             document.getElementById('cinematic-overlay').style.display = 'none';
         }
