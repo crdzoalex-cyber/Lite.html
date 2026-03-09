@@ -422,7 +422,8 @@
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
-                container.innerHTML = `<iframe width="100%" height="300" src="https://www.youtube.com/embed/AQUI_VA_EL_ID?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            } else {
                 // ¡MAGIA NATIVA! Le pasamos el link y el título directamente a Android Studio
                 try {
                     AndroidInterface.abrirReproductor(url, tituloVideo);
