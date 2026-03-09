@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nova Stream Lite 📱</title>
+    
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/3.2.1/dash.all.min.js"></script>
+
     <style>
         /* === ESTILOS BASE (AZUL NOVA) === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -33,7 +38,6 @@
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* === CABECERAS === */
         .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 10px; }
         .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
         
@@ -83,11 +87,17 @@
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
         .nav-item i { font-size: 22px; margin-bottom: 3px; font-style: normal; }
 
-        /* === REPRODUCTOR DE YOUTUBE === */
+        /* === MEGA REPRODUCTOR === */
         #cinematic-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; flex-direction: column; }
-        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: flex-end; align-items: center; padding: 0 20px; }
+        .close-bar { width: 100%; height: 50px; background: rgba(0,0,0,0.8); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 10;}
+        .player-title { color: white; font-weight: bold; font-size: 16px; text-shadow: 0 0 5px #2a60ff; }
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
-        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
+        #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;}
+        
+        /* Ajustes visuales Plyr para que se vea premium */
+        :root { --plyr-color-main: #2a60ff; }
+        .plyr { width: 100%; height: 100%; }
+        .plyr video { object-fit: contain; }
     </style>
 </head>
 <body>
@@ -197,12 +207,20 @@
     </nav>
 
     <div id="cinematic-overlay">
-        <div class="close-bar"><button class="close-btn" onclick="closeCinematic()">✖</button></div>
+        <div class="close-bar">
+            <span class="player-title" id="player-title">Nova Player</span>
+            <button class="close-btn" onclick="closeCinematic()">✖</button>
+        </div>
         <div id="cinematic-container"></div>
     </div>
 
     <script>
         window.miBaseDeDatos = {};
+        
+        // Variables globales para el reproductor
+        window.plyrPlayer = null;
+        window.hlsInstance = null;
+        window.dashInstance = null;
 
         // INTRO
         window.addEventListener('load', () => {
@@ -238,13 +256,14 @@
                 const db = await respuesta.json();
                 window.miBaseDeDatos = db; 
 
-                // 1. DIBUJAR CARRUSEL HERO
                 const heroCarrusel = document.getElementById('hero-carousel');
                 heroCarrusel.innerHTML = '';
                 if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
                     db.peliculasEstrenos.forEach(peli => {
+                        // Le pasamos el titulo también a la función para mostrarlo en el reproductor
+                        const tituloLimpio = peli.title.replace(/'/g, "\\'");
                         heroCarrusel.innerHTML += `
-                            <div class="hero-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                            <div class="hero-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
                                 <span class="hero-badge">ESTRENO</span>
                                 <img src="${peli.poster}" alt="${peli.title}">
                                 <div class="hero-gradient"></div>
@@ -255,7 +274,6 @@
                     iniciarCarrusel(); 
                 }
 
-                // 2. DIBUJAR CINE EN FILAS (LIMITADO A 5)
                 const armarFila = (idContenedor, arrayPelis) => {
                     const cont = document.getElementById(idContenedor);
                     cont.innerHTML = '';
@@ -265,8 +283,9 @@
                     }
                     
                     arrayPelis.slice(0, 5).forEach(peli => {
+                        const tituloLimpio = peli.title.replace(/'/g, "\\'");
                         cont.innerHTML += `
-                            <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                            <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
                                 <div class="movie-poster-box">
                                     <img src="${peli.poster}" alt="${peli.title}">
                                 </div>
@@ -281,12 +300,12 @@
                 armarFila('row-infantiles', db.peliculasInfantiles);
                 armarFila('row-series', db.seriesData);
 
-                // 3. DIBUJAR TV
                 const grillaTV = document.getElementById('grilla-tv');
                 grillaTV.innerHTML = '';
                 (db.channels || []).forEach(canal => {
+                    const tituloLimpio = canal.name.replace(/'/g, "\\'");
                     grillaTV.innerHTML += `
-                        <div class="canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false})">
+                        <div class="canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')">
                             <img src="${canal.logo}" alt="${canal.name}">
                             <p class="canal-title">${canal.name}</p>
                             <span class="badge-live">EN VIVO</span>
@@ -297,9 +316,7 @@
             } catch (error) { console.log(error); }
         }
 
-        // ==========================================
         // SISTEMA DE CATÁLOGO COMPLETO
-        // ==========================================
         let seccionAntesDelCatalogo = 'sec-cine';
 
         function abrirCatalogoCompleto(nombreCategoria, claveJson) {
@@ -317,8 +334,9 @@
 
             if(arrayPelis && arrayPelis.length > 0) {
                 arrayPelis.forEach(peli => {
+                    const tituloLimpio = peli.title.replace(/'/g, "\\'");
                     contenedor.innerHTML += `
-                        <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false})">
+                        <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
                             <div class="movie-poster-box">
                                 <img src="${peli.poster}" alt="${peli.title}">
                             </div>
@@ -339,9 +357,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ==========================================
         // NAVEGACIÓN Y BÚSQUEDA
-        // ==========================================
         let seccionAnterior = 'sec-cine';
 
         function cambiarSeccion(idSeccion, elementoBoton) {
@@ -408,34 +424,72 @@
         }
 
         // ==========================================
-        // REPRODUCTOR (INTENT SISTEMA ANDROID)
+        // MEGA REPRODUCTOR UNIVERSAL (PLYR + HLS + DASH)
         // ==========================================
-        function playCinematic(url, isYT) {
+        function playCinematic(url, isYT, tituloVideo = "Nova Player") {
+            const overlay = document.getElementById('cinematic-overlay');
+            const container = document.getElementById('cinematic-container');
+            const titleBar = document.getElementById('player-title');
+            
+            titleBar.innerText = tituloVideo; // Ponemos el nombre de la peli arriba
+            overlay.style.display = 'flex';
+            container.innerHTML = ''; 
+
             if (isYT || url.includes('youtu')) {
-                // Youtube se abre interno
-                const overlay = document.getElementById('cinematic-overlay');
-                const container = document.getElementById('cinematic-container');
-                overlay.style.display = 'flex';
-                
+                // YOUTUBE
                 let videoId = url;
                 if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
                 else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
 
                 container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
             } else {
-                // TV y Películas Reales se mandan al reproductor del sistema
-                try {
-                    const protocolo = url.split('://')[0];
-                    const linkSinProtocolo = url.split('://')[1];
-                    const intentAndroid = `intent://${linkSinProtocolo}#Intent;scheme=${protocolo};type=video/*;end`;
-                    window.location.href = intentAndroid;
-                } catch(e) {
-                    window.location.href = url;
+                // PELÍCULAS, SERIES Y TV DIRECTA (M3U8, MPD, MP4)
+                container.innerHTML = `<video id="nova-video" playsinline controls crossorigin></video>`;
+                const videoElement = document.getElementById('nova-video');
+                
+                // Opciones premium para el reproductor
+                const defaultOptions = {
+                    controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
+                    settings: ['quality', 'speed'],
+                    autoplay: true,
+                    keyboard: { focused: true, global: true }
+                };
+
+                if (url.includes('.m3u8')) {
+                    // CÓDEC HLS PARA TV Y STREAMING
+                    if (Hls.isSupported()) {
+                        window.hlsInstance = new Hls();
+                        window.hlsInstance.loadSource(url);
+                        window.hlsInstance.attachMedia(videoElement);
+                        window.hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
+                            window.plyrPlayer = new Plyr(videoElement, defaultOptions);
+                            window.plyrPlayer.play();
+                        });
+                    } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+                        videoElement.src = url;
+                        window.plyrPlayer = new Plyr(videoElement, defaultOptions);
+                        videoElement.addEventListener('loadedmetadata', () => { window.plyrPlayer.play(); });
+                    }
+                } else if (url.includes('.mpd')) {
+                    // CÓDEC DASH
+                    window.dashInstance = dashjs.MediaPlayer().create();
+                    window.dashInstance.initialize(videoElement, url, true);
+                    window.plyrPlayer = new Plyr(videoElement, defaultOptions);
+                } else {
+                    // MP4 DIRECTO (Tus películas de Dropbox/Drive)
+                    videoElement.src = url;
+                    window.plyrPlayer = new Plyr(videoElement, defaultOptions);
+                    window.plyrPlayer.play();
                 }
             }
         }
 
         function closeCinematic() {
+            // Destruir procesos para liberar RAM y datos
+            if(window.hlsInstance) { window.hlsInstance.destroy(); window.hlsInstance = null; }
+            if(window.dashInstance) { window.dashInstance.reset(); window.dashInstance = null; }
+            if(window.plyrPlayer) { window.plyrPlayer.destroy(); window.plyrPlayer = null; }
+            
             document.getElementById('cinematic-container').innerHTML = '';
             document.getElementById('cinematic-overlay').style.display = 'none';
         }
