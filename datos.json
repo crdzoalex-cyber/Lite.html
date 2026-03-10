@@ -965,6 +965,8 @@
     { "id": 767, "name": "Warner Channel HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a00k/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Warner+Channel+HD+2" },
     { "id": 768, "name": "Ciudad Magazine 2", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a01g/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Ciudad+Magazine+2" },
     { "id": 769, "name": "El Nueve HD 2", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a00d/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Nueve+HD+2" },
-    { "id": 770, "name": "El Trece HD 2", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a023/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Trece+HD+2" }
+    { "id": 770, "name": "El Trece HD 2", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a023/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Trece+HD+2" },
+  { "id": 771, "name": "DS Sports+", "cat": "argentina", "url": "http://217.26.190.76:8888/play/a0jb/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Trece+HD+2" }
+ 
   ]
 }
