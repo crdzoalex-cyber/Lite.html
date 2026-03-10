@@ -920,7 +920,7 @@
     { "id": 722, "name": "FOX", "cat": "series", "url": "http://192.99.19.55:25461/sRecablegratisdottv/4VIrhLpbSc/147", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=FOX" },
     { "id": 723, "name": "HBO Signature 2", "cat": "cine", "url": "http://192.99.19.55:25461/sRecablegratisdottv/4VIrhLpbSc/80", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=HBO+Signature+2" },
     { "id": 724, "name": "Historia", "cat": "documentales", "url": "http://192.99.19.55:25461/sRecablegratisdottv/4VIrhLpbSc/139", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Historia" },
-    { "id": 725, "name": "Nat geo wild 2", "cat": "documentales", "url": "http://192.99.19.55:25461/sRecablegratisdottv/4VIrhLpbSc/115", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Nat+geo+wild+2" },
+    { "id": 725, "name": "Nat geo wild 2", "cat": "documentales", "url": "http://192.99.19.55:25461/sRecablegratisdottv/4VIrhLpbSc/115", "isYT": false, "logo": "yimage.com/512x512/282828/ffffff.png&text=Nat+geo+wild+2" },
     { "id": 726, "name": "CLD: ESPN 1 LA", "cat": "deportes", "url": "http://ligatv.net:25461/clarodep/01022019/294", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+1+LA" },
     { "id": 727, "name": "CLD: ESPN 2 LA", "cat": "deportes", "url": "http://192.99.19.55:25461/live/sRe/4VIrhLpbScQ/146.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+2+LA" },
     { "id": 728, "name": "CLD: ESPN 3 LA", "cat": "deportes", "url": "http://ligatv.net:25461/clarodep/01022019/292", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+3+LA" },
@@ -929,7 +929,7 @@
     { "id": 731, "name": "CLD: FOX SPORTS 2 LA", "cat": "deportes", "url": "http://ligatv.net:25461/clarodep/01022019/290", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fox+Sports+2" },
     { "id": 732, "name": "CLD: FOX SPORTS 3 LA", "cat": "deportes", "url": "http://ligatv.net:25461/clarodep/01022019/289", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fox+Sports+3" },
     { "id": 733, "name": "CLD: CLARO SPORTS 2", "cat": "deportes", "url": "http://ligatv.net:25461/clarodep/01022019/300", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Claro+Sports+2" },
-    { "id": 734, "name": "CLD: CLARO 2", "cat": "deportes", "url": "http://ligatv.net:25461/clarodep/01022019/299", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Claro+2" }
+    { "id": 734, "name": "CLD: CLARO 2", "cat": "deportes", "url": "http://158.69.52.43:8000/live/bob/2345/1017.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Claro+2" }
 
   ]
 }
