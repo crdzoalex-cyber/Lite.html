@@ -412,19 +412,16 @@
         // ==========================================
      // Ahora aceptamos 3 parámetros por las dudas
 function playCinematic(arg1, arg2, arg3) {
-    let urlVideo = arg1;
+    if (!arg1) return; // Protección anti-errores
     
-    // Traductor del título (por si arg2 es el "true" del isYT)
+    let urlVideo = String(arg1);
     let tituloVideo = (arg2 === true || arg2 === false || arg2 === "true" || arg2 === "false") ? arg3 : arg2;
     if (!tituloVideo) tituloVideo = "Canal en Vivo";
 
-    // EL NUEVO CEREBRO: Detecta YouTube por el "true" de tu JSON o por el texto del link
     let esYouTube = (arg2 === true || arg2 === "true" || urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be"));
 
     if (esYouTube) {
-        let videoId = urlVideo; // Asumimos que ya viene el ID limpio como "SF06Qy1Ct6Y"
-        
-        // Solo lo recortamos si por casualidad mandaste un link largo que empieza con "http"
+        let videoId = urlVideo; 
         if (urlVideo.includes("http")) {
             if (urlVideo.includes("v=")) videoId = urlVideo.split('v=')[1];
             else if (urlVideo.includes("youtu.be/")) videoId = urlVideo.split('youtu.be/')[1];
@@ -435,19 +432,12 @@ function playCinematic(arg1, arg2, arg3) {
             if (videoId.includes('&')) videoId = videoId.split('&')[0];
         }
 
-        // Llamamos a tu reproductor de YouTube en Android
         if (typeof AndroidInterface !== "undefined") {
-            AndroidInterface.abrirYouTube(videoId);
-        } else {
-            console.log("Modo Web: YouTube ID -> " + videoId);
+            AndroidInterface.abrirYouTube(videoId, String(tituloVideo));
         }
-    } 
-    else {
-        // Si no es YouTube, va para VLC (Películas y m3u8)
+    } else {
         if (typeof AndroidInterface !== "undefined") {
             AndroidInterface.abrirReproductor(urlVideo, String(tituloVideo));
-        } else {
-            console.log("Modo Web: VLC -> " + urlVideo);
         }
     }
 }
