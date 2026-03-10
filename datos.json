@@ -874,9 +874,8 @@
     { "id": 676, "name": "Teleuniverso - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a01x/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Teleuniverso" },
     { "id": 677, "name": "Tru TV", "cat": "variedades", "url": "http://24.152.54.30:8085/play/a015/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Tru+TV" },
     { "id": 678, "name": "DS Sports", "cat": "deportes", "url": "http://38.224.231.98:8000/play/a0tl/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOwomol8jrm1kzJTw-9CLJOKPIQId82WPXL9ymopuROw&s" },
-    { "id": 678, "name": "AE Mundo", "cat": "documentales", "url": "http://181.177.255.253:8000/play/a04v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AE+Mundo" },
-    { "id": 679, "name": "ATRES SERIES HD", "cat": "series", "url": "http://181.177.255.253:8000/play/a00w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Atreseries+HD" },
-    { "id": 680, "name": "America TV HD", "cat": "argentina", "url": "http://181.177.255.253:8000/play/a02h/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=America+TV+HD" },
+    { "id": 679, "name": "AE Mundo", "cat": "documentales", "url": "http://181.177.255.253:8000/play/a04v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AE+Mundo" },
+        { "id": 680, "name": "America TV HD", "cat": "argentina", "url": "http://181.177.255.253:8000/play/a02h/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=America+TV+HD" },
     { "id": 681, "name": "America TV PY", "cat": "internacional", "url": "http://181.177.255.253:8000/play/a05s/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=America+PY" },
     { "id": 682, "name": "CHV HD", "cat": "chile", "url": "http://181.177.255.253:8000/play/a00n/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CHV+HD" },
     { "id": 683, "name": "CNN Chile", "cat": "noticias", "url": "http://181.177.255.253:8000/play/a03m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CNN+Chile" },
@@ -896,7 +895,8 @@
     { "id": 697, "name": "Liga 1 Max HD", "cat": "peru", "url": "http://181.177.255.253:8000/play/a074/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Liga+1+Max" },
     { "id": 698, "name": "SyFy", "cat": "series", "url": "http://181.177.255.253:8000/play/a03y/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=SyFy" },
     { "id": 699, "name": "WILLAX", "cat": "peru", "url": "http://181.177.255.253:8000/play/a05i/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Willax" },
-    { "id": 700, "name": "Zona Latina", "cat": "chile", "url": "http://181.177.255.253:8000/play/a03l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina" }
-  
+    { "id": 700, "name": "Zona Latina", "cat": "chile", "url": "http://181.177.255.253:8000/play/a03l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina" },
+  { "id": 701, "name": "ATRES SERIES HD", "cat": "series", "url": "http://181.177.255.253:8000/play/a00w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Atreseries+HD" }
+
   ]
 }
