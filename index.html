@@ -44,7 +44,18 @@
 
         /* === CARRUSEL === */
         .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
-        .hero-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 15px; padding: 0 15px; }
+        .hero-carousel { 
+            display: flex; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth; 
+            gap: 15px; 
+            padding-left: 15px; 
+            padding-right: 15vw; /* 👈 Esto deja que la última peli llegue al centro */
+            -webkit-overflow-scrolling: touch; /* 👈 Fluidez extrema en celulares */
+        }
+        /* Oculta la rayita del scroll */
+        .hero-carousel::-webkit-scrollbar { display: none; }
         .hero-card { flex: 0 0 85vw; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(30,80,255,0.3); border: 1px solid rgba(30, 80, 255, 0.3); cursor: pointer; }
         .hero-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .hero-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; background: linear-gradient(to top, rgba(2,5,15,1) 0%, rgba(2,5,15,0) 100%); pointer-events: none; }
@@ -217,46 +228,33 @@
             cargarBaseDeDatos();
         });
 
-        // MOTOR DE CARRUSEL
-        let intervaloCarrusel;
-        function iniciarCarrusel() {
-            const carrusel = document.getElementById('hero-carousel');
-            if(!carrusel) return;
-            let scrollActual = 0;
-            clearInterval(intervaloCarrusel); 
-            intervaloCarrusel = setInterval(() => {
-                const tarjeta = carrusel.querySelector('.hero-card');
-                if(!tarjeta) return;
-                const anchoTarjeta = tarjeta.offsetWidth + 15; 
-                scrollActual += anchoTarjeta;
-                if(scrollActual >= carrusel.scrollWidth - carrusel.clientWidth + 10) { scrollActual = 0; }
-                carrusel.scrollTo({ top: 0, left: scrollActual, behavior: 'smooth' });
-            }, 5000); 
+        // === MOTOR DEL CARRUSEL INTELIGENTE ===
+let carrusel = document.querySelector('.hero-carousel');
+let intervaloCarrusel;
+
+function iniciarCarrusel() {
+    // Se mueve cada 4 segundos
+    intervaloCarrusel = setInterval(() => {
+        if(carrusel) {
+            // Si llegó al final, vuelve al inicio suavemente
+            if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 20) {
+                carrusel.scrollLeft = 0;
+            } else {
+                // Avanza exactamente el ancho de una tarjeta
+                carrusel.scrollLeft += (window.innerWidth * 0.85) + 15; 
+            }
         }
+    }, 4000); 
+}
 
-        // CARGA DE DATOS
-        async function cargarBaseDeDatos() {
-            try {
-                const respuesta = await fetch('datos.json');
-                const db = await respuesta.json();
-                window.miBaseDeDatos = db; 
-
-                const heroCarrusel = document.getElementById('hero-carousel');
-                heroCarrusel.innerHTML = '';
-                if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
-                    db.peliculasEstrenos.forEach(peli => {
-                        const tituloLimpio = peli.title.replace(/'/g, "\\'");
-                        heroCarrusel.innerHTML += `
-                            <div class="hero-card" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
-                                <span class="hero-badge">ESTRENO</span>
-                                <img src="${peli.poster}" alt="${peli.title}">
-                                <div class="hero-gradient"></div>
-                                <div class="hero-title">${peli.title}</div>
-                            </div>
-                        `;
-                    });
-                    iniciarCarrusel(); 
-                }
+if(carrusel) {
+    // Si el usuario toca la pantalla, frenamos el motor
+    carrusel.addEventListener('touchstart', () => clearInterval(intervaloCarrusel));
+    // Cuando el usuario suelta el dedo, el motor arranca de nuevo
+    carrusel.addEventListener('touchend', () => iniciarCarrusel());
+    
+    iniciarCarrusel(); // Arrancamos por primera vez
+}
 
                 const armarFila = (idContenedor, arrayPelis) => {
                     const cont = document.getElementById(idContenedor);
