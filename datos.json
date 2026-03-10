@@ -764,5 +764,6 @@
     { "id": 566, "name": "Alien Nation by DUST", "cat": "series", "url": "https://dqi7ayt2o24fn.cloudfront.net/playlist.m3u8", "logo": "https://i.imgur.com/FxYhME9.png" },
     { "id": 567, "name": "Alistiqama TV", "cat": "religiosos", "url": "https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8", "logo": "https://i.imgur.com/2FPtYZr.png" },
     { "id": 568, "name": "Alkarma TV Australia", "cat": "religiosos", "url": "https://5a8308add0b31.streamlock.net/alkarmatv.com/alkarmaau.smil/playlist.m3u8", "logo": "https://i.imgur.com/90ykspa.png" }
+ { "id": 569, "name": "musica", "cat": "argentina", "url": "jfKfPfyJRdk", "isYT": true, "logo": "..." }
   ]
 }
