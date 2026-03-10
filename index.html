@@ -236,13 +236,13 @@
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
-                // 1. DIBUJAMOS EL CARRUSEL
+                // 1. DIBUJAMOS EL CARRUSEL (Ahora busca 'peliculasEstrenos' en tu JSON)
                 const heroCont = document.getElementById('hero-carousel');
                 heroCont.innerHTML = '';
-                if (db.estrenos && db.estrenos.length > 0) {
-                    db.estrenos.forEach(item => {
+                if (db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
+                    db.peliculasEstrenos.forEach(item => {
                         const tituloLimpio = (item.title || '').replace(/'/g, "\\'");
-                        // Si tiene duracion, pone el cartel, sino no.
+                        // Cartel azul oscuro para estrenos (duración)
                         let cartelInteligente = item.dur ? `<div class="hero-badge" style="background: #02050f;">⏱ ${item.dur}</div>` : '';
                         
                         heroCont.innerHTML += `
