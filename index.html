@@ -257,43 +257,51 @@ if(carrusel) {
 }
 
                 const armarFila = (idContenedor, arrayPelis) => {
-                    const cont = document.getElementById(idContenedor);
-                    cont.innerHTML = '';
-                    if (!arrayPelis || arrayPelis.length === 0) {
-                        cont.innerHTML = '<span style="color:#5577cc; padding-left:15px; font-size:12px;">Próximamente...</span>';
-                        return;
-                    }
-                    
-                    arrayPelis.slice(0, 5).forEach(peli => {
-                        const tituloLimpio = peli.title.replace(/'/g, "\\'");
-                        cont.innerHTML += `
-                            <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
-                                <div class="movie-poster-box">
-                                    <img src="${peli.poster}" alt="${peli.title}">
-                                </div>
-                                <div class="movie-title-text">${peli.title}</div>
-                            </div>
-                        `;
-                    });
-                };
+    const cont = document.getElementById(idContenedor);
+    cont.innerHTML = '';
+    if (!arrayPelis || arrayPelis.length === 0) {
+        cont.innerHTML = '<span style="color:#5577cc; padding-left:15px; font-size:12px;">Próximamente...</span>';
+        return;
+    }
+    
+    arrayPelis.slice(0, 5).forEach(peli => {
+        const tituloLimpio = (peli.title || '').replace(/'/g, "\\'");
+        
+        // 🎬 LA MAGIA PARA PELÍCULAS: Si tiene duración en el JSON, armamos el cartel. Si no, queda limpio.
+        let cartelDuracion = peli.dur ? `<span style="position:absolute; top:8px; right:8px; background:rgba(2, 5, 15, 0.85); color:#fff; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10;">⏱ ${peli.dur}</span>` : '';
 
-                armarFila('row-accion', db.peliculasAccion);
-                armarFila('row-terror', db.peliculasTerror);
-                armarFila('row-infantiles', db.peliculasInfantiles);
-                armarFila('row-series', db.seriesData);
+        cont.innerHTML += `
+            <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
+                <div class="movie-poster-box" style="position:relative;">
+                    ${cartelDuracion}
+                    <img src="${peli.poster}" alt="${peli.title}">
+                </div>
+                <div class="movie-title-text">${peli.title}</div>
+            </div>
+        `;
+    });
+};
 
-                const grillaTV = document.getElementById('grilla-tv');
-                grillaTV.innerHTML = '';
-                (db.channels || []).forEach(canal => {
-                    const tituloLimpio = canal.name.replace(/'/g, "\\'");
-                    grillaTV.innerHTML += `
-                        <div class="canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')">
-                            <img src="${canal.logo}" alt="${canal.name}">
-                            <p class="canal-title">${canal.name}</p>
-                            <span class="badge-live">EN VIVO</span>
-                        </div>
-                    `;
-                });
+armarFila('row-accion', db.peliculasAccion);
+armarFila('row-terror', db.peliculasTerror);
+armarFila('row-infantiles', db.peliculasInfantiles);
+armarFila('row-series', db.seriesData);
+
+
+const grillaTV = document.getElementById('grilla-tv');
+grillaTV.innerHTML = '';
+(db.channels || []).forEach(canal => {
+    const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
+    
+    // 📺 LA MAGIA PARA TV: El cartel "EN VIVO" asegurado arriba a la izquierda.
+    grillaTV.innerHTML += `
+        <div class="canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" style="position:relative;">
+            <span class="badge-live" style="position:absolute; top:8px; left:8px; background:#ff0033; color:white; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10; box-shadow: 0 0 8px rgba(255,0,51,0.6);">🔴 EN VIVO</span>
+            <img src="${canal.logo}" alt="${canal.name}">
+            <p class="canal-title">${canal.name}</p>
+        </div>
+    `;
+});
 
             } catch (error) { console.log(error); }
         }
