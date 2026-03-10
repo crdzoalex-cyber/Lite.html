@@ -51,10 +51,9 @@
             scroll-behavior: smooth; 
             gap: 15px; 
             padding-left: 15px; 
-            padding-right: 15vw; /* 👈 Esto deja que la última peli llegue al centro */
-            -webkit-overflow-scrolling: touch; /* 👈 Fluidez extrema en celulares */
+            padding-right: 15vw; 
+            -webkit-overflow-scrolling: touch; 
         }
-        /* Oculta la rayita del scroll */
         .hero-carousel::-webkit-scrollbar { display: none; }
         .hero-card { flex: 0 0 85vw; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(30,80,255,0.3); border: 1px solid rgba(30, 80, 255, 0.3); cursor: pointer; }
         .hero-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
@@ -218,97 +217,127 @@
     <script>
         window.miBaseDeDatos = {};
 
-        // INTRO
+        // === ARRANQUE INICIAL ===
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 splash.classList.add('splash-slide-up');
                 setTimeout(() => { splash.style.display = 'none'; }, 400);
             }, 400); 
-            cargarBaseDeDatos();
+            cargarBaseDeDatos(); // Llamamos a la función de descarga
         });
 
-        // === MOTOR DEL CARRUSEL INTELIGENTE ===
-let carrusel = document.querySelector('.hero-carousel');
-let intervaloCarrusel;
+        // === DESCARGA DEL JSON ===
+        async function cargarBaseDeDatos() {
+            try {
+                // ⚠️ ACÁ VA EL LINK DE TU JSON DE DROPBOX, GITHUB, ETC. ⚠️
+                const URL_DEL_JSON = "PON_EL_LINK_DE_TU_JSON_AQUI"; 
+                
+                const response = await fetch(URL_DEL_JSON);
+                const db = await response.json();
+                window.miBaseDeDatos = db;
 
-function iniciarCarrusel() {
-    // Se mueve cada 4 segundos
-    intervaloCarrusel = setInterval(() => {
-        if(carrusel) {
-            // Si llegó al final, vuelve al inicio suavemente
-            if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 20) {
-                carrusel.scrollLeft = 0;
-            } else {
-                // Avanza exactamente el ancho de una tarjeta
-                carrusel.scrollLeft += (window.innerWidth * 0.85) + 15; 
+                // 1. DIBUJAMOS EL CARRUSEL
+                const heroCont = document.getElementById('hero-carousel');
+                heroCont.innerHTML = '';
+                if (db.estrenos && db.estrenos.length > 0) {
+                    db.estrenos.forEach(item => {
+                        const tituloLimpio = (item.title || '').replace(/'/g, "\\'");
+                        // Si tiene duracion, pone el cartel, sino no.
+                        let cartelInteligente = item.dur ? `<div class="hero-badge" style="background: #02050f;">⏱ ${item.dur}</div>` : '';
+                        
+                        heroCont.innerHTML += `
+                            <div class="hero-card" onclick="playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')">
+                                ${cartelInteligente}
+                                <img src="${item.poster}" alt="${item.title}">
+                                <div class="hero-gradient"></div>
+                                <div class="hero-title">${item.title}</div>
+                            </div>
+                        `;
+                    });
+                    iniciarCarruselMotor(); // Arrancamos el scroll automático
+                } else {
+                    heroCont.innerHTML = '<div style="color: #5577cc; padding: 20px;">No hay estrenos hoy.</div>';
+                }
+
+                // 2. DIBUJAMOS LAS FILAS DE PELÍCULAS
+                armarFila('row-accion', db.peliculasAccion);
+                armarFila('row-terror', db.peliculasTerror);
+                armarFila('row-infantiles', db.peliculasInfantiles);
+                armarFila('row-series', db.seriesData);
+
+                // 3. DIBUJAMOS LOS CANALES DE TV
+                const grillaTV = document.getElementById('grilla-tv');
+                grillaTV.innerHTML = '';
+                (db.channels || []).forEach(canal => {
+                    const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
+                    grillaTV.innerHTML += `
+                        <div class="canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" style="position:relative;">
+                            <span class="badge-live" style="position:absolute; top:8px; left:8px; background:#ff0033; color:white; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10; box-shadow: 0 0 8px rgba(255,0,51,0.6);">🔴 EN VIVO</span>
+                            <img src="${canal.logo}" alt="${canal.name}">
+                            <p class="canal-title">${canal.name}</p>
+                        </div>
+                    `;
+                });
+
+            } catch (error) {
+                console.log("Error descargando el JSON:", error);
+                document.getElementById('hero-carousel').innerHTML = '<div style="color: red; padding: 20px;">Error al conectar con la base de datos. Verifica el link del JSON.</div>';
             }
         }
-    }, 4000); 
-}
 
-if(carrusel) {
-    // Si el usuario toca la pantalla, frenamos el motor
-    carrusel.addEventListener('touchstart', () => clearInterval(intervaloCarrusel));
-    // Cuando el usuario suelta el dedo, el motor arranca de nuevo
-    carrusel.addEventListener('touchend', () => iniciarCarrusel());
-    
-    iniciarCarrusel(); // Arrancamos por primera vez
-}
+        // === FUNCIÓN AUXILIAR PARA DIBUJAR FILAS ===
+        const armarFila = (idContenedor, arrayPelis) => {
+            const cont = document.getElementById(idContenedor);
+            cont.innerHTML = '';
+            if (!arrayPelis || arrayPelis.length === 0) {
+                cont.innerHTML = '<span style="color:#5577cc; padding-left:15px; font-size:12px;">Próximamente...</span>';
+                return;
+            }
+            
+            arrayPelis.slice(0, 5).forEach(peli => {
+                const tituloLimpio = (peli.title || '').replace(/'/g, "\\'");
+                // Magia para las películas: Si tiene duración, arma el cartel arriba a la derecha.
+                let cartelDuracion = peli.dur ? `<span style="position:absolute; top:8px; right:8px; background:rgba(2, 5, 15, 0.85); color:#fff; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10;">⏱ ${peli.dur}</span>` : '';
 
-                const armarFila = (idContenedor, arrayPelis) => {
-    const cont = document.getElementById(idContenedor);
-    cont.innerHTML = '';
-    if (!arrayPelis || arrayPelis.length === 0) {
-        cont.innerHTML = '<span style="color:#5577cc; padding-left:15px; font-size:12px;">Próximamente...</span>';
-        return;
-    }
-    
-    arrayPelis.slice(0, 5).forEach(peli => {
-        const tituloLimpio = (peli.title || '').replace(/'/g, "\\'");
-        
-        // 🎬 LA MAGIA PARA PELÍCULAS: Si tiene duración en el JSON, armamos el cartel. Si no, queda limpio.
-        let cartelDuracion = peli.dur ? `<span style="position:absolute; top:8px; right:8px; background:rgba(2, 5, 15, 0.85); color:#fff; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10;">⏱ ${peli.dur}</span>` : '';
+                cont.innerHTML += `
+                    <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
+                        <div class="movie-poster-box" style="position:relative;">
+                            ${cartelDuracion}
+                            <img src="${peli.poster}" alt="${peli.title}">
+                        </div>
+                        <div class="movie-title-text">${peli.title}</div>
+                    </div>
+                `;
+            });
+        };
 
-        cont.innerHTML += `
-            <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
-                <div class="movie-poster-box" style="position:relative;">
-                    ${cartelDuracion}
-                    <img src="${peli.poster}" alt="${peli.title}">
-                </div>
-                <div class="movie-title-text">${peli.title}</div>
-            </div>
-        `;
-    });
-};
+        // === MOTOR DEL CARRUSEL INTELIGENTE ===
+        let intervaloCarrusel;
+        function iniciarCarruselMotor() {
+            let carrusel = document.querySelector('.hero-carousel');
+            if(!carrusel) return;
 
-armarFila('row-accion', db.peliculasAccion);
-armarFila('row-terror', db.peliculasTerror);
-armarFila('row-infantiles', db.peliculasInfantiles);
-armarFila('row-series', db.seriesData);
+            clearInterval(intervaloCarrusel); // Evitamos que se duplique
+            
+            intervaloCarrusel = setInterval(() => {
+                // Si llegó al final, vuelve
+                if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 20) {
+                    carrusel.scrollLeft = 0;
+                } else {
+                    // Avanza
+                    carrusel.scrollLeft += (window.innerWidth * 0.85) + 15; 
+                }
+            }, 4000); 
 
-
-const grillaTV = document.getElementById('grilla-tv');
-grillaTV.innerHTML = '';
-(db.channels || []).forEach(canal => {
-    const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
-    
-    // 📺 LA MAGIA PARA TV: El cartel "EN VIVO" asegurado arriba a la izquierda.
-    grillaTV.innerHTML += `
-        <div class="canal-item" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" style="position:relative;">
-            <span class="badge-live" style="position:absolute; top:8px; left:8px; background:#ff0033; color:white; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10; box-shadow: 0 0 8px rgba(255,0,51,0.6);">🔴 EN VIVO</span>
-            <img src="${canal.logo}" alt="${canal.name}">
-            <p class="canal-title">${canal.name}</p>
-        </div>
-    `;
-});
-
-            } catch (error) { console.log(error); }
+            // Si el usuario toca la pantalla, frenamos el motor
+            carrusel.addEventListener('touchstart', () => clearInterval(intervaloCarrusel));
+            // Cuando suelta el dedo, arranca de nuevo
+            carrusel.addEventListener('touchend', () => iniciarCarruselMotor());
         }
 
-        // SISTEMA DE CATÁLOGO COMPLETO
+        // === SISTEMA DE CATÁLOGO COMPLETO ===
         let seccionAntesDelCatalogo = 'sec-cine';
-
         function abrirCatalogoCompleto(nombreCategoria, claveJson) {
             const activaActual = document.querySelector('.content-section.active');
             if(activaActual) seccionAntesDelCatalogo = activaActual.id;
@@ -325,9 +354,12 @@ grillaTV.innerHTML = '';
             if(arrayPelis && arrayPelis.length > 0) {
                 arrayPelis.forEach(peli => {
                     const tituloLimpio = peli.title.replace(/'/g, "\\'");
+                    let cartelDuracion = peli.dur ? `<span style="position:absolute; top:8px; right:8px; background:rgba(2, 5, 15, 0.85); color:#fff; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10;">⏱ ${peli.dur}</span>` : '';
+
                     contenedor.innerHTML += `
                         <div class="movie-card-container" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
-                            <div class="movie-poster-box">
+                            <div class="movie-poster-box" style="position:relative;">
+                                ${cartelDuracion}
                                 <img src="${peli.poster}" alt="${peli.title}">
                             </div>
                             <div class="movie-title-text">${peli.title}</div>
@@ -337,7 +369,6 @@ grillaTV.innerHTML = '';
             } else {
                 contenedor.innerHTML = '<span style="color:#555; padding: 20px; grid-column: 1/-1; text-align: center;">No hay contenido aquí todavía.</span>';
             }
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -347,7 +378,7 @@ grillaTV.innerHTML = '';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // NAVEGACIÓN Y BÚSQUEDA
+        // === NAVEGACIÓN Y BÚSQUEDA ===
         let seccionAnterior = 'sec-cine';
 
         function cambiarSeccion(idSeccion, elementoBoton) {
@@ -414,39 +445,42 @@ grillaTV.innerHTML = '';
         }
 
         // ==========================================
-        // EL REPRODUCTOR INFALIBLE (INTENT NATIVO)
+        // EL REPRODUCTOR INFALIBLE (ANDROID BRIDGE)
         // ==========================================
-     // Ahora aceptamos 3 parámetros por las dudas
-function playCinematic(arg1, arg2, arg3) {
-    if (!arg1) return; // Protección anti-errores
-    
-    let urlVideo = String(arg1);
-    let tituloVideo = (arg2 === true || arg2 === false || arg2 === "true" || arg2 === "false") ? arg3 : arg2;
-    if (!tituloVideo) tituloVideo = "Canal en Vivo";
-
-    let esYouTube = (arg2 === true || arg2 === "true" || urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be"));
-
-    if (esYouTube) {
-        let videoId = urlVideo; 
-        if (urlVideo.includes("http")) {
-            if (urlVideo.includes("v=")) videoId = urlVideo.split('v=')[1];
-            else if (urlVideo.includes("youtu.be/")) videoId = urlVideo.split('youtu.be/')[1];
-            else if (urlVideo.includes("/live/")) videoId = urlVideo.split('/live/')[1];
-            else videoId = urlVideo.split('/').pop();
+        function playCinematic(arg1, arg2, arg3) {
+            if (!arg1) return; 
             
-            if (videoId.includes('?')) videoId = videoId.split('?')[0];
-            if (videoId.includes('&')) videoId = videoId.split('&')[0];
-        }
+            let urlVideo = String(arg1);
+            let tituloVideo = (arg2 === true || arg2 === false || arg2 === "true" || arg2 === "false") ? arg3 : arg2;
+            if (!tituloVideo) tituloVideo = "Canal en Vivo";
 
-        if (typeof AndroidInterface !== "undefined") {
-            AndroidInterface.abrirYouTube(videoId, String(tituloVideo));
+            let esYouTube = (arg2 === true || arg2 === "true" || urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be"));
+
+            if (esYouTube) {
+                let videoId = urlVideo; 
+                if (urlVideo.includes("http")) {
+                    if (urlVideo.includes("v=")) videoId = urlVideo.split('v=')[1];
+                    else if (urlVideo.includes("youtu.be/")) videoId = urlVideo.split('youtu.be/')[1];
+                    else if (urlVideo.includes("/live/")) videoId = urlVideo.split('/live/')[1];
+                    else videoId = urlVideo.split('/').pop();
+                    
+                    if (videoId.includes('?')) videoId = videoId.split('?')[0];
+                    if (videoId.includes('&')) videoId = videoId.split('&')[0];
+                }
+
+                if (typeof AndroidInterface !== "undefined") {
+                    AndroidInterface.abrirYouTube(videoId, String(tituloVideo));
+                } else {
+                    console.log("Modo Web: YouTube -> " + videoId);
+                }
+            } else {
+                if (typeof AndroidInterface !== "undefined") {
+                    AndroidInterface.abrirReproductor(urlVideo, String(tituloVideo));
+                } else {
+                    console.log("Modo Web: VLC -> " + urlVideo);
+                }
+            }
         }
-    } else {
-        if (typeof AndroidInterface !== "undefined") {
-            AndroidInterface.abrirReproductor(urlVideo, String(tituloVideo));
-        }
-    }
-}
         
         function closeCinematic() {
             document.getElementById('cinematic-container').innerHTML = '';
