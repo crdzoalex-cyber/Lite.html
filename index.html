@@ -410,26 +410,37 @@
         // ==========================================
         // EL REPRODUCTOR INFALIBLE (INTENT NATIVO)
         // ==========================================
-       function playCinematic(urlVideo, tituloVideo) {
+      function playCinematic(urlVideo, tituloVideo) {
+    // 1. VERIFICAMOS SI ES YOUTUBE
     if (urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be")) {
-        // Extrae el código del video
+        
+        // Extraemos el ID del video
         let videoId = urlVideo.split('v=')[1];
-        if (!videoId) videoId = urlVideo.split('/').pop();
+        if (!videoId) {
+            videoId = urlVideo.split('/').pop(); 
+        }
         let ampersandPosition = videoId.indexOf('&');
-        if (ampersandPosition !== -1) videoId = videoId.substring(0, ampersandPosition);
+        if (ampersandPosition !== -1) {
+            videoId = videoId.substring(0, ampersandPosition);
+        }
 
-        // Llama a la nueva pantalla horizontal de YouTube en Android
+        // Llamamos a la pantalla negra y horizontal de YouTube en tu App
         if (typeof AndroidInterface !== "undefined") {
             AndroidInterface.abrirYouTube(videoId);
+        } else {
+            console.log("Modo navegador: YouTube detectado");
         }
-    } else {
-        // Llama a VLC para m3u8 y mp4
+        
+    } 
+    // 2. SI ES M3U8 o MP4, LLAMAMOS A TU REPRODUCTOR PREMIUM (VLC)
+    else {
         if (typeof AndroidInterface !== "undefined") {
             AndroidInterface.abrirReproductor(urlVideo, tituloVideo);
+        } else {
+            console.log("Modo navegador: VLC detectado");
         }
     }
 }
-
         function closeCinematic() {
             document.getElementById('cinematic-container').innerHTML = '';
             document.getElementById('cinematic-overlay').style.display = 'none';
