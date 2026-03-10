@@ -896,7 +896,11 @@
     { "id": 698, "name": "SyFy", "cat": "series", "url": "http://181.177.255.253:8000/play/a03y/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=SyFy" },
     { "id": 699, "name": "WILLAX", "cat": "peru", "url": "http://181.177.255.253:8000/play/a05i/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Willax" },
     { "id": 700, "name": "Zona Latina", "cat": "chile", "url": "http://181.177.255.253:8000/play/a03l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina" },
-  { "id": 701, "name": "ATRES SERIES HD", "cat": "series", "url": "http://181.177.255.253:8000/play/a00w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Atreseries+HD" }
+  { "id": 701, "name": "ATRES SERIES HD", "cat": "series", "url": "http://181.177.255.253:8000/play/a00w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Atreseries+HD" },
+    { "id": 702, "name": "Fox Sports 2", "cat": "deportes", "url": "http://181.177.255.253:8000/play/a05a/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fox+Sports+2" },
+    { "id": 703, "name": "Fox Sports 2 HD", "cat": "deportes", "url": "http://181.177.255.253:8000/play/a01c/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fox+Sports+2+HD" },
+    { "id": 704, "name": "Fox Sports 3 HD", "cat": "deportes", "url": "http://181.177.255.253:8000/play/a00t/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fox+Sports+3+HD" }
+ { "id": 705, "name": "Fox Sports 1 HD", "cat": "deportes", "url": "http://181.177.255.253:8000/play/a031/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fox+Sports+1+HD" },
 
   ]
 }
