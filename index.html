@@ -410,29 +410,25 @@
         // ==========================================
         // EL REPRODUCTOR INFALIBLE (INTENT NATIVO)
         // ==========================================
-        function playCinematic(url, isYT, tituloVideo = "Nova") {
-            if (isYT || url.includes('youtu')) {
-                // Youtube queda igual, en el reproductor interno de la web
-                const overlay = document.getElementById('cinematic-overlay');
-                const container = document.getElementById('cinematic-container');
-                document.getElementById('player-title').innerText = tituloVideo + " (Trailer)";
-                overlay.style.display = 'flex';
-                
-                let videoId = url;
-                if (url.includes('v=')) videoId = url.split('v=')[1].split('&')[0];
-                else if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
+       function reproducirVideo(urlVideo, tituloVideo) {
+    if (urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be")) {
+        // Extrae el código del video
+        let videoId = urlVideo.split('v=')[1];
+        if (!videoId) videoId = urlVideo.split('/').pop();
+        let ampersandPosition = videoId.indexOf('&');
+        if (ampersandPosition !== -1) videoId = videoId.substring(0, ampersandPosition);
 
-                container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-            } else {
-                // ¡MAGIA NATIVA! Le pasamos el link y el título directamente a Android Studio
-                try {
-                    AndroidInterface.abrirReproductor(url, tituloVideo);
-                } catch(e) {
-                    console.log("Android no detectado. Modo web fallback.");
-                    window.open(url, '_blank'); // Por si lo probás en la PC
-                }
-            }
+        // Llama a la nueva pantalla horizontal de YouTube en Android
+        if (typeof AndroidInterface !== "undefined") {
+            AndroidInterface.abrirYouTube(videoId);
         }
+    } else {
+        // Llama a VLC para m3u8 y mp4
+        if (typeof AndroidInterface !== "undefined") {
+            AndroidInterface.abrirReproductor(urlVideo, tituloVideo);
+        }
+    }
+}
 
         function closeCinematic() {
             document.getElementById('cinematic-container').innerHTML = '';
