@@ -435,13 +435,13 @@ function playCinematic(arg1, arg2, arg3) {
             if (videoId.includes('&')) videoId = videoId.split('&')[0];
         }
 
-// Llamamos a tu reproductor de YouTube en Android Y LE PASAMOS EL TÍTULO
+        // Llamamos a tu reproductor de YouTube en Android
         if (typeof AndroidInterface !== "undefined") {
-            AndroidInterface.abrirYouTube(videoId, String(tituloVideo));
+            AndroidInterface.abrirYouTube(videoId);
         } else {
             console.log("Modo Web: YouTube ID -> " + videoId);
         }
-        
+    } 
     else {
         // Si no es YouTube, va para VLC (Películas y m3u8)
         if (typeof AndroidInterface !== "undefined") {
