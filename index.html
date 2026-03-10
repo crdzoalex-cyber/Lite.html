@@ -231,7 +231,7 @@
         async function cargarBaseDeDatos() {
             try {
                 // ⚠️ ACÁ VA EL LINK DE TU JSON DE DROPBOX, GITHUB, ETC. ⚠️
-                const URL_DEL_JSON = "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/datos.json";
+                const URL_DEL_JSON = "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/refs/heads/main/datos.json";
                 const response = await fetch(URL_DEL_JSON);
                 const db = await response.json();
                 window.miBaseDeDatos = db;
