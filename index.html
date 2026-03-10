@@ -81,11 +81,25 @@
         .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
-        /* === TV PILLS === */
-        .category-pill-container { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
+       /* === TV PILLS === */
+        .category-pill-container { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 10px; 
+            padding: 10px 15px 15px 15px; 
+            scroll-snap-type: x mandatory; 
+            
+            /* 🔥 LA MAGIA DEL STICKY 🔥 */
+            position: -webkit-sticky; /* Soporte para Safari/iOS viejo */
+            position: sticky;
+            top: 55px; /* Se pega justo debajo de tu cabecera principal (NOVA LITE) */
+            z-index: 90; /* Flota por encima de los pósters de TV */
+            background-color: #02050f; /* Le ponemos el fondo azul oscuro para que tape los canales al subir */
+            border-bottom: 1px solid rgba(30, 80, 255, 0.2); /* Una rayita sutil abajo para separar */
+        }
+        
         .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
         .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
-
         /* === NAVEGACIÓN === */
         nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(2, 5, 15, 0.95); border-top: 1px solid #1e50ff; box-shadow: 0 -5px 15px rgba(30, 80, 255, 0.2); display: flex; justify-content: space-around; align-items: center; z-index: 100; backdrop-filter: blur(5px); }
         .nav-item { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; }
