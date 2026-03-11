@@ -15,8 +15,8 @@
             font-family: 'Segoe UI', sans-serif; 
             overflow-x: hidden; 
             padding-bottom: 70px; 
-            /* 🔥 Calculamos el techo dinámicamente según el celular */
-            padding-top: calc(110px + env(safe-area-inset-top, 35px)); 
+            /* 🔥 Redujimos el margen gigante para matar el espacio negro inicial */
+            padding-top: calc(75px + env(safe-area-inset-top, 25px)); 
         }
         ::-webkit-scrollbar { display: none; }
 
@@ -114,13 +114,13 @@
             display: flex; 
             overflow-x: auto; 
             gap: 10px; 
-            /* 🔥 Le damos 15px arriba para que no toque el borde azul */
-            padding: 15px 15px 25px 15px; 
+            /* 🔥 Le sacamos el margen de arriba (bajó de 15px a 5px) */
+            padding: 5px 15px 25px 15px; 
             scroll-snap-type: x mandatory; 
             position: -webkit-sticky; 
             position: sticky;
-            /* 🔥 Frena justo debajo de la cabecera considerando el notch */
-            top: calc(55px + env(safe-area-inset-top, 35px)); 
+            /* 🔥 Se pega exactamente al borde del logo de Nova */
+            top: calc(55px + env(safe-area-inset-top, 25px)); 
             z-index: 998; 
             background: #02050f; 
             box-shadow: 0 -40px 0px #02050f; 
