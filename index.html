@@ -127,36 +127,32 @@
         }
         /* === TV PILLS === */
         .category-pill-container { 
-            display: flex; 
-            overflow-x: auto; 
-            gap: 10px; 
-            /* 🔥 Le sacamos el margen de arriba (bajó de 15px a 5px) */
-            padding: 5px 15px 25px 15px; 
-            scroll-snap-type: x mandatory; 
-            position: -webkit-sticky; 
-            position: sticky;
-            /* 🔥 Se pega exactamente al borde del logo de Nova */
+            display: flex; overflow-x: auto; gap: 10px; 
+            padding: 5px 15px 25px 15px; scroll-snap-type: x mandatory; 
+            position: -webkit-sticky; position: sticky;
             top: calc(55px + env(safe-area-inset-top, 25px)); 
-            z-index: 998; 
-            background: #02050f; 
+            z-index: 998; background: #02050f; 
             box-shadow: 0 -40px 0px #02050f; 
             border-bottom: 1px solid rgba(30, 80, 255, 0.2); 
         }
         
-        .category-pill { outline: none; }
-        .category-pill:focus { 
-            background: rgba(30, 80, 255, 0.6); 
-            border-color: #fff; 
-            box-shadow: 0 0 10px #2a60ff; 
-            transform: scale(1.05); 
+        .category-pill { 
+            background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); 
+            color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; 
+            white-space: nowrap; cursor: pointer; transition: 0.3s; 
+            outline: none; /* Vital para que no salga el borde feo en la TV */
         }
         
         .category-pill.active { 
-            background: rgba(30, 80, 255, 0.3); 
-            color: #fff; 
-            border-color: #2a60ff; 
-            box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); 
+            background: rgba(30, 80, 255, 0.3); color: #fff; 
+            border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); 
             font-weight: bold; 
+        }
+
+        /* 🔥 Foco para el Control Remoto (TV) */
+        .category-pill:focus { 
+            background: rgba(30, 80, 255, 0.6); border-color: #fff; 
+            box-shadow: 0 0 10px #2a60ff; transform: scale(1.05); 
         }
         
         /* === NAVEGACIÓN === */
