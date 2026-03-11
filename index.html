@@ -17,7 +17,21 @@
         .splash-logo-lite { font-size: 16px; font-weight: 600; color: #888; letter-spacing: 10px; margin-top: 5px; }
 
         /* === CABECERA === */
-        header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: rgba(2, 5, 15, 0.95); border-bottom: 1px solid #1e50ff; box-shadow: 0 0 15px rgba(30, 80, 255, 0.4); z-index: 100; backdrop-filter: blur(5px); }
+       header { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            /* Empuja el logo debajo de la cámara, dejando la línea de arriba negra */
+            padding: calc(10px + env(safe-area-inset-top, 35px)) 20px 10px 20px; 
+            background: #000000; 
+            border-bottom: 1px solid #1e50ff; 
+            box-shadow: 0 0 15px rgba(30, 80, 255, 0.4); 
+            z-index: 100; 
+        }
         .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .logo-nova { font-size: 22px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); letter-spacing: 2px; line-height: 1; }
         .logo-lite { font-size: 9px; font-weight: 600; color: #888; letter-spacing: 4px; margin-top: 2px; }
