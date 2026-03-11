@@ -70,7 +70,22 @@
         .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
         .hero-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 15px; padding-left: 15px; padding-right: 15vw; -webkit-overflow-scrolling: touch; }
         .hero-carousel::-webkit-scrollbar { display: none; }
-        .hero-card { flex: 0 0 85vw; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(30,80,255,0.3); border: 1px solid rgba(30, 80, 255, 0.3); cursor: pointer; }
+       /* === CARRUSEL DE ESTRENOS === */
+        .hero-card { 
+            /* 🔥 Le sacamos los estilos feos de botón de Android */
+            background: transparent; border: none; padding: 0; margin: 0; outline: none; font-family: inherit;
+            /* Tus estilos normales */
+            position: relative; flex: 0 0 85%; max-width: 400px; height: 200px; 
+            border-radius: 12px; overflow: hidden; cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; 
+        }
+        
+        /* 🔥 Foco para el control remoto */
+        .hero-card:focus { 
+            transform: scale(0.95); 
+            border: 2px solid #2a60ff; /* Borde azul brillante al seleccionarlo */
+            box-shadow: 0 0 15px rgba(30, 80, 255, 0.8); 
+        }
         .hero-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .hero-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; background: linear-gradient(to top, rgba(2,5,15,1) 0%, rgba(2,5,15,0) 100%); pointer-events: none; }
         .hero-title { position: absolute; bottom: 15px; left: 15px; right: 15px; font-size: 20px; font-weight: bold; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
@@ -655,34 +670,42 @@
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
 
-            // 1. SI APRETAMOS LA FLECHA ARRIBA (Código 38)
+            // 1. SI APRETAMOS LA FLECHA ARRIBA
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
-                // Si estamos parados en un canal o una película...
-                if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container')) {
-                    
-                    // Calculamos si estamos en la primera fila visible (cerca del techo)
+                if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container') || focoActual.classList.contains('hero-card')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
                     
-                    // Si está a menos de 250 píxeles del techo de la pantalla...
                     if (posicionEnPantalla.top < 250) { 
-                        event.preventDefault(); // 🔥 TRUCO: Cancelamos el salto automático de la TV
+                        event.preventDefault(); 
                         
-                        // Y lo obligamos a frenar en la píldora que esté pintada de azul
-                        const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
-                        if (pildoraActiva) pildoraActiva.focus();
+                        // Si estamos en TV, subimos a los países
+                        if (document.getElementById('sec-tv').classList.contains('active')) {
+                            const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
+                            if (pildoraActiva) pildoraActiva.focus();
+                        }
+                        // Si estamos en Cine/Series, subimos al buscador
+                        else {
+                            document.getElementById('searchInput').focus();
+                        }
                     }
                 }
             }
 
-            // 2. SI APRETAMOS LA FLECHA ABAJO (Código 40) DESDE EL BUSCADOR
+            // 2. SI APRETAMOS LA FLECHA ABAJO DESDE EL BUSCADOR
             if (event.key === 'ArrowDown' || event.keyCode === 40) {
-                // Si estamos parados en la caja de búsqueda...
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
-                    event.preventDefault(); // 🔥 Cancelamos el salto directo a los canales
+                    event.preventDefault(); 
                     
-                    // Y lo obligamos a bajar primero a los países
-                    const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
-                    if (pildoraActiva) pildoraActiva.focus();
+                    // Si estamos en Cine, bajamos obligado al Carrusel de Estrenos
+                    if (document.getElementById('sec-cine').classList.contains('active')) {
+                        const primerEstreno = document.querySelector('.hero-card');
+                        if (primerEstreno) primerEstreno.focus();
+                    } 
+                    // Si estamos en TV, bajamos obligado a los Países
+                    else if (document.getElementById('sec-tv').classList.contains('active')) {
+                        const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
+                        if (pildoraActiva) pildoraActiva.focus();
+                    }
                 }
             }
         });
