@@ -140,6 +140,9 @@
             0% { opacity: 1; } 
             100% { opacity: 0.2; } 
         }
+
+
+        
         /* === TV PILLS === */
         .category-pill-container { 
             display: flex; overflow-x: auto; gap: 10px; 
@@ -306,6 +309,14 @@
         </div>
 
         <div id="sec-tv" class="content-section">
+            <button class="promo-banner" onclick="abrirPromoPro()" onkeydown="if(event.key==='Enter' || event.keyCode===13) abrirPromoPro()">
+                <div class="promo-content">
+                    <span class="promo-badge">SIN ANUNCIOS</span>
+                    <h3>¡Pásate a la versión PRO!</h3>
+                    <p>Disfruta de la experiencia completa, sin cortes y con contenido exclusivo.</p>
+                </div>
+                <div class="promo-btn">Saber más</div>
+            </button>
             <div class="section-header"><h3 class="section-title">Canales en Vivo</h3></div>
             <div class="category-pill-container">
                 <button class="category-pill active" onclick="filtrarCanales('todos', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('todos', this)">Todos</button>
