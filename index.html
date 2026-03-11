@@ -143,20 +143,16 @@
 
 Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo selecciones con el control remoto de la tele. Pegá esto en tu bloque de `<style>`, puede ser justo arriba de donde tenés los estilos de las píldoras (`/* === TV PILLS === */`):
 
-/* ========================================= */
-        /* === 1. BANNER PROMO PRO (CORREGIDO) === */
-        /* ========================================= */
+/* === BANNER PROMO PRO === */
         .promo-banner {
             display: flex; justify-content: space-between; align-items: center;
             background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
             border: 2px solid transparent; border-radius: 12px;
             
-            /* 🔥 LA SOLUCIÓN: Le devolvemos el empujón de 85px para que el buscador NO se lo trague */
-            margin: 85px auto 20px auto; 
+            /* 🔥 CORRECCIÓN: Margen normal. Nada de empujones locos de 85px */
+            margin: 15px auto 20px auto; 
             width: calc(100% - 30px); 
             max-width: 650px; 
-            
-            /* 🔥 TRUCO: z-index para que flote bien */
             z-index: 10; flex-shrink: 0;
             
             height: 120px; 
