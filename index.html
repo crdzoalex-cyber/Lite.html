@@ -143,123 +143,62 @@
 
 Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo selecciones con el control remoto de la tele. Pegá esto en tu bloque de `<style>`, puede ser justo arriba de donde tenés los estilos de las píldoras (`/* === TV PILLS === */`):
 
-/* === BANNER PROMO PRO (RESPONSIVO Y TRANSICIONAL) === */
+/* ========================================= */
+        /* === 1. BANNER PROMO PRO (CORREGIDO) === */
+        /* ========================================= */
         .promo-banner {
             display: flex; justify-content: space-between; align-items: center;
             background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
             border: 2px solid transparent; border-radius: 12px;
             
-            /* 🔥 TRUCO 1: Margen superior para que NO lo tape el buscador */
             margin: 75px auto 15px auto; 
             width: calc(100% - 30px); 
-            max-width: 900px; 
+            /* 🔥 TRUCO TV: Lo achicamos a 650px para que no quede un hueco azul gigante */
+            max-width: 650px; 
             
-            /* 🔥 TRUCO 2: Más altura para que el texto entre bien en el celu */
-            height: 130px; 
+            height: 120px; 
             position: relative; padding: 0; cursor: pointer; box-sizing: border-box;
             outline: none; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             font-family: inherit; color: white; overflow: hidden;
         }
 
-        /* 📺 OPTIMIZACIÓN EXTREMA PARA TV (Pantallas Grandes) */
         @media screen and (min-width: 1000px) {
             .promo-banner {
-                height: 160px; /* Más alto en la tele */
+                height: 140px; 
                 border-radius: 20px;
-                margin-top: 90px; /* Más empujón hacia abajo en la tele */
+                margin-top: 90px; 
                 margin-bottom: 25px; 
             }
-            .promo-content { padding: 20px 40px !important; } 
-            .promo-content h3 { font-size: 26px !important; margin-bottom: 8px !important; } 
-            .promo-content p { font-size: 16px !important; } 
-            .promo-btn { font-size: 16px !important; padding: 12px 25px !important; }
-            .nova-slogan { font-size: 14px !important; margin-top: 10px !important; }
-            .promo-badge { font-size: 12px !important; top: 15px !important; right: 20px !important; }
+            .promo-content { padding: 20px 30px !important; } 
+            .promo-content h3 { font-size: 24px !important; margin-bottom: 6px !important; } 
+            .promo-content p { font-size: 14px !important; } 
+            .promo-btn { font-size: 14px !important; padding: 10px 20px !important; }
+            .nova-slogan { font-size: 12px !important; margin-top: 8px !important; }
+            .promo-badge { font-size: 10px !important; top: 12px !important; right: 15px !important; }
         }
 
-        /* Foco para el Control Remoto (TV) */
         .promo-banner:focus {
             transform: scale(0.98); border-color: #ffffff;
             box-shadow: 0 0 20px rgba(30, 80, 255, 0.9);
         }
 
-        /* Contenedores de Carteles para la transición */
         .promo-content {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 15px; box-sizing: border-box; /* box-sizing evita que se desborde */
-            
-            /* EFECTO FUSIÓN (FADE) */
+            padding: 15px 20px; box-sizing: border-box; 
             opacity: 0; visibility: hidden;
             transition: opacity 0.8s ease-in-out, visibility 0.8s;
         }
         .promo-content.active { opacity: 1; visibility: visible; }
 
-        /* Ajustes de los textos interiores */
-        .promo-text-wrapper { flex: 1; padding-right: 10px; text-align: left; }
-        .promo-content h3 { margin: 0 0 4px 0; font-size: 15px; font-weight: bold; text-shadow: 1px 1px 3px #000; }
-        .promo-content p { margin: 0; font-size: 11px; color: #d0d8ff; line-height: 1.2; }
-/* === BANNER PROMO PRO (RESPONSIVO Y TRANSICIONAL) === */
-        .promo-banner {
-            display: flex; justify-content: space-between; align-items: center;
-            background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
-            border: 2px solid transparent; border-radius: 12px;
-            
-            /* 🔥 TRUCO 1: Margen superior para que NO lo tape el buscador NOVA LITE */
-            margin: 75px auto 15px auto; /* 75px empuja hacia abajo lo suficiente */
-            width: calc(100% - 30px); 
-            max-width: 900px; 
-            
-            /* 🔥 TRUCO 2: Más altura para que el texto largo respire */
-            height: 130px; 
-            position: relative; padding: 0; cursor: pointer; box-sizing: border-box;
-            outline: none; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            font-family: inherit; color: white; overflow: hidden;
-        }
-
-        /* 📺 OPTIMIZACIÓN EXTREMA PARA TV (Pantallas Grandes) */
-        @media screen and (min-width: 1000px) {
-            .promo-banner {
-                height: 160px; /* Más alto en la tele, ya que hay más espacio */
-                border-radius: 20px;
-                margin-top: 90px; /* Más empujón hacia abajo en la tele */
-                margin-bottom: 25px; 
-            }
-            .promo-content { padding: 20px 40px !important; } 
-            .promo-content h3 { font-size: 26px !important; margin-bottom: 8px !important; } 
-            .promo-content p { font-size: 16px !important; } 
-            .promo-btn { font-size: 16px !important; padding: 12px 25px !important; }
-            .nova-slogan { font-size: 14px !important; margin-top: 10px !important; }
-            .promo-badge { font-size: 12px !important; top: 15px !important; right: 20px !important; }
-        }
-
-        /* Foco para el Control Remoto (TV) */
-        .promo-banner:focus {
-            transform: scale(0.98); border-color: #ffffff;
-            box-shadow: 0 0 20px rgba(30, 80, 255, 0.9);
-        }
-
-        /* Contenedores de Carteles para la transición */
-        .promo-content {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px; box-sizing: border-box; /* box-sizing es vital para el padding */
-            
-            /* EFECTO FUSIÓN (FADE) */
-            opacity: 0; visibility: hidden;
-            transition: opacity 0.8s ease-in-out, visibility 0.8s;
-        }
-        .promo-content.active { opacity: 1; visibility: visible; }
-
-        /* Ajustes de los textos interiores */
-        .promo-text-wrapper { flex: 1; padding-right: 10px; text-align: left; }
+        .promo-text-wrapper { flex: 1; padding-right: 15px; text-align: left; }
         .promo-content h3 { margin: 0 0 4px 0; font-size: 15px; font-weight: bold; text-shadow: 1px 1px 3px #000; }
         .promo-content p { margin: 0; font-size: 11px; color: #d0d8ff; line-height: 1.2; }
         
         .promo-badge { 
             background: #ff0033; color: white; font-size: 9px; 
             padding: 3px 6px; border-radius: 4px; font-weight: bold; 
-            position: absolute; top: 8px; right: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 10;
+            position: absolute; top: 10px; right: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 10;
         }
         
         .promo-btn {
@@ -267,10 +206,13 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             border-radius: 20px; font-size: 11px; font-weight: bold;
             white-space: nowrap; border: 1px solid rgba(255,255,255,0.5);
         }
+        .cartel-2-btn { background: #ff0033 !important; border-color: transparent; }
+        .nova-slogan { font-weight: bold; font-style: italic; font-size: 10px !important; color: #fff !important; margin-top: 4px !important; text-shadow: none;}
 
-        /* Estilos específicos para el Cartel 2 */
-        .cartel-2-btn { background: #ff0
-        /* === TV PILLS === */
+
+        /* ========================================= */
+        /* === 2. TV PILLS / PAÍSES (RESTAURADOS) === */
+        /* ========================================= */
         .category-pill-container { 
             display: flex; overflow-x: auto; gap: 10px; 
             padding: 5px 15px 25px 15px; scroll-snap-type: x mandatory; 
@@ -279,7 +221,9 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             z-index: 998; background: #02050f; 
             box-shadow: 0 -40px 0px #02050f; 
             border-bottom: 1px solid rgba(30, 80, 255, 0.2); 
+            scrollbar-width: none; /* Oculta la barra de scroll abajo de los países */
         }
+        .category-pill-container::-webkit-scrollbar { display: none; }
         
         .category-pill { 
             background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); 
@@ -294,11 +238,12 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             font-weight: bold; 
         }
 
-        /* 🔥 Foco para el Control Remoto (TV) */
+        /* Foco para el Control Remoto (TV) */
         .category-pill:focus { 
             background: rgba(30, 80, 255, 0.6); border-color: #fff; 
             box-shadow: 0 0 10px #2a60ff; transform: scale(1.05); 
         }
+        
         
         /* === NAVEGACIÓN === */
         nav { 
