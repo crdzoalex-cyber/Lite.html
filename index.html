@@ -26,11 +26,12 @@
             justify-content: space-between; 
             align-items: center; 
             padding: calc(10px + env(safe-area-inset-top, 35px)) 20px 10px 20px; 
-            background: #000000; 
+            background: #02050f; /* 🔥 Fondo sólido impenetrable */
             border-bottom: 1px solid #1e50ff; 
-            box-shadow: 0 0 15px rgba(30, 80, 255, 0.4); 
-            z-index: 100; 
+            box-shadow: 0 5px 15px rgba(2, 5, 15, 1); 
+            z-index: 999; /* 🔥 Capa máxima absoluta */
         }
+        
         .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .logo-nova { font-size: 22px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); letter-spacing: 2px; line-height: 1; }
         .logo-lite { font-size: 9px; font-weight: 600; color: #888; letter-spacing: 4px; margin-top: 2px; }
@@ -103,14 +104,34 @@
             display: flex; 
             overflow-x: auto; 
             gap: 10px; 
-            padding: 15px 15px 15px 15px; /* 🔥 Le damos aire para que respire */
+            padding: 10px 15px 15px 15px; 
             scroll-snap-type: x mandatory; 
             position: -webkit-sticky; 
             position: sticky;
-            top: 70px; /* 🔥 Las bajamos para que no toquen el logo de NOVA LITE */
-            z-index: 998; /* Un nivel justo por debajo de la cabecera */
-            background-color: #02050f; 
+            top: 75px; /* 🔥 Enganchado justo debajo de la cabecera */
+            z-index: 998; /* 🔥 Tapará los canales al hacer scroll */
+            background: #02050f; /* 🔥 Fondo sólido impenetrable */
             border-bottom: 1px solid rgba(30, 80, 255, 0.2); 
+        }
+        
+        .category-pill { 
+            background: rgba(30, 80, 255, 0.1); 
+            border: 1px solid rgba(30, 80, 255, 0.4); 
+            color: #aaa; 
+            padding: 6px 16px; 
+            border-radius: 20px; 
+            font-size: 13px; 
+            white-space: nowrap; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        
+        .category-pill.active { 
+            background: rgba(30, 80, 255, 0.3); 
+            color: #fff; 
+            border-color: #2a60ff; 
+            box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); 
+            font-weight: bold; 
         }
         
         /* === NAVEGACIÓN === */
