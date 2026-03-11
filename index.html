@@ -104,13 +104,16 @@
             display: flex; 
             overflow-x: auto; 
             gap: 10px; 
-            padding: 10px 15px 15px 15px; 
+            /* 🔥 Aumentamos el margen de abajo a 25px para que los canales desaparezcan mucho antes */
+            padding: 10px 15px 25px 15px; 
             scroll-snap-type: x mandatory; 
             position: -webkit-sticky; 
             position: sticky;
-            top: 75px; /* 🔥 Enganchado justo debajo de la cabecera */
-            z-index: 998; /* 🔥 Tapará los canales al hacer scroll */
-            background: #02050f; /* 🔥 Fondo sólido impenetrable */
+            top: 75px; 
+            z-index: 998; 
+            background: #02050f; 
+            /* 🔥 TRUCO NINJA: Sombra negra hacia ARRIBA (-30px) para sellar cualquier huequito con la cabecera */
+            box-shadow: 0 -30px 0px #02050f; 
             border-bottom: 1px solid rgba(30, 80, 255, 0.2); 
         }
         
@@ -144,7 +147,12 @@
         @media (orientation: landscape) {
             body { padding-top: 60px; padding-bottom: 55px; }
             header { padding: 5px 20px; }
-            .category-pill-container { top: 45px; padding: 8px 15px 8px 15px; }
+            /* Ajuste de píldoras en horizontal */
+            .category-pill-container { 
+                top: 45px; 
+                padding: 5px 15px 15px 15px; 
+                box-shadow: 0 -30px 0px #02050f; 
+            }
             
             .hero-card { flex: 0 0 35vw; } 
             .hero-card img { height: 45vh; max-height: 180px; } 
