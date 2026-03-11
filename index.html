@@ -140,8 +140,7 @@
             <span class="logo-lite">LITE</span>
         </div>
         <div class="search-container">
-            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar peli..." oninput="realizarBusqueda(this.value)">
-            <span class="search-btn">🔍</span>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar peli..." oninput="buscarInteligente(this.value)">
         </div>
     </header>
 
@@ -407,7 +406,18 @@
             elementoBoton.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+            // === BUSCADOR INTELIGENTE (Anti-Lag) ===
+        let temporizadorBusqueda;
 
+        function buscarInteligente(texto) {
+            // Si el usuario sigue tecleando rápido, cancelamos la búsqueda anterior
+            clearTimeout(temporizadorBusqueda);
+            
+            // Le damos medio segundo (400 milisegundos) de espera antes de buscar
+            temporizadorBusqueda = setTimeout(() => {
+                realizarBusqueda(texto);
+            }, 400); 
+        }
         function realizarBusqueda(textoIngresado) {
             const texto = textoIngresado.toLowerCase().trim();
             const secBusqueda = document.getElementById('sec-busqueda');
