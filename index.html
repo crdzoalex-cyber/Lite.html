@@ -151,10 +151,13 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
             border: 2px solid transparent; border-radius: 12px;
             
-            margin: 75px auto 15px auto; 
+            /* 🔥 TRUCO: Márgenes normales. Le sacamos el margen gigante de 75px */
+            margin: 15px auto 20px auto; 
             width: calc(100% - 30px); 
-            /* 🔥 TRUCO TV: Lo achicamos a 650px para que no quede un hueco azul gigante */
             max-width: 650px; 
+            
+            /* 🔥 TRUCO: z-index para que SIEMPRE flote por encima de los canales */
+            z-index: 10; flex-shrink: 0;
             
             height: 120px; 
             position: relative; padding: 0; cursor: pointer; box-sizing: border-box;
@@ -166,7 +169,7 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             .promo-banner {
                 height: 140px; 
                 border-radius: 20px;
-                margin-top: 90px; 
+                margin-top: 25px; /* Margen normal para TV */
                 margin-bottom: 25px; 
             }
             .promo-content { padding: 20px 30px !important; } 
