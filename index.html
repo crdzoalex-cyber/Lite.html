@@ -143,23 +143,35 @@
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
         #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
    
-    /* === MODO SMART TV Y TABLETS (PANTALLA HORIZONTAL) === */
-        @media (min-width: 768px) {
-            /* En la TV, los estrenos principales son más angostos para que entren 3 en la pantalla */
-            .hero-card { flex: 0 0 35vw; }
-            .hero-card img { height: 280px; }
-            
-            /* En la TV, las películas de Acción/Terror son un poco más grandes */
-            .movie-card-container { flex: 0 0 160px; }
-            .movie-poster-box img { height: 240px; }
-            
-            /* En la TV, las cajas de los canales son un poco más grandes y se acomodan solas */
-            .movie-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
-            
-            /* La botonera de abajo se hace más chica para no molestar la visión */
-            nav { height: 70px; }
-            .nav-item i { font-size: 24px; }
-            .nav-item { font-size: 13px; }
+   
+       /* === MODO HORIZONTAL (TV y Celulares acostados) === */
+        @media (orientation: landscape) {
+            /* Achicamos márgenes superiores e inferiores para ganar espacio vital */
+            body { padding-top: 60px; padding-bottom: 55px; }
+            header { padding: 5px 20px; }
+            .category-pill-container { top: 40px; padding: 5px 15px 10px 15px; }
+
+            /* 1. CINE: Carrusel más bajito para que se vea la fila de Acción abajo */
+            .hero-card { flex: 0 0 35vw; } /* Más angosto para que entren varios */
+            .hero-card img { height: 45vh; max-height: 180px; } /* Altura basada en el % de la pantalla */
+            .section-header { margin-top: 10px; margin-bottom: 5px; }
+            .section-title { font-size: 15px; }
+
+            /* Filas de películas más compactas */
+            .movie-card-container { flex: 0 0 100px; }
+            .movie-poster-box img { height: 140px; }
+
+            /* 2. CANALES DE TV: Grilla más chica para que entren al menos 2 filas enteras */
+            .movie-grid { 
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+                gap: 10px; 
+            }
+            .canal-item img { padding: 5px; }
+            .canal-title { font-size: 10px; padding: 3px; }
+
+            /* Menú inferior más finito para que no tape el contenido */
+            nav { height: 50px; }
+            .nav-item i { font-size: 18px; margin-bottom: 2px; }
         }
     </style>
 </head>
