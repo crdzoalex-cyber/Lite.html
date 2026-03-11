@@ -649,6 +649,43 @@
                 }
             }
         }
+
+                      // === GUARDIA DE TRÁFICO PARA EL CONTROL REMOTO (SMART TV) ===
+        document.addEventListener('keydown', function(event) {
+            const focoActual = document.activeElement;
+
+            // 1. SI APRETAMOS LA FLECHA ARRIBA (Código 38)
+            if (event.key === 'ArrowUp' || event.keyCode === 38) {
+                // Si estamos parados en un canal o una película...
+                if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container')) {
+                    
+                    // Calculamos si estamos en la primera fila visible (cerca del techo)
+                    const posicionEnPantalla = focoActual.getBoundingClientRect();
+                    
+                    // Si está a menos de 250 píxeles del techo de la pantalla...
+                    if (posicionEnPantalla.top < 250) { 
+                        event.preventDefault(); // 🔥 TRUCO: Cancelamos el salto automático de la TV
+                        
+                        // Y lo obligamos a frenar en la píldora que esté pintada de azul
+                        const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
+                        if (pildoraActiva) pildoraActiva.focus();
+                    }
+                }
+            }
+
+            // 2. SI APRETAMOS LA FLECHA ABAJO (Código 40) DESDE EL BUSCADOR
+            if (event.key === 'ArrowDown' || event.keyCode === 40) {
+                // Si estamos parados en la caja de búsqueda...
+                if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
+                    event.preventDefault(); // 🔥 Cancelamos el salto directo a los canales
+                    
+                    // Y lo obligamos a bajar primero a los países
+                    const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
+                    if (pildoraActiva) pildoraActiva.focus();
+                }
+            }
+        });
+                      
     </script>  
                                         
 </body>
