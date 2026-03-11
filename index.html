@@ -89,35 +89,37 @@
         .movie-poster-box img { width: 100%; height: 170px; object-fit: cover; display: block; }
         .movie-title-text { font-size: 13px; color: #ddd; margin-top: 8px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; }
 
-        /* === CANALES TV === */
+        /* === CANALES TV (ACELERADOS POR HARDWARE) === */
         .canal-item { 
             border-radius: 8px; overflow: hidden; position: relative; 
             border: 1px solid rgba(30, 80, 255, 0.3); background: #000; 
-            cursor: pointer; transition: 0.2s; 
-            z-index: 1; /* 🔥 REGLA DE ORO: Siempre se queda abajo */
+            cursor: pointer; transition: transform 0.2s, border-color 0.2s; 
+            z-index: 1; 
+            /* 🔥 TRUCO MAGIA: Obligamos a la TV a usar su Placa de Video para que no se trabe */
+            transform: translateZ(0); 
+            will-change: transform; 
         }
-        /* Controlamos qué pasa cuando se toca o se selecciona con control remoto */
         .canal-item:active, .canal-item:focus { 
-            transform: scale(0.95); 
+            transform: scale(0.95) translateZ(0); 
             border-color: #2a60ff; 
             box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); 
-            outline: none; /* 🔥 Elimina el borde blanco gigante de Android TV */
-            z-index: 10; /* Sube un poquito, pero NUNCA tapa la cabecera */
+            outline: none; 
+            z-index: 10; 
         }
         .canal-item img { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain; padding: 10px; background: white; display: block; }
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
-        /* === PUNTO EN VIVO OPTIMIZADO PARA TV === */
+        
+        /* === PUNTO EN VIVO OPTIMIZADO EXTREMO (SIN ANIMACIÓN) === */
         .dot-live { 
             position: absolute; 
             top: 8px; 
             left: 8px; 
-            width: 12px; 
-            height: 12px; 
+            width: 10px; 
+            height: 10px; 
             background-color: #ff0033; 
             border-radius: 50%; 
             z-index: 10; 
-            box-shadow: 0 0 4px #ff0033; 
-            animation: latidoLigero 2s infinite alternate; /* Más lento para gastar menos CPU */
+            box-shadow: 0 0 3px #000; /* Sombra negra súper ligera */
         }
         @keyframes latidoLigero { 
             0% { opacity: 1; } 
@@ -384,59 +386,57 @@ window.miBaseDeDatos = {};
                 armarFila('row-series', db.seriesData);
 
                 // 3. DIBUJAMOS LOS CANALES (Carga Inteligente para evitar Lag)
-                window.todosLosCanales = db.channels || [];
-                renderizarCanalesPorLotes(window.todosLosCanales);
+                // === MOTOR DE SCROLL INFINITO PARA TV ===
+        window.canalIndex = 0;
+        window.canalesMostrados = [];
 
-            } catch (error) {
-                console.log("Error descargando el JSON:", error);
-                document.getElementById('hero-carousel').innerHTML = '<div style="color: red; padding: 20px;">Error al conectar con la base de datos.</div>';
-            }
-        }
-
-        // === CARGADOR INTELIGENTE DE CANALES (ANTI-LAG) ===
         function renderizarCanalesPorLotes(listaCanales) {
             const grillaTV = document.getElementById('grilla-tv');
             grillaTV.innerHTML = ''; 
-            clearTimeout(window.loteTimeout); // Frenamos cualquier carga vieja
             
-            // 1. Cargamos rápido solo 40 canales para que la pantalla encienda al instante
-            let htmlInicial = '';
-            const primeros = listaCanales.slice(0, 40);
-            primeros.forEach(canal => {
+            // Reiniciamos los contadores
+            window.canalesMostrados = listaCanales;
+            window.canalIndex = 0;
+            
+            // Arrancamos cargando SOLO 28 canales (Exactamente tu pantalla)
+            cargarMasCanales();
+        }
+
+        function cargarMasCanales() {
+            if (window.canalIndex >= window.canalesMostrados.length) return; // Ya no hay más para cargar
+            
+            const grillaTV = document.getElementById('grilla-tv');
+            let htmlLote = '';
+            
+            // 🔥 Cortamos exactamente 28 canales
+            const lote = window.canalesMostrados.slice(window.canalIndex, window.canalIndex + 28);
+            
+            lote.forEach(canal => {
                 const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
-                htmlInicial += `
-                    <div class="canal-item" tabindex="0" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" style="position:relative;">
+                htmlLote += `
+                    <div class="canal-item" tabindex="0" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')">
                         <div class="dot-live"></div>
                         <img src="${canal.logo}" alt="${canal.name}" loading="lazy">
                         <p class="canal-title">${canal.name}</p>
                     </div>`;
             });
-            grillaTV.innerHTML = htmlInicial;
-
-            // 2. Cargamos el resto de los canales en secreto, de a poquito (40 en 40)
-            let index = 40;
-            function renderizarSiguienteLote() {
-                if (index >= listaCanales.length) return; // Terminamos de cargar todo
-                
-                let htmlLote = '';
-                const lote = listaCanales.slice(index, index + 40);
-                lote.forEach(canal => {
-                    const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
-                    htmlLote += `
-                        <div class="canal-item" tabindex="0" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" style="position:relative;">
-                            <span class="badge-live" style="position:absolute; top:8px; left:8px; background:#ff0033; color:white; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10; box-shadow: 0 0 8px rgba(255,0,51,0.6);">🔴 EN VIVO</span>
-                            <img src="${canal.logo}" alt="${canal.name}" loading="lazy">
-                            <p class="canal-title">${canal.name}</p>
-                        </div>`;
-                });
-                grillaTV.insertAdjacentHTML('beforeend', htmlLote);
-                index += 40;
-                
-                // Le damos 200 milisegundos de descanso al procesador de la TV
-                window.loteTimeout = setTimeout(renderizarSiguienteLote, 200);
-            }
-            window.loteTimeout = setTimeout(renderizarSiguienteLote, 400);
+            
+            // Los inyectamos en la pantalla de golpe
+            grillaTV.insertAdjacentHTML('beforeend', htmlLote);
+            
+            // 🔥 Preparamos para los próximos 28
+            window.canalIndex += 28; 
         }
+
+        // 🔥 DETECTOR DE CONTROL REMOTO / DEDO: Solo carga más canales si llegás al fondo
+        window.addEventListener('scroll', () => {
+            // Si el usuario bajó y está a menos de 500 píxeles del final de la página...
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                clearTimeout(window.loteTimeout);
+                // Carga los próximos 28 con un pequeño retraso para no trabar el control remoto
+                window.loteTimeout = setTimeout(cargarMasCanales, 150);
+            }
+        });
 
         // === FUNCIONES AUXILIARES ===
         const armarFila = (idContenedor, arrayPelis) => {
