@@ -146,22 +146,25 @@
    
        /* === MODO HORIZONTAL (TV y Celulares acostados) === */
         @media (orientation: landscape) {
-            /* Achicamos márgenes superiores e inferiores para ganar espacio vital */
-            body { padding-top: 30px; padding-bottom: 55px; }
+            /* Achicamos márgenes superiores e inferiores */
+            body { padding-top: 60px; padding-bottom: 55px; }
             header { padding: 5px 20px; }
             .category-pill-container { top: 40px; padding: 5px 15px 10px 15px; }
 
-            /* 1. CINE: Carrusel más bajito para que se vea la fila de Acción abajo */
-            .hero-card { flex: 0 0 35vw; } /* Más angosto para que entren varios */
-            .hero-card img { height: 45vh; max-height: 180px; } /* Altura basada en el % de la pantalla */
-            .section-header { margin-top: 10px; margin-bottom: 5px; }
-            .section-title { font-size: 15px; }
+            /* 1. CINE ULTRA COMPACTO: Carrusel mini y textos reducidos */
+            .hero-card { flex: 0 0 28vw; } /* Carrusel más angosto */
+            .hero-card img { height: 35vh; max-height: 130px; } /* Altura reducida al máximo */
+            .hero-title { font-size: 14px; bottom: 8px; left: 10px; } /* Letra del carrusel más chica */
+            .section-header { margin-top: 5px; margin-bottom: 5px; }
+            .section-title { font-size: 14px; }
+            .btn-more { padding: 4px 10px; font-size: 10px; } /* Botón 'Ver más' más chiquito */
 
-            /* Filas de películas más compactas */
-            .movie-card-container { flex: 0 0 100px; }
-            .movie-poster-box img { height: 140px; }
+            /* Filas de películas ultra compactas */
+            .movie-card-container { flex: 0 0 85px; } /* Pósters más angostos */
+            .movie-poster-box img { height: 120px; } /* Pósters más bajitos */
+            .movie-title-text { font-size: 11px; margin-top: 4px; } /* Título de peli más chiquito */
 
-            /* 2. CANALES DE TV: Grilla más chica para que entren al menos 2 filas enteras */
+            /* 2. CANALES DE TV (Queda igual porque estaba perfecto) */
             .movie-grid { 
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
                 gap: 10px; 
@@ -169,7 +172,7 @@
             .canal-item img { padding: 5px; }
             .canal-title { font-size: 10px; padding: 3px; }
 
-            /* Menú inferior más finito para que no tape el contenido */
+            /* Menú inferior más finito */
             nav { height: 50px; }
             .nav-item i { font-size: 18px; margin-bottom: 2px; }
         }
