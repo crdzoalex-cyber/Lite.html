@@ -77,8 +77,17 @@
 
         /* === FILAS Y GRILLAS === */
         .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
-        .movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 15px 15px; }
-        
+        /* La grilla ahora calcula sola cuántas columnas entran según el ancho */
+        .movie-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+            gap: 15px; 
+            padding: 0 15px 15px 15px; 
+        }
+        /* Seguro para que en celulares chicos siempre se vean 2 exactos */
+        @media (max-width: 400px) {
+            .movie-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         .movie-card-container { flex: 0 0 115px; scroll-snap-align: start; cursor: pointer; display: flex; flex-direction: column; }
         .movie-grid .movie-card-container { flex: unset; width: 100%; }
 
@@ -90,7 +99,15 @@
         /* === CANALES TV === */
         .canal-item { border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); background: #000; cursor: pointer; transition: 0.2s; }
         .canal-item:active { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
-        .canal-item img { width: 100%; object-fit: contain; padding: 10px; height: 120px; background: white; display: block; }
+        .canal-item img { 
+            width: 100%; 
+            aspect-ratio: 16 / 9; /* 🔥 Esto fuerza el formato panorámico de TV */
+            height: auto; 
+            object-fit: contain; 
+            padding: 10px; 
+            background: white; 
+            display: block; 
+        }
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
         .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
@@ -125,6 +142,25 @@
         .player-title { color: white; font-weight: bold; font-size: 16px; text-shadow: 0 0 5px #2a60ff; }
         .close-btn { font-size: 30px; color: white; border: none; background: transparent; text-shadow: 0 0 10px #1e50ff; cursor: pointer; }
         #cinematic-container { flex: 1; width: 100%; background: #000; display: flex; justify-content: center; align-items: center;}
+   
+    /* === MODO SMART TV Y TABLETS (PANTALLA HORIZONTAL) === */
+        @media (min-width: 768px) {
+            /* En la TV, los estrenos principales son más angostos para que entren 3 en la pantalla */
+            .hero-card { flex: 0 0 35vw; }
+            .hero-card img { height: 280px; }
+            
+            /* En la TV, las películas de Acción/Terror son un poco más grandes */
+            .movie-card-container { flex: 0 0 160px; }
+            .movie-poster-box img { height: 240px; }
+            
+            /* En la TV, las cajas de los canales son un poco más grandes y se acomodan solas */
+            .movie-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+            
+            /* La botonera de abajo se hace más chica para no molestar la visión */
+            nav { height: 70px; }
+            .nav-item i { font-size: 24px; }
+            .nav-item { font-size: 13px; }
+        }
     </style>
 </head>
 <body>
