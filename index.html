@@ -322,15 +322,16 @@
         <div class="nav-item" tabindex="0" onclick="cambiarSeccion('sec-perfil', this)"><i>👤</i><span>Perfil</span></div>
     </nav>
 
-    <script>
-
-        
-window.miBaseDeDatos = {};
-        window.todosLosCanales = []; // Memoria global para que la TV no se ahogue
-        window.loteTimeout = null; // Controla la carga en segundo plano
+                  <script>
+        window.miBaseDeDatos = {};
+        window.todosLosCanales = []; 
+        window.loteTimeout = null; 
+        window.canalIndex = 0;
+        window.canalesMostrados = [];
 
         // === ARRANQUE INICIAL ===
         document.addEventListener('DOMContentLoaded', () => {
+            // Seguro anti-trabas: si algo falla, la intro muere a los 5 segs.
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 if (splash && splash.style.display !== 'none') {
@@ -338,6 +339,7 @@ window.miBaseDeDatos = {};
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
             }, 5000);
+            
             cargarBaseDeDatos();
         });
 
@@ -349,13 +351,14 @@ window.miBaseDeDatos = {};
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
+                // Ocultamos la intro de forma limpia
                 const splash = document.getElementById('splash-screen');
                 if(splash) {
                     splash.classList.add('splash-slide-up');
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
 
-                // 1. DIBUJAMOS EL CARRUSEL (Con soporte para Control Remoto TV)
+                // 1. DIBUJAMOS EL CARRUSEL
                 const heroCont = document.getElementById('hero-carousel');
                 let heroHTML = '';
                 if (db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
@@ -363,7 +366,6 @@ window.miBaseDeDatos = {};
                         const tituloLimpio = (item.title || '').replace(/'/g, "\\'");
                         let cartelInteligente = item.dur ? `<div class="hero-badge" style="background: #02050f;">⏱ ${item.dur}</div>` : '';
                         
-                        // 🔥 TRUCO TV: tabindex="0" y onkeydown para la tecla OK/Enter
                         heroHTML += `
                             <div class="hero-card" tabindex="0" onclick="playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')">
                                 ${cartelInteligente}
@@ -385,30 +387,33 @@ window.miBaseDeDatos = {};
                 armarFila('row-infantiles', db.peliculasInfantiles);
                 armarFila('row-series', db.seriesData);
 
-                // 3. DIBUJAMOS LOS CANALES (Carga Inteligente para evitar Lag)
-                // === MOTOR DE SCROLL INFINITO PARA TV ===
-        window.canalIndex = 0;
-        window.canalesMostrados = [];
+                // 3. DIBUJAMOS LOS CANALES (Scroll Infinito)
+                window.todosLosCanales = db.channels || [];
+                renderizarCanalesPorLotes(window.todosLosCanales);
 
+            } catch (error) {
+                console.log("Error descargando el JSON:", error);
+                document.getElementById('hero-carousel').innerHTML = '<div style="color: red; padding: 20px;">Error al conectar con la base de datos.</div>';
+            }
+        }
+
+        // === MOTOR DE SCROLL INFINITO PARA TV ===
         function renderizarCanalesPorLotes(listaCanales) {
             const grillaTV = document.getElementById('grilla-tv');
             grillaTV.innerHTML = ''; 
             
-            // Reiniciamos los contadores
             window.canalesMostrados = listaCanales;
             window.canalIndex = 0;
             
-            // Arrancamos cargando SOLO 28 canales (Exactamente tu pantalla)
             cargarMasCanales();
         }
 
         function cargarMasCanales() {
-            if (window.canalIndex >= window.canalesMostrados.length) return; // Ya no hay más para cargar
+            if (window.canalIndex >= window.canalesMostrados.length) return; 
             
             const grillaTV = document.getElementById('grilla-tv');
             let htmlLote = '';
             
-            // 🔥 Cortamos exactamente 28 canales
             const lote = window.canalesMostrados.slice(window.canalIndex, window.canalIndex + 28);
             
             lote.forEach(canal => {
@@ -421,19 +426,14 @@ window.miBaseDeDatos = {};
                     </div>`;
             });
             
-            // Los inyectamos en la pantalla de golpe
             grillaTV.insertAdjacentHTML('beforeend', htmlLote);
-            
-            // 🔥 Preparamos para los próximos 28
             window.canalIndex += 28; 
         }
 
-        // 🔥 DETECTOR DE CONTROL REMOTO / DEDO: Solo carga más canales si llegás al fondo
+        // DETECTOR DE SCROLL
         window.addEventListener('scroll', () => {
-            // Si el usuario bajó y está a menos de 500 píxeles del final de la página...
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
                 clearTimeout(window.loteTimeout);
-                // Carga los próximos 28 con un pequeño retraso para no trabar el control remoto
                 window.loteTimeout = setTimeout(cargarMasCanales, 150);
             }
         });
@@ -450,7 +450,6 @@ window.miBaseDeDatos = {};
                 const tituloLimpio = (peli.title || '').replace(/'/g, "\\'");
                 let cartelDuracion = peli.dur ? `<span style="position:absolute; top:8px; right:8px; background:rgba(2, 5, 15, 0.85); color:#fff; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10;">⏱ ${peli.dur}</span>` : '';
 
-                // 🔥 Soporte TV: tabindex="0"
                 cont.innerHTML += `
                     <div class="movie-card-container" tabindex="0" onclick="playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${peli.url}', ${peli.isYT || false}, '${tituloLimpio}')">
                         <div class="movie-poster-box" style="position:relative;">
@@ -528,7 +527,7 @@ window.miBaseDeDatos = {};
             document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
             document.getElementById(idSeccion).classList.add('active');
-            elementoBoton.classList.add('active');
+            if(elementoBoton) elementoBoton.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -559,18 +558,35 @@ window.miBaseDeDatos = {};
             let htmlResultados = '';
             let encontradas = 0;
 
-            // Busca súper rápido directo en la memoria RAM en lugar de revisar la pantalla
-            window.todosLosCanales.forEach(canal => {
-                if (canal.name.toLowerCase().includes(texto)) {
-                    const tituloLimpio = canal.name.replace(/'/g, "\\'");
-                    htmlResultados += `
-                        <div class="canal-item" tabindex="0" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')">
-                            <img src="${canal.logo}" alt="${canal.name}">
-                            <p class="canal-title">${canal.name}</p>
-                        </div>`;
-                    encontradas++;
-                }
-            });
+            // Diferenciamos si busca en TV o en Películas
+            if (seccionAnterior === 'sec-tv') {
+                window.todosLosCanales.forEach(canal => {
+                    if (canal.name.toLowerCase().includes(texto)) {
+                        const tituloLimpio = canal.name.replace(/'/g, "\\'");
+                        htmlResultados += `
+                            <div class="canal-item" tabindex="0" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')">
+                                <div class="dot-live"></div>
+                                <img src="${canal.logo}" alt="${canal.name}">
+                                <p class="canal-title">${canal.name}</p>
+                            </div>`;
+                        encontradas++;
+                    }
+                });
+            } else {
+                const seccionDondeBuscar = document.getElementById(seccionAnterior);
+                seccionDondeBuscar.querySelectorAll('.movie-card-container').forEach(tarjeta => {
+                    let titulo = "";
+                    const img = tarjeta.querySelector('img');
+                    if(img && img.alt) titulo += img.alt.toLowerCase();
+                    const textoInterior = tarjeta.innerText;
+                    if(textoInterior) titulo += " " + textoInterior.toLowerCase();
+
+                    if (titulo.includes(texto)) {
+                        htmlResultados += tarjeta.outerHTML; 
+                        encontradas++;
+                    }
+                });
+            }
 
             if(encontradas === 0) {
                 contenedorResultados.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:20px; color:#aaa;">No se encontró nada 🛸</div>';
@@ -587,7 +603,6 @@ window.miBaseDeDatos = {};
             if (categoria === 'todos') {
                 renderizarCanalesPorLotes(window.todosLosCanales);
             } else {
-                // Filtramos en milisegundos usando la memoria
                 const filtrados = window.todosLosCanales.filter(c => c.cat === categoria);
                 renderizarCanalesPorLotes(filtrados);
             }
@@ -627,6 +642,7 @@ window.miBaseDeDatos = {};
                 }
             }
         }
-    </script>
+    </script>  
+                                        
 </body>
 </html>
