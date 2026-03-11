@@ -106,9 +106,23 @@
         }
         .canal-item img { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain; padding: 10px; background: white; display: block; }
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
-        .badge-live { position: absolute; top: 5px; right: 5px; background: #ff0033; color: white; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #ff0033; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
-    
+        /* === PUNTO EN VIVO OPTIMIZADO PARA TV === */
+        .dot-live { 
+            position: absolute; 
+            top: 8px; 
+            left: 8px; 
+            width: 12px; 
+            height: 12px; 
+            background-color: #ff0033; 
+            border-radius: 50%; 
+            z-index: 10; 
+            box-shadow: 0 0 4px #ff0033; 
+            animation: latidoLigero 2s infinite alternate; /* Más lento para gastar menos CPU */
+        }
+        @keyframes latidoLigero { 
+            0% { opacity: 1; } 
+            100% { opacity: 0.2; } 
+        }
         /* === TV PILLS === */
         .category-pill-container { 
             display: flex; 
@@ -392,7 +406,7 @@ window.miBaseDeDatos = {};
                 const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
                 htmlInicial += `
                     <div class="canal-item" tabindex="0" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" style="position:relative;">
-                        <span class="badge-live" style="position:absolute; top:8px; left:8px; background:#ff0033; color:white; font-size:10px; font-weight:bold; padding:4px 7px; border-radius:4px; z-index:10; box-shadow: 0 0 8px rgba(255,0,51,0.6);">🔴 EN VIVO</span>
+                        <div class="dot-live"></div>
                         <img src="${canal.logo}" alt="${canal.name}" loading="lazy">
                         <p class="canal-title">${canal.name}</p>
                     </div>`;
