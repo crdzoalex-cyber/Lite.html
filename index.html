@@ -151,12 +151,12 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
             border: 2px solid transparent; border-radius: 12px;
             
-            /* 🔥 TRUCO: Márgenes normales. Le sacamos el margen gigante de 75px */
-            margin: 15px auto 20px auto; 
+            /* 🔥 LA SOLUCIÓN: Le devolvemos el empujón de 85px para que el buscador NO se lo trague */
+            margin: 85px auto 20px auto; 
             width: calc(100% - 30px); 
             max-width: 650px; 
             
-            /* 🔥 TRUCO: z-index para que SIEMPRE flote por encima de los canales */
+            /* 🔥 TRUCO: z-index para que flote bien */
             z-index: 10; flex-shrink: 0;
             
             height: 120px; 
@@ -169,7 +169,8 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             .promo-banner {
                 height: 140px; 
                 border-radius: 20px;
-                margin-top: 25px; /* Margen normal para TV */
+                /* 🔥 Empujón un poquito más grande para la TV */
+                margin-top: 95px; 
                 margin-bottom: 25px; 
             }
             .promo-content { padding: 20px 30px !important; } 
