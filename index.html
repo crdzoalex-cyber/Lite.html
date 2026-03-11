@@ -15,7 +15,6 @@
             font-family: 'Segoe UI', sans-serif; 
             overflow-x: hidden; 
             padding-bottom: 70px; 
-            /* 🔥 Redujimos el margen gigante para matar el espacio negro inicial */
             padding-top: calc(75px + env(safe-area-inset-top, 25px)); 
         }
         ::-webkit-scrollbar { display: none; }
@@ -28,24 +27,13 @@
 
         /* === CABECERA === */
         header { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+            position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; 
             padding: calc(10px + env(safe-area-inset-top, 35px)) 20px 10px 20px; 
-            background: #02050f; /* 🔥 Fondo sólido impenetrable */
-            border-bottom: 1px solid #1e50ff; 
-            box-shadow: 0 5px 15px rgba(2, 5, 15, 1); 
-            z-index: 999; /* 🔥 Capa máxima absoluta */
+            background: #02050f; border-bottom: 1px solid #1e50ff; box-shadow: 0 5px 15px rgba(2, 5, 15, 1); z-index: 999; 
         }
-        
         .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .logo-nova { font-size: 22px; font-weight: 900; color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); letter-spacing: 2px; line-height: 1; }
         .logo-lite { font-size: 9px; font-weight: 600; color: #888; letter-spacing: 4px; margin-top: 2px; }
-
         .search-container { display: flex; align-items: center; background: rgba(30, 80, 255, 0.1); border-radius: 20px; padding: 4px 12px; border: 1px solid rgba(30, 80, 255, 0.5); }
         .search-bar { background: transparent; border: none; color: white; outline: none; width: 130px; font-size: 14px; transition: 0.3s; }
         .search-bar::placeholder { color: #5577cc; }
@@ -59,10 +47,8 @@
         /* === CABECERAS === */
         .section-header { display: flex; justify-content: space-between; align-items: center; padding-right: 15px; margin-top: 20px; margin-bottom: 10px; }
         .section-title { margin: 0 0 0 15px; font-size: 17px; font-weight: bold; border-left: 3px solid #1e50ff; padding-left: 10px; text-shadow: 0 0 8px rgba(30, 80, 255, 0.6); }
-        
         .btn-more, .btn-back { background: rgba(30,80,255,0.2); border: 1px solid #2a60ff; color: white; padding: 6px 14px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 12px; transition: 0.2s; display: flex; align-items: center; gap: 5px; }
         .btn-more:active, .btn-back:active { transform: scale(0.95); background: rgba(30,80,255,0.4); }
-
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
         .btn-back { font-size: 14px; } 
 
@@ -70,22 +56,15 @@
         .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
         .hero-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 15px; padding-left: 15px; padding-right: 15vw; -webkit-overflow-scrolling: touch; }
         .hero-carousel::-webkit-scrollbar { display: none; }
-       /* === CARRUSEL DE ESTRENOS === */
+        
+        /* === CARRUSEL DE ESTRENOS === */
         .hero-card { 
-            /* 🔥 Le sacamos los estilos feos de botón de Android */
             background: transparent; border: none; padding: 0; margin: 0; outline: none; font-family: inherit;
-            /* Tus estilos normales */
             position: relative; flex: 0 0 85%; max-width: 400px; height: 200px; 
             border-radius: 12px; overflow: hidden; cursor: pointer; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; 
         }
-        
-        /* 🔥 Foco para el control remoto */
-        .hero-card:focus { 
-            transform: scale(0.95); 
-            border: 2px solid #2a60ff; /* Borde azul brillante al seleccionarlo */
-            box-shadow: 0 0 15px rgba(30, 80, 255, 0.8); 
-        }
+        .hero-card:focus { transform: scale(0.95); border: 2px solid #2a60ff; box-shadow: 0 0 15px rgba(30, 80, 255, 0.8); }
         .hero-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .hero-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; background: linear-gradient(to top, rgba(2,5,15,1) 0%, rgba(2,5,15,0) 100%); pointer-events: none; }
         .hero-title { position: absolute; bottom: 15px; left: 15px; right: 15px; font-size: 20px; font-weight: bold; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
@@ -98,77 +77,47 @@
         
         .movie-card-container { flex: 0 0 115px; scroll-snap-align: start; cursor: pointer; display: flex; flex-direction: column; }
         .movie-grid .movie-card-container { flex: unset; width: 100%; }
-
         .movie-poster-box { border-radius: 8px; overflow: hidden; position: relative; background: #000; border: 1px solid rgba(30, 80, 255, 0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: 0.2s; }
         .movie-card-container:active .movie-poster-box { transform: scale(0.95); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); }
         .movie-poster-box img { width: 100%; height: 170px; object-fit: cover; display: block; }
         .movie-title-text { font-size: 13px; color: #ddd; margin-top: 8px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; }
 
-        /* === CANALES TV (ACELERADOS POR HARDWARE) === */
+        /* === CANALES TV === */
         .canal-item { 
             border-radius: 8px; overflow: hidden; position: relative; 
             border: 1px solid rgba(30, 80, 255, 0.3); background: #000; 
-            cursor: pointer; transition: transform 0.2s, border-color 0.2s; 
-            z-index: 1; 
-            /* 🔥 TRUCO MAGIA: Obligamos a la TV a usar su Placa de Video para que no se trabe */
-            transform: translateZ(0); 
-            will-change: transform; 
+            cursor: pointer; transition: transform 0.2s, border-color 0.2s; z-index: 1; 
+            transform: translateZ(0); will-change: transform; 
         }
-        .canal-item:active, .canal-item:focus { 
-            transform: scale(0.95) translateZ(0); 
-            border-color: #2a60ff; 
-            box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); 
-            outline: none; 
-            z-index: 10; 
-        }
+        .canal-item:active, .canal-item:focus { transform: scale(0.95) translateZ(0); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); outline: none; z-index: 10; }
         .canal-item img { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain; padding: 10px; background: white; display: block; }
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
         
-        /* === PUNTO EN VIVO OPTIMIZADO EXTREMO (SIN ANIMACIÓN) === */
-        .dot-live { 
-            position: absolute; 
-            top: 8px; 
-            left: 8px; 
-            width: 10px; 
-            height: 10px; 
-            background-color: #ff0033; 
-            border-radius: 50%; 
-            z-index: 10; 
-            box-shadow: 0 0 3px #000; /* Sombra negra súper ligera */
-        }
-        @keyframes latidoLigero { 
-            0% { opacity: 1; } 
-            100% { opacity: 0.2; } 
+        .dot-live { position: absolute; top: 8px; left: 8px; width: 10px; height: 10px; background-color: #ff0033; border-radius: 50%; z-index: 10; box-shadow: 0 0 3px #000; }
+        @keyframes latidoLigero { 0% { opacity: 1; } 100% { opacity: 0.2; } }
+
+        /* ========================================= */
+        /* === CAJA INVISIBLE Y BANNER PROMO PRO === */
+        /* ========================================= */
+        .banner-wrapper {
+            width: 100%; display: block;
+            padding-top: 10px; /* Separación limpia del buscador */
+            padding-bottom: 15px; /* Separación limpia de los países */
+            background: transparent;
         }
 
-Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo selecciones con el control remoto de la tele. Pegá esto en tu bloque de `<style>`, puede ser justo arriba de donde tenés los estilos de las píldoras (`/* === TV PILLS === */`):
-
-/* === BANNER PROMO PRO === */
         .promo-banner {
             display: flex; justify-content: space-between; align-items: center;
             background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
             border: 2px solid transparent; border-radius: 12px;
-            
-            /* 🔥 CORRECCIÓN: Margen normal. Nada de empujones locos de 85px */
-            margin: 15px auto 20px auto; 
-            width: calc(100% - 30px); 
-            max-width: 650px; 
-            z-index: 10; flex-shrink: 0;
-            
-            height: 120px; 
+            margin: 0 auto; width: calc(100% - 30px); max-width: 650px; 
+            z-index: 10; flex-shrink: 0; height: 120px; 
             position: relative; padding: 0; cursor: pointer; box-sizing: border-box;
             outline: none; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             font-family: inherit; color: white; overflow: hidden;
         }
-
         @media screen and (min-width: 1000px) {
-            .promo-banner {
-                height: 140px; 
-                border-radius: 20px;
-                /* 🔥 Empujón un poquito más grande para la TV */
-                margin-top: 95px; 
-                margin-bottom: 25px; 
-            }
+            .promo-banner { height: 140px; border-radius: 20px; }
             .promo-content { padding: 20px 30px !important; } 
             .promo-content h3 { font-size: 24px !important; margin-bottom: 6px !important; } 
             .promo-content p { font-size: 14px !important; } 
@@ -176,139 +125,64 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             .nova-slogan { font-size: 12px !important; margin-top: 8px !important; }
             .promo-badge { font-size: 10px !important; top: 12px !important; right: 15px !important; }
         }
-
-        .promo-banner:focus {
-            transform: scale(0.98); border-color: #ffffff;
-            box-shadow: 0 0 20px rgba(30, 80, 255, 0.9);
-        }
-
-        .promo-content {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 20px; box-sizing: border-box; 
-            opacity: 0; visibility: hidden;
-            transition: opacity 0.8s ease-in-out, visibility 0.8s;
-        }
+        .promo-banner:focus { transform: scale(0.98); border-color: #ffffff; box-shadow: 0 0 20px rgba(30, 80, 255, 0.9); }
+        .promo-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; box-sizing: border-box; opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in-out, visibility 0.8s; }
         .promo-content.active { opacity: 1; visibility: visible; }
-
         .promo-text-wrapper { flex: 1; padding-right: 15px; text-align: left; }
         .promo-content h3 { margin: 0 0 4px 0; font-size: 15px; font-weight: bold; text-shadow: 1px 1px 3px #000; }
         .promo-content p { margin: 0; font-size: 11px; color: #d0d8ff; line-height: 1.2; }
-        
-        .promo-badge { 
-            background: #ff0033; color: white; font-size: 9px; 
-            padding: 3px 6px; border-radius: 4px; font-weight: bold; 
-            position: absolute; top: 10px; right: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 10;
-        }
-        
-        .promo-btn {
-            background: rgba(255, 255, 255, 0.2); padding: 7px 12px;
-            border-radius: 20px; font-size: 11px; font-weight: bold;
-            white-space: nowrap; border: 1px solid rgba(255,255,255,0.5);
-        }
+        .promo-badge { background: #ff0033; color: white; font-size: 9px; padding: 3px 6px; border-radius: 4px; font-weight: bold; position: absolute; top: 10px; right: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 10; }
+        .promo-btn { background: rgba(255, 255, 255, 0.2); padding: 7px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; white-space: nowrap; border: 1px solid rgba(255,255,255,0.5); }
         .cartel-2-btn { background: #ff0033 !important; border-color: transparent; }
         .nova-slogan { font-weight: bold; font-style: italic; font-size: 10px !important; color: #fff !important; margin-top: 4px !important; text-shadow: none;}
 
-
         /* ========================================= */
-        /* === 2. TV PILLS / PAÍSES (RESTAURADOS) === */
+        /* === PÍLDORAS / PAÍSES === */
         /* ========================================= */
         .category-pill-container { 
-            display: flex; overflow-x: auto; gap: 10px; 
-            padding: 5px 15px 25px 15px; scroll-snap-type: x mandatory; 
-            position: -webkit-sticky; position: sticky;
-            top: calc(55px + env(safe-area-inset-top, 25px)); 
-            z-index: 998; background: #02050f; 
-            box-shadow: 0 -40px 0px #02050f; 
-            border-bottom: 1px solid rgba(30, 80, 255, 0.2); 
-            scrollbar-width: none; /* Oculta la barra de scroll abajo de los países */
+            display: flex; overflow-x: auto; gap: 10px; padding: 5px 15px 25px 15px; scroll-snap-type: x mandatory; 
+            position: -webkit-sticky; position: sticky; top: calc(55px + env(safe-area-inset-top, 25px)); 
+            z-index: 998; background: #02050f; box-shadow: 0 -40px 0px #02050f; border-bottom: 1px solid rgba(30, 80, 255, 0.2); 
+            scrollbar-width: none; 
         }
         .category-pill-container::-webkit-scrollbar { display: none; }
-        
-        .category-pill { 
-            background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); 
-            color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; 
-            white-space: nowrap; cursor: pointer; transition: 0.3s; 
-            outline: none; font-family: inherit;
-        }
-        
-        .category-pill.active { 
-            background: rgba(30, 80, 255, 0.3); color: #fff; 
-            border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); 
-            font-weight: bold; 
-        }
-
-        /* Foco para el Control Remoto (TV) */
-        .category-pill:focus { 
-            background: rgba(30, 80, 255, 0.6); border-color: #fff; 
-            box-shadow: 0 0 10px #2a60ff; transform: scale(1.05); 
-        }
-        
+        .category-pill { background: rgba(30, 80, 255, 0.1); border: 1px solid rgba(30, 80, 255, 0.4); color: #aaa; padding: 6px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; transition: 0.3s; outline: none; font-family: inherit; }
+        .category-pill.active { background: rgba(30, 80, 255, 0.3); color: #fff; border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.4); font-weight: bold; }
+        .category-pill:focus { background: rgba(30, 80, 255, 0.6); border-color: #fff; box-shadow: 0 0 10px #2a60ff; transform: scale(1.05); }
         
         /* === NAVEGACIÓN === */
         nav { 
             position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; 
-            background: #02050f; border-top: 1px solid #1e50ff; 
-            box-shadow: 0 -5px 15px rgba(2, 5, 15, 1); 
+            background: #02050f; border-top: 1px solid #1e50ff; box-shadow: 0 -5px 15px rgba(2, 5, 15, 1); 
             display: flex; justify-content: space-around; align-items: center; z-index: 999; 
         }
-        
-        .nav-item { 
-            display: flex; flex-direction: column; align-items: center; 
-            color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; 
-            outline: none; background: transparent; border: none; font-family: inherit; padding: 0;
-        }
+        .nav-item { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 10px; cursor: pointer; transition: 0.3s; outline: none; background: transparent; border: none; font-family: inherit; padding: 0; }
         .nav-item.active { color: #2a60ff; text-shadow: 0 0 10px rgba(30, 80, 255, 0.8); }
         .nav-item i { font-size: 22px; margin-bottom: 3px; font-style: normal; }
+        .nav-item:focus { color: #2a60ff; text-shadow: 0 0 15px rgba(30, 80, 255, 1); transform: scale(1.1); }
 
-        /* 🔥 Foco para el Control Remoto (TV) */
-        .nav-item:focus { 
-            color: #2a60ff; text-shadow: 0 0 15px rgba(30, 80, 255, 1); transform: scale(1.1); 
-        }
-        /* === MODO HORIZONTAL (TV y Celulares acostados) === */
+        /* === MODO HORIZONTAL === */
         @media (orientation: landscape) {
             body { padding-top: 60px; padding-bottom: 55px; }
             header { padding: 5px 20px; }
-            /* Ajuste de píldoras en horizontal */
-            .category-pill-container { 
-                top: 45px; 
-                padding: 5px 15px 15px 15px; 
-                box-shadow: 0 -30px 0px #02050f; 
-            }
-            
+            .category-pill-container { top: 45px; padding: 5px 15px 15px 15px; box-shadow: 0 -30px 0px #02050f; }
             .hero-card { flex: 0 0 35vw; } 
             .hero-card img { height: 45vh; max-height: 180px; } 
             .section-header { margin-top: 10px; margin-bottom: 5px; }
             .section-title { font-size: 15px; }
-
             .movie-card-container { flex: 0 0 100px; }
             .movie-poster-box img { height: 140px; }
-
             .movie-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
             .canal-item img { padding: 5px; }
             .canal-title { font-size: 10px; padding: 3px; }
-
             nav { height: 50px; }
             .nav-item i { font-size: 18px; margin-bottom: 2px; }
         }
 
         /* === MODO CONTROL REMOTO (TV FOCUS) === */
-        
         *:focus { outline: none; } 
-        .hero-card:focus, 
-        .movie-card-container:focus .movie-poster-box, 
-        .canal-item:focus,
-        .category-pill:focus,
-        .nav-item:focus,
-        .search-bar:focus,
-        .btn-more:focus,
-        .btn-back:focus {
-            transform: scale(1.08) !important;
-            border: 3px solid #ffffff !important;
-            box-shadow: 0 0 25px rgba(42, 96, 255, 0.9) !important;
-            z-index: 100;
-            transition: 0.2s;
-            border-radius: 8px;
+        .hero-card:focus, .movie-card-container:focus .movie-poster-box, .canal-item:focus, .category-pill:focus, .nav-item:focus, .search-bar:focus, .btn-more:focus, .btn-back:focus {
+            transform: scale(1.08) !important; border: 3px solid #ffffff !important; box-shadow: 0 0 25px rgba(42, 96, 255, 0.9) !important; z-index: 100; transition: 0.2s; border-radius: 8px;
         }
         .hero-card:focus { border-radius: 12px; }
         .category-pill:focus, .nav-item:focus, .btn-more:focus, .btn-back:focus { border-radius: 20px; }
@@ -352,19 +226,16 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                     <div style="color: #2a60ff; padding: 20px; width: 100%; text-align: center;">Cargando estrenos... 🚀</div>
                 </div>
             </div>
-
             <div class="section-header">
                 <h3 class="section-title">🔥 Acción</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-accion"></div>
-
             <div class="section-header">
                 <h3 class="section-title">👻 Terror</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-terror"></div>
-
             <div class="section-header">
                 <h3 class="section-title">🧸 Infantiles</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">Ver más ❯</button>
@@ -379,8 +250,8 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             </div>
             <div class="movie-row" id="row-series"></div>
         </div>
-<div id="sec-tv" class="content-section">
-            
+
+        <div id="sec-tv" class="content-section">
             <div class="banner-wrapper">
                 <button class="promo-banner" onclick="abrirPromoPro()" onkeydown="if(event.key==='Enter' || event.keyCode===13) abrirPromoPro()">
                     <div class="promo-content cartel-1 active">
@@ -401,6 +272,7 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                     </div>
                 </button>
             </div>
+
             <div class="category-pill-container">
                 <button class="category-pill active" onclick="filtrarCanales('todos', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('todos', this)">Todos</button>
                 <button class="category-pill" onclick="filtrarCanales('bolivia', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('bolivia', this)">Bolivia</button>
@@ -432,14 +304,13 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
     </main>
 
     <nav>
-        <nav>
         <button class="nav-item active" onclick="cambiarSeccion('sec-cine', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-cine', this)"><i>🎬</i><span>Cine</span></button>
         <button class="nav-item" onclick="cambiarSeccion('sec-series', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-series', this)"><i>📺</i><span>Series</span></button>
         <button class="nav-item" onclick="cambiarSeccion('sec-tv', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-tv', this)"><i>📡</i><span>TV</span></button>
         <button class="nav-item" onclick="cambiarSeccion('sec-perfil', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-perfil', this)"><i>👤</i><span>Perfil</span></button>
     </nav>
 
-                  <script>
+    <script>
         window.miBaseDeDatos = {};
         window.todosLosCanales = []; 
         window.loteTimeout = null; 
@@ -448,7 +319,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
 
         // === ARRANQUE INICIAL ===
         document.addEventListener('DOMContentLoaded', () => {
-            // Seguro anti-trabas: si algo falla, la intro muere a los 5 segs.
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 if (splash && splash.style.display !== 'none') {
@@ -456,7 +326,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
             }, 5000);
-            
             cargarBaseDeDatos();
         });
 
@@ -468,14 +337,12 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
-                // Ocultamos la intro de forma limpia
                 const splash = document.getElementById('splash-screen');
                 if(splash) {
                     splash.classList.add('splash-slide-up');
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
 
-                // 1. DIBUJAMOS EL CARRUSEL
                 const heroCont = document.getElementById('hero-carousel');
                 let heroHTML = '';
                 if (db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
@@ -483,7 +350,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                         const tituloLimpio = (item.title || '').replace(/'/g, "\\'");
                         let cartelInteligente = item.dur ? `<div class="hero-badge" style="background: #02050f;">⏱ ${item.dur}</div>` : '';
                         
-                        // 🔥 TRUCO TV: Ahora son <button> para que la tele no los pueda ignorar
                         heroHTML += `
                             <button class="hero-card" onclick="playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')">
                                 ${cartelInteligente}
@@ -499,13 +365,11 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                     heroCont.innerHTML = '<div style="color: #5577cc; padding: 20px;">No hay estrenos hoy.</div>';
                 }
 
-                // 2. DIBUJAMOS LAS FILAS
                 armarFila('row-accion', db.peliculasAccion);
                 armarFila('row-terror', db.peliculasTerror);
                 armarFila('row-infantiles', db.peliculasInfantiles);
                 armarFila('row-series', db.seriesData);
 
-                // 3. DIBUJAMOS LOS CANALES (Scroll Infinito)
                 window.todosLosCanales = db.channels || [];
                 renderizarCanalesPorLotes(window.todosLosCanales);
 
@@ -519,19 +383,15 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
         function renderizarCanalesPorLotes(listaCanales) {
             const grillaTV = document.getElementById('grilla-tv');
             grillaTV.innerHTML = ''; 
-            
             window.canalesMostrados = listaCanales;
             window.canalIndex = 0;
-            
             cargarMasCanales();
         }
 
         function cargarMasCanales() {
             if (window.canalIndex >= window.canalesMostrados.length) return; 
-            
             const grillaTV = document.getElementById('grilla-tv');
             let htmlLote = '';
-            
             const lote = window.canalesMostrados.slice(window.canalIndex, window.canalIndex + 28);
             
             lote.forEach(canal => {
@@ -548,7 +408,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             window.canalIndex += 28; 
         }
 
-        // DETECTOR DE SCROLL
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
                 clearTimeout(window.loteTimeout);
@@ -649,7 +508,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // === BUSCADOR INTELIGENTE Y EXTREMADAMENTE RÁPIDO ===
         let temporizadorBusqueda;
         function buscarInteligente(texto) {
             clearTimeout(temporizadorBusqueda);
@@ -676,7 +534,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             let htmlResultados = '';
             let encontradas = 0;
 
-            // Diferenciamos si busca en TV o en Películas
             if (seccionAnterior === 'sec-tv') {
                 window.todosLosCanales.forEach(canal => {
                     if (canal.name.toLowerCase().includes(texto)) {
@@ -713,7 +570,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             }
         }
 
-        // === FILTRO TV ULTRA RÁPIDO ===
         function filtrarCanales(categoria, botonApretado) {
             document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
             botonApretado.classList.add('active');
@@ -728,7 +584,6 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
 
         function playCinematic(arg1, arg2, arg3) {
             if (!arg1) return; 
-            
             let urlVideo = String(arg1);
             let tituloVideo = (arg2 === true || arg2 === false || arg2 === "true" || arg2 === "false") ? arg3 : arg2;
             if (!tituloVideo) tituloVideo = "Canal en Vivo";
@@ -742,11 +597,9 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
                     else if (urlVideo.includes("youtu.be/")) videoId = urlVideo.split('youtu.be/')[1];
                     else if (urlVideo.includes("/live/")) videoId = urlVideo.split('/live/')[1];
                     else videoId = urlVideo.split('/').pop();
-                    
                     if (videoId.includes('?')) videoId = videoId.split('?')[0];
                     if (videoId.includes('&')) videoId = videoId.split('&')[0];
                 }
-
                 if (typeof AndroidInterface !== "undefined") {
                     AndroidInterface.abrirYouTube(videoId, String(tituloVideo));
                 } else {
@@ -761,43 +614,30 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             }
         }
 
-                      // === GUARDIA DE TRÁFICO PARA EL CONTROL REMOTO (SMART TV) ===
+        // === GUARDIA DE TRÁFICO ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
-
-            // 1. SI APRETAMOS LA FLECHA ARRIBA
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
                 if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container') || focoActual.classList.contains('hero-card')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
-                    
                     if (posicionEnPantalla.top < 250) { 
                         event.preventDefault(); 
-                        
-                        // Si estamos en TV, subimos a los países
                         if (document.getElementById('sec-tv').classList.contains('active')) {
                             const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
                             if (pildoraActiva) pildoraActiva.focus();
-                        }
-                        // Si estamos en Cine/Series, subimos al buscador
-                        else {
+                        } else {
                             document.getElementById('searchInput').focus();
                         }
                     }
                 }
             }
-
-            // 2. SI APRETAMOS LA FLECHA ABAJO DESDE EL BUSCADOR
             if (event.key === 'ArrowDown' || event.keyCode === 40) {
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
                     event.preventDefault(); 
-                    
-                    // Si estamos en Cine, bajamos obligado al Carrusel de Estrenos
                     if (document.getElementById('sec-cine').classList.contains('active')) {
                         const primerEstreno = document.querySelector('.hero-card');
                         if (primerEstreno) primerEstreno.focus();
-                    } 
-                    // Si estamos en TV, bajamos obligado a los Países
-                    else if (document.getElementById('sec-tv').classList.contains('active')) {
+                    } else if (document.getElementById('sec-tv').classList.contains('active')) {
                         const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
                         if (pildoraActiva) pildoraActiva.focus();
                     }
@@ -805,14 +645,7 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
             }
         });
 
-                      // === FUNCIÓN PROMO PRO ===
-        function abrirPromoPro() {
-            // Acá más adelante podemos poner el link de descarga de tu app PRO
-            // Por ahora, lanzamos un cartelito de aviso.
-            alert("¡Próximamente! Descarga la versión PRO para eliminar todos los anuncios.");
-        }
-
-                      // === MOTOR DE TRANSICIÓN DE BANNERS PROMO ===
+        // === MOTOR DE TRANSICIÓN DE BANNERS ===
         document.addEventListener('DOMContentLoaded', () => {
             const cartel1 = document.querySelector('.cartel-1');
             const cartel2 = document.querySelector('.cartel-2');
@@ -820,33 +653,26 @@ Vamos a darle un toque brillante, con un degradado y un efecto para cuando lo se
 
             let intervalId;
             const startPromoTransition = () => {
-                clearInterval(intervalId); // Limpia cualquier temporizador previo
+                clearInterval(intervalId);
                 intervalId = setInterval(() => {
-                    // Cambia la clase active entre las dos cartelitas
                     cartel1.classList.toggle('active');
                     cartel2.classList.toggle('active');
-                }, 6000); // Transición cada 6 segundos
+                }, 6000); 
             };
-            
-            // Iniciamos la transición automática al cargar la página
             startPromoTransition(); 
             
-            // 🔥 TRUCO TV: Si el usuario para el foco con el control, pausamos la animación
             const promoBanner = document.querySelector('.promo-banner');
             if (promoBanner) {
-                promoBanner.addEventListener('focus', () => {
-                    clearInterval(intervalId); // Pausamos para que pueda leer tranquilo
-                });
-                promoBanner.addEventListener('blur', () => {
-                    startPromoTransition(); // Reanudamos al salir
-                });
-                // También agregamos eventos de ratón para el celular
+                promoBanner.addEventListener('focus', () => clearInterval(intervalId));
+                promoBanner.addEventListener('blur', () => startPromoTransition());
                 promoBanner.addEventListener('mouseenter', () => clearInterval(intervalId));
                 promoBanner.addEventListener('mouseleave', () => startPromoTransition());
             }
         });
-                      
-    </script>  
-                                        
+
+        function abrirPromoPro() {
+            alert("¡Próximamente! Descarga la versión PRO para eliminar todos los anuncios.");
+        }
+    </script>                                        
 </body>
 </html>
