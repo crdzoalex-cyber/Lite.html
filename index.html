@@ -393,7 +393,7 @@
             if (window.canalIndex >= window.canalesMostrados.length) return; 
             const grillaTV = document.getElementById('grilla-tv');
             let htmlLote = '';
-            const lote = window.canalesMostrados.slice(window.canalIndex, window.canalIndex + 12);
+            const lote = window.canalesMostrados.slice(window.canalIndex, window.canalIndex + 28);
             
             lote.forEach(canal => {
                 const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
