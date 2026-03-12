@@ -8,14 +8,9 @@
         /* === ESTILOS BASE (AZUL NOVA) === */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { 
-            margin: 0; 
-            padding: 0; 
-            background-color: #02050f; 
-            color: #ffffff; 
-            font-family: 'Segoe UI', sans-serif; 
-            overflow-x: hidden; 
-            padding-bottom: 70px; 
-            padding-top: calc(75px + env(safe-area-inset-top, 25px)); 
+            margin: 0; padding: 0; background-color: #02050f; color: #ffffff; 
+            font-family: 'Segoe UI', sans-serif; overflow-x: hidden; 
+            padding-bottom: 70px; padding-top: calc(75px + env(safe-area-inset-top, 25px)); 
         }
         ::-webkit-scrollbar { display: none; }
 
@@ -52,7 +47,7 @@
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
         .btn-back { font-size: 14px; } 
 
-        /* === NUEVO BANNER ÚNICO (OPTIMIZADO PARA TV) === */
+        /* === NUEVO BANNER ÚNICO (DISEÑO ANTI-PIXELADO PARA TV) === */
         .hero-carousel-wrapper { width: 100%; position: relative; margin-bottom: 10px; padding-top: 5px; }
         
         .hero-banner-single {
@@ -62,20 +57,31 @@
             display: block; outline: none;
         }
 
-        .hero-banner-single img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.5s ease-in-out; }
-
-        .hero-gradient {
-            position: absolute; bottom: 0; left: 0; width: 100%; height: 70%;
-            background: linear-gradient(to top, rgba(2,5,15,0.9) 0%, rgba(2,5,15,0) 100%); pointer-events: none;
+        /* MAGIA: La imagen no se estira, se acomoda a la derecha entera */
+        .hero-banner-single img { 
+            width: 70%; 
+            height: 100%; 
+            object-fit: contain; 
+            object-position: right center;
+            position: absolute; right: 0; top: 0;
+            transition: opacity 0.5s ease-in-out; 
         }
 
-        .hero-info { position: absolute; bottom: 15px; left: 15px; text-align: left; pointer-events: none; }
+        /* Doble difuminado negro para que el texto se lea perfecto */
+        .hero-gradient {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(10,10,10,1) 35%, rgba(10,10,10,0.5) 65%, transparent 100%),
+                        linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 40%);
+            pointer-events: none; z-index: 5;
+        }
+
+        .hero-info { position: absolute; bottom: 15px; left: 15px; text-align: left; pointer-events: none; z-index: 10; width: 60%; }
         .hero-info h2 { margin: 0 0 8px 0; color: white; font-size: 22px; font-weight: bold; text-shadow: 0 2px 5px rgba(0,0,0,0.9); }
 
         .hero-play-btn { display: inline-block; background: white; color: black; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
-        .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); }
+        .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); z-index: 10; }
 
-        /* Flechas visuales para controlar el banner manualmente */
+        /* Flechas visuales */
         .hero-arrow {
             position: absolute; top: 50%; transform: translateY(-50%);
             background: rgba(0,0,0,0.4); color: white; border: none; font-size: 16px; padding: 8px 12px;
@@ -230,7 +236,7 @@
 
             <div class="section-header" style="margin-top: 5px;">
                 <h3 class="section-title">🚀 Últimos Estrenos</h3>
-                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Estrenos', window.miBaseDeDatos.peliculasEstrenos ? 'peliculasEstrenos' : 'estrenos')">Ver todos ❯</button>
+                <button class="btn-more" id="btn-ver-estrenos" tabindex="0" onclick="abrirCatalogoCompleto('Estrenos', window.miBaseDeDatos.peliculasEstrenos ? 'peliculasEstrenos' : 'estrenos')">Ver todos ❯</button>
             </div>
 
             <div class="section-header">
@@ -250,7 +256,9 @@
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-infantiles"></div>
-        </div> <div id="sec-series" class="content-section">
+        </div> 
+
+        <div id="sec-series" class="content-section">
             <div class="section-header">
                 <h3 class="section-title">📺 Series Top</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Series', 'seriesData')">Ver más ❯</button>
@@ -260,7 +268,7 @@
 
         <div id="sec-tv" class="content-section">
             <div class="banner-wrapper">
-                <button class="promo-banner" tabindex="0" onclick="abrirPromoPro()" onkeydown="if(event.key==='Enter' || event.keyCode===13) abrirPromoPro()">
+                <button class="promo-banner" id="promo-tv" tabindex="0" onclick="abrirPromoPro()" onkeydown="if(event.key==='Enter' || event.keyCode===13) abrirPromoPro()">
                     <div class="promo-content cartel-1 active">
                         <div class="promo-text-wrapper">
                             <h3>¡Pásate a Premium!</h3>
@@ -345,7 +353,6 @@
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
-                // 1. Iniciamos el banner
                 if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
                     iniciarCarruselUnico(db.peliculasEstrenos);
                 } else if(db.estrenos && db.estrenos.length > 0) {
@@ -354,20 +361,17 @@
                     document.getElementById('hero-title').textContent = "No hay estrenos hoy.";
                 }
 
-                // 2. Ocultamos el Splash Screen
                 const splash = document.getElementById('splash-screen');
                 if(splash) {
                     splash.classList.add('splash-slide-up');
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
                 
-                // 3. Armamos las filas normales
                 armarFila('row-accion', db.peliculasAccion);
                 armarFila('row-terror', db.peliculasTerror);
                 armarFila('row-infantiles', db.peliculasInfantiles);
                 armarFila('row-series', db.seriesData);
 
-                // 4. Cargamos los canales de TV
                 window.todosLosCanales = db.channels || [];
                 renderizarCanalesPorLotes(window.todosLosCanales);
 
@@ -377,7 +381,7 @@
             }
         }
 
-        // === NUEVO MOTOR: CARRUSEL ÚNICO CON NAVEGACIÓN MANUAL ===
+        // === NUEVO MOTOR: CARRUSEL ÚNICO ===
         let listaEstrenos = []; 
         let indiceCarrusel = 0;
         let temporizadorCarrusel;
@@ -388,7 +392,7 @@
             
             actualizarBanner();
             resetTemporizador();
-            configurarGestosTouch(); // Activa el swipe para celulares
+            configurarGestosTouch(); 
         }
 
         function resetTemporizador() {
@@ -403,7 +407,7 @@
             indiceCarrusel++;
             if(indiceCarrusel >= listaEstrenos.length) indiceCarrusel = 0; 
             actualizarBanner();
-            resetTemporizador(); // Al cambiar manual, el reloj vuelve a cero
+            resetTemporizador(); 
         }
 
         function carruselAnterior() {
@@ -446,8 +450,8 @@
             }, {passive: true});
             banner.addEventListener('touchend', e => {
                 touchEndX = e.changedTouches[0].screenX;
-                if (touchEndX < touchStartX - 50) carruselSiguiente(); // Swipe Izquierda
-                if (touchEndX > touchStartX + 50) carruselAnterior();  // Swipe Derecha
+                if (touchEndX < touchStartX - 50) carruselSiguiente(); 
+                if (touchEndX > touchStartX + 50) carruselAnterior();  
             }, {passive: true});
         }
 
@@ -562,6 +566,19 @@
             document.getElementById(idSeccion).classList.add('active');
             if(elementoBoton) elementoBoton.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // 🔥 MAGIA: Auto-enfocar el primer canal o banner cuando cambiás de pestaña en la TV
+            if (idSeccion === 'sec-tv') {
+                setTimeout(() => {
+                    const primerCanal = document.querySelector('#grilla-tv .canal-item');
+                    if (primerCanal) primerCanal.focus();
+                }, 150);
+            } else if (idSeccion === 'sec-cine') {
+                setTimeout(() => {
+                    const hero = document.getElementById('hero-banner');
+                    if(hero) hero.focus();
+                }, 150);
+            }
         }
 
         let temporizadorBusqueda;
@@ -670,14 +687,14 @@
             }
         }
 
-        // === GUARDIA DE TRÁFICO ===
+        // === GUARDIA DE TRÁFICO (RENOVADO PARA CONTROL REMOTO TV) ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
             
-            // FLECHAS IZQUIERDA/DERECHA PARA TV (MANEJO DEL BANNER GIGANTE)
+            // FLECHAS IZQUIERDA/DERECHA
             if (event.key === 'ArrowRight' || event.keyCode === 39) {
                 if (focoActual.id === 'hero-banner') {
-                    event.preventDefault(); // Evita perder el foco
+                    event.preventDefault(); 
                     carruselSiguiente();
                 }
             }
@@ -688,20 +705,7 @@
                 }
             }
 
-            if (event.key === 'ArrowUp' || event.keyCode === 38) {
-                if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container') || focoActual.classList.contains('hero-banner-single')) {
-                    const posicionEnPantalla = focoActual.getBoundingClientRect();
-                    if (posicionEnPantalla.top < 250) { 
-                        event.preventDefault(); 
-                        if (document.getElementById('sec-tv').classList.contains('active')) {
-                            const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
-                            if (pildoraActiva) pildoraActiva.focus();
-                        } else {
-                            document.getElementById('searchInput').focus();
-                        }
-                    }
-                }
-            }
+            // FLECHA ABAJO: Puentes de Foco
             if (event.key === 'ArrowDown' || event.keyCode === 40) {
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
                     event.preventDefault(); 
@@ -709,8 +713,58 @@
                         const primerEstreno = document.querySelector('.hero-banner-single');
                         if (primerEstreno) primerEstreno.focus();
                     } else if (document.getElementById('sec-tv').classList.contains('active')) {
+                        const promoTv = document.getElementById('promo-tv');
+                        if (promoTv) promoTv.focus();
+                    }
+                }
+                // Si estoy en el Banner de Cine -> bajo a "Ver todos"
+                else if (focoActual.id === 'hero-banner') {
+                    event.preventDefault();
+                    const btnVerTodos = document.getElementById('btn-ver-estrenos');
+                    if (btnVerTodos) btnVerTodos.focus();
+                }
+                // Si estoy en el Anuncio Promo TV -> bajo a la Píldora de Países
+                else if (focoActual.id === 'promo-tv') {
+                    event.preventDefault();
+                    const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
+                    if (pildoraActiva) pildoraActiva.focus();
+                }
+                // Si estoy en la Píldora de Países -> bajo al Primer Canal de la Grilla
+                else if (focoActual.classList.contains('category-pill')) {
+                    event.preventDefault();
+                    const primerCanal = document.querySelector('#grilla-tv .canal-item');
+                    if (primerCanal) primerCanal.focus();
+                }
+            }
+
+            // FLECHA ARRIBA: Puentes de Foco Inversos
+            if (event.key === 'ArrowUp' || event.keyCode === 38) {
+                if (focoActual.classList.contains('canal-item')) {
+                    const posicionEnPantalla = focoActual.getBoundingClientRect();
+                    if (posicionEnPantalla.top < 280) { // Si el canal está muy arriba
+                        event.preventDefault(); 
                         const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
                         if (pildoraActiva) pildoraActiva.focus();
+                    }
+                } 
+                else if (focoActual.classList.contains('category-pill')) {
+                    event.preventDefault();
+                    const promoTv = document.getElementById('promo-tv');
+                    if (promoTv) promoTv.focus();
+                }
+                else if (focoActual.id === 'promo-tv') {
+                    event.preventDefault();
+                    document.getElementById('searchInput').focus();
+                }
+                else if (focoActual.id === 'btn-ver-estrenos') {
+                    event.preventDefault();
+                    document.getElementById('hero-banner').focus();
+                }
+                else if (focoActual.id === 'hero-banner' || focoActual.classList.contains('movie-card-container')) {
+                    const posicionEnPantalla = focoActual.getBoundingClientRect();
+                    if (posicionEnPantalla.top < 250) { 
+                        event.preventDefault();
+                        document.getElementById('searchInput').focus();
                     }
                 }
             }
