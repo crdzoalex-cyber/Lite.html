@@ -1219,7 +1219,7 @@
     { "id": 1035, "name": "re WIND", "cat": "musica", "url": "http://217.26.190.76:8888/play/a0jh/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1036, "name": "Unitel BO", "cat": "bolivia", "url": "https://us-b4-p-e-ml19.cdn.mdstrm.com/live-stream/692b7e7ac84183fcf9e3462d/publish/media_1800.m3u8?aid=69132f19f5398246a0193eb6&uid=i1EL18sbc6jFh6QEb4M0t70AQ2Iv6853&sid=SueRz84ZZ9mgA8WUoXzt6k8athGjXbJc&pid=ewkuj24bHlaNE4WDiz61gGK4QgXUusPC&pid_dvr=vsTYUQIPkfSsWhnDybu8han6Fr5KDWkd&ref=https%3A%2F%2Funitel.bo%2F&without_cookies=false&listenerid=&dnt=true&es=us-b4-p-e-ml19.cdn.mdstrm.com&ote=1773265304596&ot=Rkvi15wtnGazrapu6MSFrQ&proto=https&pz=us&CMCD=cid%3D%22692b7e7ac84183fcf9e3462d%22%2Cmtp%3D28300%2Cot%3Dm%2Csf%3Dh%2Csid%3D%22ewkuj24bHlaNE4WDiz61gGK4QgXUusPC%22", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1036, "name": "Ceacom", "cat": "bolivia", "url": "https://eu1.servers10.com:8081/ceacom/tracks-v1a1/mono.m3u8", "isYT": false, "logo": "https://i.imgur.com/hutdRfk.png" },
-    { "id": 1036, "name": "ATB La Paz", "cat": "bolivia", "url": "http://186.121.206.197/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" }
+    { "id": 1036, "name": "ATB La Paz", "cat": "bolivia", "url": "http://186.121.206.197/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" },
     { "id": 1036, "name": "ATB La Paz", "cat": "bolivia", "url": "http://186.121.206.197/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" }
     
     
