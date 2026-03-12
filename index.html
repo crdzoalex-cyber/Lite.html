@@ -53,81 +53,38 @@
         .btn-back { font-size: 14px; } 
 
         /* === NUEVO BANNER ÚNICO (OPTIMIZADO PARA TV) === */
-        .hero-carousel-wrapper { width: 100%; position: relative; margin-bottom: 25px; padding-top: 5px; }
+        .hero-carousel-wrapper { width: 100%; position: relative; margin-bottom: 10px; padding-top: 5px; }
         
         .hero-banner-single {
-            width: 100%;
-            height: 220px;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 3px solid transparent;
-            background: #0a0a0a;
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.2s, border 0.2s;
-            display: block;
-            outline: none;
+            width: 100%; height: 220px; position: relative; border-radius: 12px; overflow: hidden;
+            border: 3px solid transparent; background: #0a0a0a; cursor: pointer; padding: 0; margin: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: transform 0.2s, border 0.2s;
+            display: block; outline: none;
         }
 
-        .hero-banner-single img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.5s ease-in-out; 
-        }
+        .hero-banner-single img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.5s ease-in-out; }
 
         .hero-gradient {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 70%;
-            background: linear-gradient(to top, rgba(2,5,15,0.9) 0%, rgba(2,5,15,0) 100%);
-            pointer-events: none;
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 70%;
+            background: linear-gradient(to top, rgba(2,5,15,0.9) 0%, rgba(2,5,15,0) 100%); pointer-events: none;
         }
 
-        .hero-info {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            text-align: left;
-            pointer-events: none;
-        }
+        .hero-info { position: absolute; bottom: 15px; left: 15px; text-align: left; pointer-events: none; }
+        .hero-info h2 { margin: 0 0 8px 0; color: white; font-size: 22px; font-weight: bold; text-shadow: 0 2px 5px rgba(0,0,0,0.9); }
 
-        .hero-info h2 {
-            margin: 0 0 8px 0;
-            color: white;
-            font-size: 22px;
-            font-weight: bold;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.9);
-        }
+        .hero-play-btn { display: inline-block; background: white; color: black; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); }
 
-        .hero-play-btn {
-            display: inline-block;
-            background: white;
-            color: black;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        /* Flechas visuales para controlar el banner manualmente */
+        .hero-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,0.4); color: white; border: none; font-size: 16px; padding: 8px 12px;
+            cursor: pointer; z-index: 20; border-radius: 8px; transition: 0.3s; backdrop-filter: blur(4px);
         }
-
-        .hero-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #ff0033;
-            color: white;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 4px;
-            box-shadow: 0 0 8px rgba(255,0,51,0.6);
-        }
+        .hero-arrow:hover { background: rgba(42, 96, 255, 0.8); }
+        .hero-arrow:active { transform: translateY(-50%) scale(0.9); }
+        .hero-arrow-left { left: 10px; }
+        .hero-arrow-right { right: 10px; }
 
         /* === FILAS Y GRILLAS === */
         .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
@@ -143,37 +100,21 @@
 
         /* === CANALES TV === */
         .canal-item { 
-            border-radius: 8px; overflow: hidden; position: relative; 
-            border: 1px solid rgba(30, 80, 255, 0.3); background: #000; 
-            cursor: pointer; transition: transform 0.2s, border-color 0.2s; z-index: 1; 
-            transform: translateZ(0); will-change: transform; 
+            border-radius: 8px; overflow: hidden; position: relative; border: 1px solid rgba(30, 80, 255, 0.3); background: #000; 
+            cursor: pointer; transition: transform 0.2s, border-color 0.2s; z-index: 1; transform: translateZ(0); will-change: transform; 
         }
         .canal-item:active, .canal-item:focus { transform: scale(0.95) translateZ(0); border-color: #2a60ff; box-shadow: 0 0 10px rgba(30, 80, 255, 0.5); outline: none; z-index: 10; }
         .canal-item img { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain; padding: 10px; background: white; display: block; }
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
-        
         .dot-live { position: absolute; top: 8px; left: 8px; width: 10px; height: 10px; background-color: #ff0033; border-radius: 50%; z-index: 10; box-shadow: 0 0 3px #000; }
 
         /* === CAJA INVISIBLE Y BANNER PROMO PRO === */
         .banner-wrapper { width: 100%; display: block; padding-top: 10px; padding-bottom: 15px; background: transparent; }
         .promo-banner {
-            display: flex; justify-content: space-between; align-items: center;
-            background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
-            border: 2px solid transparent; border-radius: 12px;
-            margin: 0 auto; width: calc(100% - 30px); max-width: 650px; 
-            z-index: 10; flex-shrink: 0; height: 120px; 
-            position: relative; padding: 0; cursor: pointer; box-sizing: border-box;
-            outline: none; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            font-family: inherit; color: white; overflow: hidden;
-        }
-        @media screen and (min-width: 1000px) {
-            .promo-banner { height: 140px; border-radius: 20px; }
-            .promo-content { padding: 20px 30px !important; } 
-            .promo-content h3 { font-size: 24px !important; margin-bottom: 6px !important; } 
-            .promo-content p { font-size: 14px !important; } 
-            .promo-btn { font-size: 14px !important; padding: 10px 20px !important; }
-            .nova-slogan { font-size: 12px !important; margin-top: 8px !important; }
-            .promo-badge { font-size: 10px !important; top: 12px !important; right: 15px !important; }
+            display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
+            border: 2px solid transparent; border-radius: 12px; margin: 0 auto; width: calc(100% - 30px); max-width: 650px; 
+            z-index: 10; flex-shrink: 0; height: 120px; position: relative; padding: 0; cursor: pointer; box-sizing: border-box;
+            outline: none; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; font-family: inherit; color: white; overflow: hidden;
         }
         .promo-banner:focus { transform: scale(0.98); border-color: #ffffff; box-shadow: 0 0 20px rgba(30, 80, 255, 0.9); }
         .promo-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; box-sizing: border-box; opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in-out, visibility 0.8s; }
@@ -275,12 +216,21 @@
                 <button id="hero-banner" class="hero-banner-single" tabindex="0" onclick="reproducirEstrenoActual()" onkeydown="if(event.key==='Enter' || event.keyCode===13) reproducirEstrenoActual()">
                     <img id="hero-img" src="" alt="Estreno">
                     <div class="hero-gradient"></div>
+                    
+                    <div class="hero-arrow hero-arrow-left" onclick="event.stopPropagation(); carruselAnterior()">❮</div>
+                    <div class="hero-arrow hero-arrow-right" onclick="event.stopPropagation(); carruselSiguiente()">❯</div>
+
                     <div class="hero-badge" id="hero-badge-text">NUEVO</div>
                     <div class="hero-info">
                         <h2 id="hero-title">Cargando estrenos... 🚀</h2>
                         <div class="hero-play-btn">▶ Reproducir</div>
                     </div>
                 </button>
+            </div>
+
+            <div class="section-header" style="margin-top: 5px;">
+                <h3 class="section-title">🚀 Últimos Estrenos</h3>
+                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Estrenos', window.miBaseDeDatos.peliculasEstrenos ? 'peliculasEstrenos' : 'estrenos')">Ver todos ❯</button>
             </div>
 
             <div class="section-header">
@@ -395,7 +345,7 @@
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
-                // 1. Iniciamos el motor del banner gigante usando tus "peliculasEstrenos"
+                // 1. Iniciamos el banner
                 if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
                     iniciarCarruselUnico(db.peliculasEstrenos);
                 } else if(db.estrenos && db.estrenos.length > 0) {
@@ -411,7 +361,7 @@
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
                 
-                // 3. Armamos las filas normales de abajo
+                // 3. Armamos las filas normales
                 armarFila('row-accion', db.peliculasAccion);
                 armarFila('row-terror', db.peliculasTerror);
                 armarFila('row-infantiles', db.peliculasInfantiles);
@@ -427,7 +377,7 @@
             }
         }
 
-        // === NUEVO MOTOR: CARRUSEL ÚNICO ===
+        // === NUEVO MOTOR: CARRUSEL ÚNICO CON NAVEGACIÓN MANUAL ===
         let listaEstrenos = []; 
         let indiceCarrusel = 0;
         let temporizadorCarrusel;
@@ -437,15 +387,31 @@
             listaEstrenos = arrayPelis;
             
             actualizarBanner();
+            resetTemporizador();
+            configurarGestosTouch(); // Activa el swipe para celulares
+        }
 
+        function resetTemporizador() {
             clearInterval(temporizadorCarrusel); 
             temporizadorCarrusel = setInterval(() => {
-                indiceCarrusel++;
-                if(indiceCarrusel >= listaEstrenos.length) {
-                    indiceCarrusel = 0; 
-                }
-                actualizarBanner();
+                carruselSiguiente();
             }, 5000);
+        }
+
+        function carruselSiguiente() {
+            if(listaEstrenos.length === 0) return;
+            indiceCarrusel++;
+            if(indiceCarrusel >= listaEstrenos.length) indiceCarrusel = 0; 
+            actualizarBanner();
+            resetTemporizador(); // Al cambiar manual, el reloj vuelve a cero
+        }
+
+        function carruselAnterior() {
+            if(listaEstrenos.length === 0) return;
+            indiceCarrusel--;
+            if(indiceCarrusel < 0) indiceCarrusel = listaEstrenos.length - 1; 
+            actualizarBanner();
+            resetTemporizador();
         }
 
         function actualizarBanner() {
@@ -456,7 +422,7 @@
             img.style.opacity = 0;
             
             setTimeout(() => {
-                img.src = peli.poster || peli.imagen; // Soporta ambos nombres de variable
+                img.src = peli.poster || peli.imagen; 
                 titulo.textContent = peli.title || peli.titulo;
                 img.style.opacity = 1;
             }, 300);
@@ -469,6 +435,20 @@
             const tituloLimpio = tituloFinal.replace(/'/g, "\\'");
             
             playCinematic(peli.url, peli.isYT || false, tituloLimpio);
+        }
+
+        function configurarGestosTouch() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const banner = document.getElementById('hero-banner');
+            banner.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            banner.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchEndX < touchStartX - 50) carruselSiguiente(); // Swipe Izquierda
+                if (touchEndX > touchStartX + 50) carruselAnterior();  // Swipe Derecha
+            }, {passive: true});
         }
 
         // === MOTOR DE SCROLL INFINITO PARA TV ===
@@ -690,9 +670,24 @@
             }
         }
 
-        // === GUARDIA DE TRÁFICO (MODIFICADO PARA EL BANNER ÚNICO) ===
+        // === GUARDIA DE TRÁFICO ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
+            
+            // FLECHAS IZQUIERDA/DERECHA PARA TV (MANEJO DEL BANNER GIGANTE)
+            if (event.key === 'ArrowRight' || event.keyCode === 39) {
+                if (focoActual.id === 'hero-banner') {
+                    event.preventDefault(); // Evita perder el foco
+                    carruselSiguiente();
+                }
+            }
+            if (event.key === 'ArrowLeft' || event.keyCode === 37) {
+                if (focoActual.id === 'hero-banner') {
+                    event.preventDefault();
+                    carruselAnterior();
+                }
+            }
+
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
                 if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container') || focoActual.classList.contains('hero-banner-single')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
@@ -721,7 +716,7 @@
             }
         });
 
-        // === MOTOR DE TRANSICIÓN DE BANNERS ===
+        // === MOTOR DE TRANSICIÓN DE BANNERS (SECCIÓN TV) ===
         document.addEventListener('DOMContentLoaded', () => {
             const cartel1 = document.querySelector('.cartel-1');
             const cartel2 = document.querySelector('.cartel-2');
