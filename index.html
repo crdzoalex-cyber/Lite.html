@@ -52,12 +52,12 @@
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
         .btn-back { font-size: 14px; } 
 
-/* === NUEVO BANNER ÚNICO (OPTIMIZADO PARA TV) === */
+        /* === NUEVO BANNER ÚNICO (OPTIMIZADO PARA TV) === */
         .hero-carousel-wrapper { width: 100%; position: relative; margin-bottom: 25px; padding-top: 5px; }
         
         .hero-banner-single {
             width: 100%;
-            height: 220px; /* Tamaño ideal para destacar sin ocupar toda la tele */
+            height: 220px;
             position: relative;
             border-radius: 12px;
             overflow: hidden;
@@ -72,18 +72,11 @@
             outline: none;
         }
 
-        /* El foco blanco cuando navegás con el control de la tele */
-        .hero-banner-single:focus {
-            transform: scale(0.98);
-            border: 3px solid #2a60ff;
-            box-shadow: 0 0 20px rgba(42, 96, 255, 0.8);
-        }
-
         .hero-banner-single img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.5s ease-in-out; /* Fundido suave al cambiar de peli */
+            transition: opacity 0.5s ease-in-out; 
         }
 
         .hero-gradient {
@@ -135,6 +128,7 @@
             border-radius: 4px;
             box-shadow: 0 0 8px rgba(255,0,51,0.6);
         }
+
         /* === FILAS Y GRILLAS === */
         .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; padding: 0 15px 15px 15px; }
@@ -159,18 +153,9 @@
         .canal-title { text-align: center; font-size: 12px; padding: 5px; color: white; background: #111; margin: 0;}
         
         .dot-live { position: absolute; top: 8px; left: 8px; width: 10px; height: 10px; background-color: #ff0033; border-radius: 50%; z-index: 10; box-shadow: 0 0 3px #000; }
-        @keyframes latidoLigero { 0% { opacity: 1; } 100% { opacity: 0.2; } }
 
-        /* ========================================= */
         /* === CAJA INVISIBLE Y BANNER PROMO PRO === */
-        /* ========================================= */
-        .banner-wrapper {
-            width: 100%; display: block;
-            padding-top: 10px; /* Separación limpia del buscador */
-            padding-bottom: 15px; /* Separación limpia de los países */
-            background: transparent;
-        }
-
+        .banner-wrapper { width: 100%; display: block; padding-top: 10px; padding-bottom: 15px; background: transparent; }
         .promo-banner {
             display: flex; justify-content: space-between; align-items: center;
             background: linear-gradient(135deg, #1e50ff 0%, #0a195c 100%);
@@ -201,9 +186,7 @@
         .cartel-2-btn { background: #ff0033 !important; border-color: transparent; }
         .nova-slogan { font-weight: bold; font-style: italic; font-size: 10px !important; color: #fff !important; margin-top: 4px !important; text-shadow: none;}
 
-        /* ========================================= */
         /* === PÍLDORAS / PAÍSES === */
-        /* ========================================= */
         .category-pill-container { 
             display: flex; overflow-x: auto; gap: 10px; padding: 5px 15px 25px 15px; scroll-snap-type: x mandatory; 
             position: -webkit-sticky; position: sticky; top: calc(55px + env(safe-area-inset-top, 25px)); 
@@ -231,8 +214,7 @@
             body { padding-top: 60px; padding-bottom: 55px; }
             header { padding: 5px 20px; }
             .category-pill-container { top: 45px; padding: 5px 15px 15px 15px; box-shadow: 0 -30px 0px #02050f; }
-            .hero-card { flex: 0 0 35vw; } 
-            .hero-card img { height: 45vh; max-height: 180px; } 
+            .hero-banner-single { height: 200px; } 
             .section-header { margin-top: 10px; margin-bottom: 5px; }
             .section-title { font-size: 15px; }
             .movie-card-container { flex: 0 0 100px; }
@@ -246,10 +228,12 @@
 
         /* === MODO CONTROL REMOTO (TV FOCUS) === */
         *:focus { outline: none; } 
-        .hero-card:focus, .movie-card-container:focus .movie-poster-box, .canal-item:focus, .category-pill:focus, .nav-item:focus, .search-bar:focus, .btn-more:focus, .btn-back:focus {
+        .movie-card-container:focus .movie-poster-box, .canal-item:focus, .category-pill:focus, .nav-item:focus, .search-bar:focus, .btn-more:focus, .btn-back:focus {
             transform: scale(1.08) !important; border: 3px solid #ffffff !important; box-shadow: 0 0 25px rgba(42, 96, 255, 0.9) !important; z-index: 100; transition: 0.2s; border-radius: 8px;
         }
-        .hero-card:focus { border-radius: 12px; }
+        .hero-banner-single:focus {
+            transform: scale(0.98) !important; border: 3px solid #ffffff !important; box-shadow: 0 0 25px rgba(42, 96, 255, 0.9) !important; z-index: 100; transition: 0.2s; border-radius: 12px;
+        }
         .category-pill:focus, .nav-item:focus, .btn-more:focus, .btn-back:focus { border-radius: 20px; }
     </style>
 </head>
@@ -286,38 +270,37 @@
         </div>
 
         <div id="sec-cine" class="content-section active">
-    
-    <div class="hero-carousel-wrapper">
-        <button id="hero-banner" class="hero-banner-single" onclick="reproducirEstrenoActual()">
-            <img id="hero-img" src="" alt="Estreno">
-            <div class="hero-gradient"></div>
-            <div class="hero-badge" id="hero-badge-text">NUEVO</div>
-            <div class="hero-info">
-                <h2 id="hero-title">Cargando estrenos... 🚀</h2>
-                <div class="hero-play-btn">▶ Reproducir</div>
+            
+            <div class="hero-carousel-wrapper">
+                <button id="hero-banner" class="hero-banner-single" tabindex="0" onclick="reproducirEstrenoActual()" onkeydown="if(event.key==='Enter' || event.keyCode===13) reproducirEstrenoActual()">
+                    <img id="hero-img" src="" alt="Estreno">
+                    <div class="hero-gradient"></div>
+                    <div class="hero-badge" id="hero-badge-text">NUEVO</div>
+                    <div class="hero-info">
+                        <h2 id="hero-title">Cargando estrenos... 🚀</h2>
+                        <div class="hero-play-btn">▶ Reproducir</div>
+                    </div>
+                </button>
             </div>
-        </button>
-    </div>
 
-    </div>
             <div class="section-header">
                 <h3 class="section-title">🔥 Acción</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-accion"></div>
+            
             <div class="section-header">
                 <h3 class="section-title">👻 Terror</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-terror"></div>
+            
             <div class="section-header">
                 <h3 class="section-title">🧸 Infantiles</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-infantiles"></div>
-        </div>
-
-        <div id="sec-series" class="content-section">
+        </div> <div id="sec-series" class="content-section">
             <div class="section-header">
                 <h3 class="section-title">📺 Series Top</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Series', 'seriesData')">Ver más ❯</button>
@@ -327,7 +310,7 @@
 
         <div id="sec-tv" class="content-section">
             <div class="banner-wrapper">
-                <button class="promo-banner" onclick="abrirPromoPro()" onkeydown="if(event.key==='Enter' || event.keyCode===13) abrirPromoPro()">
+                <button class="promo-banner" tabindex="0" onclick="abrirPromoPro()" onkeydown="if(event.key==='Enter' || event.keyCode===13) abrirPromoPro()">
                     <div class="promo-content cartel-1 active">
                         <div class="promo-text-wrapper">
                             <h3>¡Pásate a Premium!</h3>
@@ -348,23 +331,23 @@
             </div>
 
             <div class="category-pill-container">
-                <button class="category-pill active" onclick="filtrarCanales('todos', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('todos', this)">Todos</button>
-                <button class="category-pill" onclick="filtrarCanales('bolivia', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('bolivia', this)">Bolivia</button>
-                <button class="category-pill" onclick="filtrarCanales('argentina', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('argentina', this)">Argentina</button>
-                <button class="category-pill" onclick="filtrarCanales('mexico', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('mexico', this)">México</button>
-                <button class="category-pill" onclick="filtrarCanales('colombia', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('colombia', this)">Colombia</button>
-                <button class="category-pill" onclick="filtrarCanales('chile', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('chile', this)">Chile</button>
-                <button class="category-pill" onclick="filtrarCanales('peru', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('peru', this)">Perú</button>
-                <button class="category-pill" onclick="filtrarCanales('ecuador', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('ecuador', this)">Ecuador</button>
-                <button class="category-pill" onclick="filtrarCanales('venezuela', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('venezuela', this)">Venezuela</button>
-                <button class="category-pill" onclick="filtrarCanales('internacional', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('internacional', this)">Internacional</button>
-                <button class="category-pill" onclick="filtrarCanales('infantiles', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('infantiles', this)">Infantiles</button>
-                <button class="category-pill" onclick="filtrarCanales('deportes', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('deportes', this)">Deportes</button>
-                <button class="category-pill" onclick="filtrarCanales('noticias', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('noticias', this)">Noticias</button>
-                <button class="category-pill" onclick="filtrarCanales('cine', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('cine', this)">Cine</button>
-                <button class="category-pill" onclick="filtrarCanales('musica', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('musica', this)">Música</button>
-                <button class="category-pill" onclick="filtrarCanales('cam', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('Cam', this)">Cam</button>
-                <button class="category-pill" onclick="filtrarCanales('religiosos', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('religiosos', this)">Religiosos</button>
+                <button class="category-pill active" tabindex="0" onclick="filtrarCanales('todos', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('todos', this)">Todos</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('bolivia', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('bolivia', this)">Bolivia</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('argentina', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('argentina', this)">Argentina</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('mexico', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('mexico', this)">México</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('colombia', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('colombia', this)">Colombia</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('chile', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('chile', this)">Chile</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('peru', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('peru', this)">Perú</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('ecuador', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('ecuador', this)">Ecuador</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('venezuela', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('venezuela', this)">Venezuela</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('internacional', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('internacional', this)">Internacional</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('infantiles', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('infantiles', this)">Infantiles</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('deportes', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('deportes', this)">Deportes</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('noticias', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('noticias', this)">Noticias</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('cine', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('cine', this)">Cine</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('musica', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('musica', this)">Música</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('cam', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('Cam', this)">Cam</button>
+                <button class="category-pill" tabindex="0" onclick="filtrarCanales('religiosos', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) filtrarCanales('religiosos', this)">Religiosos</button>
             </div>
 
             <div class="movie-grid" id="grilla-tv"></div>
@@ -379,10 +362,10 @@
     </main>
 
     <nav>
-        <button class="nav-item active" onclick="cambiarSeccion('sec-cine', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-cine', this)"><i>🎬</i><span>Cine</span></button>
-        <button class="nav-item" onclick="cambiarSeccion('sec-series', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-series', this)"><i>📺</i><span>Series</span></button>
-        <button class="nav-item" onclick="cambiarSeccion('sec-tv', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-tv', this)"><i>📡</i><span>TV</span></button>
-        <button class="nav-item" onclick="cambiarSeccion('sec-perfil', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-perfil', this)"><i>👤</i><span>Perfil</span></button>
+        <button class="nav-item active" tabindex="0" onclick="cambiarSeccion('sec-cine', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-cine', this)"><i>🎬</i><span>Cine</span></button>
+        <button class="nav-item" tabindex="0" onclick="cambiarSeccion('sec-series', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-series', this)"><i>📺</i><span>Series</span></button>
+        <button class="nav-item" tabindex="0" onclick="cambiarSeccion('sec-tv', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-tv', this)"><i>📡</i><span>TV</span></button>
+        <button class="nav-item" tabindex="0" onclick="cambiarSeccion('sec-perfil', this)" onkeydown="if(event.key==='Enter' || event.keyCode===13) cambiarSeccion('sec-perfil', this)"><i>👤</i><span>Perfil</span></button>
     </nav>
 
     <script>
@@ -412,56 +395,80 @@
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
-                // 🔥 ACÁ INYECTAMOS EL NUEVO MOTOR DEL CARRUSEL 🔥
-                // ⚠️ IMPORTANTE: Yo puse "db.estrenos", pero si en tu JSON la lista de 
-                // películas del carrusel se llama "carrusel", "destacados" o de otra forma, 
-                // cambialo acá abajo (por ejemplo: db.destacados).
-                if(db.estrenos) {
+                // 1. Iniciamos el motor del banner gigante usando tus "peliculasEstrenos"
+                if(db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
+                    iniciarCarruselUnico(db.peliculasEstrenos);
+                } else if(db.estrenos && db.estrenos.length > 0) {
                     iniciarCarruselUnico(db.estrenos);
+                } else {
+                    document.getElementById('hero-title').textContent = "No hay estrenos hoy.";
                 }
 
+                // 2. Ocultamos el Splash Screen
                 const splash = document.getElementById('splash-screen');
                 if(splash) {
                     splash.classList.add('splash-slide-up');
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
                 
-                // ... (Acá seguramente tenés el código que carga las otras filas de películas, dejalo tal cual)
-
-                const heroCont = document.getElementById('hero-carousel');
-                let heroHTML = '';
-                if (db.peliculasEstrenos && db.peliculasEstrenos.length > 0) {
-                    db.peliculasEstrenos.forEach(item => {
-                        const tituloLimpio = (item.title || '').replace(/'/g, "\\'");
-                        let cartelInteligente = item.dur ? `<div class="hero-badge" style="background: #02050f;">⏱ ${item.dur}</div>` : '';
-                        
-                        heroHTML += `
-                            <button class="hero-card" onclick="playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${item.url}', ${item.isYT || false}, '${tituloLimpio}')">
-                                ${cartelInteligente}
-                                <img src="${item.poster}" alt="${item.title}">
-                                <div class="hero-gradient"></div>
-                                <div class="hero-title">${item.title}</div>
-                            </button>
-                        `;
-                    });
-                    heroCont.innerHTML = heroHTML;
-                    iniciarCarruselMotor(); 
-                } else {
-                    heroCont.innerHTML = '<div style="color: #5577cc; padding: 20px;">No hay estrenos hoy.</div>';
-                }
-
+                // 3. Armamos las filas normales de abajo
                 armarFila('row-accion', db.peliculasAccion);
                 armarFila('row-terror', db.peliculasTerror);
                 armarFila('row-infantiles', db.peliculasInfantiles);
                 armarFila('row-series', db.seriesData);
 
+                // 4. Cargamos los canales de TV
                 window.todosLosCanales = db.channels || [];
                 renderizarCanalesPorLotes(window.todosLosCanales);
 
             } catch (error) {
                 console.log("Error descargando el JSON:", error);
-                document.getElementById('hero-carousel').innerHTML = '<div style="color: red; padding: 20px;">Error al conectar con la base de datos.</div>';
+                document.getElementById('hero-title').textContent = 'Error de conexión ❌';
             }
+        }
+
+        // === NUEVO MOTOR: CARRUSEL ÚNICO ===
+        let listaEstrenos = []; 
+        let indiceCarrusel = 0;
+        let temporizadorCarrusel;
+
+        function iniciarCarruselUnico(arrayPelis) {
+            if (!arrayPelis || arrayPelis.length === 0) return;
+            listaEstrenos = arrayPelis;
+            
+            actualizarBanner();
+
+            clearInterval(temporizadorCarrusel); 
+            temporizadorCarrusel = setInterval(() => {
+                indiceCarrusel++;
+                if(indiceCarrusel >= listaEstrenos.length) {
+                    indiceCarrusel = 0; 
+                }
+                actualizarBanner();
+            }, 5000);
+        }
+
+        function actualizarBanner() {
+            const img = document.getElementById("hero-img");
+            const titulo = document.getElementById("hero-title");
+            const peli = listaEstrenos[indiceCarrusel];
+
+            img.style.opacity = 0;
+            
+            setTimeout(() => {
+                img.src = peli.poster || peli.imagen; // Soporta ambos nombres de variable
+                titulo.textContent = peli.title || peli.titulo;
+                img.style.opacity = 1;
+            }, 300);
+        }
+
+        function reproducirEstrenoActual() {
+            if(listaEstrenos.length === 0) return;
+            const peli = listaEstrenos[indiceCarrusel];
+            const tituloFinal = peli.title || peli.titulo;
+            const tituloLimpio = tituloFinal.replace(/'/g, "\\'");
+            
+            playCinematic(peli.url, peli.isYT || false, tituloLimpio);
         }
 
         // === MOTOR DE SCROLL INFINITO PARA TV ===
@@ -523,54 +530,6 @@
                 `;
             });
         };
-
-        // ✅ PEGAR EL NUEVO MOTOR ACÁ:
-let listaEstrenos = []; 
-let indiceCarrusel = 0;
-let temporizadorCarrusel;
-
-function iniciarCarruselUnico(arrayPelis) {
-    if (!arrayPelis || arrayPelis.length === 0) return;
-    listaEstrenos = arrayPelis;
-    
-    // Mostrar la primera película al instante
-    actualizarBanner();
-
-    // Iniciar el reloj: Cambia cada 5 segundos (5000ms)
-    clearInterval(temporizadorCarrusel); 
-    temporizadorCarrusel = setInterval(() => {
-        indiceCarrusel++;
-        if(indiceCarrusel >= listaEstrenos.length) {
-            indiceCarrusel = 0; // Volver a empezar
-        }
-        actualizarBanner();
-    }, 5000);
-}
-
-function actualizarBanner() {
-    const img = document.getElementById("hero-img");
-    const titulo = document.getElementById("hero-title");
-    const peli = listaEstrenos[indiceCarrusel];
-
-    // 1. Efecto de fundido (opacidad 0)
-    img.style.opacity = 0;
-    
-    // 2. Cambiamos la info (usando TUS variables exactas: poster y title)
-    setTimeout(() => {
-        img.src = peli.poster; 
-        titulo.textContent = peli.title;
-        img.style.opacity = 1;
-    }, 300);
-}
-
-// Cuando aprietan "OK" en el control remoto sobre el póster gigante
-function reproducirEstrenoActual() {
-    const peli = listaEstrenos[indiceCarrusel];
-    const tituloLimpio = peli.title.replace(/'/g, "\\'");
-    
-    // Llamamos a TU función playCinematic exacta
-    playCinematic(peli.url, peli.isYT || false, tituloLimpio);
-}
 
         let seccionAntesDelCatalogo = 'sec-cine';
         function abrirCatalogoCompleto(nombreCategoria, claveJson) {
@@ -731,11 +690,11 @@ function reproducirEstrenoActual() {
             }
         }
 
-        // === GUARDIA DE TRÁFICO ===
+        // === GUARDIA DE TRÁFICO (MODIFICADO PARA EL BANNER ÚNICO) ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
-                if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container') || focoActual.classList.contains('hero-card')) {
+                if (focoActual.classList.contains('canal-item') || focoActual.classList.contains('movie-card-container') || focoActual.classList.contains('hero-banner-single')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
                     if (posicionEnPantalla.top < 250) { 
                         event.preventDefault(); 
@@ -752,7 +711,7 @@ function reproducirEstrenoActual() {
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
                     event.preventDefault(); 
                     if (document.getElementById('sec-cine').classList.contains('active')) {
-                        const primerEstreno = document.querySelector('.hero-card');
+                        const primerEstreno = document.querySelector('.hero-banner-single');
                         if (primerEstreno) primerEstreno.focus();
                     } else if (document.getElementById('sec-tv').classList.contains('active')) {
                         const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
