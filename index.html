@@ -47,36 +47,67 @@
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
         .btn-back { font-size: 14px; } 
 
-        /* === NUEVO BANNER ÚNICO (DISEÑO ANTI-PIXELADO PARA TV) === */
+        /* === NUEVO BANNER ÚNICO (DISEÑO ANTI-PIXELADO Y PLASMA PARA TV) === */
         .hero-carousel-wrapper { width: 100%; position: relative; margin-bottom: 10px; padding-top: 5px; }
         
         .hero-banner-single {
             width: 100%; height: 220px; position: relative; border-radius: 12px; overflow: hidden;
-            border: 3px solid transparent; background: #0a0a0a; cursor: pointer; padding: 0; margin: 0;
+            border: 3px solid transparent; background: #02050f; cursor: pointer; padding: 0; margin: 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: transform 0.2s, border 0.2s;
             display: block; outline: none;
         }
 
-        /* MAGIA: La imagen no se estira, se acomoda a la derecha entera */
         .hero-banner-single img { 
-            width: 70%; 
-            height: 100%; 
-            object-fit: contain; 
-            object-position: right center;
-            position: absolute; right: 0; top: 0;
-            transition: opacity 0.5s ease-in-out; 
+            width: 70%; height: 100%; object-fit: contain; object-position: right center;
+            position: absolute; right: 0; top: 0; transition: opacity 0.5s ease-in-out; z-index: 1;
         }
 
-        /* Doble difuminado negro para que el texto se lea perfecto */
+        /* 🔥 EFECTO VIDRIO Y PLASMA ANIMADO 🔥 */
+        @keyframes plasmaMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-glass-panel {
+            position: absolute; top: 0; left: 0; width: 65%; height: 100%;
+            background: linear-gradient(-45deg, rgba(2,5,15,0.95), rgba(30,80,255,0.4), rgba(255,0,51,0.2), rgba(2,5,15,0.95));
+            background-size: 300% 300%; animation: plasmaMove 8s ease infinite;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 2;
+            display: flex; align-items: center; justify-content: center;
+            padding: 10px 40px 60px 20px; /* Espacio abajo para no tapar el título de la peli */
+            /* Difuminado hacia la derecha para mezclarse con el póster */
+            -webkit-mask-image: linear-gradient(to right, black 65%, transparent 100%);
+            mask-image: linear-gradient(to right, black 65%, transparent 100%);
+        }
+
+        /* Textos y Logo Animado dentro del Vidrio */
+        .hero-promo-content { text-align: center; width: 100%; transition: opacity 0.5s ease; }
+        .promo-text-anim {
+            font-size: 13px; font-weight: 500; color: #e0e6ff; text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+            font-style: italic; line-height: 1.4; padding: 0 10px;
+        }
+        .promo-logo-anim {
+            font-size: 26px; font-weight: 900; color: #ffffff; 
+            text-shadow: 0 0 15px #2a60ff, 0 0 30px #1e50ff; letter-spacing: 3px;
+        }
+
+        /* 💥 El efecto de Quemado para el logo 💥 */
+        .burn-effect { animation: burnAnim 1.5s forwards; }
+        @keyframes burnAnim {
+            0% { filter: brightness(1) blur(0px); opacity: 1; transform: scale(1); }
+            40% { filter: brightness(1.5) blur(1px) sepia(0.8) hue-rotate(-30deg) saturate(3); opacity: 0.9; transform: scale(1.05); color: #ff8c00; text-shadow: 0 0 20px #ff0000; }
+            100% { filter: brightness(0) blur(8px); opacity: 0; transform: scale(1.1) translateY(-10px); color: #000; }
+        }
+
         .hero-gradient {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to right, rgba(10,10,10,1) 35%, rgba(10,10,10,0.5) 65%, transparent 100%),
-                        linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 40%);
-            pointer-events: none; z-index: 5;
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
+            background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 100%),
+                        linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 50%);
+            pointer-events: none; z-index: 3;
         }
 
-        .hero-info { position: absolute; bottom: 15px; left: 15px; text-align: left; pointer-events: none; z-index: 10; width: 60%; }
-        .hero-info h2 { margin: 0 0 8px 0; color: white; font-size: 22px; font-weight: bold; text-shadow: 0 2px 5px rgba(0,0,0,0.9); }
+        .hero-info { position: absolute; bottom: 15px; left: 15px; text-align: left; pointer-events: none; z-index: 10; width: 70%; }
+        .hero-info h2 { margin: 0 0 8px 0; color: white; font-size: 20px; font-weight: bold; text-shadow: 0 2px 5px rgba(0,0,0,0.9); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         .hero-play-btn { display: inline-block; background: white; color: black; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); z-index: 10; }
@@ -220,7 +251,13 @@
             
             <div class="hero-carousel-wrapper">
                 <button id="hero-banner" class="hero-banner-single" tabindex="0" onclick="reproducirEstrenoActual()" onkeydown="if(event.key==='Enter' || event.keyCode===13) reproducirEstrenoActual()">
+                    
                     <img id="hero-img" src="" alt="Estreno">
+                    
+                    <div class="hero-glass-panel">
+                        <div id="promo-text-container" class="hero-promo-content"></div>
+                    </div>
+
                     <div class="hero-gradient"></div>
                     
                     <div class="hero-arrow hero-arrow-left" onclick="event.stopPropagation(); carruselAnterior()">❮</div>
@@ -343,6 +380,7 @@
                 }
             }, 5000);
             cargarBaseDeDatos();
+            rotarTextosPlasma(); // Arranca el motor de textos del plasma
         });
 
         // === DESCARGA DEL JSON ===
@@ -381,6 +419,49 @@
             }
         }
 
+        // === NUEVO MOTOR: TEXTOS DEL PLASMA Y LOGO QUEMADO ===
+        let textoPlasmaIndex = 0;
+        const textosPlasma = [
+            '<div class="promo-text-anim">"Con Nova siempre lo mejor"</div>',
+            '<div class="promo-text-anim">Pasate a la versión premium, sin anuncios molestos y la mejor experiencia visual</div>',
+            '<div class="promo-logo-anim">NOVA LITE</div>'
+        ];
+
+        function rotarTextosPlasma() {
+            const container = document.getElementById('promo-text-container');
+            if(!container) return;
+
+            if (textoPlasmaIndex === 2) { 
+                // Es el turno del logo NOVA LITE
+                container.style.opacity = 0;
+                setTimeout(() => {
+                    container.innerHTML = textosPlasma[textoPlasmaIndex];
+                    container.style.opacity = 1;
+                    
+                    // Esperamos 3 segundos brillando, y luego lo quemamos
+                    setTimeout(() => {
+                        const logo = container.querySelector('.promo-logo-anim');
+                        if(logo) logo.classList.add('burn-effect');
+                        
+                        // Esperamos a que se haga cenizas (1.5s) y reiniciamos
+                        setTimeout(() => {
+                            textoPlasmaIndex = 0;
+                            rotarTextosPlasma();
+                        }, 1600); 
+                    }, 3500); 
+                }, 500);
+            } else { 
+                // Textos normales
+                container.style.opacity = 0;
+                setTimeout(() => {
+                    container.innerHTML = textosPlasma[textoPlasmaIndex];
+                    container.style.opacity = 1;
+                    textoPlasmaIndex++;
+                    setTimeout(rotarTextosPlasma, 4000); // Cada frase dura 4 segundos
+                }, 500);
+            }
+        }
+
         // === NUEVO MOTOR: CARRUSEL ÚNICO ===
         let listaEstrenos = []; 
         let indiceCarrusel = 0;
@@ -399,7 +480,7 @@
             clearInterval(temporizadorCarrusel); 
             temporizadorCarrusel = setInterval(() => {
                 carruselSiguiente();
-            }, 5000);
+            }, 6000); // 6 segundos por póster
         }
 
         function carruselSiguiente() {
@@ -567,7 +648,6 @@
             if(elementoBoton) elementoBoton.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // 🔥 MAGIA: Auto-enfocar el primer canal o banner cuando cambiás de pestaña en la TV
             if (idSeccion === 'sec-tv') {
                 setTimeout(() => {
                     const primerCanal = document.querySelector('#grilla-tv .canal-item');
@@ -687,11 +767,10 @@
             }
         }
 
-        // === GUARDIA DE TRÁFICO (RENOVADO PARA CONTROL REMOTO TV) ===
+        // === GUARDIA DE TRÁFICO (CONTROL REMOTO TV) ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
             
-            // FLECHAS IZQUIERDA/DERECHA
             if (event.key === 'ArrowRight' || event.keyCode === 39) {
                 if (focoActual.id === 'hero-banner') {
                     event.preventDefault(); 
@@ -705,7 +784,6 @@
                 }
             }
 
-            // FLECHA ABAJO: Puentes de Foco
             if (event.key === 'ArrowDown' || event.keyCode === 40) {
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
                     event.preventDefault(); 
@@ -717,19 +795,16 @@
                         if (promoTv) promoTv.focus();
                     }
                 }
-                // Si estoy en el Banner de Cine -> bajo a "Ver todos"
                 else if (focoActual.id === 'hero-banner') {
                     event.preventDefault();
                     const btnVerTodos = document.getElementById('btn-ver-estrenos');
                     if (btnVerTodos) btnVerTodos.focus();
                 }
-                // Si estoy en el Anuncio Promo TV -> bajo a la Píldora de Países
                 else if (focoActual.id === 'promo-tv') {
                     event.preventDefault();
                     const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
                     if (pildoraActiva) pildoraActiva.focus();
                 }
-                // Si estoy en la Píldora de Países -> bajo al Primer Canal de la Grilla
                 else if (focoActual.classList.contains('category-pill')) {
                     event.preventDefault();
                     const primerCanal = document.querySelector('#grilla-tv .canal-item');
@@ -737,11 +812,10 @@
                 }
             }
 
-            // FLECHA ARRIBA: Puentes de Foco Inversos
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
                 if (focoActual.classList.contains('canal-item')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
-                    if (posicionEnPantalla.top < 280) { // Si el canal está muy arriba
+                    if (posicionEnPantalla.top < 280) { 
                         event.preventDefault(); 
                         const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
                         if (pildoraActiva) pildoraActiva.focus();
