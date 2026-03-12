@@ -52,24 +52,89 @@
         .header-back { display: flex; align-items: center; padding: 15px; gap: 15px; margin-top: 5px; margin-bottom: 10px; }
         .btn-back { font-size: 14px; } 
 
-        /* === CARRUSEL === */
-        .hero-carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 20px; padding-top: 5px;}
-        .hero-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 15px; padding-left: 15px; padding-right: 15vw; -webkit-overflow-scrolling: touch; }
-        .hero-carousel::-webkit-scrollbar { display: none; }
+/* === NUEVO BANNER ÚNICO (OPTIMIZADO PARA TV) === */
+        .hero-carousel-wrapper { width: 100%; position: relative; margin-bottom: 25px; padding-top: 5px; }
         
-        /* === CARRUSEL DE ESTRENOS === */
-        .hero-card { 
-            background: transparent; border: none; padding: 0; margin: 0; outline: none; font-family: inherit;
-            position: relative; flex: 0 0 85%; max-width: 400px; height: 200px; 
-            border-radius: 12px; overflow: hidden; cursor: pointer; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; 
+        .hero-banner-single {
+            width: 100%;
+            height: 220px; /* Tamaño ideal para destacar sin ocupar toda la tele */
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background: #0a0a0a;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.2s, border 0.2s;
+            display: block;
+            outline: none;
         }
-        .hero-card:focus { transform: scale(0.95); border: 2px solid #2a60ff; box-shadow: 0 0 15px rgba(30, 80, 255, 0.8); }
-        .hero-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-        .hero-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; background: linear-gradient(to top, rgba(2,5,15,1) 0%, rgba(2,5,15,0) 100%); pointer-events: none; }
-        .hero-title { position: absolute; bottom: 15px; left: 15px; right: 15px; font-size: 20px; font-weight: bold; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
-        .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); }
 
+        /* El foco blanco cuando navegás con el control de la tele */
+        .hero-banner-single:focus {
+            transform: scale(0.98);
+            border: 3px solid #2a60ff;
+            box-shadow: 0 0 20px rgba(42, 96, 255, 0.8);
+        }
+
+        .hero-banner-single img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out; /* Fundido suave al cambiar de peli */
+        }
+
+        .hero-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(to top, rgba(2,5,15,0.9) 0%, rgba(2,5,15,0) 100%);
+            pointer-events: none;
+        }
+
+        .hero-info {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            text-align: left;
+            pointer-events: none;
+        }
+
+        .hero-info h2 {
+            margin: 0 0 8px 0;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+        }
+
+        .hero-play-btn {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff0033;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            box-shadow: 0 0 8px rgba(255,0,51,0.6);
+        }
         /* === FILAS Y GRILLAS === */
         .movie-row { display: flex; overflow-x: auto; gap: 12px; padding: 0 15px 15px 15px; scroll-snap-type: x mandatory; }
         .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; padding: 0 15px 15px 15px; }
@@ -221,11 +286,20 @@
         </div>
 
         <div id="sec-cine" class="content-section active">
-            <div class="hero-carousel-wrapper">
-                <div class="hero-carousel" id="hero-carousel">
-                    <div style="color: #2a60ff; padding: 20px; width: 100%; text-align: center;">Cargando estrenos... 🚀</div>
-                </div>
+    
+    <div class="hero-carousel-wrapper">
+        <button id="hero-banner" class="hero-banner-single" onclick="reproducirEstrenoActual()">
+            <img id="hero-img" src="" alt="Estreno">
+            <div class="hero-gradient"></div>
+            <div class="hero-badge" id="hero-badge-text">NUEVO</div>
+            <div class="hero-info">
+                <h2 id="hero-title">Cargando estrenos... 🚀</h2>
+                <div class="hero-play-btn">▶ Reproducir</div>
             </div>
+        </button>
+    </div>
+
+    </div>
             <div class="section-header">
                 <h3 class="section-title">🔥 Acción</h3>
                 <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">Ver más ❯</button>
@@ -338,11 +412,21 @@
                 const db = await response.json();
                 window.miBaseDeDatos = db;
 
+                // 🔥 ACÁ INYECTAMOS EL NUEVO MOTOR DEL CARRUSEL 🔥
+                // ⚠️ IMPORTANTE: Yo puse "db.estrenos", pero si en tu JSON la lista de 
+                // películas del carrusel se llama "carrusel", "destacados" o de otra forma, 
+                // cambialo acá abajo (por ejemplo: db.destacados).
+                if(db.estrenos) {
+                    iniciarCarruselUnico(db.estrenos);
+                }
+
                 const splash = document.getElementById('splash-screen');
                 if(splash) {
                     splash.classList.add('splash-slide-up');
                     setTimeout(() => { splash.style.display = 'none'; }, 400);
                 }
+                
+                // ... (Acá seguramente tenés el código que carga las otras filas de películas, dejalo tal cual)
 
                 const heroCont = document.getElementById('hero-carousel');
                 let heroHTML = '';
@@ -440,21 +524,53 @@
             });
         };
 
-        let intervaloCarrusel;
-        function iniciarCarruselMotor() {
-            let carrusel = document.querySelector('.hero-carousel');
-            if(!carrusel) return;
-            clearInterval(intervaloCarrusel); 
-            intervaloCarrusel = setInterval(() => {
-                if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 20) {
-                    carrusel.scrollLeft = 0;
-                } else {
-                    carrusel.scrollLeft += (window.innerWidth * 0.85) + 15; 
-                }
-            }, 4000); 
-            carrusel.addEventListener('touchstart', () => clearInterval(intervaloCarrusel));
-            carrusel.addEventListener('touchend', () => iniciarCarruselMotor());
+        // ✅ PEGAR EL NUEVO MOTOR ACÁ:
+let listaEstrenos = []; 
+let indiceCarrusel = 0;
+let temporizadorCarrusel;
+
+function iniciarCarruselUnico(arrayPelis) {
+    if (!arrayPelis || arrayPelis.length === 0) return;
+    listaEstrenos = arrayPelis;
+    
+    // Mostrar la primera película al instante
+    actualizarBanner();
+
+    // Iniciar el reloj: Cambia cada 5 segundos (5000ms)
+    clearInterval(temporizadorCarrusel); 
+    temporizadorCarrusel = setInterval(() => {
+        indiceCarrusel++;
+        if(indiceCarrusel >= listaEstrenos.length) {
+            indiceCarrusel = 0; // Volver a empezar
         }
+        actualizarBanner();
+    }, 5000);
+}
+
+function actualizarBanner() {
+    const img = document.getElementById("hero-img");
+    const titulo = document.getElementById("hero-title");
+    const peli = listaEstrenos[indiceCarrusel];
+
+    // 1. Efecto de fundido (opacidad 0)
+    img.style.opacity = 0;
+    
+    // 2. Cambiamos la info (usando TUS variables exactas: poster y title)
+    setTimeout(() => {
+        img.src = peli.poster; 
+        titulo.textContent = peli.title;
+        img.style.opacity = 1;
+    }, 300);
+}
+
+// Cuando aprietan "OK" en el control remoto sobre el póster gigante
+function reproducirEstrenoActual() {
+    const peli = listaEstrenos[indiceCarrusel];
+    const tituloLimpio = peli.title.replace(/'/g, "\\'");
+    
+    // Llamamos a TU función playCinematic exacta
+    playCinematic(peli.url, peli.isYT || false, tituloLimpio);
+}
 
         let seccionAntesDelCatalogo = 'sec-cine';
         function abrirCatalogoCompleto(nombreCategoria, claveJson) {
