@@ -771,6 +771,7 @@
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
             
+            // FLECHAS IZQUIERDA/DERECHA
             if (event.key === 'ArrowRight' || event.keyCode === 39) {
                 if (focoActual.id === 'hero-banner') {
                     event.preventDefault(); 
@@ -784,6 +785,7 @@
                 }
             }
 
+            // FLECHA ABAJO: Puentes de Foco
             if (event.key === 'ArrowDown' || event.keyCode === 40) {
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
                     event.preventDefault(); 
@@ -800,6 +802,21 @@
                     const btnVerTodos = document.getElementById('btn-ver-estrenos');
                     if (btnVerTodos) btnVerTodos.focus();
                 }
+                // 🔥 NUEVO: Si estoy en "Ver todos" de estrenos -> bajo a la fila Acción
+                else if (focoActual.id === 'btn-ver-estrenos') {
+                    event.preventDefault();
+                    const primeraAccion = document.querySelector('#row-accion .movie-card-container');
+                    if (primeraAccion) primeraAccion.focus();
+                }
+                // 🔥 NUEVO: Si estoy en CUALQUIER botón "Ver más" -> bajo a la 1ra peli de SU fila
+                else if (focoActual.classList.contains('btn-more')) {
+                    event.preventDefault();
+                    const filaPeliculas = focoActual.parentElement.nextElementSibling;
+                    if (filaPeliculas && filaPeliculas.classList.contains('movie-row')) {
+                        const primeraPeli = filaPeliculas.querySelector('.movie-card-container');
+                        if (primeraPeli) primeraPeli.focus();
+                    }
+                }
                 else if (focoActual.id === 'promo-tv') {
                     event.preventDefault();
                     const pildoraActiva = document.querySelector('.category-pill.active') || document.querySelector('.category-pill');
@@ -812,6 +829,7 @@
                 }
             }
 
+            // FLECHA ARRIBA: Puentes de Foco Inversos
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
                 if (focoActual.classList.contains('canal-item')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
@@ -830,7 +848,8 @@
                     event.preventDefault();
                     document.getElementById('searchInput').focus();
                 }
-                else if (focoActual.id === 'btn-ver-estrenos') {
+                // 🔥 NUEVO: Si subo desde un botón "Ver más", voy al banner gigante
+                else if (focoActual.classList.contains('btn-more')) {
                     event.preventDefault();
                     document.getElementById('hero-banner').focus();
                 }
@@ -843,7 +862,7 @@
                 }
             }
         });
-
+        
         // === MOTOR DE TRANSICIÓN DE BANNERS (SECCIÓN TV) ===
         document.addEventListener('DOMContentLoaded', () => {
             const cartel1 = document.querySelector('.cartel-1');
