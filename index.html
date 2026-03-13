@@ -722,11 +722,14 @@
             }
         }
 
-        function playCinematic(arg1, arg2, arg3) {
+        function playCinematic(arg1, arg2, arg3, arg4 = false) {
             if (!arg1) return; 
             let urlVideo = String(arg1);
             let tituloVideo = (arg2 === true || arg2 === false || arg2 === "true" || arg2 === "false") ? arg3 : arg2;
             if (!tituloVideo) tituloVideo = "Canal en Vivo";
+            
+            // 🔥 Guardamos si debe arrancar mudo (true o false)
+            let arrancaMuteado = Boolean(arg4);
 
             let esYouTube = (arg2 === true || arg2 === "true" || urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be"));
 
@@ -747,13 +750,13 @@
                 }
             } else {
                 if (typeof AndroidInterface !== "undefined") {
-                    AndroidInterface.abrirReproductor(urlVideo, String(tituloVideo));
+                    // 🔥 LE PASAMOS EL PARÁMETRO DE MUTE A ANDROID STUDIO
+                    AndroidInterface.abrirReproductor(urlVideo, String(tituloVideo), arrancaMuteado);
                 } else {
-                    console.log("Modo Web: VLC -> " + urlVideo);
+                    console.log("Modo Web: VLC -> " + urlVideo + " | Muteado: " + arrancaMuteado);
                 }
             }
         }
-
         // === GUARDIA DE TRÁFICO (RENOVADO PARA EL NUEVO DISEÑO) ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
