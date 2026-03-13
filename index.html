@@ -542,16 +542,18 @@
             lote.forEach(canal => {
                 const tituloLimpio = (canal.name || '').replace(/'/g, "\\'");
                 htmlLote += `
-                    <div class="canal-item" tabindex="0" data-category="${canal.cat}" onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')" onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}')">
+                    <div class="canal-item" tabindex="0" data-category="${canal.cat}" 
+                         onclick="playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}', ${canal.mute || false})" 
+                         onkeydown="if(event.key==='Enter' || event.keyCode===13) playCinematic('${canal.url}', ${canal.isYT || false}, '${tituloLimpio}', ${canal.mute || false})">
                         <div class="dot-live"></div>
                         <img src="${canal.logo}" alt="${canal.name}" loading="lazy">
                         <p class="canal-title">${canal.name}</p>
                     </div>`;
             });
+            
             grillaTV.insertAdjacentHTML('beforeend', htmlLote);
             window.canalIndex += 28; 
         }
-
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
                 clearTimeout(window.loteTimeout);
@@ -722,16 +724,15 @@
             }
         }
 
-        function playCinematic(arg1, arg2, arg3, arg4 = false) {
+        // Le agregamos el arg4 que es el Mute
+        function playCinematic(arg1, arg2, arg3, arg4) {
             if (!arg1) return; 
             let urlVideo = String(arg1);
             let tituloVideo = (arg2 === true || arg2 === false || arg2 === "true" || arg2 === "false") ? arg3 : arg2;
             if (!tituloVideo) tituloVideo = "Canal en Vivo";
             
-            // 🔥 Guardamos si debe arrancar mudo (true o false)
-            let arrancaMuteado = Boolean(arg4);
-
             let esYouTube = (arg2 === true || arg2 === "true" || urlVideo.includes("youtube.com") || urlVideo.includes("youtu.be"));
+            let silenciar = (arg4 === true || arg4 === "true"); // 🔥 Evaluamos si hay que mutear
 
             if (esYouTube) {
                 let videoId = urlVideo; 
@@ -744,10 +745,18 @@
                     if (videoId.includes('&')) videoId = videoId.split('&')[0];
                 }
                 if (typeof AndroidInterface !== "undefined") {
-                    AndroidInterface.abrirYouTube(videoId, String(tituloVideo));
+                    AndroidInterface.abrirYouTube(videoId, String(tituloVideo), silenciar);
                 } else {
-                    console.log("Modo Web: YouTube -> " + videoId);
+                    console.log("Modo Web: YouTube -> " + videoId + " | Mute: " + silenciar);
                 }
+            } else {
+                if (typeof AndroidInterface !== "undefined") {
+                    AndroidInterface.abrirReproductor(urlVideo, String(tituloVideo), silenciar);
+                } else {
+                    console.log("Modo Web: VLC -> " + urlVideo + " | Mute: " + silenciar);
+                }
+            }
+        }
             } else {
                 if (typeof AndroidInterface !== "undefined") {
                     // 🔥 LE PASAMOS EL PARÁMETRO DE MUTE A ANDROID STUDIO
