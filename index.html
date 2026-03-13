@@ -761,6 +761,36 @@
         // === GUARDIA DE TRÁFICO (RENOVADO PARA EL NUEVO DISEÑO) ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
+
+// === CAPTURAR EL BOTÓN "ATRÁS" DEL CONTROL REMOTO TV ===
+            // Las teles suelen mandar el código 27 (Escape), 8 (Backspace) o 10009 (Botón Back)
+            if (event.key === 'Escape' || event.key === 'Backspace' || event.keyCode === 27 || event.keyCode === 8 || event.keyCode === 10009) {
+                
+                // 1. Si el Catálogo está abierto, lo cerramos con 1 toque
+                if (document.getElementById('sec-catalogo').classList.contains('active')) {
+                    event.preventDefault(); // Frenamos a Android
+                    volverDeCatalogo();
+                    return; // Cortamos la ejecución acá
+                }
+                
+                // 2. Si el Buscador está abierto, lo cerramos con 1 toque
+                if (document.getElementById('sec-busqueda').classList.contains('active')) {
+                    event.preventDefault(); // Frenamos a Android
+                    document.getElementById('searchInput').value = '';
+                    document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+                    document.getElementById(seccionAnterior).classList.add('active');
+                    
+                    // Le devolvemos el foco a donde estaba
+                    if (seccionAnterior === 'sec-cine') {
+                        const hero = document.getElementById('hero-banner');
+                        if (hero) hero.focus();
+                    } else if (seccionAnterior === 'sec-tv') {
+                        const pildora = document.querySelector('.category-pill.active');
+                        if (pildora) pildora.focus();
+                    }
+                    return; // Cortamos la ejecución acá
+                }
+            }
             
             if (event.key === 'ArrowRight' || event.keyCode === 39) {
                 if (focoActual.id === 'hero-banner') {
