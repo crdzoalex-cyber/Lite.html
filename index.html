@@ -74,24 +74,15 @@
             background-size: 300% 300%; animation: plasmaMove 8s ease infinite;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 2;
             display: flex; align-items: center; justify-content: center;
-            padding: 10px 40px 60px 20px; /* Espacio abajo para no tapar el título de la peli */
-            /* Difuminado hacia la derecha para mezclarse con el póster */
+            padding: 10px 40px 60px 20px; 
             -webkit-mask-image: linear-gradient(to right, black 65%, transparent 100%);
             mask-image: linear-gradient(to right, black 65%, transparent 100%);
         }
 
-        /* Textos y Logo Animado dentro del Vidrio */
         .hero-promo-content { text-align: center; width: 100%; transition: opacity 0.5s ease; }
-        .promo-text-anim {
-            font-size: 13px; font-weight: 500; color: #e0e6ff; text-shadow: 0 2px 4px rgba(0,0,0,0.9);
-            font-style: italic; line-height: 1.4; padding: 0 10px;
-        }
-        .promo-logo-anim {
-            font-size: 26px; font-weight: 900; color: #ffffff; 
-            text-shadow: 0 0 15px #2a60ff, 0 0 30px #1e50ff; letter-spacing: 3px;
-        }
+        .promo-text-anim { font-size: 13px; font-weight: 500; color: #e0e6ff; text-shadow: 0 2px 4px rgba(0,0,0,0.9); font-style: italic; line-height: 1.4; padding: 0 10px; }
+        .promo-logo-anim { font-size: 26px; font-weight: 900; color: #ffffff; text-shadow: 0 0 15px #2a60ff, 0 0 30px #1e50ff; letter-spacing: 3px; }
 
-        /* 💥 El efecto de Quemado para el logo 💥 */
         .burn-effect { animation: burnAnim 1.5s forwards; }
         @keyframes burnAnim {
             0% { filter: brightness(1) blur(0px); opacity: 1; transform: scale(1); }
@@ -112,7 +103,6 @@
         .hero-play-btn { display: inline-block; background: white; color: black; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         .hero-badge { position: absolute; top: 10px; left: 10px; background: #ff0033; color: white; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(255,0,51,0.6); z-index: 10; }
 
-        /* Flechas visuales */
         .hero-arrow {
             position: absolute; top: 50%; transform: translateY(-50%);
             background: rgba(0,0,0,0.4); color: white; border: none; font-size: 16px; padding: 8px 12px;
@@ -273,34 +263,44 @@
 
             <div class="section-header" style="margin-top: 5px;">
                 <h3 class="section-title">🚀 Últimos Estrenos</h3>
-                <button class="btn-more" id="btn-ver-estrenos" tabindex="0" onclick="abrirCatalogoCompleto('Estrenos', window.miBaseDeDatos.peliculasEstrenos ? 'peliculasEstrenos' : 'estrenos')">Ver todos ❯</button>
+            </div>
+            <div style="padding: 0 15px 15px 15px; text-align: right;">
+                <button class="btn-more" id="btn-ver-estrenos" tabindex="0" onclick="abrirCatalogoCompleto('Estrenos', window.miBaseDeDatos.peliculasEstrenos ? 'peliculasEstrenos' : 'estrenos')" style="display: inline-flex;">Ver todos los estrenos ❯</button>
             </div>
 
             <div class="section-header">
                 <h3 class="section-title">🔥 Acción</h3>
-                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-accion"></div>
+            <div style="padding: 0 15px 20px 15px; text-align: right;">
+                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Acción', 'peliculasAccion')" style="display: inline-flex;">Ver más Acción ❯</button>
+            </div>
             
             <div class="section-header">
                 <h3 class="section-title">👻 Terror</h3>
-                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-terror"></div>
+            <div style="padding: 0 15px 20px 15px; text-align: right;">
+                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Terror', 'peliculasTerror')" style="display: inline-flex;">Ver más Terror ❯</button>
+            </div>
             
             <div class="section-header">
                 <h3 class="section-title">🧸 Infantiles</h3>
-                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-infantiles"></div>
+            <div style="padding: 0 15px 20px 15px; text-align: right;">
+                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Infantiles', 'peliculasInfantiles')" style="display: inline-flex;">Ver más Infantiles ❯</button>
+            </div>
         </div> 
 
         <div id="sec-series" class="content-section">
             <div class="section-header">
                 <h3 class="section-title">📺 Series Top</h3>
-                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Series', 'seriesData')">Ver más ❯</button>
             </div>
             <div class="movie-row" id="row-series"></div>
+            <div style="padding: 0 15px 20px 15px; text-align: right;">
+                <button class="btn-more" tabindex="0" onclick="abrirCatalogoCompleto('Series', 'seriesData')" style="display: inline-flex;">Ver más Series ❯</button>
+            </div>
         </div>
 
         <div id="sec-tv" class="content-section">
@@ -380,7 +380,7 @@
                 }
             }, 5000);
             cargarBaseDeDatos();
-            rotarTextosPlasma(); // Arranca el motor de textos del plasma
+            rotarTextosPlasma(); 
         });
 
         // === DESCARGA DEL JSON ===
@@ -432,18 +432,15 @@
             if(!container) return;
 
             if (textoPlasmaIndex === 2) { 
-                // Es el turno del logo NOVA LITE
                 container.style.opacity = 0;
                 setTimeout(() => {
                     container.innerHTML = textosPlasma[textoPlasmaIndex];
                     container.style.opacity = 1;
                     
-                    // Esperamos 3 segundos brillando, y luego lo quemamos
                     setTimeout(() => {
                         const logo = container.querySelector('.promo-logo-anim');
                         if(logo) logo.classList.add('burn-effect');
                         
-                        // Esperamos a que se haga cenizas (1.5s) y reiniciamos
                         setTimeout(() => {
                             textoPlasmaIndex = 0;
                             rotarTextosPlasma();
@@ -451,18 +448,17 @@
                     }, 3500); 
                 }, 500);
             } else { 
-                // Textos normales
                 container.style.opacity = 0;
                 setTimeout(() => {
                     container.innerHTML = textosPlasma[textoPlasmaIndex];
                     container.style.opacity = 1;
                     textoPlasmaIndex++;
-                    setTimeout(rotarTextosPlasma, 4000); // Cada frase dura 4 segundos
+                    setTimeout(rotarTextosPlasma, 4000); 
                 }, 500);
             }
         }
 
-        // === NUEVO MOTOR: CARRUSEL ÚNICO ===
+        // === MOTOR: CARRUSEL ÚNICO ===
         let listaEstrenos = []; 
         let indiceCarrusel = 0;
         let temporizadorCarrusel;
@@ -470,7 +466,6 @@
         function iniciarCarruselUnico(arrayPelis) {
             if (!arrayPelis || arrayPelis.length === 0) return;
             listaEstrenos = arrayPelis;
-            
             actualizarBanner();
             resetTemporizador();
             configurarGestosTouch(); 
@@ -478,9 +473,7 @@
 
         function resetTemporizador() {
             clearInterval(temporizadorCarrusel); 
-            temporizadorCarrusel = setInterval(() => {
-                carruselSiguiente();
-            }, 6000); // 6 segundos por póster
+            temporizadorCarrusel = setInterval(() => { carruselSiguiente(); }, 6000); 
         }
 
         function carruselSiguiente() {
@@ -503,9 +496,7 @@
             const img = document.getElementById("hero-img");
             const titulo = document.getElementById("hero-title");
             const peli = listaEstrenos[indiceCarrusel];
-
             img.style.opacity = 0;
-            
             setTimeout(() => {
                 img.src = peli.poster || peli.imagen; 
                 titulo.textContent = peli.title || peli.titulo;
@@ -518,7 +509,6 @@
             const peli = listaEstrenos[indiceCarrusel];
             const tituloFinal = peli.title || peli.titulo;
             const tituloLimpio = tituloFinal.replace(/'/g, "\\'");
-            
             playCinematic(peli.url, peli.isYT || false, tituloLimpio);
         }
 
@@ -526,9 +516,7 @@
             let touchStartX = 0;
             let touchEndX = 0;
             const banner = document.getElementById('hero-banner');
-            banner.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, {passive: true});
+            banner.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
             banner.addEventListener('touchend', e => {
                 touchEndX = e.changedTouches[0].screenX;
                 if (touchEndX < touchStartX - 50) carruselSiguiente(); 
@@ -560,7 +548,6 @@
                         <p class="canal-title">${canal.name}</p>
                     </div>`;
             });
-            
             grillaTV.insertAdjacentHTML('beforeend', htmlLote);
             window.canalIndex += 28; 
         }
@@ -767,11 +754,10 @@
             }
         }
 
-        // === GUARDIA DE TRÁFICO (CONTROL REMOTO TV) ===
+        // === GUARDIA DE TRÁFICO (RENOVADO PARA EL NUEVO DISEÑO) ===
         document.addEventListener('keydown', function(event) {
             const focoActual = document.activeElement;
             
-            // FLECHAS IZQUIERDA/DERECHA
             if (event.key === 'ArrowRight' || event.keyCode === 39) {
                 if (focoActual.id === 'hero-banner') {
                     event.preventDefault(); 
@@ -785,7 +771,7 @@
                 }
             }
 
-            // FLECHA ABAJO: Puentes de Foco
+            // === FLECHA ABAJO ===
             if (event.key === 'ArrowDown' || event.keyCode === 40) {
                 if (focoActual.tagName === 'INPUT' || focoActual.id === 'searchInput') {
                     event.preventDefault(); 
@@ -802,19 +788,33 @@
                     const btnVerTodos = document.getElementById('btn-ver-estrenos');
                     if (btnVerTodos) btnVerTodos.focus();
                 }
-                // 🔥 NUEVO: Si estoy en "Ver todos" de estrenos -> bajo a la fila Acción
-                else if (focoActual.id === 'btn-ver-estrenos') {
-                    event.preventDefault();
-                    const primeraAccion = document.querySelector('#row-accion .movie-card-container');
-                    if (primeraAccion) primeraAccion.focus();
+                else if (focoActual.classList.contains('movie-card-container')) {
+                    // BAJAR DESDE UNA PELI -> AL BOTÓN "VER MÁS" DE ESA FILA
+                    const filaActual = focoActual.closest('.movie-row');
+                    if (filaActual) {
+                        const contenedorBoton = filaActual.nextElementSibling;
+                        if (contenedorBoton) {
+                            const btnMas = contenedorBoton.querySelector('.btn-more');
+                            if (btnMas) {
+                                event.preventDefault();
+                                btnMas.focus();
+                            }
+                        }
+                    }
                 }
-                // 🔥 NUEVO: Si estoy en CUALQUIER botón "Ver más" -> bajo a la 1ra peli de SU fila
                 else if (focoActual.classList.contains('btn-more')) {
-                    event.preventDefault();
-                    const filaPeliculas = focoActual.parentElement.nextElementSibling;
-                    if (filaPeliculas && filaPeliculas.classList.contains('movie-row')) {
-                        const primeraPeli = filaPeliculas.querySelector('.movie-card-container');
-                        if (primeraPeli) primeraPeli.focus();
+                    // BAJAR DESDE "VER MÁS" -> A LA PRIMERA PELI DE LA SIGUIENTE FILA
+                    const contenedorBoton = focoActual.parentElement;
+                    const siguienteHeader = contenedorBoton.nextElementSibling;
+                    if (siguienteHeader && siguienteHeader.classList.contains('section-header')) {
+                        const siguienteFila = siguienteHeader.nextElementSibling;
+                        if (siguienteFila && siguienteFila.classList.contains('movie-row')) {
+                            const primeraPeli = siguienteFila.querySelector('.movie-card-container');
+                            if (primeraPeli) {
+                                event.preventDefault();
+                                primeraPeli.focus();
+                            }
+                        }
                     }
                 }
                 else if (focoActual.id === 'promo-tv') {
@@ -829,7 +829,7 @@
                 }
             }
 
-            // FLECHA ARRIBA: Puentes de Foco Inversos
+            // === FLECHA ARRIBA ===
             if (event.key === 'ArrowUp' || event.keyCode === 38) {
                 if (focoActual.classList.contains('canal-item')) {
                     const posicionEnPantalla = focoActual.getBoundingClientRect();
@@ -848,21 +848,48 @@
                     event.preventDefault();
                     document.getElementById('searchInput').focus();
                 }
-                // 🔥 NUEVO: Si subo desde un botón "Ver más", voy al banner gigante
                 else if (focoActual.classList.contains('btn-more')) {
-                    event.preventDefault();
-                    document.getElementById('hero-banner').focus();
-                }
-                else if (focoActual.id === 'hero-banner' || focoActual.classList.contains('movie-card-container')) {
-                    const posicionEnPantalla = focoActual.getBoundingClientRect();
-                    if (posicionEnPantalla.top < 250) { 
+                    // SUBIR DESDE "VER MÁS" -> A LA PRIMERA PELI DE SU PROPIA FILA (Justo arriba)
+                    const filaArriba = focoActual.parentElement.previousElementSibling;
+                    if (filaArriba && filaArriba.classList.contains('movie-row')) {
+                        const primeraPeli = filaArriba.querySelector('.movie-card-container');
+                        if (primeraPeli) {
+                            event.preventDefault();
+                            primeraPeli.focus();
+                        }
+                    } else if (focoActual.id === 'btn-ver-estrenos') {
                         event.preventDefault();
-                        document.getElementById('searchInput').focus();
+                        document.getElementById('hero-banner').focus();
                     }
+                }
+                else if (focoActual.classList.contains('movie-card-container')) {
+                    // SUBIR DESDE UNA PELI -> AL BOTÓN "VER MÁS" DE LA FILA ANTERIOR
+                    const filaActual = focoActual.closest('.movie-row');
+                    if (filaActual) {
+                        const headerAnterior = filaActual.previousElementSibling;
+                        if (headerAnterior && headerAnterior.classList.contains('section-header')) {
+                            const contenedorBotonAnterior = headerAnterior.previousElementSibling;
+                            if (contenedorBotonAnterior) {
+                                const btnMas = contenedorBotonAnterior.querySelector('.btn-more');
+                                if (btnMas) {
+                                    event.preventDefault();
+                                    btnMas.focus();
+                                } else if (contenedorBotonAnterior.id === 'hero-banner' || filaActual.id === 'row-accion') {
+                                     event.preventDefault();
+                                     const btnEstrenos = document.getElementById('btn-ver-estrenos');
+                                     if (btnEstrenos) btnEstrenos.focus();
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (focoActual.id === 'hero-banner') {
+                    event.preventDefault();
+                    document.getElementById('searchInput').focus();
                 }
             }
         });
-        
+
         // === MOTOR DE TRANSICIÓN DE BANNERS (SECCIÓN TV) ===
         document.addEventListener('DOMContentLoaded', () => {
             const cartel1 = document.querySelector('.cartel-1');
