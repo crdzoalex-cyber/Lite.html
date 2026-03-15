@@ -952,6 +952,44 @@
         function abrirPromoPro() {
             alert("¡Próximamente! Descarga la versión PRO para eliminar todos los anuncios.");
         }
+
+// === RESPONDER AL BOTÓN ATRÁS DE ANDROID ===
+        function manejarBotonAtras() {
+            // 1. ¿Está abierto el Buscador?
+            const secBusqueda = document.getElementById('sec-busqueda');
+            if (secBusqueda && secBusqueda.classList.contains('active')) {
+                // Cerramos buscador limpiando el texto
+                document.getElementById('searchInput').value = '';
+                document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+                
+                // Volvemos a la sección donde estábamos antes (por defecto TV)
+                const volverA = (typeof seccionAnterior !== 'undefined') ? seccionAnterior : 'sec-tv';
+                const seccDestino = document.getElementById(volverA);
+                if (seccDestino) {
+                    seccDestino.classList.add('active');
+                    // Le devolvemos el foco a los botones principales para que la tele no se pierda
+                    if (volverA === 'sec-tv') {
+                        setTimeout(() => { document.getElementById('promo-tv')?.focus(); }, 100);
+                    } else {
+                        setTimeout(() => { document.getElementById('hero-banner')?.focus(); }, 100);
+                    }
+                }
+                return true; // Le decimos a Android: "Yo me hice cargo, NO cierres la app"
+            }
+            
+            // 2. ¿Está abierto el Catálogo de detalles (cuando entrás a una peli/serie)?
+            const secCatalogo = document.getElementById('sec-catalogo');
+            if (secCatalogo && secCatalogo.classList.contains('active')) {
+                volverDeCatalogo(); // Llamamos a tu función que ya cierra el catálogo
+                return true; // Le decimos a Android: "Yo me hice cargo, NO cierres la app"
+            }
+
+            // 3. ¿Hay algún otro modal o ventana flotante abierta? (Podés agregar más if acá en el futuro)
+
+            // 🔥 Si el código llega hasta acá, significa que estamos en la pantalla principal limpia...
+            return false; // Le decimos a Android: "No hay nada para cerrar, matá la aplicación"
+        }
+        
     </script>                                        
 </body>
 </html>
