@@ -199,7 +199,7 @@
   ],
   "channels": [
     { "id": 1, "name": "Telefe", "cat": "argentina", "url": "http://107.152.39.199:8030/hls/canal13.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Telefe_%28nuevo_logo%29.png" },
-    { "id": 2, "name": "C5N", "cat": "argentina", "url": "SF06Qy1Ct6Y", "isYT": true, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvq_SOP_QOh9sP7KasciCruNLfAptpHkjZF2LZXALbOA&s" },
+    { "id": 2, "name": "C5N", "cat": "argentina", "url": "http://207.246.114.254:25461/live/gabysports/gabysports/3328.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvq_SOP_QOh9sP7KasciCruNLfAptpHkjZF2LZXALbOA&s" },
     { "id": 3, "name": "TV Publica", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a00c/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo_Televisi%C3%B3n_P%C3%BAblica_Argentina.png" },
     { "id": 4, "name": "El Trece", "cat": "argentina", "url": "https://livetrx01.vodgc.net/eltrecetv/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Canal_13_200_8.png" },
     { "id": 6, "name": "A24", "cat": "argentina", "url": "ArKbAx1K-2U", "isYT": true, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWrKdcM-AOju0vaXXXVOIuoaZew8SpU2aghXOiXjn15w&s=10" },
