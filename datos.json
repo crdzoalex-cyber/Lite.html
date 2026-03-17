@@ -987,7 +987,7 @@
     { "id": 789, "name": "Cinemax 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a005/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cinemax+2" },
     { "id": 790, "name": "Comedy Central HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a01u/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Comedy+Central+HD+2" },
     { "id": 791, "name": "Crónica 2", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00x/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cronica+2" },
-    { "id": 792, "name": "DeporTV", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a027/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=DeporTV" },
+    { "id": 792, "name": "DeporTV", "cat": "deportes", "url": "http://181.209.37.74:8001/play/a07f/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=DeporTV" },
     { "id": 793, "name": "Discovery Channel HD 2", "cat": "documentales", "url": "http://181.209.125.236:10000/play/a039/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+Channel+HD+2" },
     { "id": 794, "name": "Discovery H&H HD 2", "cat": "documentales", "url": "http://181.209.125.236:10000/play/a038/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+H%26H+HD+2" },
     { "id": 795, "name": "Discovery Kids 2", "cat": "infantiles", "url": "http://181.209.125.236:10000/play/a02j/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+Kids+2" },
