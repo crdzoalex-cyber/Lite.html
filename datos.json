@@ -209,7 +209,7 @@
     { "id": 7, "name": "Canal 26 (yt)", "cat": "argentina", "url": "Akf2MWm8vfk", "isYT": true, "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Canal_26_logo_%282022%29.svg/2048px-Canal_26_logo_%282022%29.svg.png" },
 
     { "id": 8, "name": "TN (yt)", "cat": "argentina", "url": "cb12KmMMDJA", "isYT": true, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCMREUEqODBnDkjU3L_LOf7dFAV77YKTtglhB9fGuDqg&s=10" },
-    { "id": 9, "name": "Crónica TV", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a00x/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Cr%C3%B3nica_TV_logotipo_%282016%29.png" },
+    { "id": 9, "name": "Crónica TV (yt)", "cat": "argentina", "url": "JC7f3EUDaqw", "isYT": true, "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Cr%C3%B3nica_TV_logotipo_%282016%29.png" },
     { "id": 10, "name": "Canal E", "cat": "argentina", "url": "https://unlimited1-us.dps.live/perfiltv/perfiltv.smil/perfiltv/livestream2/chunks.m3u8", "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-UG4AWh5Z629R8faO00lu4KDsci26i9Z9wtKu0nq2eeTL1ev-12pVkEw3_3yRzKmkqUWzfuse87aOS8wWiTGtM0x84p2BJ6BC-KBBr5dsqW333rGqOxLq3kL8fpQqQ2QBtdjnSdxvSS7brGMyf3YbZBypavCdKZDXtb1ndVxKghGf7XV1EhhgH4gf/s158/canal-e.webp" },
     { "id": 11, "name": "24/7", "cat": "argentina", "url": "https://panel.host-live.com:19360/cn247tv/360p.m3u8", "logo": "https://files.catbox.moe/supqza.png" },
     { "id": 12, "name": "TV Solidaria", "cat": "argentina", "url": "https://canadaremar2.todostreaming.es/live/argentina-web.m3u8", "logo": "https://files.catbox.moe/4rutpx.png" },
