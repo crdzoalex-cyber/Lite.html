@@ -12,6 +12,13 @@
       "pin": "1234",
       "status": "active",
       "expires": "2099-03-05"
+    },
+
+    {
+      "username": "prueba",
+      "pin": "1234",
+      "status": "active",
+      "expires": "2026-04-01"
     }
   ],
   "heroData": [
