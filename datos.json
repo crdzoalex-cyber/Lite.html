@@ -1,3 +1,29 @@
+"musicPlayer": {
+  "autoplay": true,
+  "playlist": [
+    {
+      "title": "Bout Me",
+      "artist": "Devour",
+      "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/Devour%20-%20Bout%20Me.mp3"
+    },
+    {
+      "title": "Till I Get It",
+      "artist": "Devour",
+      "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/Devour%20-%20Till%20I%20Get%20It.mp3"
+    },
+    {
+      "title": "No Money No Fame",
+      "artist": "Dub Libitum",
+      "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/Dub%20Libitum%20-%20No%20Money%20No%20Fame.mp3"
+    },
+    {
+      "title": "Hopeless Boy",
+      "artist": "King Lil G",
+      "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/KING%20LIL%20G%20-%20Hopeless%20Boy.mp3"
+    }
+  ]
+}
+
 {
   "config": {
     "welcomeType": "video",
