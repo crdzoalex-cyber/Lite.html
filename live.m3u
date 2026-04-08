@@ -1,7 +1,7 @@
 #EXTM3U
 
 # ===== ARGENTINA =====
-#EXTINF:-1 tvg-name="C5N" group-title="Argentina",C5N
+#EXTINF:-1 tvg-name="C5N",C5N group-title="Argentina",C5N
 https://www.youtube.com/watch?v=SF06Qy1Ct6Y
 
 #EXTINF:-1 tvg-name="TN" group-title="Argentina",TN
