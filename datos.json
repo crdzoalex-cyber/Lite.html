@@ -21,8 +21,9 @@
         "title": "Hopeless Boy",
         "artist": "King Lil G",
         "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/hopeless.mp3"
-      }
+       }
     ]
+  },
 
   "config": {
     "welcomeType": "video",
