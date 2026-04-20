@@ -1299,7 +1299,9 @@
   "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/live.m3u",
   "isYT": false
 }
-
+    
+{ "id": 1064, "name": "Cine War", "cat": "Cine", "url": "http://179.63.6.12:9000/play/a07n", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
+   
     
   ]
 }
