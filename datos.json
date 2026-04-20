@@ -242,7 +242,7 @@
   ],
   "channels": [
     
-  { "id": 1, "name": "Telefe", "cat": "argentina", "url": "http://38.156.13.106:8888/play/a03v/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Telefe_%28nuevo_logo%29.png", "tvg_id": "Telefe.ar" },
+  { "id": 1, "name": "Telefe", "cat": "argentina", "url": "http://200.115.120.1:8000/play/ca016/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Telefe_%28nuevo_logo%29.png", "tvg_id": "Telefe.ar" },
   { "id": 2, "name": "C5N", "cat": "argentina", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/c5n_480.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvq_SOP_QOh9sP7KasciCruNLfAptpHkjZF2LZXALbOA&s", "tvg_id": "C5N.ar" },
   { "id": 3, "name": "TV Publica", "cat": "argentina", "url": "https://puentes.viendotele.cl/ar-tvp/c7_vivo01_dai_source-20001_360p.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo_Televisi%C3%B3n_P%C3%BAblica_Argentina.png", "tvg_id": "TVPublica.ar" },
   { "id": 4, "name": "El Trece", "cat": "argentina", "url": "https://livetrx01.vodgc.net/eltrecetv/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Canal_13_200_8.png", "tvg_id": "ElTrece.ar" },
