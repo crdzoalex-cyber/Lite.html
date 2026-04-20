@@ -886,7 +886,7 @@
     { "id": 642, "name": "Nat Geo Kids", "cat": "infantiles", "url": "http://24.152.54.30:8085/play/Nat_Geo_Kids/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Nat+Geo+Kids" },
     { "id": 643, "name": "Nat Geo Wild", "cat": "documentales", "url": "http://24.152.54.30:8085/play/Nat_Geo_Wild/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Nat+Geo+Wild" },
     { "id": 644, "name": "Nicarao TV", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a013/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Nicarao+TV" },
-    { "id": 645, "name": "Panico", "cat": "cine", "url": "http://24.152.54.30:8085/play/Panico/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Panico" },
+    { "id": 645, "name": "Panico", "cat": "cine", "url": "http://147.75.122.125:8000/play/a02v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Panico" },
     { "id": 646, "name": "PrimeTime", "cat": "cine", "url": "http://24.152.54.30:8085/play/PrimeTime/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=PrimeTime" },
     { "id": 647, "name": "RHEMA TV", "cat": "religiosos", "url": "http://24.152.54.30:8085/play/a04e/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=RHEMA+TV" },
     { "id": 648, "name": "SEMILLITAS", "cat": "infantiles", "url": "http://24.152.54.30:8085/play/a014/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Semillitas" },
@@ -1288,10 +1288,11 @@
 { "id": 1059, "name": "Universo HD", "cat": "variedades", "url": "http://190.11.225.124:5000/live/universo_hd/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb-1bTnbU6OrhC4nEIkZmPauGG9P2v1Pz222F-T0YANg&s" },
     { "id": 1060, "name": "NFL Channel", "cat": "deportes", "url": "http://38.49.128.38:8000/play/a0kk/index.m3u8", "isYT": false, "logo": "https://www.sportspro.com/wp-content/uploads/2023/03/NFL-Network.png" },
    { "id": 1061, "name": "Aby Yala", "cat": "bolivia", "url": "https://seo.tv.bo/hls/AbyaYala.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+   { "id": 1062, "name": "Univision", "cat": "noticias", "url": "http://187.245.231.226:8000/play/a0q3/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    
     
     {
-  "id": 1062,
+  "id": 1063,
   "name": "Live PRO",
   "cat": "live",
   "type": "m3u",
