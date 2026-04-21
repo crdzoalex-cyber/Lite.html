@@ -1263,7 +1263,7 @@
     { "id": 1033, "name": "Win Sport 2", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a06a/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
     { "id": 1034, "name": "Zona Latina 2", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0a5/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina+2" },
     { "id": 1035, "name": "re WIND", "cat": "musica", "url": "http://217.26.190.76:8888/play/a0jh/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
-    { "id": 1036, "name": "Unitel SCZ", "cat": "bolivia", "url": "143.255.85.248:8000/play/a02w", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
+    { "id": 1036, "name": "Unitel SCZ", "cat": "bolivia", "url": "https://streamer01.digital.com.bo/session/8e1d2600-3dc1-11f1-89f0-00505683ffaa$h1.0$default/2ap337/__cl/cg:sworigin/__c/UNITEL/__op/hls-default/__f/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1037, "name": "Ceacom", "cat": "bolivia", "url": "https://eu1.servers10.com:8081/ceacom/tracks-v1a1/mono.m3u8", "isYT": false, "logo": "https://i.imgur.com/hutdRfk.png" },
     { "id": 1038, "name": "ATB La Paz", "cat": "bolivia", "url": "https://stream.atb.com.bo/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" },
     { "id": 1039, "name": "RTP", "cat": "bolivia", "url": "https://rtp.noxun.net/hls720/stream3.m3u8", "isYT": false, "logo": "https://rtpbolivia.com.bo/wp-content/uploads/elementor/thumbs/Logo800-q7ydinf88s6s2skjnyjd1vt91n6zi980xvt55ezhae.png" },
