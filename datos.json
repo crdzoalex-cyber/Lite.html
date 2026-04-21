@@ -933,7 +933,7 @@
     { "id": 689, "name": "CANAL 11 SALTA", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a07j/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CANAL+11+SALTA" },
     { "id": 690, "name": "CNN en Español 2", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00a/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CNN+en+Espanol+2" },
     { "id": 691, "name": "Canal a", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a018/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+a" },
-    { "id": 692, "name": "El Trece", "cat": "argentina", "url": "https://livetrx01.vodgc.net/eltrecetv/tracks-v1a1/mono.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+de+la+Ciudad+2" },
+    { "id": 692, "name": "El Trece", "cat": "argentina", "url": "https://livetrx01.vodgc.net/eltrecetv/tracks-v3a1/mono.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+de+la+Ciudad+2" },
     { "id": 693, "name": "Cartoon Network HD 2", "cat": "infantiles", "url": "http://181.209.125.236:10000/play/a02v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cartoon+Network+HD+2" },
     { "id": 694, "name": "Cine.AR", "cat": "cine", "url": "http://181.209.125.236:10000/play/a017/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cine.AR" },
     { "id": 695, "name": "Cinecanal HD 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a032/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cinecanal+HD+2" },
