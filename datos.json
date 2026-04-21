@@ -603,7 +603,7 @@
     { "id": 359, "name": "A2i TV", "cat": "internacional", "url": "https://stream.sen-gt.com/A2itv/myStream/playlist.m3u8", "logo": "https://i.imgur.com/YlDFir7.jpg" },
     { "id": 360, "name": "A7TV", "cat": "internacional", "url": "https://a7tvlive.ro/A7TV/A7TV/playlist.m3u8", "logo": "https://i.imgur.com/RmFg8BN.png" },
     { "id": 361, "name": "A12 TV", "cat": "internacional", "url": "https://video1.getstreamhosting.com:1936/8250/8250/manifest.m3u8", "logo": "https://i.imgur.com/JgnjgvF.png" },
-    { "id": 362, "name": "A24", "cat": "argentina", "url": "https://g5.vxral-slo.transport.edge-access.net/a12/ngrp:a24-100056_all/playlist.m3u8?sense=true", "logo": "https://i.imgur.com/LnXQkIU.png" },
+    { "id": 362, "name": "Cumbia Mix", "cat": "argentina", "url": "https://cloud.tvomix.com/CUMBIAMIX/tracks-v1a1/mono.m3u8", "logo": "https://i.imgur.com/LnXQkIU.png" },
     { "id": 363, "name": "A Punt", "cat": "internacional", "url": "https://bcovlive-a.akamaihd.net/8499d938ef904e39b58a4adec2ddeada/eu-west-1/6057955885001/playlist_dvr.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Logotip_d%27%C3%80_Punt_%282017-%29.svg/512px-Logotip_d%27%C3%80_Punt_%282017-%29.svg.png" },
     { "id": 364, "name": "A Türk Izmir", "cat": "noticias", "url": "https://vdo.digitalbox.xyz:3807/stream/play.m3u8", "logo": "https://i.imgur.com/je5wQ3G.png" },
     { "id": 365, "name": "A&E East", "cat": "series", "url": "https://tvpass.org/live/AEEast/hd", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/512px-A%26E_Network_logo.svg.png" },
