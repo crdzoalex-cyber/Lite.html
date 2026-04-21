@@ -580,7 +580,7 @@
     { "id": 336, "name": "101tv Sevilla", "cat": "internacional", "url": "https://liveingesta318.cdnmedia.tv/101weblive/smil:sevilla.smil/playlist.m3u8", "logo": "https://i.imgur.com/GzI3RC4.png" },
     { "id": 337, "name": "111 TV", "cat": "internacional", "url": "https://5db313b643fd8.streamlock.net/111/111/playlist.m3u8", "logo": "https://i.imgur.com/kVREx1Q.png" },
     { "id": 338, "name": "247 Box TV", "cat": "variedades", "url": "https://hls.247box.live/hls/stream.m3u8", "logo": "https://i.imgur.com/t5AUthL.png" },
-    { "id": 339, "name": "312 Кино", "cat": "cine", "url": "http://176.126.166.43:1935/live/312kino/playlist.m3u8", "logo": "https://i.ibb.co/3m9LrLj/k7gIibH.png" },
+    { "id": 339, "name": "prueba", "cat": "cine", "url": "45.177.21.6:9000/play/a02j", "logo": "https://i.ibb.co/3m9LrLj/k7gIibH.png" },
     { "id": 340, "name": "312 ТВ", "cat": "variedades", "url": "http://176.126.166.43:1935/live/312musik/playlist.m3u8", "logo": "https://i.ibb.co/S6sZvqk/iLSGi6c.png" },
     { "id": 341, "name": "360°", "cat": "internacional", "url": "https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8", "logo": "https://i.imgur.com/VTJqdoX.png" },
     { "id": 342, "name": "360° Новости", "cat": "noticias", "url": "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8", "logo": "https://i.imgur.com/YXDeX8q.png" },
