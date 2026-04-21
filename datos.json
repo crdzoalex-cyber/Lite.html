@@ -246,7 +246,7 @@
   { "id": 2, "name": "C5N", "cat": "argentina", "url": "http://181.13.252.102:8000/play/a01p/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvq_SOP_QOh9sP7KasciCruNLfAptpHkjZF2LZXALbOA&s", "tvg_id": "C5N.ar" },
   { "id": 3, "name": "TV Publica", "cat": "argentina", "url": "https://puentes.viendotele.cl/ar-tvp/c7_vivo01_dai_source-20001_360p.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo_Televisi%C3%B3n_P%C3%BAblica_Argentina.png", "tvg_id": "TVPublica.ar" },
   { "id": 4, "name": "El Trece", "cat": "argentina", "url": "https://livetrx01.vodgc.net/eltrecetv/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Canal_13_200_8.png", "tvg_id": "ElTrece.ar" },
-  { "id": 6, "name": "A24 (yt)", "cat": "argentina", "url": "ArKbAx1K-2U", "isYT": true, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWrKdcM-AOju0vaXXXVOIuoaZew8SpU2aghXOiXjn15w&s=10", "tvg_id": "A24.ar" },
+  { "id": 6, "name": "A24 (yt)", "cat": "argentina", "url": "http://181.209.105.115:2525/play/a24/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWrKdcM-AOju0vaXXXVOIuoaZew8SpU2aghXOiXjn15w&s=10", "tvg_id": "A24.ar" },
   { "id": 7, "name": "Canal 26", "cat": "argentina", "url": "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8", "isYT": false, "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Canal_26_logo_%282022%29.svg/2048px-Canal_26_logo_%282022%29.svg.png", "tvg_id": "Canal26.ar" },
   { "id": 8, "name": "TN", "cat": "argentina", "url": "https://latam-cache-sv2-cdn.latamlive.net/TN_ENC_LIVE/index.mpd", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCMREUEqODBnDkjU3L_LOf7dFAV77YKTtglhB9fGuDqg&s=10", "tvg_id": "TN.ar" },
   { "id": 9, "name": "Crónica TV (yt)", "cat": "argentina", "url": "JC7f3EUDaqw", "isYT": true, "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Cr%C3%B3nica_TV_logotipo_%282016%29.png", "tvg_id": "CronicaTV.ar" },
@@ -411,7 +411,7 @@
     { "id": 167, "name": "NTN24", "cat": "colombia", "url": "http://181.78.7.90:12500/play/a0op/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/NTN24_logo.svg/512px-NTN24_logo.svg.png" },
     { "id": 168, "name": "Nat Geo", "cat": "documentales", "url": "http://181.78.7.90:12500/play/a0mu/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/National_Geographic_Logo.svg/512px-National_Geographic_Logo.svg.png" },
     { "id": 169, "name": "Nickelodeon", "cat": "infantiles", "url": "http://181.78.7.90:12500/play/a0ji/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nickelodeon_2009_logo.svg/512px-Nickelodeon_2009_logo.svg.png" },
-    { "id": 170, "name": "Nick Jr.", "cat": "infantiles", "url": "http://181.78.7.90:12500/play/a0np/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nick_Jr_Logo_2009.svg/512px-Nick_Jr_Logo_2009.svg.png" },
+    { "id": 170, "name": "Nick Jr.", "cat": "infantiles", "url": "http://181.13.252.102:8000/play/a06u/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nick_Jr_Logo_2009.svg/512px-Nick_Jr_Logo_2009.svg.png" },
     { "id": 171, "name": "Nick Music", "cat": "musica", "url": "http://181.78.7.90:12500/play/a0fo/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Nick+Music" },
     { "id": 172, "name": "Nuestra Tele", "cat": "colombia", "url": "http://181.78.7.90:12500/play/a0fn/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nuestra_Tele_Internacional_logo.png/512px-Nuestra_Tele_Internacional_logo.png" },
     { "id": 173, "name": "Oromar TV", "cat": "ecuador", "url": "http://181.78.7.90:12500/play/a0ny/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Oromar+TV" },
@@ -1300,8 +1300,8 @@
   "isYT": false
 },
     
-{ "id": 1064, "name": "Cine War", "cat": "cine", "url": "http://179.63.6.12:9000/play/a07n", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
+{ "id": 1064, "name": "Cine War", "cat": "cine", "url": "http://179.63.6.12:9000/play/a07n", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+    { "id": 1065, "name": "A24 Py", "cat": "paraguay", "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/6.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
    
-    
   ]
 }
