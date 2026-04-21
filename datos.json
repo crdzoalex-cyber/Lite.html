@@ -401,7 +401,7 @@
     { "id": 157, "name": "Mega", "cat": "chile", "url": "http://181.78.7.90:12500/play/a0jm/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mega_logo.svg/512px-Mega_logo.svg.png" },
     { "id": 158, "name": "Mi Canal", "cat": "variedades", "url": "http://181.78.7.90:12500/play/a0pt/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Mi+Canal" },
     { "id": 159, "name": "MTV", "cat": "musica", "url": "http://181.78.7.90:12500/play/a0j4/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/MTV_Logo_2021.svg/512px-MTV_Logo_2021.svg.png" },
-    { "id": 160, "name": "Multipremier", "cat": "cine", "url": "http://181.78.7.90:12500/play/a0l0/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Multipremier_logo.svg/512px-Multipremier_logo.svg.png" },
+    { "id": 160, "name": "Multipremier", "cat": "cine", "url": "http://45.5.151.62:8000/play/a01a/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Multipremier_logo.svg/512px-Multipremier_logo.svg.png" },
     { "id": 161, "name": "Mundo del Campo", "cat": "documentales", "url": "http://181.78.7.90:12500/play/a0o0/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Mundo+del+Campo" },
     { "id": 162, "name": "Música Popular", "cat": "musica", "url": "http://181.78.7.90:12500/play/MUSICAPOPULAR/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Musica+Popular" },
     { "id": 163, "name": "Música Romántica", "cat": "musica", "url": "http://181.78.7.90:12500/play/a0cp/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Romantica" },
