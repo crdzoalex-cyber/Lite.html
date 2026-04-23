@@ -1304,7 +1304,7 @@
     { "id": 1065, "name": "A24 Py", "cat": "paraguay", "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/6.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1066, "name": "TUDN", "cat": "deportes", "url": "https://streaming.alwaysdata.net/tudn.php", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1067, "name": "Oxigeno", "cat": "documentales", "url": "http://179.57.171.184:8000/play/1/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
-   { "id": 1068, "name": "Bolivia TV 12", "cat": "bolivia", "url": "143.255.85.248:8000/play/a02w", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
+   { "id": 1068, "name": "Bolivia TV 0", "cat": "bolivia", "url": "143.255.85.248:8000/play/a02w", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
    
   ]
 }
