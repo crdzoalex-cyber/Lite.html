@@ -954,7 +954,7 @@
     { "id": 710, "name": "ESPN 2 HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a00f/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+2+HD+2" },
     { "id": 711, "name": "ESPN 3 HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a00h/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+3+HD+2" },
     { "id": 712, "name": "ESPN 4 HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a02x/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+4+HD+2" },
-    { "id": 713, "name": "ESPN HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a00g/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+HD+2" },
+    { "id": 713, "name": "ESPN MX", "cat": "deportes", "url": "http://200.229.147.142:8000/play/a013/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+HD+2" },
     { "id": 714, "name": "ESPN Premium HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a02z/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+Premium+HD+2" },
     { "id": 715, "name": "El Canal de las Estrellas 2", "cat": "mexico", "url": "http://181.209.125.236:10000/play/a02p/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+2" },
     { "id": 716, "name": "El Gourmet 2", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a02m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Gourmet+2" },
@@ -1190,8 +1190,8 @@
     { "id": 946, "name": "La Red", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0ma/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=La+Red" },
     { "id": 947, "name": "Latina", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0du/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Latina" },
     { "id": 948, "name": "Lifetime 3", "cat": "series", "url": "http://217.26.190.76:8888/play/a02k/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Lifetime+3" },
-    { "id": 949, "name": "Liga1", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0bt/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Liga1" },
-    { "id": 950, "name": "Liga1 MAX", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0j4/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Liga1+MAX" },
+    { "id": 949, "name": "Liga1", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a0bt/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Liga1" },
+    { "id": 950, "name": "Liga1 MAX", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a0j4/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Liga1+MAX" },
     { "id": 951, "name": "Love Nature 1", "cat": "documentales", "url": "http://217.26.190.76:8888/play/a0go/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Love+Nature+1" },
     { "id": 952, "name": "Love Nature 2", "cat": "documentales", "url": "http://217.26.190.76:8888/play/a0m4/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Love+Nature+2" },
     { "id": 953, "name": "MEGA", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0e0/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=MEGA" },
@@ -1283,7 +1283,7 @@
 { "id": 1054, "name": "Muro de los Lamentos Israel", "cat": "cam", "url": "https://videos-3.earthcam.com/fecnetwork/7949.flv/chunklist_w375470399.m3u8?t=qJ8klkLQpmFc8tdfbSweV%2FYro5ZzjupmVXt5WSbEaa32O%2BDiTdYZY%2FipGuR22U34&cid=&DVR=", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsf2JywlB2xK-Wpmo3NYR0CRsbsJkMkJjqYXKwev9WKA&s" },
 { "id": 1055, "name": "Telefe Noticias", "cat": "argentina", "url": "XhAYcYpPzTc", "isYT": true, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKpthw72JVs3BzvwT83RwRFKMh3MCoavVTuzLtotFmQ&s" },
 { "id": 1056, "name": "Ds Sports 2", "cat": "deportes", "url": "https://videxdata.alwaysdata.net/deportivo111/95.m3u8?key=c487f4dc06a667d234e7abc5853d1e9e", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMDszlNpvUISP9ByTZueKyCzuXWRzCY2q7p7yNuyo_A&s=10" },
-{ "id": 1057, "name": "Unitel Bo 1222", "cat": "bolivia", "url": "https://cdn.digital.com.bo/__cl/cg:sworigin/__c/UNITEL/__op/hls-default/__f/index.m3u8", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMDszlNpvUISP9ByTZueKyCzuXWRzCY2q7p7yNuyo_A&s=10" },
+{ "id": 1057, "name": "Unitel", "cat": "bolivia", "url": "https://cdn.digital.com.bo/__cl/cg:sworigin/__c/UNITEL/__op/hls-default/__f/index.m3u8", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMDszlNpvUISP9ByTZueKyCzuXWRzCY2q7p7yNuyo_A&s=10" },
   { "id": 1058, "name": "Win Sports", "cat": "deportes", "url": "http://170.82.113.51:8899/play/a0no/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
 { "id": 1059, "name": "Universo HD", "cat": "variedades", "url": "http://190.11.225.124:5000/live/universo_hd/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb-1bTnbU6OrhC4nEIkZmPauGG9P2v1Pz222F-T0YANg&s" },
     { "id": 1060, "name": "NFL Channel", "cat": "deportes", "url": "http://38.49.128.38:8000/play/a0kk/index.m3u8", "isYT": false, "logo": "https://www.sportspro.com/wp-content/uploads/2023/03/NFL-Network.png" },
@@ -1310,7 +1310,8 @@
       { "id": 1071, "name": "TV Offlive", "cat": "bolivia", "url": "https://s4.tvdatta.com:3449/live/tvofflive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1072, "name": "Upea TV", "cat": "bolivia", "url": "https://tvstream.upea.bo/hls/oSs0jSWumTFIIVY97559.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
      { "id": 1073, "name": "Coral TV", "cat": "bolivia", "url": "https://tv.mediacp.eu:8081/coraltv/tracks-v1a1/mono.ts.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
-     { "id": 1074, "name": "RED CCTV HD", "cat": "bolivia", "url": "https://ares.disfrutaenlared.com:1936/redcctv/redcctv/chunklist_w2098818106.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
+     { "id": 1074, "name": "RED CCTV HD", "cat": "bolivia", "url": "https://ares.disfrutaenlared.com:1936/redcctv/redcctv/chunklist_w2098818106.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+     { "id": 1075, "name": "Tl Estrella", "cat": "bolivia", "url": "https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist_w643308258.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
     
 
 
