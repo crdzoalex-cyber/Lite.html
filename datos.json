@@ -659,7 +659,7 @@
     { "id": 415, "name": "Abu Dhabi Sports 1", "cat": "deportes", "url": "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_1/abudhabi_sports_1_hls_nd/index.m3u8", "logo": "https://i.imgur.com/6BVWk8z.png" },
     { "id": 416, "name": "Abu Dhabi Sports 2", "cat": "deportes", "url": "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_2/abudhabi_sports_2_hls_nd/index.m3u8", "logo": "https://i.imgur.com/y1I2jFK.png" },
     { "id": 417, "name": "Abu Dhabi TV", "cat": "internacional", "url": "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_tv/abudhabi_tv_hls_nd/index.m3u8", "logo": "https://i.imgur.com/8DAriPs.png" },
-    { "id": 418, "name": "Abya Yala TV", "cat": "bolivia", "url": "https://seo.tv.bo/hls/AbyaYala.m3u8", "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+    { "id": 418, "name": "Red Advenir", "cat": "bolivia", "url": "https://streamer1.streamhost.org/salive/GMIredadvenirh/chunklist_w1940547209.m3u8", "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
     { "id": 419, "name": "Abzy Dhakad", "cat": "cine", "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/4fe6ab07a13543d6bdb2ec63b3e2df44/index.m3u8", "logo": "https://i.imgur.com/5ORC4tn.png" },
     { "id": 420, "name": "Abzy Movies", "cat": "cine", "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/db8d4eca72d64748a00d0631debf542d/index.m3u8", "logo": "https://i.imgur.com/LnVgKVF.png" },
     { "id": 421, "name": "AC TV", "cat": "religiosos", "url": "https://ssh101stream.ssh101.com/akamaissh101/ssh101/actvstream/playlist.m3u8", "logo": "https://i.imgur.com/SYugK7Y.png" },
@@ -1263,17 +1263,17 @@
     { "id": 1033, "name": "Win Sport 2", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a06a/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
     { "id": 1034, "name": "Zona Latina 2", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0a5/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina+2" },
     { "id": 1035, "name": "re WIND", "cat": "musica", "url": "http://217.26.190.76:8888/play/a0jh/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
-    { "id": 1036, "name": "Unitel SCZ", "cat": "bolivia", "url": "https://us-b4-p-e-pb13.cdn.mdstrm.com/live-stream/692b7e7ac84183fcf9e3462d/publish/media_2500.m3u8?aid=69132f19f5398246a0193eb6&uid=0R6thZ5GX0PQ27VeOGnC6Xj39LiiBiWn&sid=uWI5U6AwrGc9vcfdE67EQv5F80mbA1e2&pid=MJzTeFAfVNbrfKDIA3x3ZBGyzhPAKrNz&pid_dvr=7vicKDWsr5hkobGwDDvqVJIlxlwpZ0Ju&ref=https%3A%2F%2Funitel.bo%2F&without_cookies=false&listenerid=&dnt=true&es=us-b4-p-e-pb13.cdn.mdstrm.com&ote=1776945617782&ot=27RDdMkDgb1nn0NaWIOLPw&proto=https&pz=us&CMCD=cid%3D%22692b7e7ac84183fcf9e3462d%22%2Cmtp%3D43500%2Cot%3Dm%2Csf%3Dh%2Csid%3D%22MJzTeFAfVNbrfKDIA3x3ZBGyzhPAKrNz%22", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
+    { "id": 1036, "name": "TV Latina HD", "cat": "bolivia", "url": "https://castv10.plugstreaming.com:19360/redtv/1080p.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1037, "name": "Ceacom", "cat": "bolivia", "url": "https://eu1.servers10.com:8081/ceacom/tracks-v1a1/mono.m3u8", "isYT": false, "logo": "https://i.imgur.com/hutdRfk.png" },
     { "id": 1038, "name": "ATB La Paz", "cat": "bolivia", "url": "https://stream.atb.com.bo/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" },
     { "id": 1039, "name": "RTP", "cat": "bolivia", "url": "https://rtp.noxun.net/hls720/stream3.m3u8", "isYT": false, "logo": "https://rtpbolivia.com.bo/wp-content/uploads/elementor/thumbs/Logo800-q7ydinf88s6s2skjnyjd1vt91n6zi980xvt55ezhae.png" },
-    { "id": 1040, "name": "CTV", "cat": "bolivia", "url": "https://streaming.ctvbolivia.com/hlsweb/ctv.m3u8", "isYT": false, "logo": "https://ctvbolivia.com/wp-content/uploads/2025/09/logo_CTV.png" },
+    { "id": 1040, "name": "VTV", "cat": "bolivia", "url": "https://ares.disfrutaenlared.com:1936/vtvcanal/vtvcanal/chunklist_w1413178975.m3u8", "isYT": false, "logo": "https://ctvbolivia.com/wp-content/uploads/2025/09/logo_CTV.png" },
     { "id": 1041, "name": "Bolivision", "cat": "bolivia", "url": "https://alba-bo-bolivision-bolivision.stream.mediatiquestream.com/original.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRksLlmPMF2QJi6k_vgxkSCwJg7B9Bfhl8_7SVaBbK8_Q&s=10" },
     { "id": 1043, "name": "F10", "cat": "bolivia", "url": "https://tv2.bitstreaming.net:3235/multi_live/play_720.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5gya7LmSBopWWjFw8-j2JVlxwQqlYUig6bygz2Q&s" },
-    { "id": 1044, "name": "Palenque TV", "cat": "bolivia", "url": "http://167.250.135.246:81/play/a0jp/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvY3VojapsTYFIH0y-b0WVP8YkVCakf52C-jI_EnGsGg&s" },
+    { "id": 1044, "name": "Palenque TV", "cat": "bolivia", "url": "https://tv.bitstreaming.net:3234/live/palenquetvlive.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvY3VojapsTYFIH0y-b0WVP8YkVCakf52C-jI_EnGsGg&s" },
     { "id": 1045, "name": "Red TV Shop", "cat": "bolivia", "url": "https://master.tucableip.com/redtvshop/tracks-v1a1/mono.ts.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPW6d_riBBahEeL2JVqRGjZ-V3MpmoI6AU4n2uDoCArg&s=10" },
     { "id": 1046, "name": "Red Uno", "cat": "bolivia", "url": "http://45.5.149.220:8000/play/a066/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5g" },
-    { "id": 1047, "name": "F10", "cat": "bolivia", "url": "https://www.streaming101tv.es:19360/axarquia/720p.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpxs" },
+    { "id": 1047, "name": "Univalle TV HD", "cat": "bolivia", "url": "https://master.tucableip.com/univalletv/tracks-v1a1/mono.ts.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpxs" },
     { "id": 1048, "name": "CineAR", "cat": "argentina", "url": "http://181.209.37.74:8001/play/a069/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5" },
     { "id": 1049, "name": "Camaras Argentinas 2", "cat": "cam", "url": "rqBfiegG5qU", "isYT": true, "mute": false, "logo": "https://yt3.ggpht.com/rib9jkZkBLQWhxG_nBx3IRIgXJI7Rw1Gp8aVOhaz21AcIUHA8T5c8ceKNTqjMu3HfayxNxotjA=s48-c-k-c0x00ffffff-no-rj" },
 { "id": 1050, "name": "Tokio Shinjuku", "cat": "cam", "url": "6dp-bvQ7RWo", "isYT": true, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03GQYzCYbj25_Tl_ckLWL0wx8mVXny1pLkCwN-ljRiQ&s=10" },
@@ -1304,7 +1304,16 @@
     { "id": 1065, "name": "A24 Py", "cat": "paraguay", "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/6.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1066, "name": "TUDN", "cat": "deportes", "url": "https://streaming.alwaysdata.net/tudn.php", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1067, "name": "Oxigeno", "cat": "documentales", "url": "http://179.57.171.184:8000/play/1/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
-   { "id": 1068, "name": "Bolivia TV", "cat": "bolivia", "url": "http://128.201.227.251:4000/play/a0ft", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
-   
+   { "id": 1068, "name": "Bolivia TV", "cat": "bolivia", "url": "http://128.201.227.251:4000/play/a0ft", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+   { "id": 1069, "name": "Zuraca TV", "cat": "bolivia", "url": "https://tv3.bitstreaming.net:3680/live/zuracatvlive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+   { "id": 1070, "name": "CTV", "cat": "bolivia", "url": "https://streaming.ctvbolivia.com/hlsweb/ctv.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+      { "id": 1071, "name": "TV Offlive", "cat": "bolivia", "url": "https://s4.tvdatta.com:3449/live/tvofflive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+   { "id": 1072, "name": "Upea TV", "cat": "bolivia", "url": "https://tvstream.upea.bo/hls/oSs0jSWumTFIIVY97559.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+     { "id": 1073, "name": "Coral TV", "cat": "bolivia", "url": "https://tv.mediacp.eu:8081/coraltv/tracks-v1a1/mono.ts.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+     { "id": 1074, "name": "RED CCTV HD", "cat": "bolivia", "url": "https://ares.disfrutaenlared.com:1936/redcctv/redcctv/chunklist_w2098818106.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
+    
+
+
+    
   ]
 }
