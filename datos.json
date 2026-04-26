@@ -1296,7 +1296,7 @@
   { "id": 1058, "name": "Win Sports", "cat": "deportes", "url": "http://170.82.113.51:8899/play/a0no/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
 { "id": 1059, "name": "Universo HD", "cat": "variedades", "url": "http://190.11.225.124:5000/live/universo_hd/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb-1bTnbU6OrhC4nEIkZmPauGG9P2v1Pz222F-T0YANg&s" },
     { "id": 1060, "name": "NFL Channel", "cat": "deportes", "url": "http://38.49.128.38:8000/play/a0kk/index.m3u8", "isYT": false, "logo": "https://www.sportspro.com/wp-content/uploads/2023/03/NFL-Network.png" },
-   { "id": 1061, "name": "Aby Yala", "cat": "bolivia", "url": "https://seo.tv.bo/tv/LIpSEO-TV-8.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+   { "id": 1061, "name": "Aby Yala", "cat": "bolivia", "url": "https://seo.tv.bo/www/AbyaYala.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1062, "name": "Univision", "cat": "noticias", "url": "http://187.245.231.226:8000/play/a0q3/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    
     
