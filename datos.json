@@ -273,7 +273,7 @@
 
   { "id": 31, "name": "Telpin", "cat": "argentina", "url": "https://wowza.telpin.com.ar:1935/telpintv/smil:ttv.stream.smil/playlist.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHsAwKtQch6aswMQOTafhrITW8q3ELhfOJ9zWv8wNUlF-1QvAFAyH_dok&s", "tvg_id": "Telpin.ar" },
   { "id": 32, "name": "TyC Sports", "cat": "deportes", "url": "http://38.44.109.41:8003/play/a02l/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMzx4ySSc35L1oQehOEcpFtwTA_ZggbaEDtNp37Q9lLg&s", "tvg_id": "TyCSports.ar" },
-  { "id": 33, "name": "ESPN AR sd", "cat": "deportes", "url": "http://170.244.209.30:8000/play/a0yx/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/ESPN_logo.svg/512px-ESPN_logo.svg.png", "tvg_id": "ESPN.co" },
+  { "id": 33, "name": "ESPN AR SD", "cat": "deportes", "url": "http://170.244.209.30:8000/play/a0yx/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/ESPN_logo.svg/512px-ESPN_logo.svg.png", "tvg_id": "ESPN.co" },
   { "id": 34, "name": "La Nación +", "cat": "noticias", "url": "http://181.13.252.102:8000/play/a01s/index.m3u8", "isYT": false, "logo": "https://yt3.ggpht.com/ytc/AIdro_kqtZB_6WG36RuIrX7Npa_XgoeV-KK74HcQ7m9xWQcKI7E=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "LNMas.ar" },
   { "id": 35, "name": "DW Arg", "cat": "noticias", "url": "https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjgCb-BmRLeGkeqsV6kq_CQ7H0ELZIlwnlxP_6X_mBPw&s=10", "tvg_id": "DWEspanol.de" },
   { "id": 36, "name": "Estrella TV", "cat": "mexico", "url": "https://amg00567-estrellamedia-estrellatv-estrellamedia-5tdh5.amagi.tv/ts-us-w2-n2/playlist/amg00567-estrellamedia-estrellatv-estrellamedia/playlist.m3u8?route_version=v2", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvVeFW7BgQaJi6d-rGEo4DBPFwh7U8teXr4aDmF9msw&s=10", "tvg_id": "EstrellaTV.us" },
@@ -460,7 +460,7 @@
     { "id": 216, "name": "Televicentro", "cat": "internacional", "url": "http://181.78.7.90:12500/play/a0hk/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Televicentro" },
     { "id": 217, "name": "Tlnovelas", "cat": "series", "url": "http://181.78.7.90:12500/play/a0p3/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Tlnovelas_logo.svg/512px-Tlnovelas_logo.svg.png" },
     { "id": 218, "name": "Tooncast", "cat": "infantiles", "url": "http://181.78.7.90:12500/play/a0nu/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Tooncast_logo.png/512px-Tooncast_logo.png" },
-    { "id": 219, "name": "TyC Sports", "cat": "deportes", "url": "http://181.78.7.90:12500/play/a01f/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/TyC_Sports_logo.svg/512px-TyC_Sports_logo.svg.png" },
+    { "id": 219, "name": "SportsGrid", "cat": "deportes", "url": "https://amg00315-sportsgrid-firetv.amagi.tv/playlist.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/TyC_Sports_logo.svg/512px-TyC_Sports_logo.svg.png" },
     { "id": 220, "name": "Ultra Hit", "cat": "musica", "url": "http://181.78.7.90:12500/play/a0o5/index.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Ultra+Hit" },
     { "id": 221, "name": "Universal Channel", "cat": "series", "url": "http://181.78.7.90:12500/play/a0n6/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Universal_TV_Logo_2018.svg/512px-Universal_TV_Logo_2018.svg.png" },
     { "id": 222, "name": "USA Network", "cat": "series", "url": "http://181.78.7.90:12500/play/a0g3/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/USA_Network_logo.svg/512px-USA_Network_logo.svg.png" },
@@ -816,7 +816,7 @@
     { "id": 572, "name": "6 - Repretel", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a022/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=6+Repretel" },
     { "id": 573, "name": "A&E HD", "cat": "cine", "url": "http://24.152.54.30:8085/play/a0qw/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=A%26E+HD" },
     { "id": 574, "name": "AXN HD", "cat": "cine", "url": "http://24.152.54.30:8085/play/a04g/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AXN+HD" },
-    { "id": 575, "name": "AZ Click HD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a0r3/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AZ+Click+HD" },
+    { "id": 575, "name": "Azteca Clic", "cat": "internacional", "url": "http://200.229.147.142:8000/play/a024/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AZ+Click+HD" },
     { "id": 576, "name": "Animal Planet HD", "cat": "documentales", "url": "http://24.152.54.30:8085/play/a0qt/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Animal+Planet+HD" },
     { "id": 577, "name": "Antena 7- RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a00v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Antena+7+RD" },
     { "id": 578, "name": "Azcorazon", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a017/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Azcorazon" },
@@ -956,7 +956,7 @@
     { "id": 712, "name": "ESPN 4 HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a02x/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+4+HD+2" },
     { "id": 713, "name": "ESPN MX", "cat": "deportes", "url": "http://200.229.147.142:8000/play/a013/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+HD+2" },
     { "id": 714, "name": "ESPN Premium HD 2", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a02z/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+Premium+HD+2" },
-    { "id": 715, "name": "El Canal de las Estrellas 2", "cat": "mexico", "url": "http://181.209.125.236:10000/play/a02p/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+2" },
+    { "id": 715, "name": "Teleformula MX", "cat": "mexico", "url": "https://mdstrm.com/live-stream-playlist/62f2c855f7981b5a5a2d8763.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+2" },
     { "id": 716, "name": "El Gourmet 2", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a02m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Gourmet+2" },
     { "id": 717, "name": "Encuentro", "cat": "documentales", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-19.playlist.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Encuentro" },
     { "id": 718, "name": "Europa Europa 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a02l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Europa+Europa+2" },
@@ -1049,7 +1049,7 @@
     { "id": 805, "name": "ESPN 4 HD", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a02x/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+4+HD" },
     { "id": 806, "name": "ESPN HD", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a00g/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+HD" },
     { "id": 807, "name": "ESPN Premium HD", "cat": "deportes", "url": "http://181.209.125.236:10000/play/a02z/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+Premium+HD" },
-    { "id": 808, "name": "Canal de las Estrellas 2", "cat": "mexico", "url": "http://181.209.125.236:10000/play/a02p/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Estrellas+2" },
+    { "id": 808, "name": "Multimedios CDMX", "cat": "mexico", "url": "https://mdstrm.com/live-stream-playlist/5f2d9d6ff17144074bd8a284.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Estrellas+2" },
     { "id": 809, "name": "El Gourmet 2", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a02m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Gourmet+2" },
     { "id": 810, "name": "Encuentro", "cat": "documentales", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-19.playlist.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Encuentro" },
     { "id": 811, "name": "Europa Europa 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a02l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Europa+Europa+2" },
@@ -1124,7 +1124,7 @@
     { "id": 880, "name": "CHV HD", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0m7/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CHV+HD" },
     { "id": 881, "name": "CNN Chile", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a029/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CNN+Chile" },
     { "id": 882, "name": "CNN Espanol 3", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a0aj/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CNN+Espanol+3" },
-    { "id": 883, "name": "Canal Estrellas 3", "cat": "mexico", "url": "http://217.26.190.76:8888/play/a03k/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+3" },
+    { "id": 883, "name": "Las Estrellas 2", "cat": "mexico", "url": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+3" },
     { "id": 884, "name": "Canal N", "cat": "peru", "url": "http://217.26.190.76:8888/play/a09p/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+N" },
     { "id": 885, "name": "Cartoon Network 3", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a0a9/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cartoon+Network+3" },
     { "id": 886, "name": "Cine Latino 2", "cat": "cine", "url": "http://217.26.190.76:8888/play/a0ja/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cine+Latino+2" },
@@ -1142,7 +1142,7 @@
     { "id": 898, "name": "Discovery Turbo 3", "cat": "documentales", "url": "http://217.26.190.76:8888/play/a051/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+Turbo+3" },
     { "id": 899, "name": "Disney Channel 3", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a037/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Disney+Channel+3" },
     { "id": 900, "name": "Disney Jr 3", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a02z/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Disney+Jr+3" },
-    { "id": 901, "name": "Distrito Comedia 2", "cat": "mexico", "url": "http://217.26.190.76:8888/play/a0jc/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Distrito+Comedia+2" },
+    { "id": 901, "name": "Mexiquense Television", "cat": "mexico", "url": "https://5e50264bd6766.streamlock.net/mexiquense2/videomexiquense2/playlist.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Distrito+Comedia+2" },
     { "id": 902, "name": "E Entertainment 3", "cat": "variedades", "url": "http://217.26.190.76:8888/play/a03b/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=E+Entertainment+3" },
     { "id": 903, "name": "ESPN 2", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a0ee/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+2" },
     { "id": 904, "name": "ESPN 2 HD", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a0kp/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=ESPN+2+HD" },
@@ -1268,7 +1268,7 @@
     { "id": 1038, "name": "ATB La Paz", "cat": "bolivia", "url": "https://stream.atb.com.bo/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" },
     { "id": 1039, "name": "RTP", "cat": "bolivia", "url": "https://rtp.noxun.net/hls720/stream3.m3u8", "isYT": false, "logo": "https://rtpbolivia.com.bo/wp-content/uploads/elementor/thumbs/Logo800-q7ydinf88s6s2skjnyjd1vt91n6zi980xvt55ezhae.png" },
     { "id": 1040, "name": "VTV", "cat": "bolivia", "url": "https://ares.disfrutaenlared.com:1936/vtvcanal/vtvcanal/chunklist_w1413178975.m3u8", "isYT": false, "logo": "https://ctvbolivia.com/wp-content/uploads/2025/09/logo_CTV.png" },
-    { "id": 1041, "name": "Bolivision", "cat": "bolivia", "url": "https://alba-bo-bolivision-bolivision.stream.mediatiquestream.com/original.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRksLlmPMF2QJi6k_vgxkSCwJg7B9Bfhl8_7SVaBbK8_Q&s=10" },
+    { "id": 1041, "name": "Bolivision", "cat": "bolivia", "url": "https://alba-bo-bolivision-bolivision.stream.mediatiquestream.com/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRksLlmPMF2QJi6k_vgxkSCwJg7B9Bfhl8_7SVaBbK8_Q&s=10" },
     { "id": 1043, "name": "F10", "cat": "bolivia", "url": "https://tv2.bitstreaming.net:3235/multi_live/play_720.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5gya7LmSBopWWjFw8-j2JVlxwQqlYUig6bygz2Q&s" },
     { "id": 1044, "name": "Palenque TV", "cat": "bolivia", "url": "https://tv.bitstreaming.net:3234/live/palenquetvlive.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvY3VojapsTYFIH0y-b0WVP8YkVCakf52C-jI_EnGsGg&s" },
     { "id": 1045, "name": "Red TV Shop", "cat": "bolivia", "url": "https://master.tucableip.com/redtvshop/tracks-v1a1/mono.ts.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPW6d_riBBahEeL2JVqRGjZ-V3MpmoI6AU4n2uDoCArg&s=10" },
@@ -1347,6 +1347,54 @@
       "url": "https://www.youtube.com/watch?v=CG7UYN5OrQA/?.html", 
       "logo": "https://yt3.ggpht.com/OL0n5KS1Yw3200B8OhLyq6Qa_g-aNGhJcuhNQJ2Ym3Ykan1Bptx1_yJrClMlMedhLR_W4cvoOw=s88-c-k-c0x00ffffff-no-rj", 
       "tvg_id": "AbyaYala.bo" 
-    }
+    },
+
+{ "id": 1082, "name": "VClassic TV", "cat": "musica", "url": "https://5eaccbab48461.streamlock.net:1936/8112/8112/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1083, "name": "Urbano TV", "cat": "musica", "url": "https://59ef525c24caa.streamlock.net/tvurbano/tvurbano/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1084, "name": "Energy TV Music", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvmusic/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1085, "name": "Energy TV DJ", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvDJ/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1086, "name": "Trace Latina", "cat": "musica", "url": "https://amg01131-tracetv-tracelatinaes-samsungspain-d7byg.amagi.tv/playlist/amg01131-tracetv-tracelatinaes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1087, "name": "Trace Urban", "cat": "musica", "url": "https://amg01131-tracetv-traceurbanes-samsungspain-c6yeo.amagi.tv/playlist/amg01131-tracetv-traceurbanes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+    { "id": 1088, "name": "Deluxe Dance Germany", "cat": "musica", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1089, "name": "Deluxe Music", "cat": "musica", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1090, "name": "DBM TV", "cat": "musica", "url": "https://dbmtv.vedge.infomaniak.com/livecast/dbmtv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1091, "name": "UFC", "cat": "deportes", "url": "https://linear-893.frequency.stream/dist/xumo/893/hls/master/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1092, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1093, "name": "Red Bull TV", "cat": "deportes", "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1094, "name": "Stadium", "cat": "deportes", "url": "https://2d006483e2aa43fe812f7b464cb2916d.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/Samsung_Stadium/playlist.m3u8?ads.wurl_channel=160&ads.wurl_name=Stadium&ads.us_privacy=1YNY&ads.psid=%7BPSID%7D&ads.targetopt=%7BTARGETOPT%7D&ads.app_domain=%7BAPP_DOMAIN%7D&ads.app_name=%7BAPP_NAME%7D&ads.coppa=0", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1096, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1097, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1098, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1099, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1100, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1102, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1193, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+
+{ "id": 1114, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+    
+{ "id": 1092, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+    
+{ "id": 1092, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
+
+  
   ]
 }
