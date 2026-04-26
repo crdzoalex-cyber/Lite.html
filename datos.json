@@ -1311,10 +1311,25 @@
    { "id": 1072, "name": "Upea TV", "cat": "bolivia", "url": "https://tvstream.upea.bo/hls/oSs0jSWumTFIIVY97559.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
      { "id": 1073, "name": "Coral TV", "cat": "bolivia", "url": "https://tv.mediacp.eu:8081/coraltv/tracks-v1a1/mono.ts.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
      { "id": 1074, "name": "RED CCTV HD", "cat": "bolivia", "url": "https://ares.disfrutaenlared.com:1936/redcctv/redcctv/chunklist_w2098818106.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
-     { "id": 1075, "name": "Tl Estrella", "cat": "bolivia", "url": "https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist_w643308258.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" }
-    
+     { "id": 1075, "name": "Tl Estrella", "cat": "bolivia", "url": "https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist_w643308258.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
 
+    { 
+      "id": 1078, 
+      "name": "Abya Yala", 
+      "cat": "Bolivia", 
+      "url": "https://abyayala.tv.bo/en-vivo-2/", 
+      "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png", 
+      "tvg_id": "AbyaYala.bo" 
+    },
 
+   { 
+      "id": 1079, 
+      "name": "Bolivia TV 2", 
+      "cat": "Bolivia", 
+      "url": "https://www.boliviatv.bo/principal/vivo71.php", 
+      "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png", 
+      "tvg_id": "AbyaYala.bo" 
+    },
     
   ]
 }
