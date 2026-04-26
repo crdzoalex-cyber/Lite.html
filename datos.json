@@ -816,7 +816,7 @@
     { "id": 572, "name": "6 - Repretel", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a022/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=6+Repretel" },
     { "id": 573, "name": "A&E HD", "cat": "cine", "url": "http://24.152.54.30:8085/play/a0qw/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=A%26E+HD" },
     { "id": 574, "name": "AXN HD", "cat": "cine", "url": "http://24.152.54.30:8085/play/a04g/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AXN+HD" },
-    { "id": 575, "name": "Azteca Clic", "cat": "internacional", "url": "http://200.229.147.142:8000/play/a024/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AZ+Click+HD" },
+    { "id": 575, "name": "Azteca Clic", "cat": "mexico", "url": "http://200.229.147.142:8000/play/a024/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AZ+Click+HD" },
     { "id": 576, "name": "Animal Planet HD", "cat": "documentales", "url": "http://24.152.54.30:8085/play/a0qt/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Animal+Planet+HD" },
     { "id": 577, "name": "Antena 7- RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a00v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Antena+7+RD" },
     { "id": 578, "name": "Azcorazon", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a017/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Azcorazon" },
