@@ -1411,9 +1411,11 @@
       "url": "https://www.youtube.com/watch?v=AMiVAF_tuJ4/?.html", 
       "logo": "https://yt3.ggpht.com/OL0n5KS1Yw3200B8OhLyq6Qa_g-aNGhJcuhNQJ2Ym3Ykan1Bptx1_yJrClMlMedhLR_W4cvoOw=s88-c-k-c0x00ffffff-no-rj", 
       "tvg_id": "AbyaYala.bo" 
-    }
+    },
 
-
+     { "id": 1094, "name": "Red Uno 2", "cat": "bolivia", "url": "https://cdndirector.dailymotion.com/cdn/live/video/x9n2qyk.m3u8?sec=mUJqXO2avEnbDe9J-qaiTDrFkMtsKB_swA2DbwMB8GE-6USoXtfGXZuYf_OPQEF6RmJAKmZFSkWnMBjesrFNW0d9Yrr5VqbqkBBPiv2uLQkYu0jkBgzf6MNKqfYDjthQ&dmTs=504405&dmV1st=488fb8e2-d684-7811-6c82-31c05c21cb89
+", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5g" }
+   
 
     
   ]
