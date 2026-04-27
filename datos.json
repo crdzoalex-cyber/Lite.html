@@ -1414,9 +1414,16 @@
     },
 
      { "id": 1094, "name": "Red Uno 2", "cat": "bolivia", "url": "https://cdndirector.dailymotion.com/cdn/live/video/x9n2qyk.m3u8?sec=mUJqXO2avEnbDe9J-qaiTDrFkMtsKB_swA2DbwMB8GE-6USoXtfGXZuYf_OPQEF6RmJAKmZFSkWnMBjesrFNW0d9Yrr5VqbqkBBPiv2uLQkYu0jkBgzf6MNKqfYDjthQ&dmTs=504405&dmV1st=488fb8e2-d684-7811-6c82-31c05c21cb89
-", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5g" }
+", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcpx5g" },
    
-
+{
+  "id": 1095,
+  "name": "Red Uno WB",
+  "logo": "logo.png",
+  "url": "https://www.dailymotion.com/video/x9n2qyk",
+  "cat": "bolivia",
+  "isYT": false
+}
     
   ]
 }
