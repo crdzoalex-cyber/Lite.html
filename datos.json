@@ -249,8 +249,8 @@
   "id": 2,
   "name": "TV Pública",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Televisi%C3%B3n_P%C3%BAblica_%28Argentina%29.svg/1200px-Televisi%C3%B3n_P%C3%BAblica_%28Argentina%29.svg.png",
-  "url": "https://www.tvpublica.com.ar/vivo/?.html",
-  "cat": "Argentina",
+  "url": "https://www.tvpublica.com.ar/?.html",
+  "cat": "argentina",
   "tvg_id": "",
   "isYT": false
 },
