@@ -245,15 +245,8 @@
   { "id": 1, "name": "Telefe", "cat": "argentina", "url": "http://45.225.40.206:12080/Live/eab080bb8da84db1cd89ee8233571041/telefe_480.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Telefe_%28nuevo_logo%29.png", "tvg_id": "Telefe.ar" },
  { "id": 2, "name": "C5N", "cat": "argentina", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/c5n_480.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvq_SOP_QOh9sP7KasciCruNLfAptpHkjZF2LZXALbOA&s", "tvg_id": "C5N.ar" },
 
-    {
-  "id": 3,
-  "name": "TV Pública",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Televisi%C3%B3n_P%C3%BAblica_%28Argentina%29.svg/1200px-Televisi%C3%B3n_P%C3%BAblica_%28Argentina%29.svg.png",
-  "url": "https://www.tvpublica.com.ar/?.html",
-  "cat": "argentina",
-  "tvg_id": "",
-  "isYT": false
-},
+  { "id": 17, "name": "TV Publica (YT)", "cat": "argentina", "url": "91RbCzAna4U", "isYT": true, "logo": "https://yt3.ggpht.com/ytc/AIdro_mhWI95Ymyqyg1FauU8rwtUC8lZIb3vkAhFwhA71hfwRlw=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "CanaldelaCiudad.ar" },
+ 
     
     { "id": 4, "name": "El Trece Internacional", "cat": "argentina", "url": "http://181.78.7.90:12500/play/a0gn/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Canal_13_200_8.png", "tvg_id": "ElTrece.ar" },
   { "id": 6, "name": "A24", "cat": "argentina", "url": "http://181.209.105.115:2525/play/a24/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWrKdcM-AOju0vaXXXVOIuoaZew8SpU2aghXOiXjn15w&s=10", "tvg_id": "A24.ar" },
@@ -266,7 +259,7 @@
   { "id": 13, "name": "Bravo TV", "cat": "argentina", "url": "https://jireh-6-hls-video-us-isp.dps.live/hls-video/c54ac2799874375c81c1672abb700870537c5223/bravo/bravo.smil/bravo/livestream0/chunks.m3u8?dpssid=b21054496656699efe45c64f3&sid=ba5t1l1xb2652903182699efe4702b3e&ndvc=0", "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Bravotv.png", "tvg_id": "BravoTV.ar" },
   { "id": 14, "name": "Bolivia TV FHD", "cat": "bolivia", "url": "http://45.5.151.62:8000/play/a02g/index.m3u8", "logo": "https://www.boliviatv.bo/principal/images/logos/btv-nuevo.png", "tvg_id": "BoliviaTV.bo" },
   { "id": 15, "name": "TVU La Paz", "cat": "bolivia", "url": "https://live.enhdtv.com:8081/8190/tracks-v1a1/mono.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtYnsWi5sPj-43WB7GKMxyRAOg7qZUfUq_REYp56EZ1n2AxI6dMS5XQ&s", "tvg_id": "TVU.bo" },
-  { "id": 17, "name": "El Canal de la Ciudad (yt)", "cat": "argentina", "url": "AMiVAF_tuJ4", "isYT": true, "logo": "https://yt3.ggpht.com/ytc/AIdro_mhWI95Ymyqyg1FauU8rwtUC8lZIb3vkAhFwhA71hfwRlw=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "CanaldelaCiudad.ar" },
+  { "id": 17, "name": "El Canal de la Ciudad (YT)", "cat": "argentina", "url": "AMiVAF_tuJ4", "isYT": true, "logo": "https://yt3.ggpht.com/ytc/AIdro_mhWI95Ymyqyg1FauU8rwtUC8lZIb3vkAhFwhA71hfwRlw=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "CanaldelaCiudad.ar" },
   { "id": 18, "name": "Ciudad Magazine", "cat": "argentina", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/ciudadmagazine_720.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Ciudad_magazine_logo.png", "tvg_id": "CiudadMagazine.ar" },
   { "id": 19, "name": "Multivision", "cat": "argentina", "url": "https://videostream.shockmedia.com.ar:19360/multivisionfederal/multivisionfederal.m3u8", "logo": "https://files.catbox.moe/iqx1h4.png", "tvg_id": "MultivisionFederal.ar" },
   { "id": 20, "name": "Argentinísima Satelital", "cat": "argentina", "url": "https://stream1.sersat.com/hls/argentinisima.m3u8", "logo": "https://static.wikia.nocookie.net/logopedia/images/a/a7/Cd893-arg-sat.png/revision/latest?cb=20210526005104&path-prefix=es", "tvg_id": "ArgentinisimaSatelital.ar" },
