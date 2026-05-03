@@ -511,7 +511,7 @@
     { "id": 264, "name": "4UV", "cat": "internacional", "url": "https://d3qg1liq0unuxm.cloudfront.net/4UV.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=4UV" },
     { "id": 265, "name": "5-Minute Craft", "cat": "variedades", "url": "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=5-Minute+Craft" },
     { "id": 266, "name": "5AAB TV", "cat": "internacional", "url": "http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8", "logo": "https://i.imgur.com/jrGrfof.png" },
-    { "id": 267, "name": "5TV Corrientes", "cat": "argentina", "url": "http://www.coninfo.net:1935/tvcinco/live1/playlist.m3u8", "logo": "https://i.imgur.com/mSn7ACs.png" },
+    { "id": 267, "name": "Power HD", "cat": "argentina", "url": "https://live2.tensila.com/1-1-1.power-tv/hls/live/mystream.m3u8", "logo": "https://i.imgur.com/mSn7ACs.png" },
     { "id": 268, "name": "6PR Perth", "cat": "noticias", "url": "https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8", "logo": "https://i.imgur.com/Q9iCxg1.png" },
     { "id": 269, "name": "6 TV Telugu", "cat": "noticias", "url": "https://cdn-1.pishow.tv/live/232/master.m3u8", "logo": "https://i.imgur.com/l3EcRnZ.png" },
     { "id": 270, "name": "6 Wise Tv", "cat": "variedades", "url": "https://live.enhdtv.com:8081/8150/index.m3u8", "logo": "https://jrlist70.pages.dev/list/wise.png" },
