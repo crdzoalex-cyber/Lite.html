@@ -907,7 +907,7 @@
     { "id": 660, "name": "Teleflix", "cat": "cine", "url": "http://24.152.54.30:8085/play/a001/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Teleflix" },
     { "id": 661, "name": "Telenovelas", "cat": "cine", "url": "http://24.152.54.30:8085/play/TELENOVELAS/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telenovelas" },
     { "id": 662, "name": "TLC Discover", "cat": "documentales", "url": "http://24.152.54.30:8085/play/TLC_Discover/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TLC+Discover" },
-    { "id": 663, "name": "TN23", "cat": "noticias", "url": "http://24.152.54.30:8085/play/TN23/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TN23" },
+    { "id": 663, "name": "Net TV", "cat": "qrgentina", "url": "https://unlimited1-us.dps.live/nettv/nettv.smil/playlist.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TN23" },
     { "id": 664, "name": "TV Arquidiocesana", "cat": "religiosos", "url": "http://24.152.54.30:8085/play/TV_Arquidiocesana/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TV+Arquidiocesana" },
     { "id": 665, "name": "Tele Antillas - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a00u/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Tele+Antillas" },
     { "id": 666, "name": "TeleMicro - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a02v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TeleMicro" },
