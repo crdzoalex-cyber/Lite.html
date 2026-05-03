@@ -1002,7 +1002,7 @@
     { "id": 755, "name": "TNT HD 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a034/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TNT+HD+2" },
     { "id": 756, "name": "TNT Novelas HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a037/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TNT+Novelas+HD+2" },
     { "id": 757, "name": "TNT Series HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a035/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TNT+Series+HD+2" },
-    { "id": 758, "name": "TNT Sports HD 2", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a01r/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TNT+Sports+HD+2" },
+    { "id": 758, "name": "TNT Sports", "cat": "deportes", "url": "http://181.78.79.131:8000/play/a0mo", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TNT+Sports+HD+2" },
     { "id": 759, "name": "Power Max Radio y TV", "cat": "argentina", "url": "https://videostream.shockmedia.com.ar:19360/radio1045/radio1045.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TV+Publica+HD+2" },
     { "id": 760, "name": "TVE 2", "cat": "internacional", "url": "http://181.209.125.236:10000/play/a02s/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TVE+2" },
     { "id": 761, "name": "Telefe HD 2", "cat": "argentina", "url": "http://181.209.125.236:10000/play/a022/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telefe+HD+2" },
