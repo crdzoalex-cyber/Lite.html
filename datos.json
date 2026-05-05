@@ -1303,8 +1303,7 @@
     { "id": 1065, "name": "A24 Py", "cat": "paraguay", "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/6.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1066, "name": "TUDN", "cat": "deportes", "url": "https://streaming.alwaysdata.net/tudn.php", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1067, "name": "Oxigeno", "cat": "documentales", "url": "http://179.57.171.184:8000/play/1/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
-   { "id": 1068, "name": "Bolivia TV", "cat": "bolivia", "url": "http://128.201.227.251:4000/play/a0ft", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
-   { "id": 1069, "name": "Zuraca TV", "cat": "bolivia", "url": "https://tv3.bitstreaming.net:3680/live/zuracatvlive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+    { "id": 1069, "name": "Zuraca TV", "cat": "bolivia", "url": "https://tv3.bitstreaming.net:3680/live/zuracatvlive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1070, "name": "CTV", "cat": "bolivia", "url": "https://streaming.ctvbolivia.com/hlsweb/ctv.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
       { "id": 1071, "name": "TV Offlive", "cat": "bolivia", "url": "https://s4.tvdatta.com:3449/live/tvofflive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
    { "id": 1072, "name": "Upea TV", "cat": "bolivia", "url": "https://tvstream.upea.bo/hls/oSs0jSWumTFIIVY97559.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
@@ -1317,15 +1316,6 @@
       "name": "Abya Yala 2", 
       "cat": "bolivia", 
       "url": "https://abyayala.tv.bo/en-vivo-2/", 
-      "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png", 
-      "tvg_id": "AbyaYala.bo" 
-    },
-
-   { 
-      "id": 1079, 
-      "name": "Bolivia TV 2", 
-      "cat": "bolivia", 
-      "url": "https://www.boliviatv.bo/principal/vivo71.php", 
       "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png", 
       "tvg_id": "AbyaYala.bo" 
     },
