@@ -930,7 +930,7 @@
     { "id": 683, "name": "AMC 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a012/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AMC+2" },
     { "id": 684, "name": "AXN HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a00l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AXN+HD+2" },
     { "id": 685, "name": "Adult swim HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a036/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Adult+swim+HD+2" },
-    { "id": 686, "name": "America TV", "cat": "argentina", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-17_720.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=America+TV+HD+2" },
+    { "id": 686, "name": "America TV", "cat": "argentina", "url": "181.13.252.102:8000/play/a055/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=America+TV+HD+2" },
     { "id": 687, "name": "Baby TV 2", "cat": "infantiles", "url": "http://181.209.125.236:10000/play/a01d/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Baby+TV+2" },
     { "id": 688, "name": "C5N 2", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=C5N+2" },
     { "id": 689, "name": "Canal 79 Mar Del Plata", "cat": "argentina", "url": "https://streamconex.com:19360/mardelplata/mardelplata.m3u8", "isYT": false, "logo": "https://canal79tv.com.ar/wp-content/uploads/2025/10/canal79.webp" },
