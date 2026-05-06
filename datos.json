@@ -580,7 +580,7 @@
     { "id": 343, "name": "360 TV", "cat": "noticias", "url": "https://turkmedya-live.ercdn.net/tv360/tv360.m3u8", "logo": "https://i.imgur.com/agn47sQ.png" },
     { "id": 344, "name": "365 Дней", "cat": "documentales", "url": "http://31.148.48.15/365_dney/index.m3u8", "logo": "https://i.imgur.com/NfnAiTR.png" },
     { "id": 345, "name": "1001 Noites", "cat": "variedades", "url": "https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8", "logo": "https://i.imgur.com/dWA9y2J.png" },
-         { "id": 352, "name": ".sci-fi", "cat": "documentales", "url": "http://31.148.48.15/SONY_SCI_FI/index.m3u8", "logo": "https://i.imgur.com/nSSUHcg.png" },
+         { "id": 352, "name": "Telehit Latino", "cat": "musica", "url": "http://190.61.47.54:8000/play/a029/index.m3u8", "logo": "https://i.imgur.com/nSSUHcg.png" },
     { "id": 353, "name": ":24", "cat": "noticias", "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8", "logo": "https://i.imgur.com/tTCuczU.png" },
     { "id": 354, "name": "@TV", "cat": "cine", "url": "http://49.0.87.24:1936/HDAttv/Attv/playlist.m3u8", "logo": "https://files.catbox.moe/6rj9aw.jpg" },
     { "id": 355, "name": "A1 TV", "cat": "internacional", "url": "https://stream.a1mediagroep.nl/hls/a1tv.m3u8", "logo": "https://i.imgur.com/JZ1oTM2.png" },
