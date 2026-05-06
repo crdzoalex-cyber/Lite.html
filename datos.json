@@ -524,7 +524,7 @@
     { "id": 277, "name": "8NTV", "cat": "internacional", "url": "https://60417ddeaf0d9.streamlock.net/ntv/videontv/playlist.m3u8", "logo": "https://i.imgur.com/7ecgGIG.png" },
     { "id": 278, "name": "8TV", "cat": "internacional", "url": "http://cdn6.163189.xyz/163189/8tv", "logo": "https://i.imgur.com/Jkx9W88.png" },
     { "id": 279, "name": "9X Jalwa", "cat": "musica", "url": "https://b.jsrdn.com/strm/channels/9xjalwa/master.m3u8", "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_9X_JALWA/images/LOGO_HD/image.png" },
-    { "id": 280, "name": "9X Jhakaas", "cat": "musica", "url": "https://cdn-3.pishow.tv/live/6/master.m3u8", "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/9xjhakaas.png" },
+    { "id": 280, "name": "Video Rolas", "cat": "musica", "url": "http://38.49.128.38:8000/play/a0b5/index.m3u8", "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/9xjhakaas.png" },
     { "id": 281, "name": "9X Tashan", "cat": "musica", "url": "https://9xjio.wiseplayout.com/9X_Tashan/master.m3u8", "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_9X_TASHAN/images/LOGO_HD/image.png" },
     { "id": 282, "name": "9XM", "cat": "musica", "url": "https://b.jsrdn.com/strm/channels/9xm/master.m3u8", "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_9XM/images/LOGO_HD/image.png" },
     { "id": 283, "name": "10 Bold Adelaide", "cat": "internacional", "url": "https://dce3793146fef017.mediapackage.us-west-2.amazonaws.com/out/v1/55cdf73af7894775ba6de8f57482b66a/CMAF_HLS/index.m3u8", "logo": "https://i.imgur.com/2xglh33.png" },
