@@ -681,7 +681,7 @@
     { "id": 609, "name": "Cine Mexicano", "cat": "cine", "url": "http://24.152.54.30:8085/play/Cine-Mexicano/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cine+Mexicano" },
     { "id": 610, "name": "Cinema Platino", "cat": "cine", "url": "http://24.152.54.30:8085/play/Cinema_Platino/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Cinema+Platino" },
     { "id": 611, "name": "Color Vision 9 - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a02w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Color+Vision+9" },
-    { "id": 612, "name": "Concert Channel", "cat": "musica", "url": "http://24.152.54.30:8085/play/a03z/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Concert+Channel" },
+    { "id": 612, "name": "Concert Channel", "cat": "musica", "url": "https://jmp2.uk/plu-6868152657543d1f8be4ece3.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrbgFiq2kVpQC8-GoojB7uOnoB5SAzCvRVC6_BJtUhw&s=10" },
     { "id": 613, "name": "DHE HD", "cat": "cine", "url": "http://24.152.54.30:8085/play/a0r2/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=DHE+HD" },
     { "id": 615, "name": "Digital 15 - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a01v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Digital+15" },
     { "id": 616, "name": "Disney", "cat": "infantiles", "url": "http://24.152.54.30:8085/play/a03r/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Disney" },
