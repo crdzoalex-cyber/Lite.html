@@ -1108,7 +1108,7 @@
 
 { "id": 1094, "name": "Stadium", "cat": "deportes", "url": "https://2d006483e2aa43fe812f7b464cb2916d.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/Samsung_Stadium/playlist.m3u8?ads.wurl_channel=160&ads.wurl_name=Stadium&ads.us_privacy=1YNY&ads.psid=%7BPSID%7D&ads.targetopt=%7BTARGETOPT%7D&ads.app_domain=%7BAPP_DOMAIN%7D&ads.app_name=%7BAPP_NAME%7D&ads.coppa=0", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
 
-{ "id": 1096, "name": "Trace Sports", "cat": "deportes", "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+{ "id": 1096, "name": "Azteca Deportes Network 2", "cat": "deportes", "url": "http://38.50.38.247:8000/play/a03z/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXsJzMUvQSxH5hQokQs7rHiNLB5ri77Ykqh8RE9TP26duQME3PQgJjml0j&s=10" },
 
 { "id": 1097, "name": "Deluxe Rap", "cat": "musica", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/65183/65183_264_live.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfxOY48IpB_L60fshy-SgD4idHM_VIN27fT1tri47g1Q&s=10" },
 
