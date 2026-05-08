@@ -249,7 +249,7 @@
  
     
     { "id": 4, "name": "El Trece Internacional", "cat": "argentina", "url": "http://170.244.209.30:8000/play/a12v/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Canal_13_200_8.png", "tvg_id": "ElTrece.ar" },
-  { "id": 6, "name": "A24", "cat": "argentina", "url": "http://181.13.252.102:8000/play/a01o/index.m3u8?hls", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWrKdcM-AOju0vaXXXVOIuoaZew8SpU2aghXOiXjn15w&s=10", "tvg_id": "A24.ar" },
+  { "id": 6, "name": "A24", "cat": "argentina", "url": "https://m.youtube.com/watch?v=ArKbAx1K-2U&pp=ygUEQSAyNA%3D%3D/?.html", "isYT": false, "logo": "https://yt3.ggpht.com/77_qrFDUHw1VsCLcxQARuavMIcDxWLC82ng2BLPVC_ZT7cwRI0u1oueNPeqxbBKXpJ6GRkGo=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "A24.ar" },
   { "id": 7, "name": "Canal 26", "cat": "argentina", "url": "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8", "isYT": false, "logo": "https://yt3.googleusercontent.com/iwy544rQZtfKaTCTqIFUSov8vJk3usPK8bqGzR-JdQwSBEBJiGIacr3v7L3t8w9Xq7Ny6E5z=s900-c-k-c0x00ffffff-no-rj", "tvg_id": "Canal26.ar" },
   { "id": 8, "name": "TN", "cat": "argentina", "url": "http://181.13.252.102:8000/play/a058/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6DIWmw08dRT2xW1cQb26Kcn-_EnHwDTsqMoPoB8AVGA&s=10", "tvg_id": "TN.ar" },
   { "id": 9, "name": "Crónica", "cat": "argentina", "url": "181.13.252.102:8000/play/a01q/index.m3u8", "isYT": false, "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Cr%C3%B3nica_TV_logotipo_%282016%29.png", "tvg_id": "CronicaTV.ar" },
@@ -706,7 +706,7 @@
     { "id": 683, "name": "AMC 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a012/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AMC+2" },
     { "id": 684, "name": "AXN HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a00l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AXN+HD+2" },
     { "id": 685, "name": "Adult swim HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a036/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Adult+swim+HD+2" },
-    { "id": 686, "name": "America TV", "cat": "argentina", "url": "https://m.youtube.com/watch?v=zcWXboTnous&pp=uAQw/?.html", "isYT": false, "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Am%C3%A9rica_TV_%28Nuevo_logo_Junio_2020%29.png" },
+    { "id": 686, "name": "America TV", "cat": "argentina", "url": "https://m.youtube.com/watch?v=zcWXboTnous&pp=uAQw/?.html", "isYT": false, "logo": "https://yt3.ggpht.com/vIYh4fJ4FiOeD0U8sGUEUZQf3DaK-PME00Ckh7cFf4CRmC3EHopvUsjbgYKhNVkFXURSzltWYQ=s48-c-k-c0x00ffffff-no-rj" },
     { "id": 687, "name": "Baby TV 2", "cat": "infantiles", "url": "http://181.209.125.236:10000/play/a01d/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Baby+TV+2" },
     { "id": 688, "name": "C5N 2", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00w/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=C5N+2" },
     { "id": 689, "name": "Canal 79 Mar Del Plata", "cat": "argentina", "url": "https://streamconex.com:19360/mardelplata/mardelplata.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJkHYxPU8lbWVOTp8eV-jVQZHmk-3_TcjCL60K-w9Tww&s=10" },
