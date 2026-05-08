@@ -519,7 +519,7 @@
     { "id": 330, "name": "99TV", "cat": "noticias", "url": "https://cdn-1.pishow.tv/live/1211/master.m3u8", "logo": "https://i.imgur.com/dZA4gel.png" },
     { "id": 337, "name": "111 TV", "cat": "internacional", "url": "https://5db313b643fd8.streamlock.net/111/111/playlist.m3u8", "logo": "https://i.imgur.com/kVREx1Q.png" },
     { "id": 338, "name": "247 Box TV", "cat": "variedades", "url": "https://hls.247box.live/hls/stream.m3u8", "logo": "https://i.imgur.com/t5AUthL.png" },
-    { "id": 339, "name": "prueba", "cat": "musica", "url": "https://m.vk.com/video-165435488_456239595?list=cdf91f4fbc95fa5724&from=wall-165435488_510/?.html", "logo": "https://i.ibb.co/3m9LrLj/k7gIibH.png" },
+    { "id": 339, "name": "prueba", "cat": "mx", "url": "https://play.tvaztecaguate.com/home/?.html", "logo": "https://i.ibb.co/3m9LrLj/k7gIibH.png" },
     { "id": 340, "name": "312 ТВ", "cat": "variedades", "url": "http://176.126.166.43:1935/live/312musik/playlist.m3u8", "logo": "https://i.ibb.co/S6sZvqk/iLSGi6c.png" },
     { "id": 341, "name": "360°", "cat": "internacional", "url": "https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8", "logo": "https://i.imgur.com/VTJqdoX.png" },
     { "id": 342, "name": "360° Новости", "cat": "noticias", "url": "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8", "logo": "https://i.imgur.com/YXDeX8q.png" },
