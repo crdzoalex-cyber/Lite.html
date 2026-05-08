@@ -561,7 +561,7 @@
     { "id": 419, "name": "Abzy Dhakad", "cat": "cine", "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/4fe6ab07a13543d6bdb2ec63b3e2df44/index.m3u8", "logo": "https://i.imgur.com/5ORC4tn.png" },
     { "id": 420, "name": "Abzy Movies", "cat": "cine", "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/db8d4eca72d64748a00d0631debf542d/index.m3u8", "logo": "https://i.imgur.com/LnVgKVF.png" },
     { "id": 433, "name": "Acento TV", "cat": "internacional", "url": "https://acentotv01.streamprolive.com/hls/live.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ku9AQPFjSd-GlVqNnmMrQgUnKrmWPoIvYtp92ZyFxw&s=10" },
-     { "id": 435, "name": "ACI Sport TV", "cat": "deportes", "url": "https://webstream.multistream.it/memfs/e2cb3629-c1a2-495b-b43a-9eb386f04ed8.m3u8", "logo": "https://i.imgur.com/U8cHMOt.png" },
+     { "id": 435, "name": "ACI Sport TV", "cat": "deportes", "url": "https://webstream.multistream.it/memfs/e2cb3629-c1a2-495b-b43a-9eb386f04ed8.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtcxfL350Dg4TrB6nQpFaH-i152WINdzRk-jKeHUqJrFFvqEksQxtbPtg&s=10" },
      { "id": 438, "name": "Action 24", "cat": "cine", "url": "http://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Action24-logo-small.png" },
     { "id": 439, "name": "Activa TV", "cat": "musica", "url": "https://streamtv1.serviciospararadios.es/hls/activatv/1_2/index.m3u8?tkn=3333106771", "logo": "https://i.imgur.com/VCUZKiw.png" },
     { "id": 440, "name": "ACTV", "cat": "internacional", "url": "https://castus-vod-dev.s3.amazonaws.com/vod_clients/athens/live/ch2/video.m3u8", "logo": "https://i.imgur.com/Z6lB0Ww.png" },
