@@ -532,7 +532,7 @@
     { "id": 343, "name": "360 TV", "cat": "noticias", "url": "https://turkmedya-live.ercdn.net/tv360/tv360.m3u8", "logo": "https://i.imgur.com/agn47sQ.png" },
     { "id": 344, "name": "365 Дней", "cat": "documentales", "url": "http://31.148.48.15/365_dney/index.m3u8", "logo": "https://i.imgur.com/NfnAiTR.png" },
     { "id": 345, "name": "1001 Noites", "cat": "variedades", "url": "https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8", "logo": "https://i.imgur.com/dWA9y2J.png" },
-    { "id": 352, "name": "Telehit Latino", "cat": "musica", "url": "http://190.61.47.54:8000/play/a029/index.m3u8", "logo": "https://i.imgur.com/nSSUHcg.png" },
+    { "id": 352, "name": "Telehit Latino", "cat": "musica", "url": "http://190.61.47.54:8000/play/a029/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyjgfMF-s9G2ebrM9AyIf1dsk81yrQltdx-MevvAuYyA&s=10" },
     { "id": 353, "name": ":24", "cat": "noticias", "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8", "logo": "https://i.imgur.com/tTCuczU.png" },
     { "id": 361, "name": "A12 TV", "cat": "musica", "url": "https://video1.getstreamhosting.com:1936/8250/8250/manifest.m3u8", "logo": "https://i.imgur.com/JgnjgvF.png" },
     { "id": 362, "name": "Cumbia Mix", "cat": "argentina", "url": "https://cloud.tvomix.com/CUMBIAMIX/tracks-v1a1/mono.m3u8", "logo": "https://i.imgur.com/LnXQkIU.png" },
@@ -716,8 +716,7 @@
     { "id": 666, "name": "TeleMicro - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a02v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TeleMicro" },
     { "id": 667, "name": "Teleantillas", "cat": "internacional", "url": "http://24.152.54.30:8085/play/Teleantillas/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Teleantillas" },
     { "id": 668, "name": "Telecentro - RD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a01y/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telecentro" },
-    { "id": 669, "name": "Telehit", "cat": "musica", "url": "http://24.152.54.30:8085/play/Telehit/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telehit" },
-    { "id": 670, "name": "Telehit Musica", "cat": "musica", "url": "http://24.152.54.30:8085/play/Telehit_Musica/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telehit+Musica" },
+    { "id": 670, "name": "Telehit Musica", "cat": "musica", "url": "http://181.78.8.199:8000/play/a0g7/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-QrgTKI5sVYPKh5dfRtlBK77T36de72arcM38wCAIA&s=10" },
     { "id": 671, "name": "Telemicro Internacional", "cat": "internacional", "url": "http://24.152.54.30:8085/play/Telemicro_Internacional/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telemicro+Int" },
     { "id": 672, "name": "Telemundo HD", "cat": "internacional", "url": "http://24.152.54.30:8085/play/a0qy/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telemundo+HD" },
     { "id": 673, "name": "Telemundo Este", "cat": "internacional", "url": "http://24.152.54.30:8085/play/Telemundo_Este/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telemundo+Este" },
@@ -995,7 +994,7 @@
     { "id": 1000, "name": "Telenovelas 3", "cat": "series", "url": "http://217.26.190.76:8888/play/a09m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telenovelas+3" },
     { "id": 1015, "name": "Telepacifico", "cat": "colombia", "url": "http://217.26.190.76:8888/play/a0cd/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telepacifico" },
     { "id": 1016, "name": "Telesur 2", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a0ju/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Telesur+2" },
-    { "id": 1017, "name": "Top Latino", "cat": "musica", "url": "http://217.26.190.76:8888/play/a0jv/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Top+Latino" },
+    { "id": 1017, "name": "Top Latino", "cat": "musica", "url": "https://5cefcbf58ba2e.streamlock.net:543/webtltv/webtltv.stream/chunklist_w2128978894_tkd293emF0b2tlbnN0YXJ0dGltZT0xNzc4MjYyMDM0Jndvd3phdG9rZW5lbmR0aW1lPTE3NzgyNjMwMzQmd293emF0b2tlbmhhc2g9WG00YkNSUTNfR016NldiYVR0UDlNVDFJQzNBclY2NXpBTkcyUS1FaWxEcz0=.m3u8", "isYT": false, "logo": "https://toplatino.net/wp-content/uploads/2019/04/cropped-LogoTL-300-new-9.png" },
     { "id": 1018, "name": "Trece +", "cat": "colombia", "url": "https://liveingesta318.cdnmedia.tv/trecetvlive/smil:rtmp01.smil/playlist.m3u8?DVR", "isYT": false, "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/TRECE%2B.png/120px-TRECE%2B.png" },
     { "id": 1019, "name": "TyC Sports 3", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a03g/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TyC+Sports+3" },
     { "id": 1020, "name": "UNIVERSAL CHANNEL HD 2", "cat": "series", "url": "http://217.26.190.76:8888/play/a0mg/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=UNIVERSAL+CHANNEL+HD+2" },
@@ -1097,9 +1096,9 @@
 
 { "id": 1085, "name": "Energy TV DJ", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvDJ/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://energy-tv.com/assets/img/canales/CanalDJ.jpg" },
 
-{ "id": 1086, "name": "Trace Latina", "cat": "musica", "url": "https://amg01131-tracetv-tracelatinaes-samsungspain-d7byg.amagi.tv/playlist/amg01131-tracetv-tracelatinaes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+{ "id": 1086, "name": "Trace Latina", "cat": "musica", "url": "https://amg01131-tracetv-tracelatinaes-samsungspain-d7byg.amagi.tv/playlist/amg01131-tracetv-tracelatinaes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScUT4VJvZTCAip6h-ZF3s_i9R-60oQHJE2l59qR61Y4w&s=10" },
 
-{ "id": 1087, "name": "Trace Urban", "cat": "musica", "url": "https://amg01131-tracetv-traceurbanes-samsungspain-c6yeo.amagi.tv/playlist/amg01131-tracetv-traceurbanes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+{ "id": 1087, "name": "Trace Urban", "cat": "musica", "url": "https://amg01131-tracetv-traceurbanes-samsungspain-c6yeo.amagi.tv/playlist/amg01131-tracetv-traceurbanes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV9qTHT_sHRCWLW2SB49E0-IB7_BUmU2GXxm01gPFdBw&s=10" },
 
     { "id": 1088, "name": "Deluxe Dance Germany", "cat": "musica", "url": "https://teleon.tv/stream/cG5wODQ1OTA2M3BucDg0.m3u8", "isYT": false, "logo": "https://assets.teleon.tv/180_webp/deluxe-dance-ch.webp" },
 
