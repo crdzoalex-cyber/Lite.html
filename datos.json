@@ -1013,7 +1013,6 @@
     { "id": 1032, "name": "Warner Channel 3", "cat": "series", "url": "http://217.26.190.76:8888/play/a0e6/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Warner+Channel+3" },
     { "id": 1033, "name": "Win Sport 2", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a06a/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
     { "id": 1034, "name": "Zona Latina 2", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0a5/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina+2" },
-    { "id": 1035, "name": "re WIND", "cat": "musica", "url": "http://217.26.190.76:8888/play/a0jh/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1036, "name": "TV Latina HD", "cat": "bolivia", "url": "https://castv10.plugstreaming.com:19360/redtv/1080p.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1037, "name": "Ceacom", "cat": "bolivia", "url": "https://eu1.servers10.com:8081/ceacom/tracks-v1a1/mono.m3u8", "isYT": false, "logo": "https://i.imgur.com/hutdRfk.png" },
     { "id": 1038, "name": "ATB La Paz", "cat": "bolivia", "url": "https://stream.atb.com.bo/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" },
