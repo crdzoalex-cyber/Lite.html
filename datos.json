@@ -1113,15 +1113,15 @@
 
 { "id": 1083, "name": "Urbano TV", "cat": "musica", "url": "https://59ef525c24caa.streamlock.net/tvurbano/tvurbano/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
 
-{ "id": 1084, "name": "Energy TV Music", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvmusic/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+{ "id": 1084, "name": "Energy TV Music", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvmusic/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://energy-tv.com/assets/img/canales/CanalMusic.jpg" },
 
-{ "id": 1085, "name": "Energy TV DJ", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvDJ/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+{ "id": 1085, "name": "Energy TV DJ", "cat": "musica", "url": "https://59ec5453559f0.streamlock.net/energytvDJ/smil:VIVALIVETV/.m3u8", "isYT": false, "logo": "https://energy-tv.com/assets/img/canales/CanalDJ.jpg" },
 
 { "id": 1086, "name": "Trace Latina", "cat": "musica", "url": "https://amg01131-tracetv-tracelatinaes-samsungspain-d7byg.amagi.tv/playlist/amg01131-tracetv-tracelatinaes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
 
 { "id": 1087, "name": "Trace Urban", "cat": "musica", "url": "https://amg01131-tracetv-traceurbanes-samsungspain-c6yeo.amagi.tv/playlist/amg01131-tracetv-traceurbanes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
 
-    { "id": 1088, "name": "Deluxe Dance Germany", "cat": "musica", "url": "https://teleon.tv/stream/cG5wODQ1OTA2M3BucDg0.m3u8", "isYT": false, "logo": "https://deluxemusic.de/wp-content/uploads/sites/4/2023/01/DLX_KONTOR_RGB-1.png" },
+    { "id": 1088, "name": "Deluxe Dance Germany", "cat": "musica", "url": "https://teleon.tv/stream/cG5wODQ1OTA2M3BucDg0.m3u8/?.html", "isYT": false, "logo": "https://deluxemusic.de/wp-content/uploads/sites/4/2023/01/DLX_KONTOR_RGB-1.png" },
 
 { "id": 1089, "name": "Deluxe Music", "cat": "musica", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsfSSxAwkl3M_j8hj4m41TaHuMULjXawNQZjzvtmeM_Q&s=10" },
 
