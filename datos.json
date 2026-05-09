@@ -835,7 +835,7 @@
     { "id": 890, "name": "Comedy Central 3", "cat": "series", "url": "http://217.26.190.76:8888/play/a0fg/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Comedy+Central+3" },
     { "id": 891, "name": "DW Espanol 2", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a0jd/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=DW+Espanol+2" },
     { "id": 892, "name": "De Película", "cat": "cine", "url": "http://217.26.190.76:8888/play/a0kz/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=De+Pel%C3%ADcula" },
-    { "id": 893, "name": "Ds Sports", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a0co/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=DirecTV+SPORT" },
+    { "id": 893, "name": "Ds Sports", "cat": "deportes", "url": "http://38.224.175.2:8000/play/a0l4/index.m3u8", "isYT": false, "logo": "https://assets.directvsports.com/__export/1674066777645/sites/dsports/arte/apps/facebook_1200x630.png" },
     { "id": 895, "name": "Discovery Channel 3", "cat": "documentales", "url": "http://217.26.190.76:8888/play/a0ef/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+Channel+3" },
     { "id": 896, "name": "Discovery ID", "cat": "documentales", "url": "http://217.26.190.76:8888/play/a03p/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+ID" },
     { "id": 897, "name": "Discovery Kids 3", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a02m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Discovery+Kids+3" },
