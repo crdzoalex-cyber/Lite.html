@@ -538,7 +538,7 @@
    { "id": 471, "name": "Afrique54 TV", "cat": "noticias", "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8", "logo": "https://i.imgur.com/WIaRpiS.png" },
        { "id": 473, "name": "Afriwood Blockbuster", "cat": "cine", "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/afriwood-blockbuster/video.m3u8?ads.vf=W6V4C1LsfJK", "logo": "https://i.imgur.com/aESdqiB.png" },
     { "id": 474, "name": "Afro Magic Channel", "cat": "internacional", "url": "https://video1.getstreamhosting.com:1936/8306/8306/playlist.m3u8", "logo": "https://i.imgur.com/yQzXErU.png" },
-    { "id": 475, "name": "Afrobeats", "cat": "musica", "url": "https://load.ecable.tv/afbtv/tracks-v2/index.fmp4.m3u8", "logo": "https://i.imgur.com/232ndRK.png" },
+    { "id": 475, "name": "Afrobeats", "cat": "musica", "url": "https://load.ecable.tv/afbtv/tracks-v2/index.fmp4.m3u8/?.html", "logo": "https://i.imgur.com/232ndRK.png" },
     { "id": 476, "name": "Afroculture TV", "cat": "internacional", "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8", "logo": "https://i.imgur.com/bjaZ3kO.png" },
     { "id": 477, "name": "AfroLandTV", "cat": "variedades", "url": "https://alt-al.otteravision.com/alt/al/al.m3u8", "logo": "https://i.imgur.com/jvnkrEF.png" },
     { "id": 478, "name": "Afroturk TV", "cat": "internacional", "url": "https://edge.socialsmart.tv/naturaltv/bant1/playlist.m3u8", "logo": "https://i.imgur.com/fWlLvRA.png" },
