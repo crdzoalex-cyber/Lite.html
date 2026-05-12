@@ -648,7 +648,7 @@
     { "id": 679, "name": "26TV", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00y/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=26TV" },
     { "id": 680, "name": "A&E HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a00o/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=A%26E+HD+2" },
     { "id": 681, "name": "A24 2", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=A24+2" },
-    { "id": 682, "name": "AM Sports", "cat": "deportes", "url": "http://181.13.252.102:8000/play/a01v/index.m3u8a064", "isYT": false, "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lecXB3yop6mI09ieucofjAhM0vS1ORuZga1KB_nLhqeA=s900-c-k-c0x00ffffff-no-rj" },
+    { "id": 682, "name": "America Sports", "cat": "deportes", "url": "http://181.13.252.102:8000/play/a01v/index.m3u8?hls", "isYT": false, "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lecXB3yop6mI09ieucofjAhM0vS1ORuZga1KB_nLhqeA=s900-c-k-c0x00ffffff-no-rj" },
     { "id": 683, "name": "AMC 2", "cat": "cine", "url": "http://181.209.125.236:10000/play/a012/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AMC+2" },
     { "id": 684, "name": "AXN HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a00l/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=AXN+HD+2" },
     { "id": 685, "name": "Adult swim HD 2", "cat": "series", "url": "http://181.209.125.236:10000/play/a036/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Adult+swim+HD+2" },
