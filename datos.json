@@ -850,10 +850,10 @@
     
     {
   "id": 1063,
-  "name": "Live PRO",
-  "cat": "live",
-  "type": "m3u",
-  "url": "https://raw.githubusercontent.com/crdzoalex-cyber/Lite.html/main/live.m3u",
+  "name": "Golden Plus",
+  "cat": "cine y series",
+  "logo": "https://i.ytimg.com/vi/wdwyzSkPmsg/hqdefault.jpg",
+  "url": "http://201.151.118.136:8000/play/a00b/index.m3u8?hls",
   "isYT": false
 },
     
