@@ -650,7 +650,7 @@
     { "id": 715, "name": "Teleformula MX", "cat": "mexico", "url": "https://mdstrm.com/live-stream-playlist/62f2c855f7981b5a5a2d8763.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+2" },
     { "id": 716, "name": "El Gourmet 2", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a02m/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=El+Gourmet+2" },
     { "id": 717, "name": "Encuentro", "cat": "argentina", "url": "181.13.252.102:8000/play/a01m/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIWUE3okOY5RIm3x9RpJ5O8lLjkpt2KK-2_g&s" },
-    { "id": 719, "name": "Eventos HD", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a00r/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Eventos+HD" },
+    { "id": 719, "name": "Eventos 1", "cat": "deportes", "url": "http://181.209.96.155:10000/play/a162/index.m3u8", "isYT": false, "logo": "https://i.ytimg.com/vi/4WcjpvhoaMA/maxresdefault.jpg" },
     { "id": 720, "name": "Eventos HD 2", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a02t/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Eventos+HD+2" },
     { "id": 721, "name": "FIVERNET TV", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a07k/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=FIVERNET+TV" },
     { "id": 723, "name": "Film & Arts HD 2", "cat": "variedades", "url": "http://181.209.125.236:10000/play/a01x/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Film+%26+Arts+HD+2" },
