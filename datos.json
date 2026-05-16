@@ -675,7 +675,7 @@
     { "id": 766, "name": "Volver", "cat": "argentina", "url": "181.13.252.102:8000/play/a021/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Volver" },
     { "id": 768, "name": "Canal Somos Uno", "cat": "argentina", "url": "https://wowzasrv.chaco.gov.ar/Streamtv/chacotv/chunklist_w860591922.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhfOWwS7VLVXkhb8WgFztfUL4heQ_n0k2Rw&s" },
     { "id": 769, "name": "Alterna TV", "cat": "musica", "url": "https://tv.alterna.ar/stream/hls/live.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpu-19w_7qe_SHVI3XKI4-5q4YlbKawpfdCQ&s" },
-    { "id": 771, "name": "DSports 2", "cat": "deportes", "url": "https://tododeportes.xyz/streams/tvtvhd/proxy.php?stream=dsports2/?.html", "isYT": false, "logo": "https://media.bss-prd.directvgo.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/d/s/dsports_2.png" },
+    { "id": 771, "name": "DSports 2", "cat": "deportes", "url": "https://tododeportes.xyz/streams/tvtvhd/proxy.php?stream=dsports2", "isYT": false, "logo": "https://media.bss-prd.directvgo.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/d/s/dsports_2.png" },
     { "id": 772, "name": "26TV", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00y/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=26TV" },
     { "id": 774, "name": "A24 2", "cat": "noticias", "url": "http://181.209.125.236:10000/play/a00v/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=A24+2" },
     { "id": 779, "name": "Canal 79 SCLRA", "cat": "argentina", "url": "https://streamconex.com:19360/santaclara-1/santaclara-1.m3u8", "isYT": false, "logo": "https://www.teleonline.tv/wp-content/uploads/2024/07/canal79-800x450.jpg" },
@@ -839,7 +839,7 @@
       "tvg_id": "AbyaYala.bo" 
     },
     
-    { "id": 1056, "name": "DSports+", "cat": "deportes", "url": "https://canchatv.online/embedslatam/?canal=directvsportsplus&target=3&raw=1/?.html", "isYT": false, "mute": false, "logo": "https://media.bss-prd.directvgo.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/d/s/dsports_.png" },
+    { "id": 1056, "name": "DSports+", "cat": "deportes", "url": "https://tododeportes.xyz/streams/tvtvhd/proxy.php?stream=dsportsplus", "isYT": false, "mute": false, "logo": "https://media.bss-prd.directvgo.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/d/s/dsports_.png" },
 { "id": 1057, "name": "Unitel", "cat": "bolivia", "url": "https://cdn.digital.com.bo/__cl/cg:sworigin/__c/UNITEL/__op/hls-default/__f/index.m3u8", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMDszlNpvUISP9ByTZueKyCzuXWRzCY2q7p7yNuyo_A&s=10" },
   { "id": 1058, "name": "Win Sports", "cat": "deportes", "url": "http://170.82.113.51:8899/play/a0no/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
 { "id": 1059, "name": "Universo HD", "cat": "variedades", "url": "http://190.11.225.124:5000/live/universo_hd/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb-1bTnbU6OrhC4nEIkZmPauGG9P2v1Pz222F-T0YANg&s" },
