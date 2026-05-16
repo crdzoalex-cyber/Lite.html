@@ -474,7 +474,7 @@
     { "id": 295, "name": "13 Siam Thai", "cat": "noticias", "url": "https://live.x2.co.th/live/13livetv-th.m3u8", "logo": "https://i.imgur.com/FvEp1S2.png" },
     { "id": 296, "name": "13 Teleseries", "cat": "chile", "url": "https://origin.dpsgo.com/ssai/event/f4TrySe8SoiGF8Lu3EIq1g/master.m3u8", "logo": "https://i.imgur.com/csBNi2L.png" },
     { "id": 297, "name": "15+ Music", "cat": "musica", "url": "https://vkvsd277.okcdn.ru/hls/9816683055787.m3u8/sig/hMBatvBNGWg/srcIp/192.223.113.246/urls/45.136.22.58/expires/1778647671351/clientType/14/srcAg/CHROME/fromCache/1/mid/10535754804139/id/9816683055787/9816683055787_high/index.m3u8?p", "logo": "https://i.imgur.com/kj21hwd.png" },
-    { "id": 301, "name": "21 Jump Street", "cat": "cine y series", "url": "https://d1oefjzrirx6fc.cloudfront.net/21_Jump_Street_SONO6.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=21+Jump+Street" },
+    { "id": 301, "name": "Odisea", "cat": "documentales", "url": "https://tinyurl.com/odiseatv", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLGJFcV-xDoxJoE8itLn44BtRFNQ3-UpoiEB7X6oqmVWBC9izNuykn2QI&s=10" },
     { "id": 302, "name": "22Scope News", "cat": "noticias", "url": "https://thelegitpro.in/HDlive/22scope/index.fmp4.m3u8", "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/22Scope_News.png" },
     { "id": 303, "name": "24/7 Canal de Noticias", "cat": "noticias", "url": "https://panel.host-live.com:19360/cn247tv/cn247tv.m3u8", "logo": "https://i.imgur.com/4hDCB1M.png" },
     { "id": 304, "name": "24 Horas", "cat": "noticias", "url": "https://d32rw80ytx9uxs.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-vlldndmow4yre/24HES.m3u8", "logo": "https://i.ibb.co/21sXZ3GT/24h.png" },
