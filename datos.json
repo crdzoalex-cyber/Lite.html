@@ -302,7 +302,7 @@
 
     { "id": 61, "name": "Cablenoticias", "cat": "colombia", "url": "http://181.78.7.90:12500/play/a0e7/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKXW_1AE4Ivxu7qJJK-lYgQ6Dy6YKfsveic_MdG-lx2A&s=10" },
     { "id": 62, "name": "Cartoonito", "cat": "infantiles", "url": "http://181.78.7.90:12500/play/a0pp/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7uGUHuSt3t3dEjEUilGA1FAbjZVU2OkMpk9WBr9XkqQ&s=10" },
-    { "id": 63, "name": "Chilevisión", "cat": "chile", "url": "http://181.78.7.90:12500/play/a0j9/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBAFZvZ1PEhGK7veJNqJQJh_y_RSE3Lb_tJDUGXagywA&s=10" },
+    { "id": 63, "name": "Chilevisión", "cat": "chile", "url": "https://redirector.rudo.video/hls-video/10b92cafdf3646cbc1e727f3dc76863621a327fd/chv/chv.smil/playlist.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBAFZvZ1PEhGK7veJNqJQJh_y_RSE3Lb_tJDUGXagywA&s=10" },
     { "id": 64, "name": "Cine Hispano", "cat": "cine y series", "url": "http://200.229.147.142:8000/play/a07x/index.m3u8", "logo": "https://i.vimeocdn.com/video/1805386680-16b76e008e4748c644da30c0d8d4a2bf69a759c89c3fdde4d733953429dcd92e-d?f=webp" },
     { "id": 65, "name": "Cine Premium", "cat": "cine y series", "url": "http://200.229.147.142:8000/play/a082/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFtt7TE8kvY19zFfW9tBCbC519OqNAE3Cp3CgmLt7mAvheSeqUnCp739x4&s=10" },
     { "id": 66, "name": "Cine Familiar", "cat": "cine y series", "url": "http://200.229.147.142:8000/play/a07v/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhM0VAmwJxDCFapX4BFeTgwwqUdBibz_iaVPyWbbf8JSZlYPicu904E0hb&s=10" },
@@ -725,7 +725,6 @@
     { "id": 876, "name": "BABY TV 3", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a0j9/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=BABY+TV+3" },
     { "id": 877, "name": "BabyFirst 2", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a02j/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=BabyFirst+2" },
     { "id": 879, "name": "CGTN", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a0jg/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CGTN" },
-    { "id": 880, "name": "CHV HD", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0m7/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CHV+HD" },
     { "id": 881, "name": "CNN Chile", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a029/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CNN+Chile" },
     { "id": 882, "name": "CNN Espanol 3", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a0aj/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=CNN+Espanol+3" },
     { "id": 883, "name": "Las Estrellas 2", "cat": "mexico", "url": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Canal+Estrellas+3" },
