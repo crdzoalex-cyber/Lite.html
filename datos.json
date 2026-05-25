@@ -800,7 +800,7 @@
     { "id": 1029, "name": "WILLAX 2", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0bk/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=WILLAX+2" },
     { "id": 1030, "name": "WUAN+", "cat": "variedades", "url": "http://217.26.190.76:8888/play/a0ir/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=WUAN%2B" },
     { "id": 1033, "name": "Win Sport 2", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a06a/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Win+Sport+2" },
-    { "id": 1034, "name": "Zona Latina 2", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0a5/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Zona+Latina+2" },
+    { "id": 1034, "name": "Zona Latina", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0a5/index.m3u8", "isYT": false, "logo": "https://pbs.twimg.com/profile_images/1680955658831552512/_F4y-RH2_400x400.jpg" },
     { "id": 1036, "name": "TV Latina HD", "cat": "bolivia", "url": "https://castv10.plugstreaming.com:19360/redtv/1080p.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=re+WIND" },
     { "id": 1037, "name": "Ceacom", "cat": "bolivia", "url": "https://eu1.servers10.com:8081/ceacom/tracks-v1a1/mono.m3u8", "isYT": false, "logo": "https://i.imgur.com/hutdRfk.png" },
     { "id": 1038, "name": "ATB La Paz", "cat": "bolivia", "url": "https://stream.atb.com.bo/live/daniel/index.m3u8", "isYT": false, "logo": "https://i.imgur.com/E243X2x.png" },
