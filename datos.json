@@ -456,7 +456,7 @@
     { "id": 265, "name": "5-Minute Craft", "cat": "variedades", "url": "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=5-Minute+Craft" },
     { "id": 267, "name": "Power HD", "cat": "argentina", "url": "https://live2.tensila.com/1-1-1.power-tv/hls/live/mystream.m3u8", "logo": "https://i.imgur.com/mSn7ACs.png" },
     { "id": 268, "name": "TNT Sports Premium ARG", "cat": "deportes", "url": "http://45.5.151.147:8000/play/a00r/index.m3u8?hls", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcYLNhyKDDC5TEY7EEz2ePQptBFaCXjTT9VxPozIMFGw&s=10" },
-    { "id": 269, "name": "6 TV Telugu", "cat": "noticias", "url": "https://cdn-1.pishow.tv/live/232/master.m3u8", "logo": "https://i.imgur.com/l3EcRnZ.png" },
+    { "id": 269, "name": "Zoey Novelas Turcas", "cat": "Novelas", "url": "https://tv.zoymilton.com/ZoyTurcas/index.m3u8", "logo": "https://play-lh.googleusercontent.com/IOSW12t9g2aSHgnMoPA-kUeye8tfrAScasZeGjaHTIJJ72-7jOa6gfMSdVSXvp2ZOv67=w240-h480-rw" },
     { "id": 270, "name": "6 Wise Tv", "cat": "variedades", "url": "https://live.enhdtv.com:8081/8150/index.m3u8", "logo": "https://jrlist70.pages.dev/list/wise.png" },
     { "id": 273, "name": "7 TeleValencia", "cat": "internacional", "url": "https://play.cdn.enetres.net/9E9557EFCEBB43A89CEC8FBD3C500247022/028/playlist.m3u8", "logo": "https://i.imgur.com/ILfXDRs.png" },
     { "id": 279, "name": "Hiel Music", "cat": "musica", "url": "https://live.obslivestream.com/hielmusic/index.m3u8", "logo": "https://pbs.twimg.com/profile_images/1965536351677263872/lgTa0N-o_200x200.jpg" },
