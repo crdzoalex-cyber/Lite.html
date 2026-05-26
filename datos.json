@@ -773,7 +773,7 @@
     { "id": 986, "name": "TCM 3", "cat": "cine y series", "url": "http://217.26.190.76:8888/play/a0a8/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TCM+3" },
     { "id": 987, "name": "TLC 3", "cat": "documentales", "url": "http://217.26.190.76:8888/play/a07r/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TLC+3" },
     { "id": 992, "name": "TV PERU 2", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0al/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TV+PERU+2" },
-    { "id": 993, "name": "TV+", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0m9/index.m3u8", "isYT": false, "logo": "https://tvmas.tv/_templates/globals/img/placeholder.png" },
+    { "id": 993, "name": "TV+", "cat": "chile", "url": "http://217.26.190.76:8888/play/a0m9/index.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMMldpnsmRhbLu6YJoJWFwVawrFjg-nu-n8W6J1xZGrDBlMi_49RUHRb5H&s=10" },
     { "id": 994, "name": "TVE 3", "cat": "internacional", "url": "http://217.26.190.76:8888/play/a0af/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TVE+3" },
     { "id": 995, "name": "TV Chile", "cat": "chile", "url": "https://www.tvn.cl/en-vivo#/?.html", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgxQiEHueHK1eaoiXKK69GzU4lUrs_sbONDrYjTZPQfQ&s=10" },
     { "id": 996, "name": "TVPeru Noticia", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0jw/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=TVPeru+Noticia" },
