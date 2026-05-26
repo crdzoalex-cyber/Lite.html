@@ -888,7 +888,7 @@
 
 { "id": 1089, "name": "Deluxe Music", "cat": "musica", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsfSSxAwkl3M_j8hj4m41TaHuMULjXawNQZjzvtmeM_Q&s=10" },
 
-{ "id": 1090, "name": "DBM TV", "cat": "musica", "url": "https://edge21.vedge.infomaniak.com/livecast/ik:dbmtv/chunklist_w29516287.m3u8?spark=6da605fd-e8d3-4461-94a7-e54bec03fd58&token=", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdRvHDK0xAUNUkVHc2WYyWoNr6qK9EN6LHOofCbnOixA&s=10" },
+{ "id": 1090, "name": "DBM TV", "cat": "musica", "url": "https://edge13.vedge.infomaniak.com/livecast/ik:dbmtv/chunklist_w1101911537.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdRvHDK0xAUNUkVHc2WYyWoNr6qK9EN6LHOofCbnOixA&s=10" },
 
 { "id": 1091, "name": "UFC", "cat": "deportes", "url": "https://linear-893.frequency.stream/dist/xumo/893/hls/master/playlist.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
 
