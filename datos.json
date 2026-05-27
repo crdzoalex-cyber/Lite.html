@@ -248,7 +248,7 @@
  
     
   { "id": 4, "name": "El Trece Internacional", "cat": "argentina", "url": "http://170.244.209.30:8000/play/a12v/index.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Canal_13_200_8.png", "tvg_id": "ElTrece.ar" },
-  { "id": 6, "name": "A24", "cat": "argentina", "url": "http://45.5.151.147:8000/play/a006/index.m3u8?hls", "isYT": false, "logo": "https://yt3.ggpht.com/77_qrFDUHw1VsCLcxQARuavMIcDxWLC82ng2BLPVC_ZT7cwRI0u1oueNPeqxbBKXpJ6GRkGo=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "A24.ar" },
+  { "id": 6, "name": "A24", "cat": "argentina", "url": "https://g5.mc-slo.transport.edge-access.net/a12/ngrp:a24-100056_all/a24-100056_720p.m3u8?sense=true", "isYT": false, "logo": "https://yt3.ggpht.com/77_qrFDUHw1VsCLcxQARuavMIcDxWLC82ng2BLPVC_ZT7cwRI0u1oueNPeqxbBKXpJ6GRkGo=s48-c-k-c0x00ffffff-no-rj", "tvg_id": "A24.ar" },
   { "id": 7, "name": "Canal 26", "cat": "argentina", "url": "https://stream-gtlc.telecentro.net.ar/hls/canal26hls/main.m3u8", "isYT": false, "logo": "https://yt3.googleusercontent.com/iwy544rQZtfKaTCTqIFUSov8vJk3usPK8bqGzR-JdQwSBEBJiGIacr3v7L3t8w9Xq7Ny6E5z=s900-c-k-c0x00ffffff-no-rj", "tvg_id": "Canal26.ar" },
   { "id": 8, "name": "TN", "cat": "argentina", "url": "http://45.5.151.147:8000/play/a00b/index.m3u8?hls", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6DIWmw08dRT2xW1cQb26Kcn-_EnHwDTsqMoPoB8AVGA&s=10", "tvg_id": "TN.ar" },
   { "id": 9, "name": "Crónica", "cat": "argentina", "url": "http://45.5.151.147:8000/play/a009/index.m3u8?hls", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0g4N8PHQf1YolHqIY3asRNAuamxPb6ZJ6nayjl8QyRzFiZzArbRX4DQ0&s=10", "tvg_id": "CronicaTV.ar" },
