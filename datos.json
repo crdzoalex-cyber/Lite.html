@@ -510,7 +510,7 @@
     { "id": 455, "name": "Afarin Baxcha", "cat": "infantiles", "url": "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8", "logo": "https://i.postimg.cc/4xRkBDRx/Afarin-Baxcha-200.png" },
     { "id": 471, "name": "Afrique54 TV", "cat": "noticias", "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8", "logo": "https://i.imgur.com/WIaRpiS.png" },
     { "id": 474, "name": "Afro Magic Channel", "cat": "internacional", "url": "https://video1.getstreamhosting.com:1936/8306/8306/playlist.m3u8", "logo": "https://i.imgur.com/yQzXErU.png" },
-    { "id": 475, "name": "Afrobeats", "cat": "musica", "url": "https://load.ecable.tv/afbtv/tracks-v2/index.fmp4.m3u8/?.html", "logo": "https://i.imgur.com/232ndRK.png" },
+    { "id": 475, "name": "Afrobeats", "cat": "musica", "url": "https://stream.ecable.tv/afbtv/tracks-v2/index.fmp4.m3u8", "audio_url": "https://stream.ecable.tv/afbtv/tracks-a1/seg-0-46269.hls.fmp4", "logo": "https://i.imgur.com/232ndRK.png" },
     { "id": 476, "name": "Afroculture TV", "cat": "musica", "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8", "logo": "https://i.imgur.com/bjaZ3kO.png" },
     { "id": 477, "name": "AfroLandTV", "cat": "variedades", "url": "https://alt-al.otteravision.com/alt/al/al.m3u8", "logo": "https://i.imgur.com/jvnkrEF.png" },
     { "id": 483, "name": "Aghapy Kids", "cat": "infantiles", "url": "https://5b622f07944df.streamlock.net/aghapykids.tv/aghapykids2/playlist.m3u8", "logo": "https://i.imgur.com/8ariztD.png" },
