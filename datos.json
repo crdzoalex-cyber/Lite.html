@@ -180,15 +180,16 @@
       "year": "2026",
       "dur": "1h 34m",
       "syn": "Tres líneas narrativas extendidas a través de miles de años se entrelazan para dar lugar a una reflexión sobre la esperanza, la conexión y el ciclo de la vida humana."
-    }
+    },
 
     {
   "id": 1201,
-  "name": "Proyecto Fin del Mundo",
-  "logo": "https://megapeliculasrip.me/wp-content/uploads/thumbs/4f7fc4c101128f501a402a3f6ee8c6dd_hd.webp",
+  "title": "Proyecto Fin del Mundo",
+  "poster": "https://megapeliculasrip.me/wp-content/uploads/thumbs/4f7fc4c101128f501a402a3f6ee8c6dd_hd.webp",
   "url": "https://youtu.be/7pjbpD6COVk", 
   "cat": "estrenos",
   "isYT": true,
+  "year": "2026",
   "syn": "El profesor de ciencias Ryland Grace despierta en una nave espacial a años luz de su hogar sin recordar quién es ni cómo llegó allí. A medida que recupera la memoria, comienza a descubrir su misión: resolver el enigma de la misteriosa sustancia que está causando la extinción del sol."
     }
     
@@ -928,7 +929,7 @@
     
 { "id": 1092, "name": "Dance TV Live", "cat": "musica", "url": "https://5eaccbab48461.streamlock.net:1936/dancefm_1/dancefm_1/chunklist_w196857855.m3u8", "isYT": false, "logo": "https://www.vivalivetv.com/public/files/shows/0/1/2339-540x304-FFFFFF.jpg" },
     
-{ "id": 1092, "name": "DLX Dance WB", "cat": "musica", "url": "https://teleon.tv/co/watch-free-music-tv-online/deluxe-dance-by-kontor-ch/?.html", "isYT": false, "logo": "https://assets.teleon.tv/180_webp/deluxe-dance-ch.webp" },
+{ "id": 1096, "name": "DLX Dance WB", "cat": "musica", "url": "https://teleon.tv/co/watch-free-music-tv-online/deluxe-dance-by-kontor-ch/?.html", "isYT": false, "logo": "https://assets.teleon.tv/180_webp/deluxe-dance-ch.webp" },
 
   { 
       "id": 1093, 
