@@ -224,6 +224,17 @@
   "year": "2026",
   "syn": "Dos amigos se ven envueltos otra vez en el caos con asesinos, monstruos y criaturas sobrenaturales.."
     }
+
+    {
+  "id": 1204,
+  "title": "Michael 2026",
+  "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToQknWoHUA6w_081Uxdwo5wPfO6XvEPf-nSdqxKD8W2w&s=10",
+  "url": "https://ok.ru/videoembed/14929002105480?autoplay=1&?.html", 
+  "cat": "estrenos",
+  "isYT": false,
+  "year": "2026",
+  "syn": "Película biográfica sobre el rey del pop, Michael Jackson. Retratará al cantante desde sus inicios hasta su trágico fallecimiento en 2009..."
+    }
     
   ],
   "peliculasAccion": [
@@ -265,6 +276,9 @@
   ],
   "peliculasTerror": [],
   "peliculasInfantiles": [],
+
+
+  
   "seriesData": [
     {
       "id": 201,
