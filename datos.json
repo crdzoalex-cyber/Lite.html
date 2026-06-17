@@ -991,8 +991,10 @@
     
 { "id": 1096, "name": "DLX Dance WB", "cat": "musica", "url": "https://teleon.tv/co/watch-free-music-tv-online/deluxe-dance-by-kontor-ch/?.html", "isYT": false, "logo": "https://assets.teleon.tv/180_webp/deluxe-dance-ch.webp" },
 
+    { "id": 1097, "name": "Telemundo Deportes", "cat": "deportes", "url": "https://tda-nnaa-drct-pa6dy.fast.nbcuni.com/live/master_4.m3u8", "isYT": false, "logo": "https://lasociedaddelcontenido.com/wp-content/uploads/2025/05/Copia-de-Imagen-2.jpg" },
+    
   { 
-      "id": 1093, 
+      "id": 1098, 
       "name": "Canal de la Ciudad WB", 
       "cat": "argentina", 
       "url": "https://www.youtube.com/live/AMiVAF_tuJ4/?.html", 
