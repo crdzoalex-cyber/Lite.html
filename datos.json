@@ -533,7 +533,7 @@
     { "id": 251, "name": "3Cat Plats bruts", "cat": "internacional", "url": "https://fast-tailor.3catdirectes.cat/v1/channel/ccma-channel2/hls.m3u8", "logo": "https://i.imgur.com/49ZENis.png" },
     { "id": 255, "name": "Dreamworks", "cat": "infantiles", "url": "http://45.5.151.62:8000/play/a010/index.m3u8", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ZauQAyuBRte-bC9icgLp95Qz6XH450UZLpJk0-x-Bg63vJwrBkj8c_c&s=10" },
     { "id": 256, "name": "4D más Noticias TV", "cat": "paraguay", "url": "https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8", "logo": "https://i.ibb.co/1fb5BtN/unnamed.png" },
-    { "id": 260, "name": "4K Travel TV", "cat": "documentales", "url": "https://c.kmpr.in/assets/tv_channels_150/7077.jpg", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=4K+Travel+TV" },
+    { "id": 260, "name": "4K Travel TV", "cat": "documentales", "url": "https://streams2.sofast.tv/sofastplayout/33c31ac4-51fa-46ae-afd0-0d1fe5e60a80_0_HLS/master.m3u8", "logo": "https://c.kmpr.in/assets/tv_channels_150/7077.jpg" },
     { "id": 265, "name": "5-Minute Craft", "cat": "variedades", "url": "https://soul-5mincrafteng-rakuten.amagi.tv/playlist.m3u8", "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=5-Minute+Craft" },
     { "id": 267, "name": "Power HD", "cat": "argentina", "url": "https://live2.tensila.com/1-1-1.power-tv/hls/live/mystream.m3u8", "logo": "https://i.imgur.com/mSn7ACs.png" },
     { "id": 268, "name": "TNT Sports Premium ARG", "cat": "deportes", "url": "http://45.5.151.147:8000/play/a00r/index.m3u8?hls", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcYLNhyKDDC5TEY7EEz2ePQptBFaCXjTT9VxPozIMFGw&s=10" },
