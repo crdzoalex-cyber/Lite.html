@@ -883,10 +883,10 @@
     { "id": 1048, "name": "La Nacion +", "cat": "argentina", "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/lntv.playlist.m3u8", "isYT": false, "logo": "https://fotos.perfil.com/2024/04/03/la-nacion-mas-1779534.jpeg" },
     { "id": 1049, "name": "Cam UADE (AR)", "cat": "cam", "url": "rqBfiegG5qU", "isYT": true, "mute": true, "audio_url": "https://radios.solumedia.com:6088/stream", "logo": "https://yt3.ggpht.com/rib9jkZkBLQWhxG_nBx3IRIgXJI7Rw1Gp8aVOhaz21AcIUHA8T5c8ceKNTqjMu3HfayxNxotjA=s48-c-k-c0x00ffffff-no-rj" },
     { "id": 1050, "name": "Tokio Shinjuku", "cat": "cam", "url": "6dp-bvQ7RWo", "isYT": true, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03GQYzCYbj25_Tl_ckLWL0wx8mVXny1pLkCwN-ljRiQ&s=10" },
-{ "id": 1051, "name": "Tel aviv Israel", "cat": "cam", "url": "Ad210DlxTlY", "isYT": true, "mute": false, "logo": "https://www.webcamhopper.com/thumb/4473.jpg" },
-{ "id": 1052, "name": "Ovelisco Arg", "cat": "cam", "url": "2nl5VgUAhyc", "isYT": true, "mute": true, "logo": "https://yt3.ggpht.com/GiX10kgpWSV9UuzD9PCR-_NLcxsim1UfQ66rE7DYDxf_ib7irx-5vtycN-lCYlIfK9nQdW0Ytg=s48-c-k-c0x00ffffff-no-rj" },
-{ "id": 1053, "name": "Tigo Sports GT 1", "cat": "deportes", "url": "http://170.244.209.30:8000/play/a0y3/index.m3u8", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsf2JywlB2xK-Wpmo3NYR0CRsbsJkMkJjqYXKwev9WKA&s" },
-{ "id": 1054, "name": "Muro de los Lamentos Israel", "cat": "cam", "url": "https://videos-3.earthcam.com/fecnetwork/7949.flv/chunklist_w375470399.m3u8?t=qJ8klkLQpmFc8tdfbSweV%2FYro5ZzjupmVXt5WSbEaa32O%2BDiTdYZY%2FipGuR22U34&cid=&DVR=", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsf2JywlB2xK-Wpmo3NYR0CRsbsJkMkJjqYXKwev9WKA&s" },
+    { "id": 1051, "name": "Tel aviv Israel", "cat": "cam", "url": "Ad210DlxTlY", "isYT": true, "mute": false, "logo": "https://www.webcamhopper.com/thumb/4473.jpg" },
+    { "id": 1052, "name": "Ovelisco Arg", "cat": "cam", "url": "2nl5VgUAhyc", "isYT": true, "mute": true, "logo": "https://yt3.ggpht.com/GiX10kgpWSV9UuzD9PCR-_NLcxsim1UfQ66rE7DYDxf_ib7irx-5vtycN-lCYlIfK9nQdW0Ytg=s48-c-k-c0x00ffffff-no-rj" },
+    { "id": 1053, "name": "Tigo Sports GT 1", "cat": "deportes", "url": "http://170.244.209.30:8000/play/a0y3/index.m3u8", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsf2JywlB2xK-Wpmo3NYR0CRsbsJkMkJjqYXKwev9WKA&s" },
+    { "id": 1054, "name": "Muro de los Lamentos Israel", "cat": "cam", "url": "https://videos-3.earthcam.com/fecnetwork/7949.flv/chunklist_w375470399.m3u8?t=qJ8klkLQpmFc8tdfbSweV%2FYro5ZzjupmVXt5WSbEaa32O%2BDiTdYZY%2FipGuR22U34&cid=&DVR=", "isYT": false, "mute": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsf2JywlB2xK-Wpmo3NYR0CRsbsJkMkJjqYXKwev9WKA&s" },
 
 { 
       "id": 1055, 
@@ -916,7 +916,7 @@
 },
     
 { "id": 1064, "name": "Cine War", "cat": "cine y series", "url": "http://179.63.6.12:9000/play/a07n", "isYT": false, "logo": "https://i0.wp.com/aion.mx/wp-content/uploads/2024/07/primera-guerra-mundial.png?resize=960%2C640&ssl=1" },
-    { "id": 1065, "name": "Canlas 8 py", "cat": "paraguay", "url": "https://video.hostingcaaguazu.com:19360/canal8cvs/canal8cvs.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReIItPmcqD2ZyIrE683YXXBSxZelOBw3AYv34-IXGVtjbv6BpjQiwDwO4&s=10" },
+    { "id": 1065, "name": "Canal 8 py", "cat": "paraguay", "url": "https://video.hostingcaaguazu.com:19360/canal8cvs/canal8cvs.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReIItPmcqD2ZyIrE683YXXBSxZelOBw3AYv34-IXGVtjbv6BpjQiwDwO4&s=10" },
    { "id": 1066, "name": "TUDN", "cat": "deportes", "url": "http://45.228.234.62:8000/play/a00a/index.m3u8", "isYT": false, "logo": "https://phantom-marca-mx.unidadeditorial.es/f0ad77d67cf138fafd1ab168d713c527/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2024/12/08/17336823886707.jpg" },
    { "id": 1067, "name": "Oxigeno", "cat": "documentales", "url": "http://179.57.171.184:8000/play/1/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
     { "id": 1069, "name": "Zuraca TV", "cat": "bolivia", "url": "https://tv3.bitstreaming.net:3680/live/zuracatvlive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
@@ -957,7 +957,7 @@
 
 { "id": 1087, "name": "Trace Urban", "cat": "musica", "url": "https://amg01131-tracetv-traceurbanes-samsungspain-c6yeo.amagi.tv/playlist/amg01131-tracetv-traceurbanes-samsungspain/playlist.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV9qTHT_sHRCWLW2SB49E0-IB7_BUmU2GXxm01gPFdBw&s=10" },
 
-    { "id": 1088, "name": "Deluxe Dance Germany", "cat": "musica", "url": "https://teleon.tv/stream/cG5wODQ1OTA2M3BucDg0.m3u8", "isYT": false, "logo": "https://assets.teleon.tv/180_webp/deluxe-dance-ch.webp" },
+{ "id": 1088, "name": "Deluxe Dance Germany", "cat": "musica", "url": "https://teleon.tv/stream/cG5wODQ1OTA2M3BucDg0.m3u8", "isYT": false, "logo": "https://assets.teleon.tv/180_webp/deluxe-dance-ch.webp" },
 
 { "id": 1089, "name": "Deluxe Music", "cat": "musica", "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsfSSxAwkl3M_j8hj4m41TaHuMULjXawNQZjzvtmeM_Q&s=10" },
 
