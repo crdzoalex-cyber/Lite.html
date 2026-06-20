@@ -916,7 +916,7 @@
 },
     
 { "id": 1064, "name": "Cine War", "cat": "cine y series", "url": "http://179.63.6.12:9000/play/a07n", "isYT": false, "logo": "https://i0.wp.com/aion.mx/wp-content/uploads/2024/07/primera-guerra-mundial.png?resize=960%2C640&ssl=1" },
-    { "id": 1065, "name": "A24 Py", "cat": "paraguay", "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/6.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
+    { "id": 1065, "name": "Canlas 8 py", "cat": "paraguay", "url": "https://video.hostingcaaguazu.com:19360/canal8cvs/canal8cvs.m3u8", "isYT": false, "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReIItPmcqD2ZyIrE683YXXBSxZelOBw3AYv34-IXGVtjbv6BpjQiwDwO4&s=10" },
    { "id": 1066, "name": "TUDN", "cat": "deportes", "url": "http://45.228.234.62:8000/play/a00a/index.m3u8", "isYT": false, "logo": "https://phantom-marca-mx.unidadeditorial.es/f0ad77d67cf138fafd1ab168d713c527/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2024/12/08/17336823886707.jpg" },
    { "id": 1067, "name": "Oxigeno", "cat": "documentales", "url": "http://179.57.171.184:8000/play/1/index.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
     { "id": 1069, "name": "Zuraca TV", "cat": "bolivia", "url": "https://tv3.bitstreaming.net:3680/live/zuracatvlive.m3u8", "isYT": false, "logo": "https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" },
