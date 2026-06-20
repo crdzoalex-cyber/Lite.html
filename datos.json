@@ -597,7 +597,7 @@
     { "id": 477, "name": "AfroLandTV", "cat": "variedades", "url": "https://alt-al.otteravision.com/alt/al/al.m3u8", "logo": "https://i.imgur.com/jvnkrEF.png" },
     { "id": 483, "name": "Universal Reality", "cat": "cine y series", "url": "http://38.194.226.190:8000/play/a004/index.m3u8?hls", "logo": "https://i.ytimg.com/vi/va4vkM8O7P8/maxresdefault.jpg" },
     { "id": 484, "name": "USA", "cat": "cine y series", "url": "http://38.194.226.190:8000/play/a02z/index.m3u8?hls", "logo": "https://yt3.googleusercontent.com/tmKkPQinwcr4OxbhANcj4mw0NAVYFNNzhLzqoQDQJEX6V2trFjIip2sHbF279MZT65MAQ1tkiQ=s900-c-k-c0x00ffffff-no-rj" },
-    { "id": 485, "name": "Agrotendencia TV", "cat": "documentales", "url": "https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8", "logo": "https://i.imgur.com/frd60hR.png" },
+    { "id": 485, "name": "NBA", "cat": "deportes", "url": "http://38.194.226.190:8000/play/a001/index.m3u8?hls", "logo": "https://www.clipartmax.com/png/middle/134-1349206_nba-logo-png-transparent-background-nba-logo-transparent-background.png" },
     { "id": 486, "name": "Aguacate TV", "cat": "venezuela", "url": "https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8", "logo": "https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg" },
     { "id": 487, "name": "Ahora TV", "cat": "internacional", "url": "https://tv.livestreaminggroup.info:3513/live/canal35live.m3u8", "logo": "https://i.imgur.com/dyJyuXc.png" },
     { "id": 489, "name": "Aire de Santa Fe", "cat": "argentina", "url": "https://unlimited1-us.dps.live/airedesantafetv/airedesantafetv.smil/playlist.m3u8", "logo": "https://i.imgur.com/60vSWW0.png" },
