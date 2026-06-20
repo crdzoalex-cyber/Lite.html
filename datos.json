@@ -595,7 +595,7 @@
     { "id": 475, "name": "Afrobeats", "cat": "musica", "url": "https://stream.ecable.tv/afbtv/tracks-v2/index.fmp4.m3u8", "audio_url": "https://stream.ecable.tv/afbtv/tracks-a1/index.fmp4.m3u8", "logo": "https://i.imgur.com/232ndRK.png" },
     { "id": 476, "name": "Afroculture TV", "cat": "musica", "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8", "logo": "https://i.imgur.com/bjaZ3kO.png" },
     { "id": 477, "name": "AfroLandTV", "cat": "variedades", "url": "https://alt-al.otteravision.com/alt/al/al.m3u8", "logo": "https://i.imgur.com/jvnkrEF.png" },
-    { "id": 483, "name": "Aghapy Kids", "cat": "infantiles", "url": "https://5b622f07944df.streamlock.net/aghapykids.tv/aghapykids2/playlist.m3u8", "logo": "https://i.imgur.com/8ariztD.png" },
+    { "id": 483, "name": "Universal Reality", "cat": "cine y series", "url": "http://38.194.226.190:8000/play/a004/index.m3u8?hls", "logo": "https://i.ytimg.com/vi/va4vkM8O7P8/maxresdefault.jpg" },
     { "id": 484, "name": "Agro TV", "cat": "documentales", "url": "https://restr2.bgtv.bg/agro/hls/agro.m3u8", "logo": "https://i.imgur.com/tPMNDtD.png" },
     { "id": 485, "name": "Agrotendencia TV", "cat": "documentales", "url": "https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8", "logo": "https://i.imgur.com/frd60hR.png" },
     { "id": 486, "name": "Aguacate TV", "cat": "venezuela", "url": "https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8", "logo": "https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg" },
