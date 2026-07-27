@@ -797,7 +797,7 @@
     { "id": 917, "name": "Exitosa", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0j1/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Exitosa" },
     { "id": 920, "name": "Food Network 2", "cat": "variedades", "url": "http://217.26.190.76:8888/play/a0mb/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Food+Network+2" },
     { "id": 921, "name": "France 24 3", "cat": "noticias", "url": "http://217.26.190.76:8888/play/a03q/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=France+24+3" },
-    { "id": 922, "name": "Fun Box", "cat": "infantiles", "url": "http://217.26.190.76:8888/play/a0jj/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fun+Box" },
+    { "id": 922, "name": "Fun Box", "cat": "infantiles", "url": "http://186.148.196.100:8000/play/a00d", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Fun+Box" },
     { "id": 923, "name": "GLOBAL", "cat": "peru", "url": "http://217.26.190.76:8888/play/a09q/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=GLOBAL" },
     { "id": 925, "name": "GOLPERU", "cat": "peru", "url": "http://217.26.190.76:8888/play/a0gb/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=GOLPERU" },
     { "id": 926, "name": "Gol TV", "cat": "deportes", "url": "http://217.26.190.76:8888/play/a0dl/index.m3u8", "isYT": false, "logo": "https://dummyimage.com/512x512/282828/ffffff.png&text=Gol+TV" },
