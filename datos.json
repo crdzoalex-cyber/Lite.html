@@ -1002,6 +1002,15 @@
   "url": "https://d2b5h5wyivfnfl.cloudfront.net/live/48f53430-9014-4459-a048-6169dac14140/medialist_15609871089997455276_hls.m3u8",
   "cat": "paraguay",
   "isYT": false
+},
+
+    {
+  "id": 1103,
+  "name": "Tigo Sports BOL",
+  "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJxikeh6fh7KPtB-ysuhSy4kqazOCjM0TDYg&s",
+  "url": "http://181.78.192.238:8000/play/a2ht/index.m3u8",
+  "cat": "deportes",
+  "isYT": false
 }
     
   ]
