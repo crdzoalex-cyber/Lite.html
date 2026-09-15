@@ -4,7 +4,21 @@
     "Hoy es el dia perfecto para recordar por que empezaste.",
     "Si puedes imaginarlo puedes lograrlo, si puedes soñarlo, puedes hacerlo realidad."
   ],
-
+"home_video_url": "https://tu-enlace-de-video-en-vivo.m3u8",
+  "home_cards": {
+    "top_1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18OpiNxS-c-LVUHm0YAzrBclYCKzQ5Pz8m8To7GoHjQ&s=10",
+    "top_2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS4wEekBv0QcdKalXW1YUefMmkIEOi0is1YDfMRqY7Ayuu2lSmUxm-pxFD&s=10",
+    "top_3": "https://ruta-de-tu-imagen.com/movies.jpg",
+    "top_4": "https://ruta-de-tu-imagen.com/series.jpg",
+    "top_5": "https://ruta-de-tu-imagen.com/sports.jpg",
+    "top_6": "https://ruta-de-tu-imagen.com/extra.jpg",
+    "discover_1": "https://ruta-de-tu-imagen.com/descubre1.jpg",
+    "discover_2": "https://ruta-de-tu-imagen.com/descubre2.jpg",
+    "discover_3": "https://ruta-de-tu-imagen.com/descubre3.jpg",
+    "discover_4": "https://ruta-de-tu-imagen.com/descubre4.jpg",
+    "discover_5": "https://ruta-de-tu-imagen.com/descubre5.jpg",
+    "discover_6": "https://ruta-de-tu-imagen.com/descubre6.jpg"
+  },
   "musicPlayer": {
     "autoplay": true,
     "playlist": [
