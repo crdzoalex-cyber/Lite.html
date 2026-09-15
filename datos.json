@@ -4,6 +4,36 @@
     "Hoy es el dia perfecto para recordar por que empezaste.",
     "Si puedes imaginarlo puedes lograrlo, si puedes soñarlo, puedes hacerlo realidad."
   ],
+  {
+  "tv_section": {
+    "slide_tv": [
+      {
+        "titulo": "Cartas en el Aire",
+        "descripcion": "Julián Soler - Nuevo Video",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18OpiNxS-c-LVUHm0YAzrBclYCKzQ5Pz8m8To7GoHjQ&s=10"
+      },
+      {
+        "titulo": "Título de Slide 2",
+        "descripcion": "Descripción del contenido 2",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoMR62o7IeAXxNmTIi1nlk1CXpr6rm1OOmLyE8lK6ldQ&s=10"
+      },
+      {
+        "titulo": "Título de Slide 3",
+        "descripcion": "Descripción del contenido 3",
+        "imagen": "URL_DE_IMAGEN_3"
+      }
+    ],
+    "canales_destacados": [
+      { "nombre": "ESPN", "imagen": "https://latinamerica.espnpressroom.com/wp-content/uploads/2026/08/ESPN-Multisport-Tenis-US-Open-KV-SUR-16-9-1-1024x576.jpg", "url": "http://191.97.63.182:8888/play/a0df/index.m3u8" },
+      { "nombre": "Canal 2", "imagen": "URL_TARJETA_2", "url": "URL_M3U8_2" },
+      { "nombre": "Canal 3", "imagen": "URL_TARJETA_3", "url": "URL_M3U8_3" }
+    ],
+    "recientemente": [
+      { "nombre": "Canal Reciente 1", "imagen": "URL_IMG_A", "url": "URL_M3U8_A" },
+      { "nombre": "Canal Reciente 2", "imagen": "URL_IMG_B", "url": "URL_M3U8_B" }
+    ]
+  }
+}
 "home_video_url": "https://tu-enlace-de-video-en-vivo.m3u8",
   "home_cards": {
     "top_1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18OpiNxS-c-LVUHm0YAzrBclYCKzQ5Pz8m8To7GoHjQ&s=10",
