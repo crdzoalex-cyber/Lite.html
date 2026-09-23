@@ -2,7 +2,7 @@
   "config": {
     "promoTitle": "Nueva Actualización",
     "promoDesc": "Mejoras de rendimiento y nuevos canales.",
-    "promoImage": "https://tu-dominio.com/promo.png"
+    "promoImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACAQMAAACjTyRkAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjYGBgAAAABAABJzQnCgAAAABJRU5ErkJggg=="
   },
   "daily_phrases": [
     "El éxito no llega por un golpe de suerte, sino por la acumulación diaria de pequeños esfuerzos y decisiones firmes.",
@@ -108,7 +108,7 @@
     ]
   },
 
-  "config": {
+  "promoBanner": {
     "welcomeType": "video",
     "welcomeUrl": "https://www.dropbox.com/scl/fi/b67rram5rwrogshny40ff/Creaci-n_de_Video_Nocturno_Estrellado_Ne-n.mp4?rlkey=kjp4dyskr1peiiu2d7dom2wcl&st=98rmtujy&raw=1",
     "promoImage": "https://www.dropbox.com/scl/fi/e3ynokjdt8cturrx8pla7/file_000000003fb871f59a1ed4c649b1021e.png?rlkey=m9x1ebh6kl0fgnxlkl4qjzqp8&st=780ane4i&raw=1",
